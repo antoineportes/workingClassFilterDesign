@@ -1,0 +1,26 @@
+@import url('main.css') layer(main);
+
+@layer override
+{
+
+
+  body
+  {
+    position: relative;
+  }
+
+  main
+  {
+    position: absolute;
+    top: var(--navbar-height);
+    height: calc(100% - var(--navbar-height));
+    background-image: url(../favicon/favicon.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: transparent;
+  }
+
+
+}

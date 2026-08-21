@@ -1,22 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
-  
-  <!--  .H.E.A.D.  -->
-  <head>
-    <title>Working-class filter design | Index</title>
-    <meta  charset="UTF-8" />
-    <meta  name="viewport"  content="width=device-width, initial-scale=1" />
-    <meta  name="author"    content="Antoine Portes" />
-    <meta
-      name="keywords"
-      content="filter design, DSP, signal processing, tuna sandwich"
+
+
+    <head>
+        <title>Working-class filter design | Welcome anyway</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Antoine Portes"/>
+        <meta
+          name="keywords"
+          content="filter design, DSP, signal processing, tuna sandwich"
+        />
+        <meta
+          name="description"
+          content="Experimental pedagogy: I don't teach, I learn and document along the way. HTML version."
     />
-    <meta  name="description"  content="Experimental pedagogy: I don't teach, I learn and document along the way. HTML version." />
-  </head>
-  
-  <!-- .B.O.D.Y.  -->
-  <body>
-    <h1>in_progress</h1>
-  </body>
-  
+        <link rel="canonical" href="https://www.antoineportes.com/workingClassFilterDesign/">
+        <!-- Style -->
+        <link
+          rel="preload"
+          href="assets/fonts/Ysabeau/YsabeauInfant[wght].woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="assets/fonts/Ysabeau/YsabeauInfant-Italic[wght].woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="assets/fonts/Ysabeau/YsabeauSC[wght].woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="assets/fonts/Unifont/unifont-17.0.05.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="assets/fonts/EBGaramond/EBGaramond-VariableFont[wght].ttf"
+          as="font"
+          type="font/ttf"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="assets/fonts/EBGaramond/EBGaramond-Italic-VariableFont[wght].ttf"
+          as="font"
+          type="font/ttf"
+          crossorigin
+        >
+        <link rel="stylesheet" type="text/css" href="assets/css/index.css"/>
+        <!-- Manifest -->
+        <link rel="manifest" href="site.webmanifest">
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+        <link rel="icon" href="assets/favicon/favicon.svg" type="image/svg+xml">
+        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+        <!-- ======== SCRIPTS ======== -->
+        <!-- #### Layout #### -->
+        <script
+          defer
+          src="assets/javascript/layout.js"
+        >
+        </script>
+        <!-- #### MathJax #### -->
+        <script
+          async
+          src="assets/javascript/mathjax/config.js"
+        >
+        </script>
+    </head>
+
+
+
+    <body>
+
+
+      <nav>
+
+        <a
+          title="Home"
+          target="_self"
+          type="text/html"
+          charset="UTF-8"
+          rel="home"
+          href=""
+        >
+          <h1>
+            Working-class filter design
+          </h1>
+        </a>
+
+        <div class="dropdown">
+          <button
+            onclick="toggleDropdown(event)"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <svg
+              viewBox="0 0 120 120"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <path
+                  style="stroke-width:12;stroke-linecap:round;stroke-linejoin:round;"
+                  d="m 20,20 h 80"
+                />
+                <path
+                  style="stroke-width:12;stroke-linecap:round;stroke-linejoin:round;"
+                  d="m 20,60 h 80"
+                />
+                <path
+                  style="stroke-width:12;stroke-linecap:round;stroke-linejoin:round;"
+                  d="m 20,100 h 80"
+                />
+              </g>
+            </svg>
+            chapters
+          </button>
+          <menu>
+            <!-- I. Analytic saignals -->
+            <li>
+              <a
+                href="./01-analytic-signals.html"
+                class="current"
+              >
+                Chapter <span class="small-caps">i</span>: Analytic signals
+              </a>
+            </li>
+            <!-- II. RC -->
+            <li>
+              <a
+                href="./02-rc.html"
+                rel="next"
+              >
+                Chapter <span class="small-caps">ii</span>: $ RC $
+              </a>
+            </li>
+            <!-- III. = I + II -->
+            <li>
+              <a
+                href="./03-equals-one-plus-two.html"
+                rel="next"
+              >
+                Chapter <span class="small-caps">iii</span>:
+                $ \ = \ $ <span class="small-caps">i</span>
+                $ + $ <span class="small-caps">ii</span>
+              </a>
+            </li>
+            <!-- IV. Jargon -->
+            <li>
+              <a
+                href="./04-jargon.html"
+                rel="next"
+              >
+                Chapter <span class="small-caps">iv</span>: Jargon
+              </a>
+            </li>
+            <!-- V. Poles and zeroes -->
+            <li>
+              <a
+                href="./05-poles-and-zeroes.html"
+                rel="next"
+              >
+                Chapter <span class="small-caps">v</span>: Poles and zeroes
+              </a>
+            </li>
+            <!-- VI. More jargon -->
+            <li>
+              <a
+                href="./06-more-jargon.html"
+                rel="next"
+              >
+                Chapter <span class="small-caps">vi</span>: More jargon
+              </a>
+            </li>
+            <!-- VII. Ones and zeroes -->
+            <li>
+              <a
+                href="./07-ones-and-zeroes.html"
+                rel="next"
+              >
+                Chapter <span class="small-caps">vii</span>: Ones and zeroes
+              </a>
+            </li>
+            <!-- Stephen Butterworth -->
+            <li>
+              <a
+                href="./08-stephen-butterworth.html"
+                rel="next"
+              >
+                Chapter <span class="small-caps">viii</span>: Stephen Butterworth
+              </a>
+            </li>
+          </menu>
+        </div>
+
+        <button class="gitHub">
+          <a
+            href="https://github.com/antoineportes/Working-class-filter-design"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="original (GitHub repository)"
+            title="original (GitHub repository)"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 512 512"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g transform="scale(4)">
+                <path
+                  class="octoCat"
+                  d="M 82.374999,128 C 90.249999,128 120,97.285025 120,70.18496 120,35.946913 94.843771,8.0000003 63.890627,8 32.937485,7.9999997 8.0000002,35.946913 8,70.18496 7.9999998,97.043069 37.75,128 45.625,128 Z"
+                />
+                <path
+                  d="M 54.125061,93.559792 C 37.624947,91.494958 25.999934,79.235401 25.999934,63.362485 c 0,-6.452321 2.250058,-13.420951 6.000066,-18.066659 -1.624947,-4.258577 -1.374955,-13.291907 0.499984,-17.034309 4.999967,-0.645219 11.750008,2.064699 15.750008,5.807102 4.749975,-1.548525 9.749942,-2.322787 15.875005,-2.322787 6.125061,0 11.125028,0.774262 15.625011,2.193743 3.875004,-3.613359 10.750041,-6.323277 15.750008,-5.678058 1.749943,3.484315 1.999935,12.517644 0.374987,16.905265 4,4.903796 6.124927,11.485295 6.124927,18.195703 0,15.872916 -11.624877,27.874385 -28.374983,30.068263 4.249992,2.838962 7.125028,9.033332 7.125028,16.131002 v 13.42095 c 0,3.87145 3.125028,6.06519 6.875037,4.51667 C 110.25006,118.59508 128,95.23736 128,66.330625 128,29.810041 99.250025,3.2178539e-7 63.875003,0 28.499984,-3.2178539e-7 2.6122451e-7,29.810041 0,66.330625 -2.4816324e-7,94.979273 17.624947,118.72412 41.374955,127.62841 44.749975,128.91885 48,126.59606 48,123.11175 v -10.32391 c -1.749942,0.7744 -4,1.29058 -6.000066,1.29058 -8.249992,0 -13.124962,-4.64571 -16.624979,-13.29205 C 24,97.302194 22.500049,95.23736 19.625012,94.850229 c -1.499951,-0.129044 -2.000065,-0.774262 -2.000065,-1.548524 0,-1.54866 2.50005,-2.710053 5.000098,-2.710053 3.625013,0 6.74991,2.322921 9.999935,7.097674 2.500048,3.742404 5.124962,5.419974 8.249992,5.419974 3.125028,0 5.124962,-1.1614 8,-4.129537 2.125061,-2.193878 3.750008,-4.129534 5.250089,-5.419971 z"
+                />
+              </g>
+            </svg>
+          </a>
+        </button>
+
+      </nav>
+
+
+
+      <!-- ==== .M.A.I.N. .W.I.N.D.O.W. ==== -->
+      <main>
+
+
+        <article>
+          //  Flowers on the dustbin
+  Guess I knew that I always would.
+  Here we are now: entertainers.
+  And as we wind on down the road,
+  our shadows taller than our souls,
+  there walks a lady we all know,
+  who shines white light, who shines white heat.
+  Shiny shiny boots of leather,
+  she comes in colours in the air.
+  I've got a new rose, I've got her good.
+  She's sure fine lookin' man, she's somethin' else.
+
+  You chose the [brown-] sugar [-skinned-puppy-] coated version.
+  Panem et circenses
+  Welcome anyway.
+        </article>
+
+
+        <footer>
+          &COPY; &nbsp; No, thanks.
+        </footer>
+
+
+      </main><!-- End Main -->
+
+
+
+    </body>
+
+
 </html>

@@ -2,14 +2,16 @@
 /* =========================================================================== */
 /* =================               _F_O_N_T_S_               ================= */
 /* =========================================================================== */
-/*  Ysabeau  */
+/*  Ysabeau  (main)  */
 @font-face
 {
   font-family: 'Ysabeau Infant';
   font-weight: 1 1000;
   font-style: normal;
   font-display: fallback;
-  src: url('../fonts/Ysabeau/YsabeauInfant[wght].woff2') format('woff2');
+  src:
+    url('../fonts/Ysabeau/YsabeauInfant[wght].woff2')
+    format('woff2');
 }
 @font-face
 {
@@ -17,7 +19,9 @@
   font-weight: 1 1000;
   font-style: italic;
   font-display: fallback;
-  src: url('../fonts/Ysabeau/YsabeauInfant-Italic[wght].woff2') format('woff2');
+  src:
+    url('../fonts/Ysabeau/YsabeauInfant-Italic[wght].woff2')
+    format('woff2');
 }
 @font-face
 {
@@ -25,16 +29,61 @@
   font-weight: 1 1000;
   font-style: normal;
   font-display: fallback;
-  src: url('../fonts/Ysabeau/YsabeauSC[wght].woff2') format('woff2');
+  src:
+    url('../fonts/Ysabeau/YsabeauSC[wght].woff2')
+    format('woff2');
 }
-/*  Unifont  */
+/*  Unifont  (monospace)  */
 @font-face
 {
   font-family: 'Unifont';
   font-weight: normal;
   font-style: normal;
   font-display: fallback;
-  src: url('../fonts/Unifont/unifont-17.0.05.woff2') format('woff2');
+  src:
+    url('../fonts/Unifont/unifont-17.0.05.woff2')
+    format('woff2');
+}
+/*  Garamond  (Ancient Greek)  */
+@font-face
+{
+  font-family: 'Garamond';
+  font-weight: 400 800;
+  font-style: normal;
+  font-display: fallback;
+  src:
+    url('../fonts/EBGaramond/EBGaramond-VariableFont[wght].ttf')
+    format('truetype');
+}
+@font-face
+{
+  font-family: 'Garamond';
+  font-weight: 400 800;
+  font-style: italic;
+  font-display: fallback;
+  src:
+    url('../fonts/EBGaramond/EBGaramond-Italic-VariableFont[wght].ttf')
+    format('truetype');
+}
+/* Arabic and Farsi */
+:lang(ar), :lang(fa)
+{
+  font-family:
+    'Segoe UI',
+    'Tahoma',
+    'Geeza Pro',
+    'Noto Sans Arabic',
+    sans-serif;
+  font-size: 1.025em; 
+}
+/* Mandarin */
+:lang(zh)
+{
+  font-family:
+  'PingFang SC',
+  'Microsoft YaHei',
+  'Noto Sans CJK SC',
+  sans-serif;
 }
 /* #endregion */
 
@@ -60,7 +109,7 @@
   --H: 1.618rem;
   --V-extra: 0px;
   --H-extra: 0px;
-  --diagram-scale: 1.667;
+  --diagram-scale: 1.4142;
   --those-bloody-phones: 850px;
   --calibri-11: 1.075rem;
   --navbar-height: 50px;
@@ -84,10 +133,12 @@
   --sky: rgb(69, 141, 180);
   --crimson: rgb(192, 22, 45);
   --pip-boy-3000: rgb(50, 229, 134);
+  --wheat: rgb(197, 172, 128);
   /* #endregion */
   --vanilla: 'Ysabeau Infant';
   --small-caps: 'Ysabeau Small Caps';
   --monospace: 'Unifont';
+  --oldSchool: 'Garamond';
 }
 /* #endregion */
 
@@ -110,6 +161,7 @@ body, html {
   font-size: var(--calibri-11);
   line-height: var(--lineHeight);
   font-weight: 400;
+  color:  var(--lightGrey);
 }
 
 
@@ -446,6 +498,7 @@ aside
       list-style: none;
       padding: 0;
       margin: 0;
+      counter-reset: aside-counter;
 
       & li
       {
@@ -463,6 +516,28 @@ aside
           white-space: nowrap;
           overflow: hidden;
           text-overflow: ellipsis;
+
+          &::before
+          {
+            font-family: var(--small-caps);
+          }
+          &:not([href="#top"]):not([href="#APPENDIX"]):not([href="#BONUS"])
+          {
+            counter-increment: aside-counter;
+            &::before
+            {
+              content:
+                counter(aside-counter, decimal-leading-zero) ' — ';
+            }
+          }
+          &[href="#APPENDIX"]::before
+          {
+            content: 'Appendix: ';
+          }
+          &[href="#BONUS"]::before
+          {
+            content: 'Bonus: ';
+          }
 
           &:hover
           {
@@ -554,21 +629,26 @@ main
   box-sizing: border-box;
   padding: 0;
   overflow-y: auto;
+  overflow-x: hidden;
   scroll-behavior: smooth;
   background-color: var(--black);
-}
-/*  Links  */
-main a:link, main a:visited
-{
-  color: var(--yellow);
-  text-decoration: none;
-  cursor: pointer;
-}
-main a:active, main a:hover
-{
-  color: var(--pink);
-  text-decoration: none;
-  cursor: pointer;
+
+  /*  Links  */
+  & a
+  {
+    &:link, &:visited
+    {
+      color: var(--yellow);
+      text-decoration: none;
+      cursor: pointer;
+    }
+    &:active, &:hover
+    {
+      color: var(--pink);
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
 }
 /* #endregion */
 
@@ -584,7 +664,8 @@ wc-chapter
   max-width: 1088px;
   background-color: var(--chapter-bg);
   padding: 0 0 1px 0;
-  color:  var(--lightGrey);
+  /*color:  var(--lightGrey);*/
+  counter-reset: h3-counter;
 
   & h2
   {
@@ -610,6 +691,41 @@ section
   margin: 0 0 3.873rem 0;
   width: 100%;
   padding: 0;
+  counter-increment: h3-counter;
+
+  & h3
+  {
+    display: block;
+    margin: 0 0 var(--lineHeight) 0;
+    padding: 0.618rem;
+    border: none;
+    border-top: 4px double var(--ground);
+    border-bottom: 4px double var(--ground);
+    text-align: left;
+    font-size:  1.1rem;
+    color: var(--sky);
+    font-weight: 618;
+
+    &::before
+    {
+      font-family: var(--small-caps);
+    }
+  }
+
+  &:not(#APPENDIX):not(#BONUS) h3::before
+  {
+    content: counter(h3-counter, decimal-leading-zero) ' — ';
+  }
+
+  &#BONUS h3::before
+  {
+    content: 'Bonus: ';
+  }
+
+  &#APPENDIX h3::before
+  {
+    content: 'Appendix: ';
+  }
 }
 /* #endregion */
 
@@ -689,21 +805,10 @@ section header
 /* #endregion */
 
 /* #region Titles */
-/*  Section title  */
-section h3
-{
-  display: block;
-  margin: 0 0 var(--lineHeight) 0;
-  padding: 0.618rem;
-  border: none;
-  border-top: 4px double var(--ground);
-  border-bottom: 4px double var(--ground);
-  text-align: left;
-  font-size:  1.1rem;
-  color: var(--sky);
-  font-weight: 618;
 
-}
+/*  Section title  */
+/* h3 moved inside section */
+
 /*  Sub-title  */
 section h4
 {
@@ -740,10 +845,16 @@ section h5
 /* #endregion */
 
 /* #region PARAGRAPH  */
-wc-paragraph, wc-nested-p
+wc-ppp
 {
   display: block;
   margin: 0 0 var(--lineHeight) 0;
+  padding: 0 var(--H);
+}
+wc-pp, wc-ppp blockquote
+{
+  display: block;
+  margin: 0;
   padding: 0 var(--H);
 }
 p
@@ -751,6 +862,10 @@ p
   display: block;
   padding: 0;
   margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
 
   &.numbered::after
   {
@@ -874,6 +989,17 @@ wc-ascii
   font-family: var(--monospace);
   font-size: 0.95rem;
 }
+/* ancient Greek */
+.oldSchool
+{
+  font-family: var(--oldSchool);
+  font-weight: 440;
+  font-size: 112.5%;
+}
+h3 .oldSchool
+{
+  font-weight: 550;
+}
 .Achtung
 {
   color: var(--crimson);
@@ -906,6 +1032,113 @@ mark
     content: '\201D';
   }
 }
+wc-ppp blockquote > q
+{
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  text-indent: -1rem;
+
+  &::before
+  {
+    display: inline-block;
+    width: 1rem;
+    text-align: right;
+    content: "\201C";
+  }
+  &::after
+  {
+    display: inline-block;
+    width: 1rem;
+    text-align: left;
+    content: "\201D";
+    text-indent: 0;
+  }
+}
+figure.portrait
+{
+  position: relative;
+  float: right;
+  padding: 0;
+  box-sizing: content-box;
+  margin: 0 0 0.75rem 0.5rem;
+  border-radius: 10px;
+  overflow: clip;
+  width: 300px;
+  height: 300px;
+
+  & img
+  {
+    display: block;
+    width: 300px;
+    height: 300px;
+  }
+
+  &::after
+  {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: inset 0 0 11px rgba(0, 0, 0, 0.85);
+    pointer-events: none;
+  }
+
+  & > figcaption
+    {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: var(--black);
+      text-align: center;
+      color: var(--wheat);
+      font-size: 1.0375rem;
+      z-index: 1000;
+      opacity: 0.5;
+    }
+}
+
+em
+{
+  font-style: inherit;
+  font-weight: inherit;
+  text-decoration: underline;
+}
+section table
+{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+figure.longDivision
+{
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: clip;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+hr
+{
+  width: stretch;
+  margin: 1rem 0;
+  height: 3px;
+  min-height: 3px;
+  display: block;
+  background-color: rgba(255, 255, 255, 0.225);
+  border: none;
+  padding: 0;
+}
+
 /* #endregion */
 
 /* #region LISTS */
@@ -1109,6 +1342,8 @@ wc-math
   overflow-y: clip;
   font-size: 1.15rem;
 
+  text-align: left;
+
   &.numbered
   {
     white-space: nowrap;
@@ -1123,11 +1358,6 @@ wc-math
       margin: 0 0 0 2rem;
       padding: 0;
     }
-  }
-
-  &:not(.TOP)
-  {
-    align-content: center;
   }
 
   &.fake
@@ -1197,14 +1427,6 @@ wc-split
   max-width: 100%;
   padding: 0;
 
-  & hr
-  {
-    display: block;
-    background-color: rgba(255, 255, 255, 0.225);
-    border: none;
-    padding: 0;
-  }
-
   /* Desktop */
   @media screen and (width > 850px)
   {
@@ -1247,24 +1469,37 @@ wc-split
       width: 3px;
       min-width: 3px;
     }
-  }
-}
 
-/* Bloody phones */
-@media screen and (width <= 850px)
-{
-  wc-split
+    & figure.longDivision
+    {
+      overflow-x: visible;
+    }
+  }
+
+  /* Bloody phones */
+  @media screen and (width <= 850px)
   {
     display: block;
   }
-  wc-split hr
+}
+
+wc-grid2
+{
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: clip;
+  row-gap: 1rem;
+  align-items: center;
+
+  & > .outlined
   {
-    width: stretch;
-    margin: 1rem 0;
-    height: 3px;
-    min-height: 3px;
+    box-sizing: border-box;
+    min-height: 100%;
   }
 }
+
 /* #endregion */
 
 /* #endregion */
@@ -1272,36 +1507,60 @@ wc-split
 /* #region .B.L.O.C.K. .D.I.A.G.R.A.M.S. */
 /* ___________________________________________________________________________ */
 /* #################      .B.L.O.C.K. .D.I.A.G.R.A.M.S.      ################# */
-.diagram-wrapper
+wc-diagram
 {
+  display: block;
   width: 100%;
+  padding-right: 1px;
   overflow-x: auto;
-}
-.block-diagram
-{
-  display: block;
-  margin: 0.5rem 0 0.75rem 0;
-  width: fit-content;
-  height: fit-content;
-  padding-top: 0.5rem;
-  padding-left: 0;
-  background-color: rgba(255, 255, 255, 0.01);
-  border: 1px solid var(--subliminal);
-}
-.block-diagram svg
-{
-  display: block;
-  transform: scale(var(--diagram-scale));
-  transform-origin: top left;
-}
-.has-fill, .has-fill *
-{
-  fill: var(--lightGrey) !important;
-}
-.has-stroke, .has-stroke *
-{
-  stroke: var(--lightGrey) !important;
-  stroke-width: 3.5pt !important;
+  overflow-y: hidden;
+
+  & > figure
+  {
+    display: block;
+    position: relative;
+    margin: 0;
+    width: fit-content;
+    height: auto;
+    padding-top: 0;
+    padding-left: 0;
+    background-color: rgba(0, 0, 0, 0.01);
+    border: 1px solid var(--subliminal);
+
+    & > svg
+    {
+      display: block;
+      padding: 0.75rem;
+      transform: scale(var(--diagram-scale));
+      transform-origin: top left;
+      overflow: visible;
+    }
+
+    & > figcaption
+    {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      box-sizing: border-box;
+      width: 100%;
+      max-height: 100%;
+      margin: 0;
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.925);
+      text-align: center;
+      color: var(--sky);
+      cursor: help;
+      z-index: 1000;
+      text-shadow: 0 0 2px var(--black);
+      opacity: 0;
+      transition: opacity 0.225s ease-in;
+
+      &:hover
+      {
+        opacity: 1;
+      }
+    }
+  }
 }
 /* #endregion */
 
@@ -1387,7 +1646,13 @@ main > footer
 {
   padding-bottom: 0.5rem;
 }
-
+.no-x-pad,
+.no-fucking-x-pad,
+.no-fucking-x-pad > *
+{
+  padding-left: 0;
+  padding-right: 0;
+}
 
 
 

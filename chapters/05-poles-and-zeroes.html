@@ -1,43 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="eb-GB">
 
 
     <head>
-        <title>Working-class filter design | TEMPLATE</title>
-        <meta charset='UTF-8'/>
-        <meta name="viewport" content='width=device-width, initial-scale=1'/>
-        <meta name='author' content='Antoine Portes'/>
+        <title>Working-class filter design | Chapter V: Poles and zeroes</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Antoine Portes"/>
         <link rel="canonical" href="https://www.antoineportes.com/working-class_filter_design/">
         <!-- Style -->
-         <link
+        <link
           rel="preload"
           href="../assets/fonts/Ysabeau/YsabeauInfant[wght].woff2"
           as="font"
           type="font/woff2"
           crossorigin
         >
-         <link
+        <link
           rel="preload"
           href="../assets/fonts/Ysabeau/YsabeauInfant-Italic[wght].woff2"
           as="font"
           type="font/woff2"
           crossorigin
         >
-         <link
+        <link
           rel="preload"
           href="../assets/fonts/Ysabeau/YsabeauSC[wght].woff2"
           as="font"
           type="font/woff2"
           crossorigin
         >
-         <link
+        <link
           rel="preload"
           href="../assets/fonts/Unifont/unifont-17.0.05.woff2"
           as="font"
           type="font/woff2"
           crossorigin
         >
-        <link rel='stylesheet'  type='text/css'  href='../assets/css/main.css'/>
+        <link
+          rel="preload"
+          href="../assets/fonts/EBGaramond/EBGaramond-VariableFont[wght].ttf"
+          as="font"
+          type="font/ttf"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="../assets/fonts/EBGaramond/EBGaramond-Italic-VariableFont[wght].ttf"
+          as="font"
+          type="font/ttf"
+          crossorigin
+        >
+        <link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
         <!-- Manifest -->
         <link rel="manifest" href="../site.webmanifest">
         <!-- Favicon -->
@@ -114,7 +128,7 @@
             <li>
               <a
                 href="./01-analytic-signals.html"
-                class="current"
+                rel="prev"
               >
                 Chapter <span class="small-caps">i</span>: Analytic signals
               </a>
@@ -123,7 +137,7 @@
             <li>
               <a
                 href="./02-rc.html"
-                rel="next"
+                rel="prev"
               >
                 Chapter <span class="small-caps">ii</span>: $ RC $
               </a>
@@ -132,10 +146,10 @@
             <li>
               <a
                 href="./03-equals-one-plus-two.html"
-                rel="next"
+                rel="prev"
               >
                 Chapter <span class="small-caps">iii</span>:
-                $ \ = \ $ <span class="small-caps">i</span>
+                $ \; = \; $ <span class="small-caps">i</span>
                 $ + $ <span class="small-caps">ii</span>
               </a>
             </li>
@@ -143,7 +157,7 @@
             <li>
               <a
                 href="./04-jargon.html"
-                rel="next"
+                rel="prev"
               >
                 Chapter <span class="small-caps">iv</span>: Jargon
               </a>
@@ -151,8 +165,8 @@
             <!-- V. Poles and zeroes -->
             <li>
               <a
-                href="./05-poles-and-zeroes"
-                rel="next"
+                href="./05-poles-and-zeroes.html"
+                class="current"
               >
                 Chapter <span class="small-caps">v</span>: Poles and zeroes
               </a>
@@ -228,7 +242,7 @@
           <!-- Side-bar header -->
           <header>
             <!-- chapter title -->
-            <h2><u>dummy</u><br/>Title</h2>
+            <h2><em>Chapter V</em><br/>Poles and zeroes</h2>
             <!-- arrow -->
             <button onclick="toggleSidebar()">
               <span>&xlarr;</span>
@@ -243,44 +257,45 @@
                   &uparrow; (Top)
                 </a>
               </li>
-              <!-- #01 dummy -->
+              <!-- #01 words. -->
               <li>
                 <a
                   href="#01"
                   data-target="01"
-                  title="DUMMY"
+                  title="words."
                 >
-                  01 — dummy
+                  Polynomials: game rules
                 </a>
               </li>
-              <!-- #02 dummy -->
+              <!-- #02 διαίρει καὶ βασίλευε — divide & impera -->
               <li>
                 <a
                   href="#02"
                   data-target="02"
-                  title="DUMMY"
+                  title="διαίρει καὶ βασίλευε &nbsp;—&nbsp; divide & impera"
                 >
-                  02 — dummy
+                  <span class="oldSchool">Διαίρει καὶ βασίλευε</span>
+                  &nbsp;—&nbsp; divide & impera
                 </a>
               </li>
-              <!-- #03 dummy-->
+              <!-- #03 Three theorems (but who's counting?)-->
               <li>
                 <a
                   href="#03"
                   data-target="03"
-                  title="DUMMY"
+                  title="Three theorems (but who's counting?)"
                 >
-                  03 — dummy
+                  Three theorems (but who's counting?)
                 </a>
               </li>
-              <!-- #04 dummy -->
+              <!-- #04 I thought this was gonna be a book about filters... -->
               <li>
                 <a
                   href="#04"
                   data-target="04"
-                  title="DUMMY"
+                  title="I thought this was gonna be a book about filters..."
                 >
-                  04 — dummy
+                  I thought this was gonna be a book about filters...
                 </a>
               </li>
               <!-- #05 dummy -->
@@ -290,7 +305,7 @@
                   data-target="05"
                   title="DUMMY"
                 >
-                  05 — dummy
+                  dummy
                 </a>
               </li>
               <!-- #06 dummy -->
@@ -300,7 +315,7 @@
                   data-target="06"
                   title="DUMMY"
                 >
-                  06 — dummy
+                  dummy
                 </a>
               </li>
               <!-- #07 dummy -->
@@ -310,7 +325,7 @@
                   data-target="07"
                   title="DUMMY"
                 >
-                  07 — dummy
+                  dummy
                 </a>
               </li>
               <!-- #08 dummy -->
@@ -320,7 +335,7 @@
                   data-target="08"
                   title="DUMMY"
                 >
-                  08 — dummy
+                  dummy
                 </a>
               </li>
               <!-- #09 dummy -->
@@ -330,7 +345,7 @@
                   data-target="09"
                   title="DUMMY"
                 >
-                  09 — dummy
+                  dummy
                 </a>
               </li>
               <!-- #10 dummy -->
@@ -340,7 +355,7 @@
                   data-target="10"
                   title="DUMMY"
                 >
-                  10 — dummy
+                  dummy
                 </a>
               </li>
               <!-- #11 dummy -->
@@ -350,97 +365,7 @@
                   data-target="11"
                   title="DUMMY"
                 >
-                  11 — dummy
-                </a>
-              </li>
-              <!-- #12 dummy -->
-              <li>
-                <a
-                  href="#12"
-                  data-target="12"
-                  title="DUMMY"
-                >
-                  12 — dummy
-                </a>
-              </li>
-              <!-- #13 dummy -->
-              <li>
-                <a
-                  href="#13"
-                  data-target="13"
-                  title="DUMMY"
-                >
-                  13 — dummy
-                </a>
-              </li>
-              <!-- #14 dummy -->
-              <li>
-                <a
-                  href="#14"
-                  data-target="14"
-                  title="DUMMY"
-                >
-                  14 — dummy
-                </a>
-              </li>
-              <!-- #15 dummy -->
-              <li>
-                <a
-                  href="#15"
-                  data-target="15"
-                  title="DUMMY"
-                >
-                  15 — dummy
-                </a>
-              </li>
-              <!-- #16 dummy -->
-              <li>
-                <a
-                  href="#16"
-                  data-target="16"
-                  title="DUMMY"
-                >
-                  16 — dummy
-                </a>
-              </li>
-              <!-- #17 dummy -->
-              <li>
-                <a
-                  href="#17"
-                  data-target="17"
-                  title="DUMMY"
-                >
-                  17 — dummy
-                </a>
-              </li>
-              <!-- #18 dummy -->
-              <li>
-                <a
-                  href="#18"
-                  data-target="18"
-                  title="DUMMY"
-                >
-                  18 — dummy
-                </a>
-              </li>
-              <!-- #19 dummy -->
-              <li>
-                <a
-                  href="#19"
-                  data-target="19"
-                  title="DUMMY"
-                >
-                  19 — dummy
-                </a>
-              </li>
-              <!-- #20 dummy -->
-              <li>
-                <a
-                  href="#20"
-                  data-target="20"
-                  title="DUMMY"
-                >
-                  20 — dummy
+                  dummy
                 </a>
               </li>
               <!-- APPENDIX: [...] -->
@@ -448,9 +373,9 @@
                 <a
                   href="#APPENDIX"
                   data-target="APPENDIX"
-                  title="DUMMY"
+                  title="FOO"
                 >
-                  <span class="small-caps">Appendix:</span> dummy
+                  foo
                 </a>
               </li>
               <!-- BONUS: [...] -->
@@ -458,9 +383,9 @@
                 <a
                   href="#BONUS"
                   data-target="BONUS"
-                  title="DUMMY"
+                  title="BAR"
                 >
-                  <span class="small-caps">Bonus:</span> dummy
+                  bar
                 </a>
               </li>
             </ul>
@@ -476,54 +401,2349 @@
           <!-- == CHAPTER == -->
           <wc-chapter>
             <!-- = Chapter title = -->
-            <h2><u>dummy</u>: Title</h2>
+            <h2><em>Chapter V</em>: Poles and zeroes</h2>
 
 
             <!-- = Section #01 = -->
             <section id="01">
               <!-- top quote -->
               <header>
-                <blockquote>You're the opposite of Batman.</blockquote>
-                <footer>— Troy Barnes (<cite>Community</cite>)</footer>
-                <blockquote>You don't know what that means.</blockquote>
-                <footer>— ad hoc</footer>
+                <blockquote>
+                  <q>You're the opposite of Batman.</q>
+                  <footer>
+                    — Troy Barnes (<cite>Community</cite>)
+                  </footer>
+                </blockquote>
+                <blockquote>
+                  <q>You don't know what that means.</q>
+                  <footer>
+                    — <cite>ad loc.</cite>
+                  </footer>
+                </blockquote>
               </header>
               <!-- section title -->
-              <h3>01 — More jargon...</h3>
+              <h3>Polynomials: game rules</h3>
 
-              <wc-paragraph>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-              </wc-paragraph>
+              <wc-ppp>
+                <p style="white-space: nowrap;">
+                  <span class="small-caps">Teaser</span>:
+                  polynomial, degree, order, coefficient, leading coefficient, term, leading term, canonical form, factored form, monic, discriminant, discriminate, root, monomial, binomial, trinomial, constant, affine, linear, quadratic, biquadratic, cubic, quartic, quintic, sextic, septic, octic, nonic, decic, undecic, duodecic, tredecic, ... yes, indeed: I did ruin the whole chapter's layout right from the very first line only for the sake of a stupid joke — you're welcome.
+                </p>
+                <p class="n">
+                  Welcome to the section of legion words.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  <mark>Naturopathy</mark> is an illiterate word.
+                </p>
+                <p class="zz">
+                  It starts Latin and turns Greek about half-way.
+                  <br/>
+                  (<mark>Naturopassion</mark>, ok; <mark>physicopathy</mark>, ok;
+                  <mark>naturopathy</mark>, please.)
+                </p>
+                <p>
+                  It has one foot on each side of the Ionian Sea.
+                  <br/>
+                  So when you cross the Ionian Sea, don't look up.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  <mark>Polynomial</mark> doesn't suffer from this syndrome:
+                </p>
+                <dl class="n">
+                  <dt class="oldSchool">πολύς</dt>
+                  <dd>is Ionian for <mark>many</mark>;</dd>
+                  <dt class="oldSchool">νομός</dt>
+                  <dd>is Ionian for a set of homonyms,
+                  amongst which: <mark>division, distribution</mark>;</dd>
+                  <dt class="oldSchool">νόμος</dt>
+                  <dd>is Ionian for a set of homonyms,
+                  amongst which: <mark>law, ordinance</mark>.</dd>
+                </dl>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  A
+                  <a
+                    title="Wikipedia.org | Polynomial"
+                    target="_blank"
+                    type="text/html"
+                    charset="UTF-8"
+                    rel="external"
+                    href="https://en.wikipedia.org/wiki/Polynomial"
+                  >
+                    polynomial
+                  </a>
+                  is an exhaustive set of equivalent polynomial expressions.
+                  <br/>
+                  A polynomial expression is an
+                  <a
+                    title="Wikipedia.org | Elementary arithmetic"
+                    target="_blank"
+                    type="text/html"
+                    charset="UTF-8"
+                    rel="external"
+                    href="https://en.wikipedia.org/wiki/Elementary_arithmetic"
+                  >
+                    arithmetical
+                  </a>
+                  expression mixing constants and variables.
+                  <br/>
+                  An arithmetical expression is a mathematical expression
+                  involving only addition and multiplication
+                  (sums and products).
+                  <br/>
+                  An addition is sometimes called a subtraction (difference)
+                  — usually when involving one or several negative numbers.
+                  <br/>
+                  A multiplication is sometimes called a division (ratio)
+                  — usually when involving one or several rational numbers.
+                  <br/>
+                  The notation of a repeated multiplication
+                  of the same term by itself
+                  can be simplified with exponentiation of said term
+                  to a positive integer power.
+                </p>
+                <p class="zz">
+                  Because of this property,
+                  classical definitions often present exponentiation
+                  as a third type of allowed operation.
+                  <br/>
+                  This is valid for polynomials
+                  as long as the exponents are positive integers.
+                  <br/>
+                  That is:
+                  a polynomial can feature exponentiation
+                  if and only if said exponentiation is in fact a product.
+                </p>
+                <p>
+                  Choose the less confusing formulation of the definition.
+                  <br/>
+                  I like mine better (hopefully), but perhaps I'm weird.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  A polynomial can be defined by several distinct
+                  (but equal) expressions.
+                  <br/>
+                  One of them is called canonical (or standard).
+                  <br/>
+                  It's obtained by making use of
+                  <a
+                    title="Wikipedia.org | Commutative property"
+                    target="_blank"
+                    type="text/html"
+                    charset="UTF-8"
+                    rel="external"
+                    href="https://en.wikipedia.org/wiki/Commutative_property"
+                  >commutativity</a>,
+                  <a
+                    title="Wikipedia.org | Associative property"
+                    target="_blank"
+                    type="text/html"
+                    charset="UTF-8"
+                    rel="external"
+                    href="https://en.wikipedia.org/wiki/Associative_property"
+                  >associativity</a>
+                  and
+                  <a
+                    title="Wikipedia.org | Distributive property"
+                    target="_blank"
+                    type="text/html"
+                    charset="UTF-8"
+                    rel="external"
+                    href="https://en.wikipedia.org/wiki/Distributive_property"
+                  >distributivity</a>
+                  so that each instance of a variable
+                  (or product of variables if more than one)
+                  with the same exponent(s) appears only once,
+                  therefore having a single constant factor.
+                </p>
+                <p class="y">
+                  E.g.: $ \quad ax^2 \, + \, bx^2 \; = \; (a \, + \, b)x^2 $
+                </p>
+                <p>
+                  This single constant factor is called a coefficient.
+                  <br/>
+                  A coefficient's association
+                  with its corresponding exponentiation of the variable
+                  forms a term.
+                  <br/>
+                  The canonical form is the sum of all terms.
+                  <br/>
+                  Each term has a degree, equal to its exponent.
+                  <br/>
+                  The <b>degree</b>, or <b>order</b>, of the polynomial
+                  is the highest degree in the canonical form.
+                  <br/>
+                  The term of highest degree is called the leading term.
+                  Its coefficient is called the <b>leading coefficient</b>.
+                  <br/>
+                  Any coefficient can be zero
+                  <strong>except</strong> the leading coefficient.
+                  <br/>
+                  If the leading coefficient is 1,
+                  the polynomial is called a <b>monic</b> polynomial.
+                  <br/>
+                  The coefficient associated with the zeroth power of the variable
+                  is called the <b>constant term</b>.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <wc-comment>
+                  <p class="S">
+                    Note that, since there's a zeroth term,
+                    the number of terms is greater than the degree / oder by 1
+                    — if we include potential null terms.
+                  </p>
+                  <h5>E.g. (1):</h5>
+                  <wc-pp class="s">
+                    <wc-math class="Z">
+                      $$
+                        x^4 \, + \, 2 \;
+                        = \; (1) x^4 \, + \, (0) x^3 \, + \, (0) x^2 \,
+                        + \, (0) x^1 \, + \, (2) x^0
+                      $$
+                    </wc-math>
+                    <wc-math class="hybrid">
+                      $$
+                        \begin{align}
+                          \text{degree:}& \quad 4
+                          \\
+                          \text{terms:}& \quad 5
+                        \end{align}
+                      $$
+                    </wc-math>
+                  </wc-pp>
+                  <h5>E.g. (2):</h5>
+                  <wc-pp class="s">
+                    <p>
+                      $ y \, = \, x \; $
+                      is a special case of the affine function:
+                      $ \; y \; = \; {a_1}x^1 \: + \: {a_0}x^0 $
+                      <br/>
+                      which is a polynomial of order 1 with coefficients
+                      $ \; a_1 \, = \, 1 \; $ and $ \; a_0 \, = \, 0 \; $.
+                      <br/>
+                      In this case, $ a_1 $ is the leading coefficient,
+                      $ \; a_1 \, x \; $ is the leading term,
+                      $ a_0 $ is the constant term.
+                    </p>
+                  </wc-pp>
+                  <h5>E.g. (3):</h5>
+                  <wc-pp class="S">
+                    <p>
+                      $ y \, = \, 1.33 \; $ is equivalent to
+                      $ \; y \; = \; 1.33 \, x^0 $
+                      <br/>
+                      which is a polynomial of order 0
+                      whose unique coefficient is $ \; a_0 \, = \, 1.33 \; $.
+                      <br/>
+                      In this case, the leading coefficient, the leading term,
+                      and the constant term are indistinguishably: $ a_0 $.
+                    </p>
+                  </wc-pp>
+                  <p>
+                    And of course:
+                    $ \quad y \; = \; {a_2}x^2 \: + \: {a_1}x \: + \: a_0 \quad $
+                    is a polynomial of order 2 — as long as $ a_2 $ is non-zero.
+                  </p>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <wc-split class="grid-b">
+                  <p>
+                    The canonical form:
+                  </p>
+                  <wc-math class="Z">
+                    $$
+                      {a_N}x^N \: + \: {a_{N-1}}x^{(N-1)} \:
+                      + \: \dots \:
+                      + \: {a_1}x \: + \: a_0
+                    $$
+                  </wc-math>
+                </wc-split>
+                <wc-split class="grid-b">
+                  <p>
+                    or, equivalently:
+                  </p>
+                  <wc-math class="Z">
+                    $$
+                      \sum_{n=0}^{N}{a_n}x^n
+                    $$
+                  </wc-math>
+                </wc-split>
+                <wc-split class="grid-b">
+                  <p>
+                    can be re-expressed as:
+                  </p>
+                  <wc-math class="Z">
+                    $$
+                      {a_N}
+                      \Bigl(
+                        x^N \: + \: \bigl( {a_{N-1}}/a_N \bigr)x^{(N-1)} \:
+                        + \: \dots \: + \:
+                        \bigl( {a_1} / {a_N} \bigr)x \: + \: {a_0}/{a_N}
+                      \Bigr)
+                    $$
+                  </wc-math>
+                </wc-split>
+                <wc-split class="grid-b">
+                  <p>
+                    or, better yet:
+                  </p>
+                  <wc-math class="Z">
+                    $$
+                      {a_N}\sum_{n=0}^{N}
+                      \dfrac{a_n}{a_N} \, x^n
+                    $$
+                  </wc-math>
+                </wc-split>
+                <p>
+                  This factorisation allows to extract a monic polynomial
+                  out of any polynomial.
+                  <br/>
+                  (And it's valid because:
+                  $ a_N $ is non-zero by definition of a polynomial.)
+                </p>
+                <p class="zz">
+                  Beware of amphibology:
+                  this expression is sometimes loosely referred to
+                  as factored form
+                  — but this name is more typically reserved
+                  for a distinct form,
+                  with which we'll deal in a few lines.
+                </p>
+                <p>
+                  I won't be using this equivocal acception,
+                  but know that it happens elsewhere.
+                </p>
+                <p class="n">
+                  Factoring out the leading coefficient to extract a monic
+                  is quite often called normalising the polynomial.
+                  <br/>
+                  Therefore, should we need a name for this form,
+                  let's agree on <mark>normalised form</mark>.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  A polynomial with a single term is called a monomial.
+                  Two terms? Binomial. Three terms? Trinomial. Etc.
+                </p>
+                <p class="n">
+                  (E.g.: $ \; x^7 \; $ is a septic monic monomial...)
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  A polynomial with strictly real coefficients
+                  <b>in canonical form</b> is called a real polynomial.
+                  <br/>
+                  (If the canonical form has only real coefficients,
+                  so does the normalised form.)
+                </p>
+                <p class="zz">
+                  If it has complex coefficients, it's a complex polynomial.
+                  <br/>
+                  (Real numbers are special cases of complex numbers.
+                  Real polynomials are special cases of complex polynomials.)
+                </p>
+                <p>
+                  If it's not in canonical (or normalised) form,
+                  we cannot say whether it's real.
+                </p>
+                <p class="n">
+                  Important distinction:
+                  <mark>real</mark> in <mark>real polynomial</mark>
+                  only concerns the coefficients
+                  — the variable can still be complex.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  A polynomial of negative order is called a
+                  <a
+                    title="Wikipedia.org | Laurent polynomial"
+                    target="_blank"
+                    type="text/html"
+                    charset="UTF-8"
+                    rel="external"
+                    href="https://en.wikipedia.org/wiki/Laurent_polynomial"
+                  >
+                    Laurent polynomial
+                  </a>
+                  (named after
+                  <a
+                    title="Wikipedia.org | Pierre Alphonse Laurent"
+                    target="_blank"
+                    type="text/html"
+                    charset="UTF-8"
+                    rel="external"
+                    href="https://en.wikipedia.org/wiki/Pierre_Alphonse_Laurent"
+                  >Pierre Alphonse Laurent</a>).
+                </p>
+                <p>
+                  More rigorously:
+                </p>
+                <wc-pp class="s">
+                  <p>
+                    a Laurent polynomial can have a positive order;
+                    <br/>
+                    its specificity is that it allows negative exponents.
+                  </p>
+                </wc-pp>
+                <p>
+                  Since $ \; x^{-n} \, = \, 1/x^n \; $,
+                  a Laurent polynomial is not defined at $ \; x \, = \, 0 \; $.
+                  <br/>
+                  (We won't be needing Laurent polynomials
+                  before Chapter <span class="small-caps">vii</span>.)
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  We now see how whether division happens in polynomials
+                  really depends on perspective:
+                  textbooks tend to answer <mark>no, never</mark>.
+                </p>
+                <p class="zz">
+                  Let's be more rigorous than textbooks:
+                  <br/>
+                  the canonical and normalised forms of non-Laurent polynomials
+                  are not supposed to show division...
+                </p>
+                <p>
+                  But if I write:
+                </p>
+                <wc-split class="grid-c s">
+                  <div>
+                    <wc-math class="Z s">
+                      $$
+                        f(x) \; = \; \frac{x/11 \, - \, 17/x}{15/10} \;
+                        = \; \frac{1}{11 \cdot 3/2} \, x \;
+                        + \; \frac{-17}{3/2} \, x^{-1}
+                      $$
+                    </wc-math>
+                    <wc-math class="Z">
+                      $$
+                        \hphantom{ f(x) \; }
+                        = \; (2/33)x^1 \, + \, 0x^0 \,
+                        + \, (-34/3)x^{-1}
+                      $$
+                    </wc-math>
+                  </div>
+                  <hr/>
+                  <div>
+                    <p>
+                      $ f(x) \; $ is a Laurent polynomial of the first order.
+                    </p>
+                    <p>
+                      Its leading coefficient is: $ \; 2/33 \; $.
+                      <br/>
+                      Its constant term is: $ \; 0 \; $.
+                    </p>
+                  </div>
+                </wc-split>
+                <wc-comment class="y">
+                  <p>
+                    Fun fact:
+                    $ a_0 $ is the only coefficient
+                    not multiplied by a non-zero power of $ x $.
+                  </p>
+                  <p class="zz">
+                    So no matter the (non-Laurent) polynomial's order,
+                    its value at $ \; x \, = \, 0 \; $
+                    is always $ a_0 $.
+                  </p>
+                  <p>
+                    (<mark>Fun</mark> is open for debate,
+                    but a fact it most certainly is.)
+                  </p>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  The values of the variable(s)
+                  at which a polynomial outputs zero
+                  are called its
+                  <strong
+                    class="small-caps Achtung"
+                  ><em>&nbsp;r&nbsp;o&nbsp;o&nbsp;t&nbsp;s&nbsp;</em></strong>.
+                </p>
+                <p class="zz">
+                  $ f(x) \; $ is a polynomial?
+                  $ \; f(r) \, = \, 0 \; $?
+                  Then $ r $ is a
+                  <span class="small-caps">root</span>
+                  of $ \; f(x) \; $.
+                  <br/>
+                  $ f(x) \; $ is a polynomial?
+                  $ \; f(x) \, = \, 0 \; $
+                  has 17 solutions for $ x $?
+                  $ \; f(x) \; $ has 17 roots.
+                </p>
+                <p>
+                  (Sometimes, roots are called
+                  <mark>zeros</mark> or <mark>zeroes</mark>
+                  — in the context of filter design,
+                  this would be confusing.
+                  I'll stick to <mark>roots</mark>.)
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Let's build stuff.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <h4>
+                  Order 0
+                  <mark><a
+                    title="Wikipedia.org | Constant function"
+                    target="_blank"
+                    type="text/html"
+                    charset="UTF-8"
+                    rel="external"
+                    href="https://en.wikipedia.org/wiki/Constant_function"
+                  >constant</a></mark>
+                </h4>
+                <wc-math class="Z">
+                  $$
+                    f(x) \; = \; a_0
+                  $$
+                </wc-math>
+                <p>
+                  Then $ \; f(x) \, = \, 0 \; $
+                  means $ \; a_0 \, = \, 0 \; $
+                  which has 1 solution for $ a_0 $
+                  but none for $ x $.
+                  <br/>
+                  Therefore a polynomial of the zeroth order
+                  has zero root.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <h4>
+                  Order 1 <mark>affine</mark> or
+                  <mark><a
+                    title="Wikipedia.org | Linearity — Linear polynomials"
+                    target="_blank"
+                    type="text/html"
+                    charset="UTF-8"
+                    rel="external"
+                    href="https://en.wikipedia.org/wiki/Linearity#Linear_polynomials"
+                  >linear</a></mark>
+                </h4>
+                <wc-math class="Z">
+                  $$
+                    f(x) \; = \; {a_1}x \, + \, a_0
+                  $$
+                </wc-math>
+                <wc-math class="x N s">
+                  $$
+                    f(x) \, = \, 0
+                    \quad\iff\quad
+                    {a_1}x \, + \, a_0 \; = \; 0
+                    \quad\iff\quad
+                    {a_1}(x \, + \, {a_0}/{a_1}) \; = \; 0
+                  $$
+                </wc-math>
+                <wc-math class="x">
+                  $$
+                    \hphantom{f(x) \, = \, 0 \quad}
+                    \iff\quad
+                    x \; = \; {-a_0}/{a_1}
+                  $$
+                </wc-math>
+                <wc-comment class="y">
+                  <p>
+                    This normalising factorisation is relevant
+                    because $ a_1 $ is non-zero
+                    by definition of a polynomial.
+                  </p>
+                </wc-comment>
+                <p>
+                  Therefore a polynomial of the first order
+                  has one root: $ \; r_1 \, = \, -a_0/a_1 \; $.
+                </p>
+                <p class="n">
+                  And:
+                </p>
+                <wc-math class="Z">
+                  $$
+                    a_1 \, (x \, + \, a_0/a_1) \; = \; {a_1}(x - r_1)
+                  $$
+                </wc-math>
+                <p>
+                  shows that it can be expressed in terms of this root.
+                </p>
+                <p class="zz">
+                  And this is the <b>factored form</b>.
+                </p>
+                <p>
+                  This is very important,
+                  so just to make sure you don't rush over this tiny line:
+                  <br/>
+                  The <strong>factored form</strong>
+                  is the expression of a polynomial
+                  <strong>in terms of its roots</strong>.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <h4>
+                  Order 2
+                  <mark><a
+                    title="Wikipedia.org | Quadratic formula"
+                    target="_blank"
+                    type="text/html"
+                    charset="UTF-8"
+                    rel="external"
+                    href="https://en.wikipedia.org/wiki/Quadratic_formula"
+                  >quadratic</a></mark>
+                </h4>
+                <wc-math class="ZZ">
+                  $$
+                    {a_2}x^2 \, + \, {a_1}x \, + \, a_0 \; = \; 0
+                    \quad\iff\quad
+                    a_2 \,
+                    \bigl(
+                      x^2 \, + \, (a_1/a_2)x \, + \, a_0/a_2
+                    \bigr) \; = \; 0
+                  $$
+                </wc-math>
+                <wc-comment class="y">
+                  <p>
+                    <wc-ascii>[blah]</wc-ascii>
+                    $ a_2 $
+                    <wc-ascii>[blah]</wc-ascii>
+                    non-zero
+                    <wc-ascii>[blah]</wc-ascii>
+                    definition &c.
+                  </p>
+                </wc-comment>
+                <wc-math class="ZZ">
+                  $$
+                    \iff\quad
+                    x^2 \, + \, (a_1/a_2)x \, + \, a_0/a_2 \; = \; 0
+                    \quad\iff\quad
+                    x^2 \, + \, (a_1/a_2)x \; = \; -a_0/a_2
+                  $$
+                </wc-math>
+                <p>
+                  Pause. Let's consider the general case:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    (\alpha + \beta)^2 \;
+                    = \; (\alpha + \beta)(\alpha + \beta) \;
+                    = \; \alpha\alpha \, + \, \alpha\beta \, + \, \beta\alpha \,
+                    + \, \beta\beta \; = \; \alpha^2 \, + \, 2\alpha\beta \, + \, \beta^2
+                  $$
+                </wc-math>
+                <p>
+                  Now $ \; x^2 \, + \, (a_1/a_2)x \; $
+                  has the form: $ \; \alpha^2 \, + \, 2\alpha\beta \; $
+                  where:
+                </p>
+                <wc-split class="grid-b s">
+                  <wc-math class="Z">
+                    $$
+                      \alpha \, = \, x
+                    $$
+                  </wc-math>
+                  <p>and</p>
+                  <wc-math class="Z">
+                    $$
+                      a_1/a_2 \, = \, 2\beta
+                    $$
+                  </wc-math>
+                  <p>so</p>
+                  <wc-math class="x N">
+                    $$
+                      \beta \; = \; a_1 / (2a_2)
+                    $$
+                  </wc-math>
+                </wc-split>
+                <wc-split class="grid-b S">
+                  <p>Then:</p>
+                  <wc-math class="x s">
+                    $$
+                      \beta^2 \; = \; {a_1}^2 / (2a_2)^2
+                    $$
+                  </wc-math>
+                </wc-split>
+                <p>
+                  We can add any term we want to the equation,
+                  as long as it happens on both sides, so:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    x^2 \, + \, (a_1/a_2) x \, + \, {a_1}^2 / (2a_2)^2 \;
+                    = \; {a_1}^2 / (2a_2)^2 \, - \, {a_0}/{a_2}
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \iff\quad
+                    \bigl(
+                      x \, + \, a_1 / (2a_2)
+                    \bigr)^2 \;
+                    = \; {a_1}^2 / (2a_2)^2 \, - \, {a_0}/{a_2} \;
+                    = \; \frac{ {a_1}^2 \, - \, {2^2}{a_2}{a_0} }{ (2a_2)^2 }
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \iff\quad
+                    x \, + \, a_1 / (2a_2) \;
+                    = \; \pm
+                    \sqrt{
+                      \frac{{a_1}^2 \, - \, 4{a_2}{a_0} }{ (2a_2)^2 }
+                    } \;
+                    = \; \pm
+                    \frac{
+                      \sqrt{
+                        {a_1}^2 \, - \, 4{a_2}{a_0}
+                      }
+                    }{
+                      2{a_2}
+                    }
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \iff\quad
+                    x \;
+                    = \; \pm
+                    \frac{
+                      \sqrt{
+                        {a_1}^2 \, - \, 4{a_2}{a_0}
+                      }
+                    }{
+                      2a_2
+                    } \:
+                    - \: \frac{a_1}{2 \, a_2} \;
+                    = \;
+                    \frac{
+                      - a_1 \, \pm \,
+                      \sqrt{
+                        {a_1}^2 \, - \, 4{a_2}{a_0}
+                      }
+                    }{
+                      2a_2
+                    }
+                  $$
+                </wc-math>
+                <p class="y">
+                  $ {a_1}^2 \, - \, 4{a_2}{a_0} \; $
+                  is called the polynomial's discriminant.
+                  (Hence <cite>discriminating</cite> meaning
+                  <mark>finding the roots</mark>.)
+                  <br/>
+                  It's usually notated $ \Delta $ (upper—case delta).
+                </p>
+                <wc-comment class="y">
+                  <p class="s">
+                    My notation is not standard
+                    (well it both is and is not,
+                    but you'll see that I'm not the inconsistent one here).
+                  </p>
+                  <p class="S">
+                    Expressing polynomials' coefficients with indexes of
+                    <mark>$ a $</mark> or <mark>$ b $</mark> is standard
+                    (the latter usually being reserved for numators).
+                  </p>
+                  <p>
+                    But when dealing with the special cases of affine or quadratic,
+                    the classical notation is (respectively):
+                  </p>
+                  <wc-split class="grid-b s">
+                    <wc-math class="Z">
+                      $$
+                       ax \, + \, b
+                      $$
+                    </wc-math>
+                    <p>and</p>
+                    <wc-math class="Z">
+                      $$
+                        ax^2 \, + \, bx \, + \, c
+                      $$
+                    </wc-math>
+                  </wc-split>
+                  <p class="s">
+                    I don't like this.
+                    You get $ \; a_1 \, = \, a \; $,
+                    then $ \; a_1 \, = \, b \; $, etc.
+                    It's confusing for no reason.
+                  </p>
+                  <p class="s">
+                    Plus it complies poorly with generalisation:
+                    if you keep raising the order you'll get
+                    $ \; a_0 \, = \, d \; $ (as in $ \; df/dx \; $...),
+                    then $ \; a_0 \, = \, e \; $ (as in $ \; \exp(1) \; $...),
+                    then $ \; a_0 \, = \, f \; $ (as in $ \; f(x) \; $ or $ \; 2\pi\f \; $...);
+                    orders 8 and 9 will give $ i $ and $ j $ (as in $ \; \sqrt{-1} \; $...);
+                    order 23 gives $ \; a_0 \, = \, x \; $...
+                  </p>
+                  <p class="s">
+                    Order 26 starts using Greek letters.
+                    <br/>
+                    At some point you'll run out of alphabets.
+                    You'll never run out of numbers.
+                  </p>
+                  <p class="s S">
+                    So pick one letter, give it indexes and stick with it.
+                    Or, as usual, go play with fire.
+                  </p>
+                  <p>
+                    Anyway, don't be surprised if you come across:
+                    $ \; \Delta \, = \, b^2 \, - \, 4ac \; $.
+                  </p>
+                </wc-comment>
+                <p>
+                  Therefore a polynomial of the second order has two roots:
+                </p>
+                <wc-split class="grid-b">
+                  <wc-math class="Z s">
+                    $$
+                      r_1 \; = \;
+                      \frac{
+                        -a_1 \, + \, \sqrt{\Delta}
+                      }{
+                        2a_2
+                      }
+                    $$
+                  </wc-math>
+                  <p>and</p>
+                  <wc-math class="Z s">
+                    $$
+                      r_2 \; = \;
+                      \frac{
+                        -a_1 \, - \, \sqrt{\Delta}
+                      }{
+                        2a_2
+                      }
+                    $$
+                  </wc-math>
+                </wc-split>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Before moving further on:
+                  we're still talking about filters
+                  — even though from a distance.
+                </p>
+                <p class="zz">
+                  We might play around with complex numbers
+                  on our notebooks and GitHub repositories,
+                  but an analogue voltage, or its digital counterpart,
+                  needs to remain purely real.
+                </p>
+                <p>
+                  So I'm assuming real polynomials, starting now.
+                </p>
+                <p class="zz">
+                  What comes next might apply to complex polynomials,
+                  but I haven't checked.
+                  And I don't want to write something false
+                  because of too general phrasing.
+                </p>
+                <p>
+                  In short: from now on:
+                  $ \quad \Im(a_2) \, = \, \Im(a_1) \, = \, \Im(a_0) \, = \, 0 $
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p class="s">
+                  Notice that if $ \Delta $ is real and negative,
+                  $ \sqrt{\Delta} $ is imaginary.
+                </p>
+                <p>
+                  Then $ r_1 $ and $ r_2 $ are complex numbers and:
+                </p>
+                <dl class="y">
+                  <dt style="padding: 0;">
+                    <wc-math class="s">
+                      $$
+                        \Re(r_1) \; = \;
+                      $$
+                    </wc-math>
+                  </dt>
+                  <dd style="padding: 0;">
+                    <wc-math class="s">
+                      $$
+                        \Re(r_2) \; = \; -{a_1}/(2a_2)
+                      $$
+                    </wc-math>
+                  </dd>
+                  <dt style="padding: 0;">
+                    <wc-math class="s">
+                      $$
+                        \Im(r_1) \; = \;
+                      $$
+                    </wc-math>
+                  </dt>
+                  <dd style="padding: 0;">
+                    <wc-math class="s">
+                      $$
+                        \hphantom{-}
+                        \sqrt{\Delta} / (2a_2)
+                      $$
+                    </wc-math>
+                  </dd>
+                  <dt style="padding: 0;">
+                    <wc-math class="s">
+                      $$
+                        \Im(r_2) \; = \;
+                      $$
+                    </wc-math>
+                  </dt>
+                  <dd style="padding: 0;">
+                    <wc-math class="s">
+                      $$
+                        -\sqrt{\Delta} / (2a_2) \;
+                        = \; -\Im(r_1)
+                      $$
+                    </wc-math>
+                  </dd>
+                </dl>
+                <p>
+                  Then $ r_1 $ and $ r_2 $ are complex conjugates.
+                  <br/>
+                  If $ \Delta $ is real and positive,
+                  $ \sqrt{\Delta} $ is real
+                  and so are $ r_1 $ and $ r_2 $.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <wc-split class="grid-c">
+                  <div>
+                    <p>
+                      So:
+                    </p>
+                    <wc-pp>
+                      the roots of a real quadratic polynomial
+                      <br/>
+                      are either both real or complex conjugates.
+                    </wc-pp>
+                    <p>
+                      even though:
+                    </p>
+                    <wc-pp>
+                      the roots of a real quadratic polynomial
+                      <br/>
+                      are either both real or complex conjugates.
+                    </wc-pp>
+                    <p>
+                      whereas:
+                    </p>
+                    <wc-pp>
+                      the roots of a real quadratic polynomial
+                      <br/>
+                      are either both real or complex conjugates.
+                    </wc-pp>
+                  </div>
+                  <wc-comment>
+                    <p class="S s">
+                      Pedagogy with a hammer.
+                      <br/>
+                      Patented by a guy named Friedrich.
+                    </p>
+                    <p class="N n">
+                      (Thanks, my friend.
+                      <br/>
+                      I wish you were here.)
+                    </p>
+                  </wc-comment>
+                </wc-split>
+              </wc-ppp>
+
+              <wc-ppp>
+                <dl class="no-fucking-x-pad s">
+                  <dt>Now if $ \; x \: = \: r_1 \; $,&nbsp;</dt>
+                  <dd>$ \; x \, - \, r_1 \: = \: 0 \; $,</dd>
+                  <dt>and if $ \; x \: = \: r_2 \; $,&nbsp;</dt>
+                  <dd>$ \; x \, - \, r_2 \: = \: 0 \; $.</dd>
+                </dl>
+                <p>
+                  So if $ x $ equals $ r_1 $
+                  <b class="small-caps">or</b> $ r_2 $:
+                </p>
+                <wc-split class="grid-b s">
+                  <wc-math class="Z">
+                    $$
+                      (x \, - \, r_1)(x \, - \, r_2) \; = \; 0
+                    $$
+                  </wc-math>
+                  <p>
+                    since one of the factors is necessarily zero.
+                  </p>
+                </wc-split>
+                <p>
+                  Then the roots of
+                  $ \; (x \, - \, r_1)(x \, - \, r_2) \; $
+                  are $ r_1 $ and $ r_2 $.
+                  <br/>
+                  Same as
+                  $ \; x^2 \, + \, (a_1/a_2)x \, + \, a_0/a_2 \; $.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  So, intuitively, they're likely equal or proportional.
+                </p>
+                <p>
+                  Easy to find out:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    (x \, - \, r_1)(x \, - \, r_2) \;
+                    = \; \left(
+                      x \: - \:
+                      \frac{
+                        -a_1 \, + \, \sqrt{\Delta}
+                      }{
+                        2a_2
+                      }
+                    \right)\left(
+                      x \: - \:
+                      \frac{
+                        -a_1 \, - \, \sqrt{\Delta}
+                      }{
+                        2a_2
+                      }
+                    \right)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    = \; x^2 \: - \: x \,
+                    \frac{
+                      -a_1 \, - \sqrt{\Delta}
+                    }{
+                      2a_2
+                    } \: - \:
+                    \frac{
+                      -a_1 \, + \, \sqrt{\Delta}
+                    }{
+                      2a_2
+                    } \, x \: + \:
+                    \frac{
+                      \left(
+                        -a_1 \, + \, \sqrt{\Delta}
+                      \right)\left(
+                        -a_1 \, - \, \sqrt{\Delta}
+                      \right)
+                    }{
+                      (2a_2)^2
+                    }
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    = \; x^2 \: - \:
+                    \frac{
+                      -a_1 \, - \, \sqrt{\Delta} \,
+                      - \, a_1 \, + \, \sqrt{\Delta}
+                    }{
+                      2a_2
+                    } \, x \: + \:
+                    \frac{
+                      {a_1}^2 \, + \, {a_1}\sqrt{\Delta} \,
+                      - \, {a_1}\sqrt{\Delta} \, - \, \sqrt{\Delta^2}
+                    }{
+                      4{a_2}^2
+                    }
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    = \; x^2 \: - \:
+                    \frac{
+                      -2a_1
+                    }{
+                      2a_2
+                    } \, x \: + \:
+                    \frac{
+                      {a_1}^2 \, - \, \Delta
+                    }{
+                      4{a_2}^2
+                    }
+                  $$
+                </wc-math>
+                <wc-split class="grid-c">
+                  <wc-math class="Z s">
+                    $$
+                      = \; x^2 \: + \: (a_1/a_2)x \: + \:
+                      \frac{
+                        {a_1}^2 \, - \, {a_1}² \, + \, 4{a_2}{a_0}
+                      }{
+                        4{a_2}{a_2}
+                      }
+                    $$
+                  </wc-math>
+                  <wc-comment>
+                    <p>
+                      $ {a_1}^2 \, - \, {a_1}^2 \; $
+                      cancels out,
+                    </p>
+                    <p>
+                      then $ \; 4a_2 \; $ becomes a common factor
+                      to both the numerator and the denominator.
+                    </p>
+                  </wc-comment>
+                </wc-split>
+                <wc-math class="Z s">
+                  $$
+                    = \; x^2 \, + \, (a_1/a_2)x \, + \, a_0/a_2
+                  $$
+                </wc-math>
+                <p>
+                  Nice.
+                </p>
+                <p>
+                  Then
+                  $ \; a_2 \bigl( x^2 \, + \, (a_1/a_2)x \,
+                  + \, a_0/a_2 \bigr) \;
+                  = \; a_2 (x \, - \, r_1)(x \, - \, r_2) \; $.
+                </p>
+                <p>
+                  Therefore any second order (or quadratic) real polynomial
+                  can be expressed in terms of its roots and leading coefficient.
+                </p>
+                <p class="n">
+                  <cite>Der Hammer redet noch ein Mal</cite>:
+                  this is the factored form of the quadratic.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Notice that:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    a_2 (x \, - \, r_1)(x \, - \, r_2) \;
+                    =\; \sqrt{a_2}(x \, - \, r_1)
+                    \cdot
+                    \sqrt{a_2}(x \, - \, r_2)
+                  $$
+                </wc-math>
+                <p>
+                  and that $ \; \sqrt{a_2}(x \, - \, r_1) \; $
+                  and $ \; \sqrt{a_2}(x \, - \, r_2) \; $
+                  are two first—order polynomials
+                  whose respective roots are $ r_1 $ and $ r_2 $.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <div class="y outlined">
+                  <wc-pp class="zz">
+                    <p class="Achtung small-caps">
+                      ↓↓↓&nbsp;
+                      <b>ACHTUNG:&nbsp;
+                      fundamental concept ahead&nbsp;</b>
+                      ↓↓↓&nbsp;
+                    </p>
+                    <hr/>
+                    <p>
+                      Therefore any second-order polynomial
+                      <br/>
+                      is the product of two first-order polynomials,
+                      <br/>
+                      whose respective roots
+                      are also the roots of said second-order polynomial.
+                    </p>
+                    <p class="zz">
+                      If the second-order polynomial is real,
+                      <br/>
+                      the first-order ones are either both real or forming a conjugate pair.
+                    </p>
+                  </wc-pp>
+                </div>
+                <wc-comment>
+                  <p>Fun example:</p>
+                  <wc-math class="x N s">
+                    $$
+                      x^2 \, - \, 1 \; = \; 0
+                      \quad\iff\quad
+                      x^2 \: = \: 1
+                    $$
+                  </wc-math>
+                  <wc-math class="x s">
+                    $$
+                      \iff\quad
+                      x \; = \; \pm\sqrt{\, 1 \,} \; = \; \pm 1
+                    $$
+                  </wc-math>
+                  <p>So:</p>
+                  <wc-math class="Z s">
+                    $$
+                      x^2 \, - \ 1 \; = \; (x \, + \, 1)(x \, - \, 1)
+                    $$
+                  </wc-math>
+                  <p>You can check:</p>
+                  <wc-math class="x N s">
+                    $$
+                      3^2 \, - \, 1 \; = \; 9 \, - \, 1 \;
+                      = \; 8 \; = \; 4 \cdot 2
+                    $$
+                  </wc-math>
+                  <wc-math class="x s S">
+                    $$
+                      \hphantom{3^2 \, - \, 1 \; }
+                      = \; (3 \, + \, 1)(3 \, - \, 1)
+                    $$
+                  </wc-math>
+                  <wc-math class="x N s">
+                    $$
+                      7^2 \, - \, 1 \; = \; 49 \, - \, 1 \;
+                      = \; 48 \; = \; 8 \cdot 6
+                    $$
+                  </wc-math>
+                  <wc-math class="x s S">
+                    $$
+                      \hphantom{7^2 \, - \, 1 \; }
+                      = \; (7 \, + \, 1)(7 \, - \, 1)
+                    $$
+                  </wc-math>
+                  <wc-math class="x N s">
+                    $$
+                      10^2 \, - \, 1 \; = \; 100 \, - \, 1 \;
+                      = \; 99 \; = \; 11 \cdot 9
+                    $$
+                  </wc-math>
+                  <wc-math class="x s S">
+                    $$
+                      \hphantom{10^2 \, - \, 1 \; }
+                      = \; (10 \, + \, 1)(10 \, - \, 1)
+                    $$
+                  </wc-math>
+                  <wc-math class="x N s">
+                    $$
+                      0.5^2 \, - \, 1 \; = \; 0.25 \, - \, 1 \;
+                      = \; -0.75 \; = \; 1.5 \cdot -0.5
+                    $$
+                  </wc-math>
+                  <wc-math class="x s S">
+                    $$
+                      \hphantom{0.5^2 \, - \, 1 \; }
+                      = \; (0.5 \, + \, 1)(0.5 \, - \, 1)
+                    $$
+                  </wc-math>
+                  <wc-math class="x N s fake">
+                    <a
+                      title="Wikipedia.org | Golden ratio"
+                      target="_blank"
+                      type="text/html"
+                      charset="UTF-8"
+                      rel="external"
+                      href="https://en.wikipedia.org/wiki/Golden_ratio"
+                    >$$ \varphi $$</a>$$
+                    {}^2 \, - \, 1 \;
+                    = \; \varphi(\varphi \, - \, 1/\varphi) \;
+                    = \; \varphi\bigl(
+                      \varphi \, - \, (\varphi \, - \, 1)
+                    \bigr)
+                    $$
+                  </wc-math>
+                  <wc-math class="x s">
+                    $$
+                      \hphantom{\varphi^2 \, - \, 1 \;}
+                      = \; \varphi(\varphi \, - \, \varphi \, + \, 1) \;
+                      = \; \varphi \cdot 1 \;
+                      = \; \varphi
+                    $$
+                  </wc-math>
+                  <wc-math class="x s">
+                    $$
+                      \hphantom{\varphi^2 \, - \, 1 \;}
+                      = \; \varphi^2/\varphi \;
+                      = \; \varphi^2 \cdot (1/\varphi)
+                    $$
+                  </wc-math>
+                  <wc-math class="x s S">
+                    $$
+                      \hphantom{\varphi^2 \, - \, 1 \;}
+                      = \; (\varphi \, + \, 1)(\varphi \, - \, 1)
+                    $$
+                  </wc-math>
+                  <p>
+                    Cool. Cool cool cool.
+                  </p>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Let's assume that $ r_1 $ and $ r_2 $ are complex and define:
+                </p>
+                <wc-math class="x N s">
+                  $$
+                    P_1(x) \; = \; \sqrt{a_2} \, (x \, - \, r_1) \;
+                    = \; \sqrt{a_2} \, \bigl(
+                      x \: - \: \Re(r_1) \: - \: j \, \Im(r_1)
+                    \bigr)
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \hphantom{P_1(x) \;}
+                    = \; \sqrt{a_2} \, x \: - \: \sqrt{a_2} \,\Re(r_1) \:
+                    - \: j \, \sqrt{a_2} \, \Im(r_1)
+                  $$
+                </wc-math>
+                <wc-math class="x N s">
+                  $$
+                    P_2(x) \; = \; \sqrt{a_2} \, (x \, - \, r_2) \;
+                    = \; \sqrt{a_2} \, \bigl(
+                      x \: - \: \Re(r_2) \: - \: j \, \Im(r_2)
+                    \bigr)
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \hphantom{P_2(x) \;}
+                    = \; \sqrt{a_2} \, x \: - \: \sqrt{a_2} \,\Re(r_2) \:
+                    - \: j \, \sqrt{a_2} \, \Im(r_2)
+                  $$
+                </wc-math>
+                <p>Then:</p>
+                <wc-math class="x N s">
+                  $$
+                    P_1(x) \, P_2(x) \;
+                    = \; \hphantom{ {} \cdot {} }
+                    \bigl(
+                      \sqrt{a_2} \, x \: - \: \sqrt{a_2} \, \Re(r_1) \:
+                      -\: j \, \sqrt{a_2} \, \Im(r_1)
+                    \bigr)
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \hphantom{ P_1(x) \, P_2(x) \; = \; {} }
+                    {} \cdot {}
+                    \bigl(
+                      \sqrt{a_2} \, x \: - \: \sqrt{a_2} \, \Re(r_2) \:
+                      - \: j \, \sqrt{a_2} \, \Im(r_2)
+                    \bigr)
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \hphantom{ P_1(x) \, P_2(x) \; }
+                    = \; a_2 \, x^2 \:
+                    - \: a_2 \, \Re(r_2) \, x \:
+                    - \: j \, a_2 \, \Im(r_2) \, x
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \hphantom{ P_1(x) \, P_2(x) \; = \; }
+                    - \: a_2 \, \Re(r_1) \, x \:
+                    - \: a_2 \, \Re(r_1) \, \Re(r_2) \:
+                    + \: j \, a_2 \, \Re(r_1) \, \Im(r_2)
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \hphantom{ P_1(x) \, P_2(x) \; = \; }
+                    - \: j \, a_2 \, \Im(r_1) \, x \:
+                    + \: j \,a_2 \, \Im(r_1) \, \Re(r_2) \:
+                    - \: j \, a_2 \, \Im(r_1) \, \Im(r_2)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \alpha_2 \; = \; a_2
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \alpha_1 \; = \; -a_2 \,
+                    \Bigl(
+                      \Re(r_2) \: + \: j \,\Im(r_2) \:
+                      + \: \Re(r_1) \: + \: j \, \Im(r_2)
+                    \Bigr)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \alpha_0 \; = \; a_2 \,
+                    \Bigl(
+                      \Re(r_1) \, \Re(r_2) \:
+                      + \: j \, \Re(r_1) \, \Im(r_2) \:
+                      + \: j \, \Im(r_1) \, \Re(r_2) \:
+                      - \: \Im(r_1) \, \Im(r_2)
+                    \Bigr)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \Im(\alpha_1) \; = \; -a_2 \,
+                    \bigl(
+                      \Im(r_2) \: + \: \Im(r_1)
+                    \bigr)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \Im(\alpha_0) \; = \; a_2 \,
+                    \bigl(
+                      \Re(r_1) \, \Im(r_2) \:
+                      + \: \Im(r_1) \, \Re(r_2) \:
+                    \bigr)
+                  $$
+                </wc-math>
+                <p>
+                  For $ \; P_1(x) \, P_2(x) \; $ to be a real polynomial,
+                  we need all three coefficients to be purely real.
+                </p>
+                <p>That is:</p>
+                <wc-math class="x N s">
+                  $$
+                    \Im(\alpha_1) \; = \; 0
+                    \quad\iff\quad
+                    \Im(r_2) \: + \: \Im(r_1) \; = \; 0
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \hphantom{ \Im(\alpha_1) \; = \; 0 \quad }
+                    \iff\quad
+                    \Im(r_2) \; = \; -\Im(r_1)
+                  $$
+                </wc-math>
+                <wc-math class="x N s">
+                  $$
+                    \Im(\alpha_0) \; = \; 0
+                    \quad\iff\quad
+                    \Re(r_1) \, \Im(r_2) \:
+                    + \: \Im(r_1) \, \Re(r_2) \; = \; 0
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \hphantom{ \Im(\alpha_0) \; = \; 0 \quad }
+                    \iff\quad
+                    \Re(r_1) \, \Im(r_2) \;
+                    = \; -\Im(r_1) \, \Re(r_2)
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \hphantom{ \Im(\alpha_0) \; = \; 0 \quad }
+                    \iff\quad
+                    \Re(r_1) \, \Im(r_2) \;
+                    = \; \Re(r_2) \, \Im(r_2)
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \hphantom{ \Im(\alpha_0) \; = \; 0 \quad }
+                    \iff\quad
+                    \Re(r_1) \; = \; \Re(r_2)
+                  $$
+                </wc-math>
+                <wc-comment class="y">
+                  <p>
+                    We got this result after dividing both sides
+                    by $ \; \Im(r_2) \; $,
+                    so it's only valid for non-zero imaginary parts
+                    for $ r_1 $ and $ r_2 $.
+                  </p>
+                </wc-comment>
+                <p>
+                  What if $ \; \Im(r_2) \, = \, 0 \; $ then?
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \bigl(
+                      P_1 \cdot P_2
+                    \bigr)(x) \;
+                    = \; a_2 \,
+                    \left(
+                      \begin{alignedat}{2}
+                        & \, x^2 \: - \: \Re(r_2) \, x \,
+                        \\
+                        {} & \, - \: \Re(r_1) \, x \:
+                        + \: \Re(r_1) \, \Re(r_2) \,
+                        \\
+                        {} & \, - \: j \, \Im(r_1) \:
+                        + \: j \, \Im(r_1) \, \Im(r_2) \,
+                      \end{alignedat}
+                    \right)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \Im\Bigl( \,
+                      \bigl(
+                        P_1 \cdot P_2
+                      \bigr)(x) \,
+                    \Bigr) \;
+                    = \; a_2 \,
+                    \bigl( \,
+                      \Im(r_1) \, \Re(r_2) \:
+                      - \: \Im(r_1) \, x \,
+                    \bigr)
+                  $$
+                </wc-math>
+              </wc-ppp>
 
             </section><!-- end #01 -->
 
 
             <!-- = Section #02 = -->
             <section id="02">
+              <!-- top quote -->
+              <header>
+                <blockquote>
+                  <q>If the kids are united, they will never be divided.</q>
+                  <footer>
+                    — Sham <span class="small-caps">69</span>
+                    (<cite>If the kids are united</cite>)
+                  </footer>
+                </blockquote>
+              </header>
               <!-- section title -->
-              <h3>02 — dummy</h3>
+              <h3>
+                <span class="oldSchool">Διαίρει καὶ βασίλευε</span>
+                &nbsp;—&nbsp; divide & impera
+              </h3>
 
-              <wc-paragraph>
+              <wc-ppp>
+                <p>
+                  There's this thing I keep hearing about:
+                  long division
+                  — like it's a shared memory from elementary school...
+                </p>
+                <p class="zz">
+                  Except said memory seems to only speak English.
+                </p>
+                <p>
+                  French public schools teach (or taught perhaps...)
+                  something they called <cite>Euclidean division</cite>.
+                  <br/>
+                  Which, according to
+                  <a
+                    title="Wikipedia.org | Euclidean division"
+                    target="_blank"
+                    type="text/html"
+                    charset="UTF-8"
+                    rel="external"
+                    href="https://en.wikipedia.org/wiki/Euclidean_division"
+                  >Wikipedia</a>:
+                  applies to any division with a remainder.
+                </p>
+                <p class="n S">
+                  So <mark>I don't know long divisions, only Euclidean ones</mark>
+                  — is a category slip similar to
+                  <mark title="#notmyfender">It's not a Telecaster, it's a guitar</mark>.
+                </p>
+                <p>
+                  Turns out, after reading
+                  <a
+                    class="small-caps"
+                    title="Wikipedia.org | Long division"
+                    target="_blank"
+                    type="text/html"
+                    charset="UTF-8"
+                    rel="external"
+                    href="https://en.wikipedia.org/wiki/Long_division"
+                  >→&nbsp;this&nbsp;←</a>,
+                  that
+                  <a
+                    title="Wikipedia.org (French) | Division posée"
+                    target="_blank"
+                    type="text/html"
+                    charset="UTF-8"
+                    rel="external"
+                    href="https://fr.wikipedia.org/wiki/Division_posée"
+                  >French division</a>
+                  is a long division,
+                  except it has «&nbsp;fuck you I'm French&nbsp;»
+                  written all over it.
+                  <br/>
+                  Pardon my French, we're the worst!
+                  Listen to Claude Debussy or Camille Saint-Saëns
+                  and try not to hate us too much.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  After more research:
+                </p>
+                <ul>
+                  <li>
+                    <a
+                      title="Wikipedia.org (Arabic) | قسمة مطولة"
+                      lang="ar"
+                      target="_blank"
+                      type="text/html"
+                      charset="UTF-8"
+                      rel="external"
+                      href="https://ar.wikipedia.org/wiki/قسمة_مطولة"
+                    ><bdi lang="ar" dir="rtl">قسمة مطولة</bdi></a>
+                  </li>
+                  <li>
+                    <a
+                      title="Wikipedia.org (Spanish) | División larga"
+                      lang="es"
+                      target="_blank"
+                      type="text/html"
+                      charset="UTF-8"
+                      rel="external"
+                      href="https://es.wikipedia.org/wiki/División_larga"
+                    ><bdi lang="es">División larga</bdi></a>
+                  </li>
+                  <li>
+                    <a
+                      title="Wikipedia.org (Flemish) | Staartdeling — België"
+                      lang="nl"
+                      target="_blank"
+                      type="text/html"
+                      charset="UTF-8"
+                      rel="external"
+                      href="https://nl.wikipedia.org/wiki/Staartdeling#België"
+                    ><bdi lang="nl">Staartdeling — België</bdi></a>
+                  </li>
+                  <li>
+                    <a
+                      title="Wikipedia.org (Mandarin) | 長除法"
+                      lang="zh-Hant"
+                      target="_blank"
+                      type="text/html"
+                      charset="UTF-8"
+                      rel="external"
+                      href="https://zh.wikipedia.org/wiki/長除法"
+                    ><bdi lang="zh-Hant">長除法</bdi></a>
+                  </li>
+                  <li>
+                    <a
+                      title="Wikipedia.org (Greek) | Κάθετη διαίρεση"
+                      lang="el"
+                      target="_blank"
+                      type="text/html"
+                      charset="UTF-8"
+                      rel="external"
+                      href="https://el.wikipedia.org/wiki/Κάθετη_διαίρεση"
+                    ><bdi lang="el">Κάθετη διαίρεση</bdi></a>
+                  </li>
+                  <li>
+                    <a
+                      title="Wikipedia.org (Greek) | Phép chia số lớn"
+                      lang="vi"
+                      target="_blank"
+                      type="text/html"
+                      charset="UTF-8"
+                      rel="external"
+                      href="https://vi.wikipedia.org/wiki/Phép_chia_số_lớn"
+                    ><bdi lang="vi">Phép chia số lớn</bdi></a>
+                  </li>
+                  <li>
+                    <a
+                      title="Wikipedia.org (Farsi) | تقسیم_طولانی"
+                      lang="fa"
+                      target="_blank"
+                      type="text/html"
+                      charset="UTF-8"
+                      rel="external"
+                      href="https://fa.wikipedia.org/wiki/تقسیم_طولانی"
+                    ><bdi lang="fa" dir="rtl">تقسیم_طولانی</bdi></a>
+                  </li>
+                  <li>...</li>
+                </ul>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  The <mark>French</mark> long division
+                  is not French and not a long division
+                  — it's called <cite>gallows method</cite>.
+                  <br/>
+                  (Sweet land of Camembert and Guillotine...)
+                </p>
+                <p class="zz">
+                  There's the German / Austrian algorithm,
+                  and the actual long division.
+                </p>
+                <p>
+                  <a
+                    title="Wikipedia.org (Russian) | Деление столбиком"
+                    lang="ru"
+                    target="_blank"
+                    type="text/html"
+                    charset="UTF-8"
+                    rel="external"
+                    href="https://ru.wikipedia.org/wiki/Деление_столбиком"
+                  ><bdi lang="ru">Russians</bdi></a>
+                  seem to know them all.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Let's divide 6711 by 19.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <wc-grid2>
+                  <!--  FRENCH  -->
+                  <!-- French —— division -->
+                  <figure class="longDivision s">
+                    <table class="Z">
+                      <tr>
+                        <td></td>
+                        <td><wc-math>$$ 6 $$</wc-math></td>
+                        <td><wc-math>$$ 7 $$</wc-math></td>
+                        <td><wc-math>$$ 1 $$</wc-math></td>
+                        <td><wc-math>$$ 1 \quad $$</wc-math></td>
+                        <td
+                          style="
+                            border-left: 1px solid var(--lightGrey);
+                            border-bottom: 1px solid var(--lightGrey);
+                          "
+                        >
+                          <wc-math>
+                            $$
+                              \; 19
+                            $$
+                          </wc-math>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><wc-math>$$ - $$</wc-math></td>
+                        <td><wc-math>$$ 5 $$</wc-math></td>
+                        <td><wc-math>$$ 7 $$</wc-math></td>
+                        <td colspan="2"></td>
+                        <td
+                          rowspan="8"
+                          style="
+                            vertical-align: top;
+                            border-left: 1px solid var(--lightGrey);
+                          "
+                        >
+                          <wc-math>
+                            $$
+                              \; 353 \quad
+                            $$
+                          </wc-math>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td rowspan="2"></td>
+                        <td><wc-math>$$ 1 $$</wc-math></td>
+                        <td colspan="3"><wc-math>$$ 0 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td><wc-math>$$ 1 $$</wc-math></td>
+                        <td><wc-math>$$ 0 $$</wc-math></td>
+                        <td colspan="2"><wc-math>$$ 1 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><wc-math>$$ - $$</wc-math></td>
+                        <td><wc-math>$$ 9 $$</wc-math></td>
+                        <td colspan="2"><wc-math>$$ 5 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td colspan="3"></td>
+                        <td colspan="2"><wc-math>$$ 6 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td colspan="3"></td>
+                        <td><wc-math>$$ 6 $$</wc-math></td>
+                        <td><wc-math>$$ 1 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td colspan="3"><wc-math>$$ - $$</wc-math></td>
+                        <td><wc-math>$$ 5 $$</wc-math></td>
+                        <td><wc-math>$$ 7 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td colspan="4"></td>
+                        <td><wc-math>$$ 4 $$</wc-math></td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <!-- French —— paragraph -->
+                  <wc-pp class="outlined zz">
+                    <p>
+                      This method (gallows method)
+                      seems to be the most widespread:
+                    </p>
+                    <p class="zz">
+                      pretty much all Latin countries except Mexico
+                      (basically South-western Europe
+                      and South America $ + $ Quebec)
+                    </p>
+                    <p>
+                      most Arabic-speaking countries
+                      (in the Middle-East and in North Africa),
+                    </p>
+                    <p class="zz">
+                      plus Iran, Turkey, Armenia...
+                    </p>
+                    <p>
+                      Palestine, Israel...
+                    </p>
+                    <p class="zz">
+                      Russia, Ukraine, all 3 Baltic states, Romania, Greece,
+                      Kazakhstan, Mongolia, Vietnam...
+                    </p>
+                    <p>
+                      Belgium and Republic of Congo
+                      fell on the Latin side of the equation,
+                    </p>
+                    <p class="zz">
+                      Mali, Senegal, Ivory Coast, Liberia, Nigeria, Chad,
+                      Gabon, Cameroon, Somalia...
+                      <br/>
+                      the former France-Afrique...
+                    </p>
+                  </wc-pp>
+                  <!--  GERMAN  -->
+                  <!-- German —— division -->
+                  <figure class="longDivision s">
+                    <table class="Z">
+                      <tr>
+                        <td></td>
+                        <td><wc-math>$$ 6 $$</wc-math></td>
+                        <td><wc-math>$$ 7 $$</wc-math></td>
+                        <td><wc-math>$$ 1 $$</wc-math></td>
+                        <td>
+                          <wc-math>
+                            $$
+                              1 \; : \; 19 \; = \; 353
+                            $$
+                          </wc-math>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><wc-math>$$ - $$</wc-math></td>
+                        <td><wc-math>$$ 5 $$</wc-math></td>
+                        <td colspan="3"><wc-math>$$ 7 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td><wc-math>$$ 1 $$</wc-math></td>
+                        <td colspan="3"><wc-math>$$ 0 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td></td>
+                        <td><wc-math>$$ 1 $$</wc-math></td>
+                        <td><wc-math>$$ 0 $$</wc-math></td>
+                        <td colspan="2"><wc-math>$$ 1 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"><wc-math>$$ - $$</wc-math></td>
+                        <td><wc-math>$$ 9 $$</wc-math></td>
+                        <td colspan="2"><wc-math>$$ 5 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td colspan="3"></td>
+                        <td colspan="2"><wc-math>$$ 6 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td colspan="3"></td>
+                        <td><wc-math>$$ 1 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td colspan="3"><wc-math>$$ - $$</wc-math></td>
+                        <td><wc-math>$$ 5 $$</wc-math></td>
+                        <td><wc-math>$$ 7 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td colspan="4"></td>
+                        <td><wc-math>$$ 4 $$</wc-math></td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <!-- German —— paragraph -->
+                  <wc-pp class="outlined zz">
+                    <p>
+                      This method (German / Austrian)
+                      is (very basically) used
+                      in Germanic-language-speaking countries:
+                      <br/>
+                      Germany, Austria, Switzerland,
+                      Norway, Sweden, Denmark...
+                    </p>
+                    <p class="zz">
+                      and former neighbours / members
+                      of the Austro-Hungarian Empire:
+                      <br/>
+                      Hungary, Slovenia, Croatia, Poland,
+                      Bulgaria, Czech Republic...
+                    </p>
+                    <p class="S">
+                      Also Finland.
+                    </p>
+                    <p>
+                      In Netherlands,
+                      the <mark>$ : $</mark> sign becomes <mark>$ / $</mark>
+                      and the <mark>$ = $</mark> sign becomes <mark>$ \backslash $</mark>.
+                    </p>
+                  </wc-pp>
+                  <!--  BRITISH  -->
+                  <!-- Britsh —— division -->
+                  <figure class="longDivision s">
+                    <table class="Z">
+                      <tr>
+                        <td colspan="3"></td>
+                        <td style="padding-bottom: 0.25rem;">
+                          <wc-math>$$ 3 $$</wc-math>
+                        </td>
+                        <td style="padding-bottom: 0.25rem;">
+                          <wc-math>$$ 5 $$</wc-math>
+                        </td>
+                        <td colspan="2" style="padding-bottom: 0.25rem;">
+                          <wc-math>$$ 3 $$</wc-math>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td><wc-math>$$ 19 \; $$</wc-math></td>
+                        <td style="border-top: 1px solid var(--lightGrey);">
+                          <wc-math>$$ \big{)} $$</wc-math>
+                        </td>
+                        <td style="border-top: 1px solid var(--lightGrey);"></td>
+                        <td style="border-top: 1px solid var(--lightGrey);">
+                          <wc-math>$$ 6 $$</wc-math>
+                        <td style="border-top: 1px solid var(--lightGrey);">
+                          <wc-math>$$ 7 $$</wc-math>
+                        </td>
+                        <td style="border-top: 1px solid var(--lightGrey);">
+                          <wc-math>$$ 1 $$</wc-math>
+                        </td>
+                        <td style="border-top: 1px solid var(--lightGrey);">
+                          <wc-math>$$ 1 \; $$</wc-math>
+                        </td>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"></td>
+                        <td><wc-math>$$ - $$</wc-math></td>
+                        <td><wc-math>$$ 5 $$</wc-math></td>
+                        <td colspan="3"><wc-math>$$ 7 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td colspan="3"></td>
+                        <td><wc-math>$$ 1 $$</wc-math></td>
+                        <td colspan="3"><wc-math>$$ 0 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td colspan="3"></td>
+                        <td><wc-math>$$ 1 $$</wc-math></td>
+                        <td><wc-math>$$ 0 $$</wc-math></td>
+                        <td colspan="2"><wc-math>$$ 1 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"></td>
+                        <td colspan="2"><wc-math>$$ - $$</wc-math></td>
+                        <td><wc-math>$$ 9 $$</wc-math></td>
+                        <td colspan="2"><wc-math>$$ 5 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td colspan="5"></td>
+                        <td colspan="2"><wc-math>$$ 6 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td colspan="5"></td>
+                        <td><wc-math>$$ 6 $$</wc-math></td>
+                        <td><wc-math>$$ 1 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td colspan="2"></td>
+                        <td colspan="3"><wc-math>$$ - $$</wc-math></td>
+                        <td><wc-math>$$ 5 $$</wc-math></td>
+                        <td><wc-math>$$ 7 $$</wc-math></td>
+                      </tr>
+                      <tr>
+                        <td colspan="6"></td>
+                        <td><wc-math>$$ 4 $$</wc-math></td>
+                      </tr>
+                    </table>
+                  </figure>
+                  <!-- Britsh —— paragraph -->
+                  <wc-pp class="outlined zz">
+                    <p class="s">
+                      This method (long division)
+                      is standard in former members
+                      of the British colonial empire:
+                    </p>
+                    <p>
+                      India, Pakistan,
+                      <br/>
+                      South Africa, Australia,
+                      non-Francophone Canada,
+                      <br/>
+                      USA, UK, New Zealand...
+                    </p>
+                    <p class="y">
+                      also Mexico for some reason,
+                    </p>
+                    <p>
+                      Japan, North Korea, South Korea,
+                      <br/>
+                      China, Thailand...
+                    </p>
+                  </wc-pp>
+                </wc-grid2>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  There are almost 200 countries on Earth —
+                  <a
+                    title="Editing Working-class-filter-design/Chapter 05_ Poles and zeroes
+at main · antoineportes/Working-class-filter-design"
+                    target="_blank"
+                    type="text/html"
+                    charset="UTF-8"
+                    rel="external"
+                    href="https://github.com/antoineportes/Working-class-filter-design/edit/main/Chapter%2005_%20Poles%20and%20zeroes"
+                  >
+                    pull a request
+                  </a>
+                  if I didn't mention yours.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Quotient is 353, remainder is 4.
+                </p>
+                <p class="zz">
+                  Three notational conventions — one algorithm.
+                  <br/>
+                  Planet Earth is a Greek colony.
+                  <br/>
+                  Well done Euclid.
+                </p>
+                <p>
+                  United by division, haha (sorry).
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <wc-comment>
+                  <h5>Why does it work?</h5>
+                  <p class="zz">
+                    Let's divide 6789 by 33.
+                    <br/>
+                    We'll denote quotients by $ q $,
+                    remainders by $ r $
+                    and divisors by $ d $.
+                  </p>
+                  <wc-math class="x N zz">
+                    $$
+                      \epsilon \; = \; \frac{6789}{33} \;
+                      = \; 10^3 \cdot (6/33) \, + \, 10^2 \cdot (7/33) \,
+                      + \, 10^1 \cdot (8/33) \, + \, 10^0 \cdot (9/33)
+                    $$
+                  </wc-math>
+                  <wc-math class="x S zz">
+                    $$
+                      \hphantom{\epsilon \; }
+                      = \; \Bigl(
+                        \bigl(
+                          (6/33) \cdot 10 \, + \, 7/33
+                        \bigr) \cdot 10 \, + \, 8/33
+                      \Bigr) \cdot 10 \, + \, 9
+                    $$
+                  </wc-math>
+                  <wc-math class="x N zz">
+                    $$
+                      6/33
+                      \quad\longrightarrow\quad
+                      q \: = \: 0
+                      \qquad\AND\qquad
+                      r \: = \: 6
+                    $$
+                  </wc-math>
+                  <wc-math class="x zz">
+                    $$
+                      \hphantom{6/33 \quad}
+                      \longrightarrow\quad
+                      6 \: = \: 0 \cdot 33 \, + \, 6 \:
+                      = \: q \cdot d \, + \, r
+                    $$
+                  </wc-math>
+                  <wc-math class="x S zz">
+                    $$
+                      \hphantom{6/33 \quad}
+                      \longrightarrow\quad
+                      10 \cdot 6/33 \:
+                      = \: 10 \cdot 0 \, + \, 10 \cdot 6/33
+                    $$
+                  </wc-math>
+                  <wc-math class="x N zz">
+                    $$
+                      \epsilon \; = \; \Bigl(
+                        \bigl(
+                          10 \cdot 0 \, + \, (10 \cdot 6 \, + \, 7)/33
+                        \bigr) \cdot 10 \, + \, 8/33
+                      \Bigr) \cdot 10 \, + \, 9/33
+                    $$
+                  </wc-math>
+                  <wc-math class="x S zz">
+                    $$
+                      \hphantom{\epsilon \; }
+                      = \; \bigl(
+                        (67/33) \cdot 10 \, + \, 8/33
+                      \bigr) \cdot 10 \, + \, 9/33
+                    $$
+                  </wc-math>
+                  <wc-math class="x N zz">
+                    $$
+                      67/33
+                      \quad\longrightarrow\quad
+                      q \: = \: 2
+                      \qquad\AND\qquad
+                      r \: = \: 1
+                    $$
+                  </wc-math>
+                  <wc-math class="x zz">
+                    $$
+                      \hphantom{67/33 \quad}
+                      \longrightarrow\quad
+                      67 \: = \: 2 \cdot 33 \, + \, 1 \:
+                      = \: q \cdot d \, + \, r
+                    $$
+                  </wc-math>
+                  <wc-math class="x S zz">
+                    $$
+                      \hphantom{67/33 \quad}
+                      \longrightarrow\quad
+                      10 \cdot 67/33 \:
+                      = \: 10 \cdot 2 \, + \, 10 \cdot 1/33
+                    $$
+                  </wc-math>
+                  <wc-math class="x N zz">
+                    $$
+                      \epsilon \; = \; \bigl(
+                        10 \cdot 2 \, + \, (10 \cdot 1 \, + \, 8)/33
+                      \bigr) \cdot 10 \, + \, 9/33
+                    $$
+                  </wc-math>
+                  <wc-math class="x S zz">
+                    $$
+                      \hphantom{\epsilon \; }
+                      = \; 100 \cdot 2 \, + \, (18/33) \cdot 10 \, + \, 9/33
+                    $$
+                  </wc-math>
+                  <wc-math class="x N zz">
+                    $$
+                      18/33
+                      \quad\longrightarrow\quad
+                      q \: = \: 0
+                      \qquad\AND\qquad
+                      r \: = \: 18
+                    $$
+                  </wc-math>
+                  <wc-math class="x zz">
+                    $$
+                      \hphantom{18/33 \quad}
+                      \longrightarrow\quad
+                      18 \: = \: 0 \cdot 33 \, + \, 18 \:
+                      = \: q \cdot d \, + \, r
+                    $$
+                  </wc-math>
+                  <wc-math class="x S zz">
+                    $$
+                      \hphantom{18/33 \quad}
+                      \longrightarrow\quad
+                      10 \cdot 18/33 \:
+                      = \: 10 \cdot 0 \, + \, 10 \cdot 18/33
+                    $$
+                  </wc-math>
+                  <wc-math class="x N zz">
+                    $$
+                      \epsilon \; = \; \bigl(
+                        100 \cdot 2 \, + \, 10 \cdot 0 \,
+                        + \, 10 \cdot 18/33 \, + \, 9/33
+                    $$
+                  </wc-math>
+                  <wc-math class="x S zz">
+                    $$
+                      \hphantom{\epsilon \; }
+                      = \; 100 \cdot 2 \, + \, (180 \, + \, 9)/33 \;
+                      = \; 100 \cdot 2 \, + \, 189/33
+                    $$
+                  </wc-math>
+                  <wc-math class="x N zz">
+                    $$
+                      189/33
+                      \quad\longrightarrow\quad
+                      q \: = \: 5
+                      \qquad\AND\qquad
+                      r \: = \: 24
+                    $$
+                  </wc-math>
+                  <wc-math class="x zz">
+                    $$
+                      \hphantom{189/33 \quad}
+                      \longrightarrow\quad
+                      189 \: = \: 5 \cdot 33 \, + \, 24 \:
+                      = \: q \cdot d \, + \, r
+                    $$
+                  </wc-math>
+                  <wc-math class="x S zz">
+                    $$
+                      \hphantom{189/33 \quad}
+                      \longrightarrow\quad
+                      10 \cdot 189/33 \:
+                      = \: 5 \, + \, 24/33
+                    $$
+                  </wc-math>
+                  <wc-math class="x N zz">
+                    $$
+                      \epsilon \; = \; 100 \cdot 2 \,
+                      + \, 5 \,
+                      + \, 24/33 \;
+                      = \; 205 \, + \, 24/33
+                    $$
+                  </wc-math>
+                  <wc-math class="x S zz">
+                    $$
+                      \hphantom{\epsilon \; }
+                      \implies\quad
+                      Q \: = \: 205
+                      \qquad\AND\qquad
+                      R \: = \: 24
+                    $$
+                  </wc-math>
+                  <p>
+                    This is Euclid's raw algorithm.
+                  </p>
+                  <p class="zz">
+                    It shows that the conventional notations are valid,
+                    but also shorter and clearer.
+                  </p>
+                  <p>
+                    I choose random numbers
+                    to reduce the feeling of abstraction,
+                    <br/>
+                    but <span class="small-caps">6, 7, 8, 9</span>
+                    and <span class="small-caps">33</span>
+                    are just symbols
+                    — forget they're numbers:
+                    this is a general formula.
+                  </p>
+                  <p class="n">
+                    (Just add <mark>$ \dots $</mark>
+                    left and right to include
+                    — respectively — larger,
+                    and fractional powers of 10.
+                    <br/>
+                    Also, replace <span class="small-caps">10</span>
+                    with whatever
+                    — just stay inside the set of complex numbers.)
+                  </p>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <h4>Conclusion</h4>
+                <wc-pp>
+                  <p class="s">
+                    Any number can take the form:
+                    $ \; \delta \: = \: q \cdot d \, + \, r \; $.
+                  </p>
+                  <wc-comment>
+                    <p>
+                      <cite><strong>δ</strong></cite>ividend,
+                      <cite><strong>d</strong></cite>ivisor,
+                      <cite><strong>q</strong></cite>uotient,
+                      <cite><strong>r</strong></cite>emainder.
+                    </p>
+                  </wc-comment>
+                  <p>where:</p>
+                  <wc-math class="x s">
+                    $$
+                      q \; = \; \floor(\delta/d)
+                    $$
+                  </wc-math>
+                  <wc-math class="x s">
+                    $$
+                      r \; = \; \delta \mod d \;
+                      = \; \delta \, - \, q \cdot d
+                    $$
+                  </wc-math>
+                  <wc-math class="x S s">
+                    $$
+                      d \; \neq \; 0
+                    $$
+                  </wc-math>
+                </wc-pp>
+                <p>
+                  We're using powers of ten because
+                  Arabic numbers are a ten—symbol alphabet
+                  (because ten fingers).
+                </p>
+                <p>
+                  We could use any base
+                  — we could use base x...
+                </p>
+                <p class="zz">
+                  Which makes every (complex) number
+                  an infinity of polynomials
+                  — or every polynomial
+                  one (complex) number per infinity of bases.
+                </p>
+                <wc-comment>
+                  <p class="S">
+                    I'm taking for granted that
+                    <a
+                      title="Wikipedia.org | Fundamental theorem of algebra"
+                      target="_blank"
+                      type="text/html"
+                      charset="UTF-8"
+                      rel="external"
+                      href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra"
+                    >the set of complex numbers
+                    is algebraically closed</a>.
+                  </p>
+                  <wc-comment>
+                    <p>
+                      Very basically,
+                      <br/>
+                      it means that it's impossible
+                      for a non-constant complex polynomial
+                      to have no complex root.
+                    </p>
+                  </wc-comment>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
@@ -545,7 +2765,383 @@
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
-              </wc-paragraph>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Now I need to commit to a notation
+                  for Euclidean division...
+                </p>
+                <p class="zz">
+                  Sorry but I don't like the British long division:
+                  <br/>
+                  it's driving on the wrong side of the road.
+                </p>
+                <p>
+                  Division unites peoples?
+                </p>
+                <p>
+                  Let's go one step further:
+                  let's reconcile Germans and French
+                  — <cite>Umwerthung aller Werthe</cite>.
+                </p>
+                <p class="zz">
+                  Let a French guy claim:
+                  <mark>I prefer the German way</mark>.
+                </p>
+                <p>
+                  (I'm talking Euclidean division,
+                  not cheese,
+                  nor <span class="small-caps">20</span><sup>th</sup>
+                  century politics — of course.)
+                </p>
+                <p class="zz">
+                  Vielleicht konnte ich sogar probieren,
+                  auf Deutsch zu schreiben... Ok, no.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <wc-split class="s">
+                  <!--  LEFT = polynomial long division + text  -->
+                  <div>
+                    <!--  Long Division  -->
+                    <figure class="longDivision s">
+                      <table class="y">
+                        <!-- line 1 -->
+                        <tr>
+                          <td rowspan="5" style="vertical-align: top;">
+                            <wc-math style="color: hsl(0, 0%, 42%);">
+                              $$
+                                P(x) \longrightarrow \;
+                              $$
+                            </wc-math>
+                          </td>
+                          <td style="vertical-align: top;">
+                            <wc-math>
+                              $$
+                                \hphantom{- \,}
+                                4x^2
+                              $$
+                            </wc-math>
+                          </td>
+                          <td style="vertical-align: top;">
+                            <wc-math>
+                              $$
+                                \: + \:
+                              $$
+                            </wc-math>
+                          </td>
+                          <td style="vertical-align: top;">
+                            <wc-math style="text-align: right;">
+                              $$
+                                3x
+                              $$
+                            </wc-math>
+                          </td>
+                          <td style="vertical-align: top;">
+                            <wc-math>
+                              $$
+                                \: + \:
+                              $$
+                            </wc-math>
+                          </td>
+                          <td style="vertical-align: top;">
+                            <wc-math style="text-align: left;">
+                              $$
+                                5
+                              $$
+                            </wc-math>
+                          </td>
+                          <td rowspan="4" style="vertical-align: top;">
+                            <wc-math style="text-align: center;">
+                              $$
+                                : \;
+                              $$
+                            </wc-math>
+                          </td>
+                          <td rowspan="4" style="vertical-align: top;">
+                            <wc-math style="text-align: center;">
+                              $$
+                                \textcolor{hsl(0, 0%, 42%)}
+                                {
+                                  \underbrace{
+                                    \textcolor{var(--lightGrey)}
+                                    {
+                                      7x \: + \: 12
+                                    }
+                                  }
+                                }
+                              $$
+                            </wc-math>
+                            <wc-math style="text-align: center; padding-top: 3pt; color: hsl(0, 0%, 42%);">
+                              $$
+                                \big\uparrow
+                              $$
+                            </wc-math>
+                            <wc-math style="text-align: center; color: hsl(0, 0%, 42%);">
+                              $$
+                                D(x)
+                              $$
+                            </wc-math>
+                          </td>
+                          <td rowspan="5" style="vertical-align: top;">
+                            <wc-math>
+                              $$
+                                \; = \;
+                              $$
+                            </wc-math>
+                          </td>
+                          <td rowspan="5" style="vertical-align: top;">
+                            <wc-math style="text-align: center;">
+                              $$
+                                \textcolor{hsl(0, 0%, 42%)}
+                                {
+                                  \underbrace{
+                                    \textcolor{var(--lightGrey)}
+                                    {
+                                      (4/7)x \: + \: 27/49
+                                    }
+                                  }
+                                }
+                              $$
+                            </wc-math>
+                            <wc-math style="text-align: center; padding-top: 3pt; color: hsl(0, 0%, 42%);">
+                              $$
+                                \big\uparrow
+                              $$
+                            </wc-math>
+                            <wc-math style="text-align: center; color: hsl(0, 0%, 42%);">
+                              $$
+                                Q(x)
+                              $$
+                            </wc-math>
+                          </td>
+                        </tr>
+                        <!-- line 2 -->
+                        <tr>
+                          <td style="border-bottom: 1px solid var(--lightGrey); padding-bottom: 0.25rem;">
+                            <wc-math>
+                              $$
+                                - \, 4x^2
+                              $$
+                            </wc-math>
+                          </td>
+                          <td style="border-bottom: 1px solid var(--lightGrey); padding-bottom: 0.25rem;">
+                            <wc-math>
+                              $$
+                                \: - \:
+                              $$
+                            </wc-math>
+                          </td>
+                          <td style="border-bottom: 1px solid var(--lightGrey); padding-bottom: 0.25rem;">
+                            <wc-math style="text-align: right;">
+                              $$
+                                (48/7)x
+                              $$
+                            </wc-math>
+                          </td>
+                          <td></td>
+                          <td>
+                            <wc-math style="text-align: left; color: var(--collateral);">
+                              $$
+                                \downarrow
+                              $$
+                            </wc-math>
+                          </td>
+                        </tr>
+                        <!-- line 3 -->
+                        <tr>
+                          <td></td>
+                          <td>
+                            <wc-math>
+                              $$
+                                \: - \:
+                              $$
+                            </wc-math>
+                          </td>
+                          <td>
+                            <wc-math style="text-align: right;">
+                              $$
+                                (27/7)x
+                              $$
+                            </wc-math>
+                          </td>
+                          <td>
+                            <wc-math>
+                              $$
+                                \: - \:
+                              $$
+                            </wc-math>
+                          </td>
+                          <td>
+                            <wc-math style="text-align: left;">
+                              $$
+                                5
+                              $$
+                            </wc-math>
+                          </td>
+                        </tr>
+                        <!-- line 4 -->
+                        <tr>
+                          <td></td>
+                          <td style="border-bottom: 1px solid var(--lightGrey); padding-bottom: 0.25rem;">
+                            <wc-math>
+                              $$
+                                \: + \:
+                              $$
+                            </wc-math>
+                          </td>
+                          <td style="border-bottom: 1px solid var(--lightGrey); padding-bottom: 0.25rem;">
+                            <wc-math style="text-align: right;">
+                              $$
+                                (27/7)x
+                              $$
+                            </wc-math>
+                          </td>
+                          <td style="border-bottom: 1px solid var(--lightGrey); padding-bottom: 0.25rem;">
+                            <wc-math>
+                              $$
+                                \: + \:
+                              $$
+                            </wc-math>
+                          </td>
+                          <td style="border-bottom: 1px solid var(--lightGrey); padding-bottom: 0.25rem;">
+                            <wc-math style="text-align: left;">
+                              $$
+                                324/49
+                              $$
+                            </wc-math>
+                          </td>
+                        </tr>
+                        <!-- line 5 -->
+                         <tr>
+                          <td colspan="4"></td>
+                          <td>
+                            <wc-math style="text-align: right; padding-top: 0.25rem;">
+                              $$
+                                79/49
+                              $$
+                            </wc-math>
+                          </td>
+                          <td colspan="2">
+                            <wc-math style="text-align: left; color: hsl(0, 0%, 42%); padding-top: 0.25rem;">
+                              $$
+                                \; \longleftarrow R(x)
+                              $$
+                            </wc-math>
+                          </td>
+                         </tr>
+                      </table>
+                    </figure>
+                    <wc-pp class="outlined">
+                      <p class="N s">
+                        We know we're going to subtract
+                        $ \; D(x) \; $ from $ \; P(x) \; $ several times.
+                      </p>
+                      <p>
+                        So we can take advantage of the subtraction
+                        to reduce $ \; Q(x) \; $'s order,
+                        by finding a factor which makes
+                        the leading term of $ \; P(x) \; $ and $ \; D(x) \; $ cancel out.
+                      </p>
+                      <p class="zz">
+                        We find it by dividing $ \; 4x^2 \; $ by $ \; 7x \; $.
+                      </p>
+                      <p>
+                        Then we multiply $ \; D(x) \; $
+                        by the result and subtract this from $ \; P(x) \; $.
+                        <br/>
+                        (Don't forget to reverse all signs when you subtract.)
+                      </p>
+                      <p class="zz">
+                        The leading term of what's left is $ \; -(27/7)x \; $.
+                      </p>
+                      <p>
+                        Repeat: we divide this new term by $ \; 7x \; $
+                        and get a new factor for $ \; D(x) \; $,
+                        multiply, subtract — the leading term is now $ \; 79/49 \; $.
+                      </p>
+                      <p class="zz">
+                        This is a constant, a coefficient for $ x^0 $,
+                        a zeroth-order polynomial...
+                      </p>
+                      <p class="S">
+                        $ D(x) \; $ is of order 1, and $ \; 1 \: \gt \: 0 \; $.
+                        So, stop.
+                      </p>
+                    </wc-pp>
+                  </div>
+                  <wc-comment>
+                    <p>
+                      $
+                        \: {4x^2/7x \: = \: (4/7)x}
+                      $
+                    </p>
+                    <p class="y">
+                      $
+                        {\: (4/7)x \cdot (7x \, + \, 12) \: = \: 4x^2 \, + \, (48/7)x}
+                      $
+                    </p>
+                    <p>
+                      $
+                        {\: 4x^2 \, + \, 3x \; - \, \bigl( 4x^2 \, + \, (48/7)x \bigr)}
+                      $
+                      <br/>
+                      $
+                        {\; = \: 3x \, - \, (48/7)x}
+                      $
+                      <br/>
+                      $
+                        {\; = \: x(21/7 \, - \, 48/7)}
+                      $
+                      <br/>
+                      $
+                        {\; = \: x \bigl( -(48 \, - \, 21)/7 \bigr)}
+                      $
+                      <br/>
+                      $
+                        {\; = \: -(27/7)x}
+                      $
+                    </p>
+                    <p class="y">
+                      $
+                        {\: (-27/7)x/7x \: = \: -27/(7 \cdot 7)}
+                      $
+                      <br/>
+                      $
+                        {\; = \: -27/49}
+                      $
+                    </p>
+                    <p>
+                      $
+                        {\: (-27/49) \cdot (7x \, + \, 12)}
+                      $
+                      <br/>
+                      $
+                        {\; = \: -(27/7)x \, - \, (27 \cdot 12)/49}
+                      $
+                      <br/>
+                      $
+                        {\; = \: -(27/7)x \, - \, 324/49}
+                      $
+                    </p>
+                    <p class="N">
+                      $
+                        {\: 324/49 \, - \, 5 \: = \: (324 \, - \, 49 \cdot 5)/49}
+                      $
+                      <br/>
+                      $
+                        {\; = \: (324 \, - \, 245)/49}
+                      $
+                      <br/>
+                      $
+                        {\; = \: 79/49}
+                      $
+                    </p>
+                  </wc-comment>
+                </wc-split>
+              </wc-ppp>
 
             </section><!-- end #02 -->
 
@@ -553,9 +3149,9 @@
             <!-- section #03 -->
             <section id="03">
               <!-- section title -->
-              <h3>03 — dummy</h3>
+              <h3>Three theorems (but who's counting?)</h3>
 
-              <wc-paragraph>
+              <wc-ppp>
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
@@ -577,7 +3173,7 @@
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
-              </wc-paragraph>
+              </wc-ppp>
 
             </section><!-- end #03 -->
 
@@ -585,31 +3181,19 @@
             <!-- section #04 -->
             <section id="04">
               <!-- section title -->
-              <h3>04 — dummy</h3>
+              <h3>I thought this was gonna be a book about filters...</h3>
 
-              <wc-paragraph>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-              </wc-paragraph>
+              <wc-ppp>
+                <p>
+                  ... right: φιλτερσ!
+                  <br/>
+                  Sorry: no refund.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <wc-ascii class="Achtung">[[original_IN_PROGRE55]]</wc-ascii>
+              </wc-ppp>
 
             </section><!-- end #04 -->
 
@@ -617,9 +3201,9 @@
             <!-- section #05 -->
             <section id="05">
               <!-- section title -->
-              <h3>05 — dummy</h3>
+              <h3>dummy</h3>
 
-              <wc-paragraph>
+              <wc-ppp>
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
@@ -641,7 +3225,7 @@
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
-              </wc-paragraph>
+              </wc-ppp>
 
             </section><!-- end #05 -->
 
@@ -649,9 +3233,9 @@
             <!-- section #06 -->
             <section id="06">
               <!-- section title -->
-              <h3>06 — dummy</h3>
+              <h3>dummy</h3>
 
-              <wc-paragraph>
+              <wc-ppp>
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
@@ -673,7 +3257,7 @@
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
-              </wc-paragraph>
+              </wc-ppp>
 
             </section><!-- end #06 -->
 
@@ -681,9 +3265,9 @@
             <!-- section #07 -->
             <section id="07">
               <!-- section title -->
-              <h3>07 — dummy</h3>
+              <h3>dummy</h3>
 
-              <wc-paragraph>
+              <wc-ppp>
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
@@ -705,7 +3289,7 @@
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
-              </wc-paragraph>
+              </wc-ppp>
 
             </section><!-- end #07 -->
 
@@ -713,9 +3297,9 @@
             <!-- section #08 -->
             <section id="08">
               <!-- section title -->
-              <h3>08 — dummy</h3>
+              <h3>dummy</h3>
 
-              <wc-paragraph>
+              <wc-ppp>
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
@@ -737,7 +3321,7 @@
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
-              </wc-paragraph>
+              </wc-ppp>
 
             </section><!-- end #08 -->
 
@@ -745,9 +3329,9 @@
             <!-- section #09 -->
             <section id="09">
               <!-- section title -->
-              <h3>09 — dummy</h3>
+              <h3>dummy</h3>
 
-              <wc-paragraph>
+              <wc-ppp>
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
@@ -769,7 +3353,7 @@
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
-              </wc-paragraph>
+              </wc-ppp>
 
             </section><!-- end #09 -->
 
@@ -777,9 +3361,9 @@
             <!-- section #10 -->
             <section id="10">
               <!-- section title -->
-              <h3>10 — dummy</h3>
+              <h3>dummy</h3>
 
-              <wc-paragraph>
+              <wc-ppp>
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
@@ -801,7 +3385,7 @@
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
-              </wc-paragraph>
+              </wc-ppp>
 
             </section><!-- end #10 -->
 
@@ -809,9 +3393,9 @@
             <!-- section #11 -->
             <section id="11">
               <!-- section title -->
-              <h3>11 — dummy</h3>
+              <h3>dummy</h3>
 
-              <wc-paragraph>
+              <wc-ppp>
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
@@ -833,7 +3417,7 @@
                 All work and no play makes Jack a dull boy.
                 <br/>
                 All work and no play makes Jack a dull boy.
-              </wc-paragraph>
+              </wc-ppp>
 
             </section><!-- end #11 -->
 
@@ -841,14 +3425,14 @@
             <!-- = APPENDIX = -->
             <section id="APPENDIX">
               <!-- section title -->
-              <h3><span class="small-caps">Appendix</span> — dummy</h3>
+              <h3>foo</h3>
 
-              <wc-paragraph>
+              <wc-ppp>
                 Der Reichthum der Gesellschaften,
                 in welchen kapitalistische Produktionsweise herrscht,
                 erscheint als eine <cite>ungeheure Waarensammlung</cite>,
                 die einzelne Waare als seine <b>Elementarform</b>.
-              </wc-paragraph>
+              </wc-ppp>
 
             </section><!-- end APPENDIX -->
 
@@ -856,13 +3440,13 @@
             <!-- = BONUS = -->
             <section id="BONUS">
               <!-- section title -->
-              <h3><span class="small-caps">Bonus</span> — dummy</h3>
+              <h3>bar</h3>
 
-              <wc-paragraph>
+              <wc-ppp>
                 Toute la vie des sociétés
                 dans lesquelles règnent les conditions modernes de production
                 s'annonce comme une immense accumulation de spectacles.
-              </wc-paragraph>
+              </wc-ppp>
 
             </section><!-- end BONUS -->
 

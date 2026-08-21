@@ -1,11 +1,12 @@
-//  1. COLLAPSE ASIDE
+//  ASIDE
+////  Collapse
 function toggleSidebar()
 {
   const sidebar = document.querySelector('aside');
   sidebar.classList.toggle('collapsed');
 }
 
-//  2. RESIZE ASIDE
+////  Resize
 const sidebar = document.querySelector('aside');
 const resizer = document.querySelector('aside .handle');
 const container = document.querySelector('wc-cosmic-wrap');
@@ -20,11 +21,11 @@ resizer.addEventListener('mousedown', (e) =>
 });
 function handleMouseMove(e)
 {
-  // Bind width
+  //////  Bind width
   let targetWidth = e.clientX;
   if (targetWidth >= 200 && targetWidth <= 600)
   {
-    // dragging ? collapse = verboten : alles gut;
+    ////////  dragging ? collapse = verboten : alles gut;
     sidebar.classList.remove('collapsed');
     document.documentElement.style.setProperty('--left-pan-width', `${targetWidth}px`);
   }
@@ -36,7 +37,7 @@ function handleMouseUp()
   document.removeEventListener('mouseup', handleMouseUp);
 }
 
-//  3. HIGHLIGHT ACTIVE SECTION
+////  Highlight active section
 const navLinks = document.querySelectorAll('aside nav ul li a[data-target]');
 const trackedElements = document.querySelectorAll('section[id]');
 const observerOptions =
@@ -72,7 +73,8 @@ const observer = new IntersectionObserver
 );
 trackedElements.forEach(element => observer.observe(element));
 
-//  4. BODY > NAV (top)
+
+//  BODY > NAV (top)
 function toggleDropdown(event)
 {
   event.stopPropagation();
@@ -90,7 +92,7 @@ function toggleDropdown(event)
     btn.setAttribute('aria-expanded', 'true');
   }
 }
-//  Close on click (anywhere)
+////  Close on click (anywhere)
 window.addEventListener
 (
   'click', () =>
@@ -105,37 +107,60 @@ window.addEventListener
   }
 );
 
-//  5. RESIZE DIAGRAMS
-window.addEventListener
-(
-  'load', () =>
+
+//  DIAGRAMS
+////  Resize + display id
+class WcDiagram extends HTMLElement {
+  connectedCallback() {
+    this.ensureFigcaption();
+
+    if (document.readyState === 'complete') {
+      this.adjustDimensions();
+    } else {
+      window.addEventListener('load', () => this.adjustDimensions(), { once: true });
+    }
+  }
+
+  ensureFigcaption()
   {
-    // 1. Get the scale factor from CSS
+    const id = this.getAttribute('id');
+    const figure = this.querySelector('figure');
+
+    if (!id || !figure || figure.querySelector('figcaption')) return;
+
+    const caption = document.createElement('figcaption');
+    caption.textContent = `id:\u00A0\u00A0\u00A0#${id}`;
+    figure.appendChild(caption);
+  }
+
+  adjustDimensions()
+  {
+    const figure = this.querySelector('figure');
+    const svg = this.querySelector('svg');
+    if (!figure || !svg) return;
+
     const rootStyles = getComputedStyle(document.documentElement);
     const scaleFactor = parseFloat(rootStyles.getPropertyValue('--diagram-scale')) || 1.5;
-    const containers = document.querySelectorAll('.block-diagram');
-    containers.forEach
-    (
-      container =>
-      {
-        const svg = container.querySelector('svg');
-        // 2. Measure the current size (already scaled)
-        const rect = svg.getBoundingClientRect();
-        // 3. Calculate original dimensions
-        const originalWidth = rect.width / scaleFactor;
-        const originalHeight = rect.height / scaleFactor;
-        // 4. Calculate adding
-        const extraWidth = rect.width - originalWidth;
-        const extraHeight = rect.height - originalHeight;
-        // 5. Apply to container
-        container.style.paddingRight = `${extraWidth}px`;
-        container.style.paddingBottom = `calc(${extraHeight}px + var(--general-bot))`;
-      }
-    );
-  }
-);
 
-//  6. POP-UPs
+    const rect = svg.getBoundingClientRect();
+
+    const originalWidth = rect.width / scaleFactor;
+    const originalHeight = rect.height / scaleFactor;
+
+    const extraWidth = rect.width - originalWidth;
+    const extraHeight = rect.height - originalHeight;
+
+    figure.style.paddingRight = `${extraWidth}px`;
+    figure.style.paddingBottom = `${extraHeight}px`;
+  }
+}
+if (!customElements.get('wc-diagram'))
+{
+  customElements.define('wc-diagram', WcDiagram);
+}
+
+
+//  POP-UPs
 document.body.addEventListener
 (
   'mouseover', (e) =>

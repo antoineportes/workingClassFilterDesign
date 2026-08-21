@@ -58,7 +58,11 @@ window.MathJax =
       fs:       "{\\operatorname{f}_{\\operatorname{s}}}",
       Nyquist:  "{\\operatorname{Nyquist}}",
       pfrac:    ["\\frac{\\mkern 6mu #1 \\mkern 6mu}{\\mkern 6mu #2 \\mkern 6mu}", 2],
-      pdfrac:   ["\\dfrac{\\mkern 6mu #1 \\mkern 6mu}{\\mkern 6mu #2 \\mkern 6mu}", 2]
+      pdfrac:   ["\\dfrac{\\mkern 6mu #1 \\mkern 6mu}{\\mkern 6mu #2 \\mkern 6mu}", 2],
+      floor:    "{\\operatorname{floor}}",
+      ceil:     "{\\operatorname{ceil}}",
+      round:    "{\\operatorname{round}}",
+      trunc:    "{\\operatorname{trunc}}"
     }
   },
   chtml:
