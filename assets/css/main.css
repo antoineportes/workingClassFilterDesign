@@ -74,7 +74,7 @@
     'Geeza Pro',
     'Noto Sans Arabic',
     sans-serif;
-  font-size: 1.025em; 
+  font-size: 95,34%; 
 }
 /* Mandarin */
 :lang(zh)
@@ -151,7 +151,8 @@ html
 {
   background-color: var(--black);
 }
-body, html {
+html, body
+{
   margin: 0;
   top: 0;
   height: 100%;
@@ -162,6 +163,14 @@ body, html {
   line-height: var(--lineHeight);
   font-weight: 400;
   color:  var(--lightGrey);
+}
+*
+{
+  font-size: inherit;
+  margin-block: unset;
+  margin-inline: unset;
+  padding-block: unset;
+  padding-inline: unset;
 }
 
 
@@ -282,7 +291,7 @@ body > nav h1
   display: inline-block;
   margin: 0;
   padding: 0;
-  font-size: 1.33rem;
+  font-size: 123.72%;
   font-weight: 500;
   text-decoration: none;
   color: var(--pink);
@@ -302,7 +311,7 @@ body > nav .dropdown button
   border: 1px solid var(--subliminal);
   padding: 0.45rem 1.2rem;
   font-family: var(--vanilla);
-  font-size: 1rem;
+  font-size: 93.02%;
   color: var(--collateral);
   cursor: pointer;
   transition: color 0.2s ease;
@@ -362,7 +371,7 @@ body > nav .dropdown menu li a
   padding: 0.5rem 1.25rem 0.75rem 1.25rem;
   color: var(--collateral);
   text-decoration: none;
-  font-size: var(--calibri-11);
+  /*font-size: var(--calibri-11);*/
   font-weight: 333;
 }
 body > nav .dropdown menu li a:hover
@@ -375,6 +384,7 @@ body > nav .dropdown menu li a.current
   color: var(--yellow);
   font-weight: 618;
 }
+
 button.gitHub
 {
   display: block;
@@ -455,7 +465,7 @@ aside
       padding: 0;
       background: none;
       text-align: center;
-      font-size: var(--calibri-11);
+      /*font-size: var(--calibri-11);*/
       font-weight: 400;
       color: var(--yellow);
     }
@@ -466,7 +476,7 @@ aside
       border: 1px solid transparent;
       color: var(--collateral);
       cursor: pointer;
-      font-size: 1.25rem;
+      font-size: 116.28%;
       padding: 4px 8px;
       border-radius: 4px;
       transition:
@@ -510,7 +520,7 @@ aside
           padding: 0.42rem 0.75rem;
           color: var(--collateral);
           text-decoration: none;
-          font-size: 1rem;
+          font-size: 93.02%;
           font-weight: 333;
           border-radius: 4px;
           white-space: nowrap;
@@ -675,7 +685,7 @@ wc-chapter
     background-color: var(--black);
     padding: var(--lineHeight) 0;
     text-align: center;
-    font-size: 1.6180rem;
+    font-size: 150.51%;
     font-weight: 500;
     color: var(--yellow);
   }
@@ -702,7 +712,7 @@ section
     border-top: 4px double var(--ground);
     border-bottom: 4px double var(--ground);
     text-align: left;
-    font-size:  1.1rem;
+    font-size:  102.33%;
     color: var(--sky);
     font-weight: 618;
 
@@ -772,7 +782,7 @@ section header
       padding: 0;
       text-align: left;
       text-indent: -1rem;
-      font-size: 1.125rem;
+      font-size: 104.65%;
       font-weight: 314;
 
       &::before
@@ -798,7 +808,7 @@ section header
       margin: 0.333rem 6.18% 0 var(--H);
       padding: 0;
       text-align: right;
-      font-size: 1rem;
+      font-size: 93.02%;
     }
   }
 }
@@ -818,7 +828,7 @@ section h4
   border-bottom: 1px solid var(--lightGrey);
   padding: 0;
   text-align: left;
-  font-size: 1.075rem;
+  /*font-size: 1.075rem;*/
   font-weight: 500;
 
   &.edit
@@ -837,7 +847,7 @@ section h5
 {
   margin: 0;
   padding: 0;
-  font-size: 1.075rem;
+  /*font-size: 1.075rem;*/
   font-style: italic;
   font-weight: 666;
   text-decoration: none;
@@ -888,7 +898,7 @@ wc-popup
 {
   all: unset;
   font-family: inherit;
-  font-size: inherit;
+  /*font-size: inherit;*/
   font-weight: inherit;
   line-height: inherit;
   display: block;
@@ -932,7 +942,7 @@ section b /*  bold: GitHub's *[...]*  */
 section strong /*  super bold: GitHub's **[...]**  */
 {
   font-family: inherit;
-  font-size: inherit;
+  /*font-size: inherit;*/
   text-decoration: inherit;
   color: inherit;
   font-weight: 825;
@@ -972,7 +982,7 @@ wc-spoiler
   {
     font-family: var(--monospace);
     color: var(--crimson);
-    font-size: 0.95rem;
+    font-size: 88.37%;
     text-shadow: none;
   }
 
@@ -987,7 +997,7 @@ wc-ascii
 {
   display: inline;
   font-family: var(--monospace);
-  font-size: 0.95rem;
+  font-size: 91%;
 }
 /* ancient Greek */
 .oldSchool
@@ -1018,7 +1028,7 @@ mark
   all: unset;
   display: inline;
   font-family: inherit;
-  font-size: inherit;
+  /*font-size: inherit;*/
   font-weight: inherit;
   line-height: inherit;
   color: inherit;
@@ -1097,7 +1107,7 @@ figure.portrait
       background-color: var(--black);
       text-align: center;
       color: var(--wheat);
-      font-size: 1.0375rem;
+      font-size: 96.51%;
       z-index: 1000;
       opacity: 0.5;
     }
@@ -1109,6 +1119,16 @@ em
   font-weight: inherit;
   text-decoration: underline;
 }
+
+small
+{
+  font-size: 75%;
+}
+wc-big
+{
+  font-size: 107.98%;
+}
+
 section table
 {
   border-collapse: collapse;
@@ -1149,7 +1169,7 @@ wc-chapter ul
 {
   all: unset;
   font-family: inherit;
-  font-size: inherit;
+  /*font-size: inherit;*/
   font-weight: inherit;
   line-height: inherit;
   color: inherit;
@@ -1182,7 +1202,7 @@ wc-chapter ol
 {
   all: unset;
   font-family: inherit;
-  font-size: inherit;
+  /*font-size: inherit;*/
   font-weight: inherit;
   color: inherit;
   line-height: inherit;
@@ -1298,7 +1318,7 @@ section code
     margin: 0;
     padding: 0;
     font-family: var(--monospace), monospace !important;
-    font-size: 0.95rem;
+    font-size: 93.02%;
     white-space: pre;
     color: var(--pip-boy-3000) !important;
     text-shadow:
@@ -1331,7 +1351,7 @@ mjx-container
 [data-semantic-font="monospace"] *
 {
   font-family: MJX-MM-ZERO, var(--monospace) !important;
-  font-size: 0.95rem;
+  font-size: 93.02%;
 }
 wc-math
 {
@@ -1340,7 +1360,7 @@ wc-math
   box-sizing: border-box;
   overflow-x: auto;
   overflow-y: clip;
-  font-size: 1.15rem;
+  font-size: 107.98%;
 
   text-align: left;
 

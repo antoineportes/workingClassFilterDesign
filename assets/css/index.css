@@ -7,20 +7,146 @@
   body
   {
     position: relative;
+    background-color: var(--chapter-bg);
+  }
+
+  wc-index-wrap {
+    display: block;
+    width: 100vw;
+    height: calc(100vh - var(--navbar-height));
+    margin-top: var(--navbar-height);
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    background-image: url(../favicon/favicon.svg);
+    background-size: calc(100vh - var(--navbar-height));
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: bottom;
+    background-attachment: fixed;
+
+    &::-webkit-scrollbar
+    {
+      width: 10px;
+      height: 10px;
+      background-color: transparent;
+      border-radius: 4px;
+      border: 1px solid var(--subliminal);
+    }
+    &::-webkit-scrollbar-corner
+    {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb
+    {
+      background-color: hsl(21, 22.5%, 12.25%);
+      border-radius: 4px;
+    }
+    &::-webkit-scrollbar-thumb:hover
+    {
+      background-color: hsl(21, 45%, 49%);
+    }
   }
 
   main
   {
-    position: absolute;
-    top: var(--navbar-height);
-    height: calc(100% - var(--navbar-height));
-    background-image: url(../favicon/favicon.svg);
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
+    width: 85%;
+    /*max-width: 1088px;*/
     background-color: transparent;
+    margin: 0 auto;
+    overflow: visible;
+    scroll-behavior: unset;
   }
 
+  h2, header, menu#ToC, article, footer
+  {
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.975);
+    text-shadow: 0 0 4px var(--black);
+    padding: var(--H);
+    margin: 2rem 0;
+  }
+
+  header
+  {
+    padding: var(--lineHeight) var(--H);
+  }
+
+  menu#ToC
+  {
+    & > ol
+    {
+      list-style: lower-roman;
+
+      & > li
+      {
+
+        margin: 0 0 var(--V) 4rem;
+
+        &::marker
+        {
+          color: var(--yellow);
+          font-weight: 444;
+          font-size: 115%;
+          font-family: var(--small-caps);
+        }
+
+        & dl
+        {
+          margin: 0 4rem 0 0;
+
+          & dd
+          {
+            margin: 0;
+            padding: 0 var(--V);
+          }
+        }
+      }
+    }
+
+    & h3
+    {
+      display: block;
+      width: 100%;
+      padding: var(--V) 0;
+      font-size: 132%;
+      text-align: center;
+      color: var(--pink);
+      text-decoration: underline;
+      background-color: var(--black);
+    }
+
+    & h4
+    {
+      font-size: 115%;
+      font-weight: 666;
+    }
+
+    & h5
+    {
+      font-weight: 555;
+
+      & > a
+      {
+        &:link, &:visited
+        {
+          color: var(--sky);
+          text-decoration: none;
+        }
+        &:hover, &:active
+        {
+          color: var(--ground);
+          text-decoration: none;
+        }
+      }
+    }
+
+  }
+
+  figure
+  {
+    width: fit-content;
+    margin: 0 auto;
+  }
 
 }
