@@ -44,6 +44,18 @@
     url('../fonts/Unifont/unifont-17.0.05.woff2')
     format('woff2');
 }
+/*  Iosevka  (monospace2)  */
+@font-face
+{
+  font-family: 'Iosevka';
+  font-weight: normal;
+  font-style: normal;
+  font-variant-ligatures: none;
+  font-display: fallback;
+  src:
+    url('../fonts/Iosevka/IosevkaFixed-Extended.woff2')
+    format('woff2');
+}
 /*  Garamond  (Ancient Greek)  */
 @font-face
 {
@@ -138,6 +150,7 @@
   --vanilla: 'Ysabeau Infant';
   --small-caps: 'Ysabeau Small Caps';
   --monospace: 'Unifont';
+  --monospace2: 'Iosevka';
   --oldSchool: 'Garamond';
 }
 /* #endregion */
@@ -497,6 +510,59 @@ aside
     }
   }
 
+  & div#OG
+  {
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.45);
+    padding: 8px 8px 4px 8px;
+    border-bottom: 1px solid var(--subliminal);
+    font-family: var(--monospace2);
+    font-size: 0.707rem;
+    line-height: 125%;
+
+    & h6
+    {
+      font-family: inherit;
+      font-size: inherit;
+      font-weight: 333;
+      color: var(--collateral);
+      text-decoration: none;
+      text-align: left;
+      padding: 0;
+      margin: 0;
+    }
+
+    & menu
+    {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      justify-content: space-around;
+
+      & li
+      {
+        display: inline-block;
+        padding: 4px 0;
+
+        & a
+        {
+          display: block;
+          color: var(--pip-boy-3000);
+          text-decoration: none;
+
+          &:link, &:visited
+          {
+            opacity: 66.7%;
+          }
+          &:hover, &:active
+          {
+            opacity: 100%;
+          }
+        }
+      }
+    }
+  }
+
   & nav
   {
     flex: 1;
@@ -720,6 +786,23 @@ section
     {
       font-family: var(--small-caps);
     }
+
+    & .subH3
+    {
+      display: block;
+      font-weight: normal;
+      text-indent: 1.5rem;
+
+      & .oldSchool
+      {
+        font-weight: inherit;
+      }
+
+      & em
+      {
+        text-decoration-thickness: 1px;
+      }
+    }
   }
 
   &:not(#APPENDIX):not(#BONUS) h3::before
@@ -880,6 +963,7 @@ p
   &.numbered::after
   {
     display: inline;
+    /*font-family: var(--small-caps);*/
     content: " [" attr(data-eq) "]";
     color: var(--sky);
   }
@@ -947,11 +1031,11 @@ section strong /*  super bold: GitHub's **[...]**  */
   color: inherit;
   font-weight: 825;
 }
-.small-caps
+.small-caps, .smallCaps
 {
   font-family: var(--small-caps);
 }
-cite
+cite, i
 {
   font-style: italic;
   text-decoration: none;
@@ -1013,6 +1097,10 @@ h3 .oldSchool
 .Achtung
 {
   color: var(--crimson);
+}
+.Achtung2
+{
+  color: var(--pip-boy-3000)
 }
 .outlined
 {
@@ -1120,7 +1208,7 @@ em
   text-decoration: underline;
 }
 
-small
+small, sup
 {
   font-size: 75%;
 }
@@ -1223,10 +1311,36 @@ wc-chapter ol
     &::before
     {
       position: absolute;
+      font-family: var(--small-caps);
       left: -2rem;
       user-select: none;
       content: "(" counter(ol-counter) ")";
       color: var(--sky);
+    }
+  }
+
+  &.display
+  {
+    margin-left: 1rem;
+    overflow-x: auto;
+    overflow-y: clip;
+
+    & li
+    {
+      padding: 0;
+      position: unset;
+      text-indent: unset;
+
+      &::before
+      {
+        position: unset;
+        display: inline-block;
+      }
+
+      & wc-math
+      {
+        overflow: unset;
+      }
     }
   }
 }
@@ -1271,6 +1385,7 @@ section dl
 /* #region CODE BLOCKS */
 /* ___________________________________________________________________________ */
 /*  CODE BLOCKS                                                                */
+/*
 section code
 {
   all: unset;
@@ -1327,6 +1442,28 @@ section code
       0 0 20px hsla(148, 77%, 55%, 0.2);
   }
 }
+*/
+wc-code
+{
+  display: block;
+  background-color: rgba(0, 0, 0, 0.667);
+  overflow-x: auto;
+  overflow-y: clip;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 2px solid rgba(255, 255, 255, 0.033);
+  padding: 0 2rem;
+
+  & code
+  {
+    display: block;
+    white-space: pre;
+    color: var(--pip-boy-3000);
+    font-family: var(--monospace2);
+    font-size: 77%;
+    line-height: 125%;
+  }
+}
 
 /* #endregion */
 
@@ -1375,6 +1512,7 @@ wc-math
       white-space: nowrap;
       content: "[" attr(data-eq) "]";
       font-size: var(--calibri-11);
+      font-family: var(--small-caps);
       margin: 0 0 0 2rem;
       padding: 0;
     }
@@ -1400,6 +1538,18 @@ wc-math
     & mjx-mtext *
     {
       font-family: MJX-MM-ZERO, var(--vanilla) !important;
+      /* MM-ZERO fixes line height but breaks if not Latin Modern */
+      font-size: var(--calibri-11) !important;
+      font-weight: 400 !important;
+    }
+  }
+
+  &.hybridSC
+  {
+    & mjx-mtext,
+    & mjx-mtext *
+    {
+      font-family: MJX-MM-ZERO, var(--small-caps) !important;
       /* MM-ZERO fixes line height but breaks if not Latin Modern */
       font-size: var(--calibri-11) !important;
       font-weight: 400 !important;
@@ -1464,7 +1614,7 @@ wc-split
     {
       align-items: baseline;
     }
-    & wc-math
+    & wc-math, & wc-code
     {
       overflow-x: visible;
     }
@@ -1499,19 +1649,31 @@ wc-split
   /* Bloody phones */
   @media screen and (width <= 850px)
   {
-    display: block;
+    &:not(.phuckPhones)
+    {
+      display: block;
+    }
   }
 }
 
 wc-grid2
 {
   display: grid;
-  grid-template-columns: repeat(2, auto);
+  grid-template-columns: auto 1fr;
   width: 100%;
   overflow-x: auto;
   overflow-y: clip;
   row-gap: 1rem;
   align-items: center;
+
+  &.baseline
+  {
+    align-items: baseline;
+  }
+  &.noGap
+  {
+    row-gap: 0;
+  }
 
   & > .outlined
   {
@@ -1641,7 +1803,8 @@ main > footer
 /* #endregion */
 
 
-
+/* ___________________________________________________________________________ */
+/* #################       .M.O.D.U.L.A.R. .S.T.U.F.F.       ################# */
 .N, .y, .Z, .ZZ
 {
   margin-top: calc(var(--V) + var(--V-extra));

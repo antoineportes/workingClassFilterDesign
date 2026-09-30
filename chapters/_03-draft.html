@@ -1,0 +1,1740 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+
+    <head>
+        <title>Working-class filter design | Chapter III: &nbsp;=&nbsp; I + II</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Antoine Portes"/>
+        <link rel="canonical" href="https://www.antoineportes.com/working-class_filter_design/">
+        <!-- Style -->
+        <link
+          rel="preload"
+          href="../assets/fonts/Ysabeau/YsabeauInfant[wght].woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="../assets/fonts/Ysabeau/YsabeauInfant-Italic[wght].woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="../assets/fonts/Ysabeau/YsabeauSC[wght].woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="../assets/fonts/Unifont/unifont-17.0.05.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="../assets/fonts/EBGaramond/EBGaramond-VariableFont[wght].ttf"
+          as="font"
+          type="font/ttf"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="../assets/fonts/EBGaramond/EBGaramond-Italic-VariableFont[wght].ttf"
+          as="font"
+          type="font/ttf"
+          crossorigin
+        >
+        <link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+        <!-- Manifest -->
+        <link rel="manifest" href="../site.webmanifest">
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+        <link rel="icon" href="../assets/favicon/favicon.svg" type="image/svg+xml">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+        <!-- ======== SCRIPTS ======== -->
+        <!-- #### Layout #### -->
+        <script
+          defer
+          src="../assets/javascript/layout.js"
+        >
+        </script>
+        <!-- #### MathJax #### -->
+        <script
+          async
+          src="../assets/javascript/mathjax/config.js"
+        >
+        </script>
+    </head>
+
+
+
+    <body>
+
+
+      <nav>
+
+        <a
+          title="Home"
+          target="_self"
+          type="text/html"
+          charset="UTF-8"
+          rel="home"
+          href="../"
+        >
+          <h1>
+            Working-class filter design
+          </h1>
+        </a>
+
+        <div class="dropdown">
+          <button
+            onclick="toggleDropdown(event)"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <svg
+              viewBox="0 0 120 120"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <path
+                  style="stroke-width:12;stroke-linecap:round;stroke-linejoin:round;"
+                  d="m 20,20 h 80"
+                />
+                <path
+                  style="stroke-width:12;stroke-linecap:round;stroke-linejoin:round;"
+                  d="m 20,60 h 80"
+                />
+                <path
+                  style="stroke-width:12;stroke-linecap:round;stroke-linejoin:round;"
+                  d="m 20,100 h 80"
+                />
+              </g>
+            </svg>
+            chapters
+          </button>
+          <menu>
+            <!-- I. Analytic saignals -->
+            <li>
+              <a
+                href="./01-analytic-signals.html"
+                rel="prev"
+              >
+                Chapter <span class="small-caps">i</span>: Analytic signals
+              </a>
+            </li>
+            <!-- II. RC -->
+            <li>
+              <a
+                href="./02-RC.html"
+                rel="prev"
+              >
+                Chapter <span class="small-caps">ii</span>: $ RC $
+              </a>
+            </li>
+            <!-- III. = I + II -->
+            <li>
+              <a
+                href="./03-equals-one-plus-two.html"
+                class="current"
+              >
+                Chapter <span class="small-caps">iii</span>:
+                $ \ = \ $ <span class="small-caps">i</span>
+                $ + $ <span class="small-caps">ii</span>
+              </a>
+            </li>
+            <!-- IV. Jargon -->
+            <li>
+              <a
+                href="./04-jargon.html"
+                rel="next"
+              >
+                Chapter <span class="small-caps">iv</span>: Jargon
+              </a>
+            </li>
+            <!-- V. Poles and zeroes -->
+            <li>
+              <a
+                href="./05-poles-and-zeroes.html"
+                rel="next"
+              >
+                Chapter <span class="small-caps">v</span>: Poles and zeroes
+              </a>
+            </li>
+            <!-- VI. More jargon -->
+            <li>
+              <a
+                href="./06-more-jargon.html"
+                rel="next"
+              >
+                Chapter <span class="small-caps">vi</span>: More jargon
+              </a>
+            </li>
+            <!-- VII. Ones and zeroes -->
+            <li>
+              <a
+                href="./07-ones-and-zeroes.html"
+                rel="next"
+              >
+                Chapter <span class="small-caps">vii</span>: Ones and zeroes
+              </a>
+            </li>
+            <!-- Stephen Butterworth -->
+            <li>
+              <a
+                href="./08-stephen-butterworth.html"
+                rel="next"
+              >
+                Chapter <span class="small-caps">viii</span>: Stephen Butterworth
+              </a>
+            </li>
+          </menu>
+        </div>
+
+        <button class="gitHub">
+          <a
+            href="https://github.com/antoineportes/Working-class-filter-design"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="original (GitHub repository)"
+            title="original (GitHub repository)"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 512 512"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g transform="scale(4)">
+                <path
+                  class="octoCat"
+                  d="M 82.374999,128 C 90.249999,128 120,97.285025 120,70.18496 120,35.946913 94.843771,8.0000003 63.890627,8 32.937485,7.9999997 8.0000002,35.946913 8,70.18496 7.9999998,97.043069 37.75,128 45.625,128 Z"
+                />
+                <path
+                  d="M 54.125061,93.559792 C 37.624947,91.494958 25.999934,79.235401 25.999934,63.362485 c 0,-6.452321 2.250058,-13.420951 6.000066,-18.066659 -1.624947,-4.258577 -1.374955,-13.291907 0.499984,-17.034309 4.999967,-0.645219 11.750008,2.064699 15.750008,5.807102 4.749975,-1.548525 9.749942,-2.322787 15.875005,-2.322787 6.125061,0 11.125028,0.774262 15.625011,2.193743 3.875004,-3.613359 10.750041,-6.323277 15.750008,-5.678058 1.749943,3.484315 1.999935,12.517644 0.374987,16.905265 4,4.903796 6.124927,11.485295 6.124927,18.195703 0,15.872916 -11.624877,27.874385 -28.374983,30.068263 4.249992,2.838962 7.125028,9.033332 7.125028,16.131002 v 13.42095 c 0,3.87145 3.125028,6.06519 6.875037,4.51667 C 110.25006,118.59508 128,95.23736 128,66.330625 128,29.810041 99.250025,3.2178539e-7 63.875003,0 28.499984,-3.2178539e-7 2.6122451e-7,29.810041 0,66.330625 -2.4816324e-7,94.979273 17.624947,118.72412 41.374955,127.62841 44.749975,128.91885 48,126.59606 48,123.11175 v -10.32391 c -1.749942,0.7744 -4,1.29058 -6.000066,1.29058 -8.249992,0 -13.124962,-4.64571 -16.624979,-13.29205 C 24,97.302194 22.500049,95.23736 19.625012,94.850229 c -1.499951,-0.129044 -2.000065,-0.774262 -2.000065,-1.548524 0,-1.54866 2.50005,-2.710053 5.000098,-2.710053 3.625013,0 6.74991,2.322921 9.999935,7.097674 2.500048,3.742404 5.124962,5.419974 8.249992,5.419974 3.125028,0 5.124962,-1.1614 8,-4.129537 2.125061,-2.193878 3.750008,-4.129534 5.250089,-5.419971 z"
+                />
+              </g>
+            </svg>
+          </a>
+        </button>
+
+      </nav>
+
+
+
+      <!--  ======  ..C..O..S..M..I..C.. ..W..R..A..P..  ======  -->
+      <wc-cosmic-wrap>
+
+
+        <!-- ==== .L.E.F.T. .P.A.N.E.L. ==== -->
+        <aside>
+          <!-- Side-bar header -->
+          <header>
+            <!-- chapter title -->
+            <h2>
+              <u>Chapter III</u>
+              <br/>
+              $ = \ $
+              <span class="small-caps">i</span>
+              $ + $
+              <span class="small-caps">ii</span>
+            </h2>
+            <!-- arrow -->
+            <button onclick="toggleSidebar()">
+              <span>&xlarr;</span>
+            </button>
+          </header>
+          <!-- Sections list -->
+          <nav>
+            <ul>
+              <!-- top -->
+              <li>
+                <a href="#top">
+                  &uparrow; (Top)
+                </a>
+              </li>
+              <!-- #01 More Calculus (yay!) -->
+              <li>
+                <a
+                  href="#01"
+                  data-target="01"
+                  title="DUMMY"
+                >
+                  01 — More Calculus (yay!)
+                </a>
+              </li>
+              <!-- #02 What is sound? -->
+              <li>
+                <a
+                  href="#02"
+                  data-target="02"
+                  title="DUMMY"
+                >
+                  02 — What is sound?
+                </a>
+              </li>
+              <!-- #03 Where were we? -->
+              <li>
+                <a
+                  href="#03"
+                  data-target="03"
+                  title="DUMMY"
+                >
+                  03 — Where were we?
+                </a>
+              </li>
+              <!-- #04 Pasghetti -->
+              <li>
+                <a
+                  href="#04"
+                  data-target="04"
+                  title="DUMMY"
+                >
+                  04 — Pasghetti
+                </a>
+              </li>
+              <!-- #05 H(s) -->
+              <li>
+                <a
+                  href="#05"
+                  data-target="05"
+                  title="DUMMY"
+                >
+                  05 — $ H(s) $
+                </a>
+              </li>
+              <!-- BONUS: Calculus cheat sheet -->
+              <li>
+                <a
+                  href="#BONUS"
+                  data-target="BONUS"
+                  title="BAR"
+                >
+                  <span class="small-caps">Bonus:</span> Calculus cheat sheet
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="handle"></div>
+        </aside>
+
+
+        <!-- ==== .M.A.I.N. .W.I.N.D.O.W. ==== -->
+        <main>
+
+
+          <!-- == CHAPTER == -->
+          <wc-chapter>
+            <!-- = Chapter title = -->
+            <h2>
+              <u>Chapter III</u>:
+              $ \ = \ $
+              <span class="small-caps">i</span>
+              $ + $
+              <span class="small-caps">ii</span>
+            </h2>
+
+
+            <!-- = Section #01 = -->
+            <section id="01">
+              <!-- top quote -->
+              <header>
+                <blockquote>
+                  <q>So schreitet in dem engen Breterhaus
+                  <br>
+                  Den ganzen Kreis der Schöpfung aus
+                  <br/>
+                  Und wandelt, mit bedächtger Schnelle,
+                  <br/>
+                  Vom Himmel, durch die Welt, zur Hölle.</q>
+                  <footer>
+                    — Goethe (<cite>Faust I</cite>)
+                  </footer>
+                </blockquote>
+              </header>
+              <!-- section title -->
+              <h3>More Calculus (yay!)</h3>
+
+              <wc-ppp>
+                <wc-comment>
+                  <h4 class="edit">Edit</h4>
+                  <wc-pp>
+                    <p class="S">
+                      This section is me starting to learn Calculus.
+                      It's one of the earliest pieces I've written for this book...
+                      long before the second half of Chapter
+                      <span class="small-caps">i</span>.
+                      <br/>
+                      Not that I'm mature now... but back then it was even worse.
+                    </p>
+                    <p class="y">
+                      I'm not explaining like you're dumb:
+                      I'm dumb and trying to understand.
+                      <br/>
+                      Please don't take it the wrong way.
+                    </p>
+                    <p class="y zz">
+                      (I've fixed what was borderline false or highly misleading
+                      — while trying my best to go easy on revisionism...)
+                    </p>
+                    <p class="N">
+                      If you've read the full Chapter <span class="small-caps">i</span>
+                      and this feels like regression,
+                      it's because you're assuming time is linear.
+                    </p>
+                  </wc-pp>
+                </wc-comment>
+              </wc-ppp>
+              <wc-ppp>
+                <p>
+                  Let's say: $ \quad y \ = \ f(x) \ $.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Then let's say we increase $ x $ by an infinitesimal amount $ dx $;
+                  <br/>
+                  $ y $ will receive a corresponding variation $ dy $
+                  (increase or decrease or stagnation, depending on $ f $).
+                </p>
+                <wc-math class="y s hybrid">
+                  $$
+                    \text{Then:} \quad
+                    f(x + dx) \ = \ y + dy \ = \ f(x) + dy \quad \iff \quad
+                    dy \ = \ f(x + dx) - f(x)
+                  $$
+                </wc-math>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p class="s">
+                  Let's call back our snail from
+                  <a
+                    href="./02-RC.html#06"
+                    target="_blank"
+                    rel="help"
+                    type="text/html"
+                    hreflang="en"
+                    charset="UTF-8"
+                    title="section #06 — Differential equations [new tab]"
+                  >Chapter <span class="small-caps">ii</span></a>.
+                </p>
+                <p>
+                  If $ x $ is time and $ y $ is distance, then $ dy $ is:
+                  <cite>how much distance the snail has covered during the time $ dx $</cite>.
+                </p>
+                <p class="y">
+                  So $ dy $ is a distance.
+                </p>
+                <p class="s">
+                  Its value is dependent upon the duration of $ dx $.
+                </p>
+                <p class="s">
+                  So if we want the rate of change of $ y $
+                  (the speed of the snail),
+                  we need to normalise $ dy $ relatively to $ dx $.
+                </p>
+                <p>
+                  That is: we don't want $ dy $, we want $ dy $ <b>per</b> $ dx $
+                  — whose shortened notation is: $ \quad dy/dx \ $.
+                </p>
+                <p class="y">
+                  The differential operator <mark>$ d $</mark>
+                  is both in the numerator and the denominator,
+                  so it kind of cancels out... (?)
+                  <br/>
+                  Except: integrals...
+                  <br/>
+                  So, better yet: it's dimension-less.
+                  <br/>
+                  (Which is why we're allowed to define speed as
+                  <mark>distance over time</mark> without mention of infinitesimal change.)
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <wc-math class="hybrid y s">
+                  $$
+                    \text{If:} \quad dy \ = \ f(x + dx) - f(x) \quad
+                    \text{then:} \quad \frac{dy}{dx} \ = \ \frac{f(x + dx) - f(x)}{dx}
+                  $$
+                </wc-math>
+                <wc-comment>
+                  <p>
+                    Or, rather, since dx is infinitesimal:
+                  </p>
+                  <wc-split class="s">
+                    <wc-math class="Z">
+                      $$
+                        \frac{dy}{dx} \ = \ \lim_{dx \to 0} \frac{f(x + dx) - f(x)}{dx}
+                      $$
+                    </wc-math>
+                    <wc-comment>
+                      <p>
+                        The limit was implied already in the word <mark>infinitesimal</mark>,
+                        but adding such redundancy to the formula frees it from needing
+                        an explanatory paragraph.
+                      </p>
+                    </wc-comment>
+                  </wc-split>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Now let's define $ \ g(x) \ $
+                  so that $ \ f(x) \ = \ \alpha \, g(x) \ $
+                  — $ \alpha $ being a constant.
+                </p>
+                <p class="n">
+                  Let's also define $ \ df = dy \ $
+                  so that we can distinguish it from $ dg $
+                  (the variation of $ \ g(x) \ $ corresponding to an increase of $ x $ by $ dx $).
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>Then:</p>
+                <wc-math class="Z s">
+                  $$
+                    \frac{dy}{dx} \ = \ \frac{df}{dx} \
+                    = \ \lim_{dx \to 0} \frac{\alpha \, g(x + dx) - \alpha \, g(x)}{dx} \
+                    = \ \lim_{dx \to 0} \alpha \, \frac{g(x + dx) - g(x)}{dx}
+                  $$
+                </wc-math>
+                <wc-math class="Z">
+                  $$
+                    \hphantom{ \frac{dy}{dx} \ }
+                    = \ \alpha \cdot \lim_{dx \to 0} \frac{g(x + dx) - g(x)}{dx} \
+                    = \ \alpha \, dg/dx
+                  $$
+                </wc-math>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  In what precedes, I've been taking for granted that
+                  $ \ f(x) \ $ and $ \ g(x) \ $ have no discontinuity
+                  and share the same domain of definition.
+                </p>
+                <p class="zz">
+                  It's actually not necessarily granted.
+                </p>
+                <p>
+                  If it's not true, this will break our equations.
+                  <br/>
+                  Which is another way of saying that continuity and equal domain of definition
+                  are the conditions for our equations to be true
+                  (otherwise they would require explicit domain restrictions).
+                </p>
+                <wc-comment class="y">
+                  <p>
+                    By the way: I had a wrong concept of these terms for a while;
+                    clarification won't hurt.
+                  </p>
+                  <ul>
+                    <li>
+                      The <b>domain</b> of a function is the set of its input (its variable).
+                      <br/>
+                      E.g.: $ \ f(x) \ = \ 1/x \ $ is defined for all non-zero complex $ x $.
+                      <br/>
+                      So: $ \ x \ \in \ \mathbb{C} - 0 \ $.
+                    </li>
+                    <li>
+                      The <b>range</b> of a function is the set of its output.
+                      <br/>
+                      E.g.: $ \ f(z) \ = \ \exp \bigl( \Re(z) \bigr) \ $ is real and strictly positive.
+                      <br/>
+                      So: $ \ f(z) \ \in \ \mathbb{R} \gt 0 \ $.
+                    </li>
+                    <li>
+                      A <b>discontinuity</b> (without further explanation)
+                      means a <strong>curve</strong> discontinuity.
+                      <br/>
+                      E.g. (1): $ \ f(x) \ = \ \lfloor x \rfloor \ $
+                      (meaning: <mark>$ \ \floor(x) \ $</mark>)
+                      has a continuous domain and a discontinuity at each integer.
+                      <br/>
+                      E.g. (2): $ \ f(x) \ = \ \tan(x \, \pi/2) \ $ is not discontinuous per se,
+                      because even though (or rather: precisely because)
+                      its curve jumps from $ +\infty $ to $ -\infty $ at each odd integer,
+                      these points are not in its domain:
+                      <br/>
+                      if you travel from $ 2 $ to $ 1 $ on $ \ \tan(x \, π/2) \ $'s curve,
+                      you'll end up at $ -\infty $;
+                      <br/>
+                      if you come from zero, you'll end up at $ +\infty $.
+                      Left limit $ \neq $ right limit.
+                      The point is multivalued, ergo not in the domain.
+                      <br/>
+                      It's a <strong>domain</strong> discontinuity,
+                      not a stricto sensu discontinuity.
+                      <br/>
+                      You don't have a discontinuity outside of your domain.
+                      <br/>
+                      You don't have <wc-ascii>[whatever]</wc-ascii> where you don't exist.
+                      <br/>
+                      I won't <mark>meet you on the dark side of the moon</mark>
+                      if <mark>there is no dark side of the moon really</mark>.
+                    </li>
+                  </ul>
+                </wc-comment>
+                <p>
+                  These equations prove the constant factor rule.
+                  This ppp describes the conditions under which said rule is valid.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <h4>Chain rule</h4>
+                <p class="n">
+                  Ok, let's start over and have: $ \quad h(x) \ = \ f \bigl( g(x) \bigr) \ $.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <wc-comment>
+                  <h5>Actually, no.</h5>
+                  <wc-pp>
+                    <p>
+                      One thing I really appreciate about the Leibnizian notation:
+                      it embeds most derivation rules in the form of algebraic relations.
+                    </p>
+                    <p class="zz">
+                      E.g.: $ \ d(\alpha \, f)/dx \ = \ \alpha \, df/dx \ $ ...
+                    </p>
+                    <p>
+                      Not intended as actual algebraic equivalence,
+                      more like encoded mnemonics
+                      — not operational Calculus yet (embryonic perhaps?),
+                      but very useful and clever in that regard.
+                    </p>
+                  </wc-pp>
+                  <wc-pp>
+                    <p>
+                      The down side: not exactly swift nor lightweight
+                      — can be cumbersome.
+                    </p>
+                    <p class="zz">
+                      E.g.:  right now, when the composition of two functions
+                      requires defining a third one.
+                    </p>
+                    <p>
+                      In this very case, ok.
+                      But if you're trying to generalise to an undefined number of compositions,
+                      Leibnizian notation becomes pretty much inapt.
+                    </p>
+                  </wc-pp>
+                  <wc-pp>
+                  <p>
+                    So let's use Lagrange's notation (see Chapter <span class="small-caps">i</span>,
+                    <a
+                      href="./01-analytic-signals.html#08"
+                      target="_blank"
+                      rel="help"
+                      type="text/html"
+                      hreflang="en"
+                      charset="UTF-8"
+                      title="[new tab]"
+                    >#08</a>).
+                  </p>
+                  <p class="zz">
+                    And the ring composition operator:
+                    <a
+                      title="Wikipedia.org | Function composition"
+                      target="_blank"
+                      type="text/html"
+                      charset="UTF-8"
+                      rel="external"
+                      href="https://en.wikipedia.org/wiki/Function_composition"
+                    >$ \ \circ $</a>
+                  </p>
+                  <p>
+                    (I couldn't find who came up with it,
+                    but I've seen it in papers from the 1940s
+                    and noticed its absence in 1930s papers...)
+                  </p>
+                  </wc-pp>
+                  <wc-pp>
+                    <p class="s">
+                      Now $ \ \bigl(f \, \circ \, g \bigr)(x) \ $
+                      means $ \ f \bigl( g(x) \bigr) \ $
+                      and $ \ \bigl(f \, \circ \, g \bigr)'(x) \ $
+                      is its first derivative with respect to $ x $.
+                    </p>
+                    <p>
+                      No need for $ \ h(x) \ $.
+                    </p>
+                  </wc-pp>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <h4>Chain rule</h4>
+                [...]
+              </wc-ppp>
+
+
+            </section><!-- end #01 -->
+
+
+            <!-- = Section #02 = -->
+            <section id="02">
+              <!-- section title -->
+              <h3>02 — dummy</h3>
+
+              <wc-ppp>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+              </wc-ppp>
+
+            </section><!-- end #02 -->
+
+
+            <!-- section #03 -->
+            <section id="03">
+              <!-- section title -->
+              <h3>03 — dummy</h3>
+
+              <wc-ppp>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+              </wc-ppp>
+
+            </section><!-- end #03 -->
+
+
+            <!-- section #04 -->
+            <section id="04">
+              <!-- top quote -->
+              <header>
+                <blockquote>
+                  <q>Look out honey 'cause I'm using technology.</q>
+                  <footer>
+                    — Iggy Pop (<cite>Search and Destroy</cite>)
+                  </footer>
+                </blockquote>
+              </header>
+              <!-- section title -->
+              <h3>04 — Pasghetti</h3>
+
+              <wc-ppp>
+                <p>
+                  Some silly people do not enjoy hardcore mathematics.
+                </p>
+                <p class="zz">
+                  If you're one of them, you can breathe now:
+                  we're about to doodle our path around.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Back to the capacitor.
+                </p>
+                <p>
+                  Let's simplify the notation:
+                </p>
+                <ul class="y">
+                  <li>
+                    $ x \ = \ X(s) \exp (st) \qquad $ [input]
+                  </li>
+                  <li>
+                    $ y \ = \ Y(s) \exp (st) \qquad $ [output: voltage across $ C \, $]
+                  </li>
+                </ul>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Then:
+                </p>
+                <wc-math class="Z">
+                  $$
+                    y \ = \ \int \omega_c \, (x - y)
+                  $$
+                </wc-math>
+                <p class="s">
+                  where we got rid of the terms which contributed to $ DC $
+                  ($ t_0 $ and $ \ y(t_0) \ $).
+                </p>
+                <p>
+                  The integration starts whenever and always ends right now.
+                  The differential is time ($ dt $ or $ d\tau $) but now it's implied.
+                  <br/>
+                  <span class="small-caps">This is not a valid expression.</span>
+                  <br/>
+                  But it helps reduce the signal path to its core elements.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Let's decompose the formula:
+                </p>
+                <ul class="y">
+                  <li>$ \alpha \ = \ x - y $</li>
+                  <li>$ \beta \ = \ \omega_c \, \alpha $</li>
+                  <li>$ \gamma \ = \ \int \, \beta $</li>
+                </ul>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p class="s">
+                  Almost there. But $ \int $ ?
+                </p>
+                <p>
+                  Chain rule and the fact that $ \ \exp(x) \ $
+                  is its own derivative give:
+                  $ \ d \exp(st) / dt \ = \ s \, \exp(st) \ $.
+                </p>
+                <p>
+                  So if our input is a complex sinusoid,
+                  multiplying by $ s $ is differentiating — or:
+                  $ s $ is a differentiator.
+                  <br/>
+                  (I didn't just coin
+                  <a
+                    title="Wikipedia.org | Differentiator"
+                    target="_blank"
+                    type="text/html"
+                    charset="UTF-8"
+                    rel="external"
+                    href="https://en.wikipedia.org/wiki/Differentiator"
+                  >
+                    the term</a>)
+                </p>
+                <wc-pp class="outlined y zz">
+                  <h5 title="reason: way too much bullshit.">
+                    Non-negotiable revisionist fix...
+                  </h5>
+                  <p class="zz">
+                    If $ \ \exp(x) \ $ is its own derivative,
+                    then it's also its own antiderivative.
+                  </p>
+                  <p>
+                    Then, chain rule and constant factor rule give:
+                    $ \ \int \, \exp(st) \ = \ \exp(st) / s \, + \, c_0 \ $.
+                    <br/>
+                    (Where $ c_0 $ is a <b>time domain</b> constant determined by initial conditions.)
+                  </p>
+                  <p class="y">
+                    So, in the Laplace domain, dividing by $ s $
+                    (or multiplying by $ \ 1/s \ $) is integrating.
+                  </p>
+                  <p class="s">
+                    Then sum rule ensures it remains true across the signal's full spectrum,
+                    assuming it's expressed as an inverse Laplace transform.
+                  </p>
+                  <wc-comment class="S">
+                    <p class="s">
+                      Integrals are pseudo-continuous sums.
+                      <br/>
+                      Nested integrals are nested pseudo-continuous sums.
+                    </p>
+                    <wc-comment>
+                      <p class="s">
+                        Or pseudo-continuous nested sums?
+                        <br/>
+                        Is meta-commutativity a thing?
+                      </p>
+                      <wc-comment>
+                        <p>
+                          <a
+                            title="Wikipedia.org | Guido Fubini"
+                            target="_blank"
+                            type="text/html"
+                            charset="UTF-8"
+                            rel="external"
+                            href="https://en.wikipedia.org/wiki/Guido_Fubini"
+                          >Guido Fubini</a>
+                          says
+                          <a
+                            title="Wikipedia.org | Fubini's theorem"
+                            target="_blank"
+                            type="text/html"
+                            charset="UTF-8"
+                            rel="external"
+                            href="https://en.wikipedia.org/wiki/Fubini's_theorem"
+                          >yes</a>.
+                        </p>
+                      </wc-comment>
+                    </wc-comment>
+                  </wc-comment>
+                  <p class="N">
+                    How $ \ \int \, (dy/dt) \, dt \ = \ y \ $
+                    is analogous to how $ \ k x / k \ = \ x \ $...
+                    <br/>
+                    Here, the analogy becomes an algebraic equivalence.
+                  </p>
+                  <p class="zz">
+                    Meet
+                    <a
+                      title="Wikipedia.org | Operational calculus"
+                      target="_blank"
+                      type="text/html"
+                      charset="UTF-8"
+                      rel="external"
+                      href="https://en.wikipedia.org/wiki/Operational_calculus"
+                    >operational Calculus</a>.
+                  </p>
+                </wc-pp>
+              </wc-ppp>
+
+              <wc-ppp>
+                [...]
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Instead of 3 switchable outputs,
+                  we could have a variable gain for each and make our mixture.
+                </p>
+                <p class="zz">
+                  How about <mark>$ m $</mark> as in <mark>$ m $ixture</mark>?
+                </p>
+                <wc-diagram class="y" id="03-04-26">
+                  <figure>
+                    <svg
+                      version='1.1'
+                      xmlns='http://www.w3.org/2000/svg'
+                      xmlns:xlink='http://www.w3.org/1999/xlink'
+                      width='355.344219pt'
+                      height='180.416956pt'
+                      viewBox='-72.000004 -72.000003 355.344219 180.416956'
+                    >
+                      <defs>
+                      <path id="03-04-26-g0-966" d='M3.368369 0V-.320797H3.068493C2.405978-.320797 2.405978-.376588 2.405978-.606725V-4.470237C2.405978-4.679452 2.364134-4.700374 2.147945-4.700374C1.701619-4.261021 1.080946-4.254047 .760149-4.254047V-3.93325C.962391-3.93325 1.429639-3.93325 1.771357-4.107597V-.606725C1.771357-.376588 1.771357-.320797 1.108842-.320797H.808966V0L2.085181-.027895L3.368369 0Z'/>
+                      <path id="03-04-26-g0-1013" d='M3.598506-1.338979H3.291656C3.263761-1.157659 3.194022-.760149 3.11731-.697385C3.068493-.662516 2.545455-.662516 2.447821-.662516H1.255293C1.917808-1.248319 2.161893-1.443587 2.580324-1.771357C3.096389-2.182814 3.591532-2.629141 3.591532-3.305604C3.591532-4.170361 2.831382-4.700374 1.924782-4.700374C1.046077-4.700374 .439352-4.072727 .439352-3.417186C.439352-3.033624 .774097-2.991781 .843836-2.991781C1.018182-2.991781 1.248319-3.124284 1.248319-3.396264C1.248319-3.521793 1.192528-3.800747 .857783-3.800747C1.046077-4.233126 1.499377-4.379577 1.820174-4.379577C2.496638-4.379577 2.84533-3.856538 2.84533-3.305604C2.84533-2.712827 2.419925-2.238605 2.196762-1.987547L.523039-.334745C.439352-.258032 .439352-.230137 .439352 0H3.375342L3.598506-1.338979Z'/>
+                      <path id="03-04-26-g0-1032" d='M3.668244-2.259527C3.668244-3.02665 3.577584-3.591532 3.249813-4.086675C3.033624-4.414446 2.580324-4.700374 2.015442-4.700374C.36264-4.700374 .36264-2.761644 .36264-2.259527S.36264 .139477 2.015442 .139477S3.668244-1.75741 3.668244-2.259527ZM2.963885-2.350187C2.963885-1.834122 2.963885-1.325031 2.873225-.885679C2.740722-.27198 2.287422-.125529 2.015442-.125529C1.701619-.125529 1.297136-.306849 1.164633-.857783C1.066999-1.26924 1.066999-1.834122 1.066999-2.350187C1.066999-2.859278 1.066999-3.382316 1.171606-3.765878C1.311083-4.29589 1.736488-4.435367 2.015442-4.435367C2.385056-4.435367 2.726775-4.219178 2.84533-3.828643C2.956912-3.452055 2.963885-2.956912 2.963885-2.350187Z'/>
+                      <path id="03-04-26-g0-1406" d='M3.521793-.753176C3.521793-.808966 3.438107-.9066 3.368369-.9066C3.312578-.9066 3.284682-.885679 3.228892-.822914C2.698879-.195268 1.896887-.195268 1.771357-.195268C1.290162-.195268 1.080946-.509091 1.080946-.934496C1.080946-1.136737 1.17858-1.882939 1.534247-2.357161C1.792279-2.691905 2.140971-2.880199 2.48269-2.880199C2.580324-2.880199 2.901121-2.866252 3.019676-2.726775C2.817435-2.698879 2.698879-2.475716 2.698879-2.315318C2.698879-2.106102 2.873225-2.022416 3.005729-2.022416C3.166127-2.022416 3.438107-2.147945 3.438107-2.503611C3.438107-3.005729 2.866252-3.145205 2.48269-3.145205C1.422665-3.145205 .432379-2.161893 .432379-1.17858C.432379-.564882 .864757 .069738 1.75741 .069738C2.949938 .069738 3.521793-.641594 3.521793-.753176Z'/>
+                      <path id="03-04-26-g1-12" d='M7.292653-2.540473C7.292653-2.669988 7.173101-2.789539 7.043587-2.789539H4.174346V-5.65878C4.174346-5.788294 4.054795-5.907846 3.92528-5.907846S3.676214-5.788294 3.676214-5.65878V-2.789539H.806974C.67746-2.789539 .557908-2.669988 .557908-2.540473S.67746-2.291407 .806974-2.291407H3.676214V.577833C3.676214 .707347 3.795766 .826899 3.92528 .826899S4.174346 .707347 4.174346 .577833V-2.291407H7.043587C7.173101-2.291407 7.292653-2.410959 7.292653-2.540473Z'/>
+                      <path id="03-04-26-g1-16" d='M4.533001-7.32254C4.533001-7.452055 4.41345-7.571606 4.283935-7.571606C4.174346-7.571606 4.084682-7.501868 4.044832-7.412204L.56787 2.15193C.557908 2.181818 .557908 2.221669 .557908 2.241594C.557908 2.371108 .67746 2.49066 .806974 2.49066C.916563 2.49066 1.006227 2.420922 1.046077 2.331258L4.523039-7.232877C4.533001-7.262765 4.533001-7.302615 4.533001-7.32254Z'/>
+                      <path id="03-04-26-g1-18" d='M4.273973 0V-.408468H3.905355C3.048568-.408468 3.028643-.478207 3.028643-.836862V-6.425903C3.028643-6.665006 3.028643-6.734745 2.729763-6.734745C2.11208-6.097136 1.255293-6.097136 .886675-6.097136V-5.688667C1.135741-5.688667 1.733499-5.688667 2.191781-5.917808V-.836862C2.191781-.488169 2.171856-.408468 1.315068-.408468H.946451V0C1.344956-.029888 2.211706-.029888 2.610212-.029888S3.875467-.029888 4.273973 0Z'/>
+                      <path id="03-04-26-g1-19" d='M4.582814-1.833126H4.234122C4.174346-1.494396 4.104608-1.066002 4.014944-.926526C3.965131-.86675 3.327522-.86675 3.108344-.86675H1.43462L2.400996-1.803238C3.955168-3.178082 4.572852-3.73599 4.572852-4.752179C4.572852-5.907846 3.646326-6.734745 2.410959-6.734745C1.265255-6.734745 .498132-5.788294 .498132-4.881694C.498132-4.273973 1.046077-4.273973 1.075965-4.273973C1.255293-4.273973 1.643836-4.403487 1.643836-4.851806C1.643836-5.13076 1.444583-5.419676 1.066002-5.419676C.986301-5.419676 .956413-5.419676 .956413-5.379826C1.205479-5.977584 1.723537-6.326276 2.281445-6.326276C3.158157-6.326276 3.566625-5.559153 3.566625-4.752179C3.566625-3.965131 3.078456-3.198007 2.530511-2.580324L.617684-.448319C.498132-.328767 .498132-.288917 .498132 0H4.283935L4.582814-1.833126Z'/>
+                      <path id="03-04-26-g1-1273" d='M8.109589-4.333748C8.109589-5.758406 7.232877-6.90411 5.718555-6.90411H2.371108C2.181818-6.90411 2.022416-6.90411 2.022416-6.665006C2.022416-6.495641 2.161893-6.495641 2.361146-6.495641C2.49066-6.495641 2.669988-6.485679 2.779577-6.475716C2.938979-6.455791 2.958904-6.445828 2.958904-6.366127C2.958904-6.336239 2.948941-6.306351 2.919054-6.1868L1.58406-.836862C1.484433-.448319 1.474471-.408468 .727273-.408468C.557908-.408468 .398506-.408468 .398506-.169365C.398506 0 .537983 0 .727273 0H4.024907C6.117061 0 8.109589-2.132005 8.109589-4.333748ZM7.143213-4.702366C7.143213-4.214197 6.94396-2.600249 6.107098-1.514321C5.818182-1.145704 5.051059-.408468 3.845579-.408468H2.719801C2.580324-.408468 2.560399-.408468 2.510585-.418431C2.410959-.428394 2.410959-.418431 2.420922-.468244C2.420922-.498132 2.420922-.508095 2.470735-.687422L3.835616-6.156912C3.92528-6.495641 3.92528-6.495641 4.323786-6.495641H5.389788C6.356164-6.495641 7.143213-5.987547 7.143213-4.702366Z'/>
+                      <path id="03-04-26-g1-1308" d='M8.547945-1.474471C8.547945-1.62391 8.408468-1.62391 8.37858-1.62391C8.229141-1.62391 8.229141-1.554172 8.179328-1.404732C8.029888-.886675 7.731009-.209215 7.212951-.209215C7.073474-.209215 7.023661-.278954 7.023661-.488169C7.023661-.727273 7.113325-.956413 7.202989-1.175592C7.392279-1.693649 7.81071-2.809465 7.81071-3.387298C7.81071-4.054795 7.382316-4.503113 6.615193-4.503113S5.32005-4.044832 5.031133-3.626401C5.031133-3.616438 5.001245-3.975093 4.702366-4.234122C4.443337-4.4533 4.104608-4.503113 3.855542-4.503113C2.938979-4.503113 2.430884-3.845579 2.34122-3.726027C2.30137-4.184309 1.853051-4.503113 1.384807-4.503113C.896638-4.503113 .697385-4.084682 .607721-3.905355C.418431-3.556663 .288917-2.958904 .288917-2.919054C.288917-2.769614 .458281-2.769614 .458281-2.769614C.577833-2.769614 .607721-2.799502 .67746-3.038605C.846824-3.73599 1.026152-4.184309 1.354919-4.184309C1.504359-4.184309 1.613948-4.124533 1.613948-3.775841C1.613948-3.576588 1.58406-3.466999 1.454545-2.948941L.876712-.647572C.846824-.498132 .787049-.268991 .787049-.209215C.787049 0 .966376 .109589 1.125778 .109589C1.255293 .109589 1.464508 .019925 1.544209-.199253C1.554172-.219178 1.673724-.697385 1.733499-.946451L1.952677-1.843088C2.012453-2.062267 2.072229-2.281445 2.122042-2.510585L2.251557-2.998755C2.391034-3.307597 2.909091-4.184309 3.825654-4.184309C4.234122-4.184309 4.313823-3.855542 4.313823-3.536737C4.313823-3.297634 4.244085-3.01868 4.164384-2.719801L3.88543-1.564134C3.785803-1.195517 3.775841-1.135741 3.686177-.806974C3.646326-.607721 3.556663-.268991 3.556663-.209215C3.556663 0 3.73599 .109589 3.895392 .109589C4.244085 .109589 4.313823-.179328 4.393524-.498132L4.991283-2.899128C5.021171-3.01868 5.529265-4.184309 6.585305-4.184309C6.973848-4.184309 7.073474-3.88543 7.073474-3.536737C7.073474-2.978829 6.655044-1.853051 6.455791-1.325031C6.366127-1.085928 6.326276-.966376 6.326276-.757161C6.326276-.268991 6.704857 .109589 7.193026 .109589C8.169365 .109589 8.547945-1.384807 8.547945-1.474471Z'/>
+                      <path id="03-04-26-g1-1314" d='M4.283935-3.596513C4.283935-4.064757 3.825654-4.503113 3.048568-4.503113C1.693649-4.503113 1.315068-3.447073 1.315068-2.998755C1.315068-2.181818 2.092154-2.022416 2.381071-1.96264C2.899128-1.863014 3.377335-1.763387 3.377335-1.255293C3.377335-1.006227 3.158157-.209215 2.002491-.209215C1.863014-.209215 1.125778-.209215 .946451-.627646C1.265255-.587796 1.544209-.916563 1.544209-1.215442C1.544209-1.474471 1.354919-1.613948 1.125778-1.613948C.846824-1.613948 .518057-1.384807 .518057-.9066C.518057-.308842 1.115816 .109589 1.992528 .109589C3.646326 .109589 4.044832-1.135741 4.044832-1.594022C4.044832-1.972603 3.845579-2.231631 3.726027-2.361146C3.437111-2.650062 3.138232-2.699875 2.699875-2.789539C2.34122-2.86924 1.982565-2.929016 1.982565-3.337484C1.982565-3.616438 2.201743-4.184309 3.048568-4.184309C3.297634-4.184309 3.755915-4.11457 3.875467-3.825654C3.646326-3.815691 3.417186-3.566625 3.417186-3.327522C3.417186-3.178082 3.526775-2.988792 3.775841-2.988792C4.014944-2.988792 4.283935-3.178082 4.283935-3.596513Z'/>
+                      <path id="03-04-26-g1-1319" d='M5.349938-3.795766C5.349938-4.353674 4.722291-4.503113 4.373599-4.503113C3.765878-4.503113 3.407223-3.955168 3.337484-3.815691C3.118306-4.393524 2.540473-4.503113 2.251557-4.503113C1.185554-4.503113 .597758-3.178082 .597758-2.919054C.597758-2.769614 .767123-2.769614 .767123-2.769614C.86675-2.769614 .916563-2.809465 .946451-2.919054C1.275218-3.945205 1.902864-4.184309 2.231631-4.184309C2.410959-4.184309 2.719801-4.104608 2.719801-3.566625C2.719801-3.267746 2.550436-2.600249 2.181818-1.205479C2.022416-.597758 1.703611-.209215 1.285181-.209215C1.225405-.209215 1.006227-.209215 .916563-.268991C1.05604-.288917 1.305106-.52802 1.305106-.826899C1.305106-1.135741 1.046077-1.225405 .886675-1.225405C.56787-1.225405 .288917-.936488 .288917-.597758C.288917-.109589 .826899 .109589 1.275218 .109589C1.96264 .109589 2.331258-.617684 2.311333-.617684C2.400996-.298879 2.779577 .109589 3.39726 .109589C4.4533 .109589 5.041096-1.215442 5.041096-1.474471C5.041096-1.62391 4.901619-1.62391 4.871731-1.62391C4.752179-1.62391 4.712329-1.554172 4.692403-1.474471C4.373599-.438356 3.726027-.209215 3.417186-.209215C3.058531-.209215 2.919054-.488169 2.919054-.816936C2.919054-1.026152 2.978829-1.24533 3.088418-1.683686L3.427148-3.048568C3.486924-3.307597 3.706102-4.184309 4.363636-4.184309C4.41345-4.184309 4.64259-4.184309 4.722291-4.134496C4.552927-4.104608 4.333748-3.825654 4.333748-3.566625C4.333748-3.39726 4.463263-3.16812 4.762142-3.16812C4.991283-3.16812 5.349938-3.367372 5.349938-3.795766Z'/>
+                      <path id="03-04-26-g1-2615" d='M7.292653-2.540473C7.292653-2.669988 7.173101-2.789539 7.043587-2.789539H.806974C.67746-2.789539 .557908-2.669988 .557908-2.540473S.67746-2.291407 .806974-2.291407H7.043587C7.173101-2.291407 7.292653-2.410959 7.292653-2.540473Z'/>
+                      <path id="03-04-26-g1-4482" d='M6.117061-3.755915C6.117061-4.024907 6.067248-4.26401 5.897883-4.403487C5.838107-4.463263 5.738481-4.503113 5.638854-4.503113C5.50934-4.503113 5.3599-4.433375 5.250311-4.323786C5.160648-4.224159 5.100872-4.094645 5.100872-3.975093C5.100872-3.865504 5.150685-3.765878 5.230386-3.686177C5.469489-3.476961 5.589041-3.188045 5.589041-2.849315C5.589041-2.729763 5.579078-2.610212 5.549191-2.49066C5.32005-1.594022 4.762142-.707347 4.004981-.707347C3.466999-.707347 3.16812-1.05604 3.078456-1.544209C3.20797-1.8132 3.307597-2.122042 3.377335-2.420922C3.39726-2.510585 3.417186-2.600249 3.417186-2.689913C3.417186-2.849315 3.347447-2.998755 3.178082-2.998755C2.958904-2.998755 2.839352-2.709838 2.789539-2.49066C2.709838-2.181818 2.669988-1.872976 2.660025-1.594022C2.34122-1.075965 1.882939-.707347 1.354919-.707347C.777086-.707347 .537983-1.165629 .537983-1.783313C.537983-1.982565 .56787-2.201743 .617684-2.420922C.767123-3.008717 1.115816-3.556663 1.494396-4.084682C1.524284-4.134496 1.554172-4.194271 1.554172-4.244085C1.554172-4.323786 1.494396-4.393524 1.444583-4.423412C1.404732-4.4533 1.354919-4.4533 1.325031-4.4533C1.255293-4.4533 1.165629-4.41345 1.105853-4.343711C.697385-3.765878 .438356-3.128269 .278954-2.49066C.179328-2.11208 .129514-1.713574 .129514-1.364882C.129514-.547945 .438356 .109589 1.225405 .109589C1.872976 .109589 2.410959-.348692 2.719801-.856787C2.809465-.358655 3.188045 .109589 3.875467 .109589C4.941469 .109589 5.589041-1.205479 5.88792-2.420922C5.997509-2.849315 6.117061-3.347447 6.117061-3.755915Z'/>
+                      <path id="03-04-26-g2-28" d='M4.811955-.886675V-1.444583H4.562889V-.886675C4.562889-.308842 4.313823-.249066 4.204234-.249066C3.875467-.249066 3.835616-.697385 3.835616-.747198V-2.739726C3.835616-3.158157 3.835616-3.5467 3.476961-3.915318C3.088418-4.303861 2.590286-4.463263 2.11208-4.463263C1.295143-4.463263 .607721-3.995019 .607721-3.337484C.607721-3.038605 .806974-2.86924 1.066002-2.86924C1.344956-2.86924 1.524284-3.068493 1.524284-3.327522C1.524284-3.447073 1.474471-3.775841 1.016189-3.785803C1.285181-4.134496 1.77335-4.244085 2.092154-4.244085C2.580324-4.244085 3.148194-3.855542 3.148194-2.968867V-2.600249C2.6401-2.570361 1.942715-2.540473 1.315068-2.241594C.56787-1.902864 .318804-1.384807 .318804-.946451C.318804-.139477 1.285181 .109589 1.912827 .109589C2.570361 .109589 3.028643-.288917 3.217933-.757161C3.257783-.358655 3.526775 .059776 3.995019 .059776C4.204234 .059776 4.811955-.079701 4.811955-.886675ZM3.148194-1.39477C3.148194-.448319 2.430884-.109589 1.982565-.109589C1.494396-.109589 1.085928-.458281 1.085928-.956413C1.085928-1.504359 1.504359-2.331258 3.148194-2.391034V-1.39477Z'/>
+                      <path id="03-04-26-g2-35" d='M5.190535-2.15193C5.190535-3.417186 4.214197-4.403487 3.078456-4.403487C2.30137-4.403487 1.872976-3.935243 1.713574-3.755915V-6.914072L.278954-6.804483V-6.495641C.976339-6.495641 1.05604-6.425903 1.05604-5.937733V0H1.305106L1.663761-.617684C1.8132-.388543 2.231631 .109589 2.968867 .109589C4.154421 .109589 5.190535-.86675 5.190535-2.15193ZM4.363636-2.161893C4.363636-1.793275 4.343711-1.195517 4.054795-.747198C3.845579-.438356 3.466999-.109589 2.929016-.109589C2.480697-.109589 2.122042-.348692 1.882939-.71731C1.743462-.926526 1.743462-.956413 1.743462-1.135741V-3.188045C1.743462-3.377335 1.743462-3.387298 1.853051-3.5467C2.241594-4.104608 2.789539-4.184309 3.028643-4.184309C3.476961-4.184309 3.835616-3.92528 4.07472-3.5467C4.333748-3.138232 4.363636-2.570361 4.363636-2.161893Z'/>
+                      <path id="03-04-26-g2-43" d='M4.134496-1.185554C4.134496-1.285181 4.034869-1.285181 4.004981-1.285181C3.915318-1.285181 3.895392-1.24533 3.875467-1.185554C3.58655-.259029 2.938979-.139477 2.570361-.139477C2.042341-.139477 1.165629-.56787 1.165629-2.171856C1.165629-3.795766 1.982565-4.214197 2.510585-4.214197C2.600249-4.214197 3.227895-4.204234 3.576588-3.845579C3.16812-3.815691 3.108344-3.516812 3.108344-3.387298C3.108344-3.128269 3.287671-2.929016 3.566625-2.929016C3.825654-2.929016 4.024907-3.098381 4.024907-3.39726C4.024907-4.07472 3.267746-4.463263 2.500623-4.463263C1.255293-4.463263 .33873-3.387298 .33873-2.15193C.33873-.876712 1.325031 .109589 2.480697 .109589C3.815691 .109589 4.134496-1.085928 4.134496-1.185554Z'/>
+                      <path id="03-04-26-g2-46" d='M7.043587-3.347447C7.043587-5.240349 5.69863-6.804483 3.995019-6.804483H.348692V-6.495641H.587796C1.354919-6.495641 1.374844-6.386052 1.374844-6.027397V-.777086C1.374844-.418431 1.354919-.308842 .587796-.308842H.348692V0H3.995019C5.668742 0 7.043587-1.474471 7.043587-3.347447ZM6.047323-3.347447C6.047323-2.241594 5.858032-1.643836 5.499377-1.155666C5.300125-.886675 4.732254-.308842 3.726027-.308842H2.719801C2.251557-.308842 2.231631-.37858 2.231631-.707347V-6.097136C2.231631-6.425903 2.251557-6.495641 2.719801-6.495641H3.716065C4.333748-6.495641 5.021171-6.276463 5.529265-5.569116C5.957659-4.98132 6.047323-4.124533 6.047323-3.347447Z'/>
+                      <path id="03-04-26-g2-47" d='M5.250311 0V-.308842C4.552927-.308842 4.473225-.37858 4.473225-.86675V-6.914072L3.038605-6.804483V-6.495641C3.73599-6.495641 3.815691-6.425903 3.815691-5.937733V-3.785803C3.526775-4.144458 3.098381-4.403487 2.560399-4.403487C1.384807-4.403487 .33873-3.427148 .33873-2.141968C.33873-.876712 1.315068 .109589 2.450809 .109589C3.088418 .109589 3.536737-.229141 3.785803-.547945V.109589L5.250311 0ZM3.785803-1.175592C3.785803-.996264 3.785803-.976339 3.676214-.806974C3.377335-.328767 2.929016-.109589 2.500623-.109589C2.052304-.109589 1.693649-.368618 1.454545-.747198C1.195517-1.155666 1.165629-1.723537 1.165629-2.132005C1.165629-2.500623 1.185554-3.098381 1.474471-3.5467C1.683686-3.855542 2.062267-4.184309 2.600249-4.184309C2.948941-4.184309 3.367372-4.034869 3.676214-3.58655C3.785803-3.417186 3.785803-3.39726 3.785803-3.217933V-1.175592Z'/>
+                      <path id="03-04-26-g2-50" d='M4.134496-1.185554C4.134496-1.285181 4.054795-1.305106 4.004981-1.305106C3.915318-1.305106 3.895392-1.24533 3.875467-1.165629C3.526775-.139477 2.630137-.139477 2.530511-.139477C2.032379-.139477 1.633873-.438356 1.404732-.806974C1.105853-1.285181 1.105853-1.942715 1.105853-2.30137H3.88543C4.104608-2.30137 4.134496-2.30137 4.134496-2.510585C4.134496-3.496887 3.596513-4.463263 2.351183-4.463263C1.195517-4.463263 .278954-3.437111 .278954-2.191781C.278954-.856787 1.325031 .109589 2.470735 .109589C3.686177 .109589 4.134496-.996264 4.134496-1.185554ZM3.476961-2.510585H1.115816C1.175592-3.995019 2.012453-4.244085 2.351183-4.244085C3.377335-4.244085 3.476961-2.899128 3.476961-2.510585Z'/>
+                      <path id="03-04-26-g2-62" d='M7.13325 0V-.308842H6.894147C6.127024-.308842 6.107098-.418431 6.107098-.777086V-6.027397C6.107098-6.386052 6.127024-6.495641 6.894147-6.495641H7.13325V-6.804483C6.784558-6.774595 6.047323-6.774595 5.668742-6.774595S4.542964-6.774595 4.194271-6.804483V-6.495641H4.433375C5.200498-6.495641 5.220423-6.386052 5.220423-6.027397V-3.696139H2.241594V-6.027397C2.241594-6.386052 2.261519-6.495641 3.028643-6.495641H3.267746V-6.804483C2.919054-6.774595 2.181818-6.774595 1.803238-6.774595S.67746-6.774595 .328767-6.804483V-6.495641H.56787C1.334994-6.495641 1.354919-6.386052 1.354919-6.027397V-.777086C1.354919-.418431 1.334994-.308842 .56787-.308842H.328767V0C.67746-.029888 1.414695-.029888 1.793275-.029888S2.919054-.029888 3.267746 0V-.308842H3.028643C2.261519-.308842 2.241594-.418431 2.241594-.777086V-3.387298H5.220423V-.777086C5.220423-.418431 5.200498-.308842 4.433375-.308842H4.194271V0C4.542964-.029888 5.280199-.029888 5.65878-.029888S6.784558-.029888 7.13325 0Z'/>
+                      <path id="03-04-26-g2-63" d='M5.330012 0V-.308842C4.811955-.308842 4.562889-.308842 4.552927-.607721V-2.510585C4.552927-3.367372 4.552927-3.676214 4.244085-4.034869C4.104608-4.204234 3.775841-4.403487 3.198007-4.403487C2.361146-4.403487 1.92279-3.805729 1.763387-3.447073H1.753425V-6.914072L.318804-6.804483V-6.495641C1.016189-6.495641 1.09589-6.425903 1.09589-5.937733V-.757161C1.09589-.308842 .986301-.308842 .318804-.308842V0L1.444583-.029888L2.560399 0V-.308842C1.892902-.308842 1.783313-.308842 1.783313-.757161V-2.590286C1.783313-3.626401 2.49066-4.184309 3.128269-4.184309C3.755915-4.184309 3.865504-3.646326 3.865504-3.078456V-.757161C3.865504-.308842 3.755915-.308842 3.088418-.308842V0L4.214197-.029888L5.330012 0Z'/>
+                      <path id="03-04-26-g2-66" d='M2.460772 0V-.308842C1.803238-.308842 1.763387-.358655 1.763387-.747198V-4.403487L.368618-4.293898V-3.985056C1.016189-3.985056 1.105853-3.92528 1.105853-3.437111V-.757161C1.105853-.308842 .996264-.308842 .328767-.308842V0L1.424658-.029888C1.77335-.029888 2.122042-.009963 2.460772 0ZM1.912827-6.017435C1.912827-6.286426 1.683686-6.545455 1.384807-6.545455C1.046077-6.545455 .846824-6.266501 .846824-6.017435C.846824-5.748443 1.075965-5.489415 1.374844-5.489415C1.713574-5.489415 1.912827-5.768369 1.912827-6.017435Z'/>
+                      <path id="03-04-26-g2-71" d='M5.798257-2.570361H5.549191C5.439601-1.554172 5.300125-.308842 3.5467-.308842H2.729763C2.261519-.308842 2.241594-.37858 2.241594-.707347V-6.017435C2.241594-6.356164 2.241594-6.495641 3.188045-6.495641H3.516812V-6.804483C3.158157-6.774595 2.251557-6.774595 1.843088-6.774595C1.454545-6.774595 .67746-6.774595 .328767-6.804483V-6.495641H.56787C1.334994-6.495641 1.354919-6.386052 1.354919-6.027397V-.777086C1.354919-.418431 1.334994-.308842 .56787-.308842H.328767V0H5.519303L5.798257-2.570361Z'/>
+                      <path id="03-04-26-g2-72" d='M2.540473 0V-.308842C1.872976-.308842 1.763387-.308842 1.763387-.757161V-6.914072L.328767-6.804483V-6.495641C1.026152-6.495641 1.105853-6.425903 1.105853-5.937733V-.757161C1.105853-.308842 .996264-.308842 .328767-.308842V0L1.43462-.029888L2.540473 0Z'/>
+                      <path id="03-04-26-g2-74" d='M8.757161 0V-.308842H8.518057C7.750934-.308842 7.731009-.418431 7.731009-.777086V-6.027397C7.731009-6.386052 7.750934-6.495641 8.518057-6.495641H8.757161V-6.804483H7.073474C6.814446-6.804483 6.814446-6.794521 6.744707-6.615193L4.562889-1.006227L2.400996-6.585305C2.311333-6.804483 2.281445-6.804483 2.052304-6.804483H.368618V-6.495641H.607721C1.374844-6.495641 1.39477-6.386052 1.39477-6.027397V-1.046077C1.39477-.777086 1.39477-.308842 .368618-.308842V0L1.534247-.029888L2.699875 0V-.308842C1.673724-.308842 1.673724-.777086 1.673724-1.046077V-6.41594H1.683686L4.084682-.219178C4.134496-.089664 4.184309 0 4.283935 0C4.393524 0 4.423412-.079701 4.463263-.18929L6.914072-6.495641H6.924035V-.777086C6.924035-.418431 6.90411-.308842 6.136986-.308842H5.897883V0C6.266501-.029888 6.94396-.029888 7.332503-.029888S8.388543-.029888 8.757161 0Z'/>
+                      <path id="03-04-26-g2-81" d='M4.692403-2.132005C4.692403-3.407223 3.696139-4.463263 2.49066-4.463263C1.24533-4.463263 .278954-3.377335 .278954-2.132005C.278954-.846824 1.315068 .109589 2.480697 .109589C3.686177 .109589 4.692403-.86675 4.692403-2.132005ZM3.865504-2.211706C3.865504-1.853051 3.865504-1.315068 3.646326-.876712C3.427148-.428394 2.988792-.139477 2.49066-.139477C2.062267-.139477 1.62391-.348692 1.354919-.806974C1.105853-1.24533 1.105853-1.853051 1.105853-2.211706C1.105853-2.600249 1.105853-3.138232 1.344956-3.576588C1.613948-4.034869 2.082192-4.244085 2.480697-4.244085C2.919054-4.244085 3.347447-4.024907 3.606476-3.596513S3.865504-2.590286 3.865504-2.211706Z'/>
+                      <path id="03-04-26-g2-96" d='M3.626401-3.795766C3.626401-4.11457 3.317559-4.403487 2.889166-4.403487C2.161893-4.403487 1.803238-3.73599 1.663761-3.307597V-4.403487L.278954-4.293898V-3.985056C.976339-3.985056 1.05604-3.915318 1.05604-3.427148V-.757161C1.05604-.308842 .946451-.308842 .278954-.308842V0L1.414695-.029888C1.8132-.029888 2.281445-.029888 2.67995 0V-.308842H2.470735C1.733499-.308842 1.713574-.418431 1.713574-.777086V-2.311333C1.713574-3.297634 2.132005-4.184309 2.889166-4.184309C2.958904-4.184309 2.978829-4.184309 2.998755-4.174346C2.968867-4.164384 2.769614-4.044832 2.769614-3.785803C2.769614-3.506849 2.978829-3.35741 3.198007-3.35741C3.377335-3.35741 3.626401-3.476961 3.626401-3.795766Z'/>
+                      <path id="03-04-26-g2-105" d='M3.307597-1.235367V-1.803238H3.058531V-1.255293C3.058531-.518057 2.759651-.139477 2.391034-.139477C1.723537-.139477 1.723537-1.046077 1.723537-1.215442V-3.985056H3.148194V-4.293898H1.723537V-6.127024H1.474471C1.464508-5.310087 1.165629-4.244085 .18929-4.204234V-3.985056H1.036115V-1.235367C1.036115-.009963 1.96264 .109589 2.321295 .109589C3.028643 .109589 3.307597-.597758 3.307597-1.235367Z'/>
+                      </defs>
+                      <g id="03-04-26-page1">
+                      <g stroke-miterlimit='10' transform='translate(-65.830163,17.522137)scale(0.996264,-0.996264)'>
+                      <g fill='currentColor' stroke='currentColor'>
+                      <g stroke-width='0.4'>
+                      <g transform='translate(-2.86,-2.155)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'>
+                      <use x='-65.830163' y='17.522137' xlink:href="#03-04-26-g1-1319"/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <g stroke-width='0.6'>
+                      <path d='M44.0645 0C44.0645 4.38286 40.51157 7.93579 36.12871 7.93579S28.19292 4.38286 28.19292 0S31.74585-7.93579 36.12871-7.93579S44.0645-4.38286 44.0645 0ZM36.12871 0' fill='none'/>
+                      </g>
+                      <g transform='translate(32.23871,-2.5)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'>
+                      <use x='-65.830163' y='17.522137' xlink:href="#03-04-26-g1-12"/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <g stroke-width='0.6'>
+                      <path d='M70.40712 0C70.40712 1.17159 69.45737 2.12134 68.28578 2.12134C67.1142 2.12134 66.16444 1.17159 66.16444 0S67.1142-2.12134 68.28578-2.12134C69.45737-2.12134 70.40712-1.17159 70.40712 0ZM68.28578 0' fill='none'/>
+                      </g>
+                      <g transform='translate(68.28578,0.0)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <g stroke-width='0.6'>
+                      <path d='M92.50706-10H122.50706V10H92.50706Z' fill='none'/>
+                      </g>
+                      <g transform='translate(102.31657,-0.93987)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'>
+                      <use x='-65.830163' y='17.522137' xlink:href="#03-04-26-g1-4482"/>
+                      <use x='-59.6334' y='19.983169' xlink:href="#03-04-26-g0-1406"/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <g stroke-width='0.6'>
+                      <path d='M144.60701-10H174.60701V10H144.60701Z' fill='none'/>
+                      </g>
+                      <g transform='translate(152.26201,-2.5)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'>
+                      <use x='-65.830163' y='17.522137' xlink:href="#03-04-26-g1-18"/>
+                      <use x='-60.848843' y='17.522137' xlink:href="#03-04-26-g1-16"/>
+                      <use x='-55.867523' y='17.522137' xlink:href="#03-04-26-g1-1314"/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <g stroke-width='0.6'>
+                      <path d='M200.94963 0C200.94963 1.17159 199.99988 2.12134 198.8283 2.12134C197.65671 2.12134 196.70695 1.17159 196.70695 0S197.65671-2.12134 198.8283-2.12134C199.99988-2.12134 200.94963-1.17159 200.94963 0ZM198.8283 0' fill='none'/>
+                      </g>
+                      <g transform='translate(198.8283,0.0)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <g stroke-width='0.6'>
+                      <path d='M223.04958-10H253.04958V10H223.04958Z' fill='none'/>
+                      </g>
+                      <g transform='translate(232.85909,-0.93987)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'>
+                      <use x='-65.830163' y='17.522137' xlink:href="#03-04-26-g1-4482"/>
+                      <use x='-59.6334' y='19.983169' xlink:href="#03-04-26-g0-1406"/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <g stroke-width='0.6'>
+                      <path d='M275.14952-10H305.14952V10H275.14952Z' fill='none'/>
+                      </g>
+                      <g transform='translate(282.80452,-2.5)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'>
+                      <use x='-65.830163' y='17.522137' xlink:href="#03-04-26-g1-18"/>
+                      <use x='-60.848843' y='17.522137' xlink:href="#03-04-26-g1-16"/>
+                      <use x='-55.867523' y='17.522137' xlink:href="#03-04-26-g1-1314"/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <g stroke-width='0.6'>
+                      <path d='M331.49214 0C331.49214 1.17159 330.54239 2.12134 329.3708 2.12134C328.19922 2.12134 327.24947 1.17159 327.24947 0S328.19922-2.12134 329.3708-2.12134C330.54239-2.12134 331.49214-1.17159 331.49214 0ZM329.3708 0' fill='none'/>
+                      </g>
+                      <g transform='translate(329.3708,0.0)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <g stroke-width='0.6'>
+                      <path d='M53.28578 31.49994H83.28578V51.49994H53.28578Z' fill='none'/>
+                      </g>
+                      <g transform='translate(61.65428,40.59508)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'>
+                      <use x='-65.830163' y='17.522137' xlink:href="#03-04-26-g1-1308"/>
+                      <use x='-57.082966' y='19.983169' xlink:href="#03-04-26-g0-1032"/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g transform='translate(44.73079,79.63988)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'>
+                      <use x='-65.830163' y='17.522137' xlink:href="#03-04-26-g2-71"/>
+                      <use x='-59.603513' y='17.522137' xlink:href="#03-04-26-g2-28"/>
+                      <use x='-51.304632' y='17.522137' xlink:href="#03-04-26-g2-74"/>
+                      <use x='-42.168893' y='17.522137' xlink:href="#03-04-26-g2-50"/>
+                      <use x='-37.745478' y='17.522137' xlink:href="#03-04-26-g2-105"/>
+                      <use x='-33.870012' y='17.522137' xlink:href="#03-04-26-g2-105"/>
+                      <use x='-29.994546' y='17.522137' xlink:href="#03-04-26-g2-96"/>
+                      <use x='-26.089193' y='17.522137' xlink:href="#03-04-26-g2-66"/>
+                      <use x='-23.31958' y='17.522137' xlink:href="#03-04-26-g2-50"/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <g stroke-width='0.6'>
+                      <path d='M183.8283 31.49994H213.8283V51.49994H183.8283Z' fill='none'/>
+                      </g>
+                      <g transform='translate(192.1968,40.52507)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'>
+                      <use x='-65.830163' y='17.522137' xlink:href="#03-04-26-g1-1308"/>
+                      <use x='-57.082966' y='19.983169' xlink:href="#03-04-26-g0-966"/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g transform='translate(182.2133,79.58487)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'>
+                      <use x='-65.830163' y='17.522137' xlink:href="#03-04-26-g2-46"/>
+                      <use x='-58.218707' y='17.522137' xlink:href="#03-04-26-g2-66"/>
+                      <use x='-55.449094' y='17.522137' xlink:href="#03-04-26-g2-47"/>
+                      <use x='-49.909869' y='17.522137' xlink:href="#03-04-26-g2-50"/>
+                      <use x='-45.486454' y='17.522137' xlink:href="#03-04-26-g2-96"/>
+                      <use x='-41.581101' y='17.522137' xlink:href="#03-04-26-g2-81"/>
+                      <use x='-36.599781' y='17.522137' xlink:href="#03-04-26-g2-105"/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <g stroke-width='0.6'>
+                      <path d='M314.3708 31.49994H344.3708V51.49994H314.3708Z' fill='none'/>
+                      </g>
+                      <g transform='translate(322.7393,40.52507)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'>
+                      <use x='-65.830163' y='17.522137' xlink:href="#03-04-26-g1-1308"/>
+                      <use x='-57.082966' y='19.983169' xlink:href="#03-04-26-g0-1013"/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g transform='translate(311.5908,79.58487)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'>
+                      <use x='-65.830163' y='17.522137' xlink:href="#03-04-26-g2-62"/>
+                      <use x='-58.358183' y='17.522137' xlink:href="#03-04-26-g2-81"/>
+                      <use x='-53.376863' y='17.522137' xlink:href="#03-04-26-g2-72"/>
+                      <use x='-50.60725' y='17.522137' xlink:href="#03-04-26-g2-35"/>
+                      <use x='-45.068025' y='17.522137' xlink:href="#03-04-26-g2-28"/>
+                      <use x='-40.086705' y='17.522137' xlink:href="#03-04-26-g2-43"/>
+                      <use x='-35.942243' y='17.522137' xlink:href="#03-04-26-g2-63"/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <g stroke-width='0.6'>
+                      <path d='M183.8283-51.49994H213.8283V-31.49994H183.8283Z' fill='none'/>
+                      </g>
+                      <g transform='translate(192.1683,-44.91493)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'>
+                      <use x='-65.830163' y='17.522137' xlink:href="#03-04-26-g1-19"/>
+                      <use x='-60.848843' y='17.522137' xlink:href="#03-04-26-g1-1273"/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <g stroke-width='0.6'>
+                      <path d='M206.76408-82.99988C206.76408-78.61702 203.21115-75.06409 198.8283-75.06409C194.44543-75.06409 190.8925-78.61702 190.8925-82.99988S194.44543-90.93567 198.8283-90.93567C203.21115-90.93567 206.76408-87.38274 206.76408-82.99988ZM198.8283-82.99988' fill='none'/>
+                      </g>
+                      <g transform='translate(194.9383,-85.49988)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'>
+                      <use x='-65.830163' y='17.522137' xlink:href="#03-04-26-g1-12"/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g transform='translate(36.12871,-41.49994)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'/>
+                      </g>
+                      </g>
+                      </g>
+                      <g transform='translate(329.3708,-41.49994)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'/>
+                      </g>
+                      </g>
+                      </g>
+                      <g transform='translate(36.12871,-82.99988)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'/>
+                      </g>
+                      </g>
+                      </g>
+                      <g transform='translate(329.3708,-82.99988)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'/>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M6.39297 0H24.29234' fill='none'/>
+                      <g transform='translate(22.19289,0.0)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M44.3645 0H62.26387' fill='none'/>
+                      <g transform='translate(60.16441,0.0)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M70.70712 0H88.60649' fill='none'/>
+                      <g transform='translate(86.50703,0.0)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M122.80707 0H140.70644' fill='none'/>
+                      <g transform='translate(138.60698,0.0)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M174.90701 0H192.80638' fill='none'/>
+                      <g transform='translate(190.70692,0.0)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M201.24963 0H219.149' fill='none'/>
+                      <g transform='translate(217.04955,0.0)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M253.34958 0H271.24895' fill='none'/>
+                      <g transform='translate(269.14949,0.0)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M305.44952 0H323.34889' fill='none'/>
+                      <g transform='translate(321.24944,0.0)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M68.28578 2.42134V27.59937' fill='none'/>
+                      <g transform='matrix(0.0,1.0,-1.0,0.0,68.28578,25.49991)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M68.28578 51.79994V72.39635' fill='none'/>
+                      <g transform='matrix(0.0,1.0,-1.0,0.0,68.28578,70.29689)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M198.8283 2.42134V27.59937' fill='none'/>
+                      <g transform='matrix(0.0,1.0,-1.0,0.0,198.8283,25.49991)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M198.8283 51.79994V72.34134' fill='none'/>
+                      <g transform='matrix(0.0,1.0,-1.0,0.0,198.8283,70.24188)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M329.3708 2.42134V27.59937' fill='none'/>
+                      <g transform='matrix(0.0,1.0,-1.0,0.0,329.3708,25.49991)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M329.3708 51.79994V72.34134' fill='none'/>
+                      <g transform='matrix(0.0,1.0,-1.0,0.0,329.3708,70.24188)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M198.8283-2.42134V-27.59937' fill='none'/>
+                      <g transform='matrix(0.0,-1.0,1.0,0.0,198.8283,-25.49991)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M198.8283-51.79994V-71.16351' fill='none'/>
+                      <g transform='matrix(0.0,-1.0,1.0,0.0,198.8283,-69.06406)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M190.5925-82.99988H36.12871V-11.83636' fill='none'/>
+                      <g transform='matrix(0.0,1.0,-1.0,0.0,36.12871,-13.93582)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      <g transform='translate(39.76169,-14.56876)'>
+                      <g stroke='none' transform='scale(-1.00375,1.00375)translate(-65.830163,17.522137)scale(-1,-1)'>
+                      <g fill='currentColor'>
+                      <g stroke='none'>
+                      <use x='-65.830163' y='17.522137' xlink:href="#03-04-26-g1-2615"/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      <g stroke-width='0.6'>
+                      <path d='M329.3708-2.42134V-82.99988H210.66466' fill='none'/>
+                      <g transform='matrix(-1.0,0.0,0.0,-1.0,212.76411,-82.99988)'>
+                      <g stroke-dasharray='none' stroke-dashoffset='0.0'>
+                      <g stroke-linejoin='miter'>
+                      <path d='M4.84563 0L.96873 1.46368L2.24945 0L.96873-1.46368Z'/>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                      </g>
+                    </svg>
+                  </figure>
+                </wc-diagram>
+                <p class="y">
+                  Now that's Epikouros.
+                </p>
+                <p>
+                  Five parameters:
+                </p>
+                <ol>
+                  <li>$ \omega_c $</li>
+                  <li>$ D $</li>
+                  <li>$ m_0 $</li>
+                  <li>$ m_1 $</li>
+                  <li>$ m_2 $</li>
+                </ol>
+                <p class="y">
+                  Amazing. How does it sound? — How would we know?
+                  <br/>
+                  Better moving on then.
+                  Let's forget about Epikouros until further notice.
+                </p>
+              </wc-ppp>
+
+            </section><!-- end #04 -->
+
+
+            <!-- section #05 -->
+            <section id="05">
+              <!-- top quote -->
+              <header>
+                <blockquote>
+                  <q>Toto, I'm afraid we're not in Kansas anymore.</q>
+                  <footer>
+                    — Pink Floyd?
+                  </footer>
+                </blockquote>
+              </header>
+              <!-- section title -->
+              <h3>05 — $ H(s) $</h3>
+
+              <wc-ppp>
+                <h5>Andante moderato.</h5>
+              </wc-ppp>
+
+            </section><!-- end #05 -->
+
+
+            <!-- section #06 -->
+            <section id="06">
+              <!-- section title -->
+              <h3>06 — dummy</h3>
+
+              <wc-ppp>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+              </wc-ppp>
+
+            </section><!-- end #06 -->
+
+
+            <!-- section #07 -->
+            <section id="07">
+              <!-- section title -->
+              <h3>07 — dummy</h3>
+
+              <wc-ppp>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+              </wc-ppp>
+
+            </section><!-- end #07 -->
+
+
+            <!-- section #08 -->
+            <section id="08">
+              <!-- section title -->
+              <h3>08 — dummy</h3>
+
+              <wc-ppp>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+              </wc-ppp>
+
+            </section><!-- end #08 -->
+
+
+            <!-- section #09 -->
+            <section id="09">
+              <!-- section title -->
+              <h3>09 — dummy</h3>
+
+              <wc-ppp>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+              </wc-ppp>
+
+            </section><!-- end #09 -->
+
+
+            <!-- section #10 -->
+            <section id="10">
+              <!-- section title -->
+              <h3>10 — dummy</h3>
+
+              <wc-ppp>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+              </wc-ppp>
+
+            </section><!-- end #10 -->
+
+
+            <!-- section #11 -->
+            <section id="11">
+              <!-- section title -->
+              <h3>11 — dummy</h3>
+
+              <wc-ppp>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+                <br/>
+                All work and no play makes Jack a dull boy.
+              </wc-ppp>
+
+            </section><!-- end #11 -->
+
+
+            <!-- = APPENDIX = -->
+            <section id="APPENDIX">
+              <!-- section title -->
+              <h3><span class="small-caps">Appendix</span> — foo</h3>
+
+              <wc-ppp>
+                Der Reichthum der Gesellschaften,
+                in welchen kapitalistische Produktionsweise herrscht,
+                erscheint als eine <cite>ungeheure Waarensammlung</cite>,
+                die einzelne Waare als seine <b>Elementarform</b>.
+              </wc-ppp>
+
+            </section><!-- end APPENDIX -->
+
+
+            <!-- = BONUS = -->
+            <section id="BONUS">
+              <!-- section title -->
+              <h3><span class="small-caps">Bonus</span> — bar</h3>
+
+              <wc-ppp>
+                Toute la vie des sociétés
+                dans lesquelles règnent les conditions modernes de production
+                s'annonce comme une immense accumulation de spectacles.
+              </wc-ppp>
+
+            </section><!-- end BONUS -->
+
+
+          </wc-chapter>
+
+
+          <footer>
+            &COPY; &nbsp; No, thanks.
+          </footer>
+
+
+        </main><!-- End Main -->
+
+
+      </wc-cosmic-wrap>
+
+
+    </body>
+
+
+</html>

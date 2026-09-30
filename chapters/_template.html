@@ -3,11 +3,11 @@
 
 
     <head>
-        <title>Working-class filter design | TEMPLATE</title>
+        <title>TEMPLATE | Working-class filter design</title>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="author" content="Antoine Portes"/>
-        <link rel="canonical" href="https://www.antoineportes.com/working-class_filter_design/">
+        <link rel="canonical" href="https://www.antoineportes.com/workingClassFilterDesign/">
         <!-- Style -->
         <link
           rel="preload"
@@ -33,6 +33,13 @@
         <link
           rel="preload"
           href="../assets/fonts/Unifont/unifont-17.0.05.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="../assets/fonts/Iosevka/IosevkaFixed-Extended.woff2"
           as="font"
           type="font/woff2"
           crossorigin
@@ -124,7 +131,7 @@
             chapters
           </button>
           <menu>
-            <!-- I. Analytic saignals -->
+            <!-- I. Analytic signals -->
             <li>
               <a
                 href="./01-analytic-signals.html"
@@ -136,7 +143,7 @@
             <!-- II. RC -->
             <li>
               <a
-                href="./02-rc.html"
+                href="./02-RC.html"
                 rel="next"
               >
                 Chapter <span class="small-caps">ii</span>: $ RC $
@@ -153,13 +160,13 @@
                 $ + $ <span class="small-caps">ii</span>
               </a>
             </li>
-            <!-- IV. Jargon -->
+            <!-- IV. Bode plots -->
             <li>
               <a
-                href="./04-jargon.html"
+                href="./04-bode-plots.html"
                 rel="next"
               >
-                Chapter <span class="small-caps">iv</span>: Jargon
+                Chapter <span class="small-caps">iv</span>: Bode plots
               </a>
             </li>
             <!-- V. Poles and zeroes -->
@@ -171,31 +178,22 @@
                 Chapter <span class="small-caps">v</span>: Poles and zeroes
               </a>
             </li>
-            <!-- VI. More jargon -->
+            <!-- VI. Ones and zeroes -->
             <li>
               <a
-                href="./06-more-jargon.html"
+                href="./06-ones-and-zeroes.html"
                 rel="next"
               >
-                Chapter <span class="small-caps">vi</span>: More jargon
+                Chapter <span class="small-caps">vi</span>: Ones and zeroes
               </a>
             </li>
-            <!-- VII. Ones and zeroes -->
+            <!-- VII. Stephen Butterworth -->
             <li>
               <a
-                href="./07-ones-and-zeroes.html"
+                href="./07-stephen-butterworth.html"
                 rel="next"
               >
-                Chapter <span class="small-caps">vii</span>: Ones and zeroes
-              </a>
-            </li>
-            <!-- Stephen Butterworth -->
-            <li>
-              <a
-                href="./08-stephen-butterworth.html"
-                rel="next"
-              >
-                Chapter <span class="small-caps">viii</span>: Stephen Butterworth
+                Chapter <span class="small-caps">vii</span>: Stephen Butterworth
               </a>
             </li>
           </menu>
@@ -242,12 +240,74 @@
           <!-- Side-bar header -->
           <header>
             <!-- chapter title -->
-            <h2><u>dummy</u><br/>Title</h2>
+            <h2><em>dummy</em><br/>Title</h2>
             <!-- arrow -->
             <button onclick="toggleSidebar()">
               <span>&xlarr;</span>
             </button>
           </header>
+          <div id="OG">
+            <!-- part A -->
+            <h6>original (part A):</h6>
+            <menu>
+              <li>
+                <a
+                  title="GitHub | antoineportes / Working-class-filter-design / Chapter 01_ Analytic signals, part A"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://github.com/antoineportes/Working-class-filter-design/blob/main/Chapter 01_ Analytic signals, part A"
+                >GitHub</a>
+              </li>
+              <li>
+                <a
+                  title="(new tab, just in case)"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://raw.githubusercontent.com/antoineportes/Working-class-filter-design/refs/heads/main/Chapter 01_ Analytic signals, part A"
+                >download</a>
+              </li>
+            </menu>
+            <!-- part B -->
+            <h6>original (part B):</h6>
+            <menu>
+              <li>
+                <a
+                  title="GitHub | antoineportes / Working-class-filter-design / Chapter 01_ Analytic signals, part B"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://github.com/antoineportes/Working-class-filter-design/blob/main/Chapter 01_ Analytic signals, part B"
+                >GitHub</a>
+              </li>
+              <li>
+                <a
+                  title="(new tab, just in case)"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://raw.githubusercontent.com/antoineportes/Working-class-filter-design/refs/heads/main/Chapter 01_ Analytic signals, part B"
+                >download</a>
+              </li>
+            </menu>
+            <!-- part C -->
+            <h6>original (part C):</h6>
+            <menu>
+              <li>
+                <a
+                  title="GitHub | antoineportes / Working-class-filter-design / Chapter 01_ Analytic signals, part C"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://github.com/antoineportes/Working-class-filter-design/blob/main/Chapter 01_ Analytic signals, part C"
+                >GitHub</a>
+              </li>
+              <li>
+                <a
+                  title="(new tab, just in case)"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://raw.githubusercontent.com/antoineportes/Working-class-filter-design/refs/heads/main/Chapter 01_ Analytic signals, part C"
+                >download</a>
+              </li>
+            </menu>
+          </div>
           <!-- Sections list -->
           <nav>
             <ul>
@@ -366,15 +426,6 @@
                 >
                   dummy
                 </a>
-              <!-- APPENDIX: [...] -->
-              <li>
-                <a
-                  href="#APPENDIX"
-                  data-target="APPENDIX"
-                  title="FOO"
-                >
-                  foo
-                </a>
               </li>
               <!-- BONUS: [...] -->
               <li>
@@ -384,6 +435,16 @@
                   title="BAR"
                 >
                   bar
+                </a>
+              </li>
+              <!-- APPENDIX: [...] -->
+              <li>
+                <a
+                  href="#APPENDIX"
+                  data-target="APPENDIX"
+                  title="FOO"
+                >
+                  foo
                 </a>
               </li>
             </ul>
@@ -397,7 +458,7 @@
 
 
           <!-- == CHAPTER == -->
-          <wc-chapter>
+          <wc-chapter id="top">
             <!-- = Chapter title = -->
             <h2><u>dummy</u>: Title</h2>
 

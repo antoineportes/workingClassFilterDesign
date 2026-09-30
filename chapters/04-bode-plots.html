@@ -1,0 +1,2964 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+    <head>
+        <title>IV. Bode plots | Working-class filter design</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <meta name="author" content="Antoine Portes"/>
+        <link rel="canonical" href="https://www.antoineportes.com/workingClassFilterDesign/">
+        <!-- Style -->
+        <link
+          rel="preload"
+          href="../assets/fonts/Ysabeau/YsabeauInfant[wght].woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="../assets/fonts/Ysabeau/YsabeauInfant-Italic[wght].woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="../assets/fonts/Ysabeau/YsabeauSC[wght].woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="../assets/fonts/Unifont/unifont-17.0.05.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="../assets/fonts/Iosevka/IosevkaFixed-Extended.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="../assets/fonts/EBGaramond/EBGaramond-VariableFont[wght].ttf"
+          as="font"
+          type="font/ttf"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="../assets/fonts/EBGaramond/EBGaramond-Italic-VariableFont[wght].ttf"
+          as="font"
+          type="font/ttf"
+          crossorigin
+        >
+        <link rel="stylesheet" type="text/css" href="../assets/css/main.css"/>
+        <!-- Manifest -->
+        <link rel="manifest" href="../site.webmanifest">
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="../assets/favicon/favicon.ico">
+        <link rel="icon" href="../assets/favicon/favicon.svg" type="image/svg+xml">
+        <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+        <!-- ======== SCRIPTS ======== -->
+        <!-- #### Layout #### -->
+        <script
+          defer
+          src="../assets/javascript/layout.js"
+        >
+        </script>
+        <!-- #### MathJax #### -->
+        <script
+          async
+          src="../assets/javascript/mathjax/config.js"
+        >
+        </script>
+    </head>
+
+
+
+    <body>
+
+
+      <nav>
+
+        <a
+          title="Home"
+          target="_self"
+          type="text/html"
+          charset="UTF-8"
+          rel="home"
+          href="../"
+        >
+          <h1>
+            Working-class filter design
+          </h1>
+        </a>
+
+        <div class="dropdown">
+          <button
+            onclick="toggleDropdown(event)"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            <svg
+              viewBox="0 0 120 120"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g>
+                <path
+                  style="stroke-width:12;stroke-linecap:round;stroke-linejoin:round;"
+                  d="m 20,20 h 80"
+                />
+                <path
+                  style="stroke-width:12;stroke-linecap:round;stroke-linejoin:round;"
+                  d="m 20,60 h 80"
+                />
+                <path
+                  style="stroke-width:12;stroke-linecap:round;stroke-linejoin:round;"
+                  d="m 20,100 h 80"
+                />
+              </g>
+            </svg>
+            chapters
+          </button>
+          <menu>
+            <!-- IV. Analytic signals -->
+            <li>
+              <a
+                href="./01-analytic-signals.html"
+                rel="prev"
+              >
+                Chapter <span class="small-caps">i</span>: Analytic signals
+              </a>
+            </li>
+            <!-- II. RC -->
+            <li>
+              <a
+                href="./02-rc.html"
+                rel="prev"
+              >
+                Chapter <span class="small-caps">ii</span>: $ RC $
+              </a>
+            </li>
+            <!-- III. = I + II -->
+            <li>
+              <a
+                href="./03-equals-one-plus-two.html"
+                rel="prev"
+              >
+                Chapter <span class="small-caps">iii</span>:
+                $ \ = \ $ <span class="small-caps">i</span>
+                $ + $ <span class="small-caps">ii</span>
+              </a>
+            </li>
+            <!-- IV. Bode plots -->
+            <li>
+              <a
+                href="./04-bode-plots.html"
+                class="current"
+              >
+                Chapter <span class="small-caps">iv</span>: Bode plots
+              </a>
+            </li>
+            <!-- V. Poles and zeroes -->
+            <li>
+              <a
+                href="./05-poles-and-zeroes.html"
+                rel="next"
+              >
+                Chapter <span class="small-caps">v</span>: Poles and zeroes
+              </a>
+            </li>
+            <!-- VI. Ones and zeroes -->
+            <li>
+              <a
+                href="./06-ones-and-zeroes.html"
+                rel="next"
+              >
+                Chapter <span class="small-caps">vi</span>: Ones and zeroes
+              </a>
+            </li>
+            <!-- VII. Stephen Butterworth -->
+            <li>
+              <a
+                href="./07-stephen-butterworth.html"
+                rel="next"
+              >
+                Chapter <span class="small-caps">vii</span>: Stephen Butterworth
+              </a>
+            </li>
+          </menu>
+        </div>
+
+        <button class="gitHub">
+          <a
+            href="https://github.com/antoineportes/Working-class-filter-design"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="original (GitHub repository)"
+            title="original (GitHub repository)"
+          >
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 512 512"
+              version="1.1"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g transform="scale(4)">
+                <path
+                  class="octoCat"
+                  d="M 82.374999,128 C 90.249999,128 120,97.285025 120,70.18496 120,35.946913 94.843771,8.0000003 63.890627,8 32.937485,7.9999997 8.0000002,35.946913 8,70.18496 7.9999998,97.043069 37.75,128 45.625,128 Z"
+                />
+                <path
+                  d="M 54.125061,93.559792 C 37.624947,91.494958 25.999934,79.235401 25.999934,63.362485 c 0,-6.452321 2.250058,-13.420951 6.000066,-18.066659 -1.624947,-4.258577 -1.374955,-13.291907 0.499984,-17.034309 4.999967,-0.645219 11.750008,2.064699 15.750008,5.807102 4.749975,-1.548525 9.749942,-2.322787 15.875005,-2.322787 6.125061,0 11.125028,0.774262 15.625011,2.193743 3.875004,-3.613359 10.750041,-6.323277 15.750008,-5.678058 1.749943,3.484315 1.999935,12.517644 0.374987,16.905265 4,4.903796 6.124927,11.485295 6.124927,18.195703 0,15.872916 -11.624877,27.874385 -28.374983,30.068263 4.249992,2.838962 7.125028,9.033332 7.125028,16.131002 v 13.42095 c 0,3.87145 3.125028,6.06519 6.875037,4.51667 C 110.25006,118.59508 128,95.23736 128,66.330625 128,29.810041 99.250025,3.2178539e-7 63.875003,0 28.499984,-3.2178539e-7 2.6122451e-7,29.810041 0,66.330625 -2.4816324e-7,94.979273 17.624947,118.72412 41.374955,127.62841 44.749975,128.91885 48,126.59606 48,123.11175 v -10.32391 c -1.749942,0.7744 -4,1.29058 -6.000066,1.29058 -8.249992,0 -13.124962,-4.64571 -16.624979,-13.29205 C 24,97.302194 22.500049,95.23736 19.625012,94.850229 c -1.499951,-0.129044 -2.000065,-0.774262 -2.000065,-1.548524 0,-1.54866 2.50005,-2.710053 5.000098,-2.710053 3.625013,0 6.74991,2.322921 9.999935,7.097674 2.500048,3.742404 5.124962,5.419974 8.249992,5.419974 3.125028,0 5.124962,-1.1614 8,-4.129537 2.125061,-2.193878 3.750008,-4.129534 5.250089,-5.419971 z"
+                />
+              </g>
+            </svg>
+          </a>
+        </button>
+
+      </nav>
+
+
+
+      <!--  ======  ..C..O..S..M..I..C.. ..W..R..A..P..  ======  -->
+      <wc-cosmic-wrap>
+
+
+        <!-- ==== .L.E.F.T. .P.A.N.E.L. ==== -->
+        <aside>
+          <!-- Side-bar header -->
+          <header>
+            <!-- chapter title -->
+            <h2><u>Chapter IV</u><br/>Bode plots</h2>
+            <!-- arrow -->
+            <button onclick="toggleSidebar()">
+              <span>&xlarr;</span>
+            </button>
+          </header>
+          <div id="OG">
+            <!-- part A -->
+            <h6>original (part A):</h6>
+            <menu>
+              <li>
+                <a
+                  title="GitHub | antoineportes / Working-class-filter-design / Chapter 04: Bode plots, part A"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://github.com/antoineportes/Working-class-filter-design/blob/main/Chapter 04_ Bode plots, part A"
+                >GitHub</a>
+              </li>
+              <li>
+                <a
+                  title="(new tab, just in case)
+(( right click, save as... for direct download ))"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://raw.githubusercontent.com/antoineportes/Working-class-filter-design/refs/heads/main/Chapter 04_ Bode plots, part A"
+                >download</a>
+              </li>
+            </menu>
+            <!-- part B -->
+            <h6>original (part B):</h6>
+            <menu>
+              <li>
+                <a
+                  title="GitHub | antoineportes / Working-class-filter-design / Chapter 04_: Bode plots, part B"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://github.com/antoineportes/Working-class-filter-design/blob/main/Chapter 04_ Bode plots, part B"
+                >GitHub</a>
+              </li>
+              <li>
+                <a
+                  title="(new tab, just in case)
+(( right click, save as... for direct download ))"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://raw.githubusercontent.com/antoineportes/Working-class-filter-design/refs/heads/main/Chapter 04_ Bode plots, part B"
+                >download</a>
+              </li>
+            </menu>
+          </div>
+          <!-- Sections list -->
+          <nav>
+            <ul>
+              <!-- top -->
+              <li>
+                <a href="#top">
+                  &uparrow; (Top)
+                </a>
+              </li>
+              <!-- #01 The world as wheel and hallucination -->
+              <li>
+                <a
+                  href="#01"
+                  data-target="01"
+                  title="The world as wheel and hallucination"
+                >
+                  The world as wheel and hallucination
+                </a>
+              </li>
+              <!-- #02 Tell me who's that writin' -->
+              <li>
+                <a
+                  href="#02"
+                  data-target="02"
+                  title="Tell me who's that writin'"
+                >
+                  Tell me who's that writin'
+                </a>
+              </li>
+              <!-- #03 Gradus ad Wohltemperierte Clavier -->
+              <li>
+                <a
+                  href="#03"
+                  data-target="03"
+                  title="Gradus ad Wohltemperierte Clavier"
+                >
+                  Gradus ad Wohltemperierte Clavier
+                </a>
+              </li>
+              <!-- #04 Big Brother & the holding company -->
+              <li>
+                <a
+                  href="#04"
+                  data-target="04"
+                  title="Big Brother & the holding company"
+                >
+                  Big Brother & the holding company
+                </a>
+              </li>
+              <!-- #05 Working-class mirificum transform ® -->
+              <li>
+                <a
+                  href="#05"
+                  data-target="05"
+                  title="Working-class mirificum transform ®"
+                >
+                  Working-class mirificum transform ®
+                </a>
+              </li>
+              <!-- #06 Working-class trigonometric deform ® -->
+              <li>
+                <a
+                  href="#06"
+                  data-target="06"
+                  title="Working-class trigonometric deform ®"
+                >
+                  Working-class trigonometric deform ®
+                </a>
+              </li>
+              <!-- #07 Working-class modulus fix ® -->
+              <li>
+                <a
+                  href="#07"
+                  data-target="07"
+                  title="Working-class modulus fix ®"
+                >
+                  Working-class modulus fix ®
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="handle"></div>
+        </aside>
+
+
+        <!-- ==== .M.A.I.N. .W.I.N.D.O.W. ==== -->
+        <main>
+
+
+          <!-- == CHAPTER == -->
+          <wc-chapter id="top">
+            <!-- = Chapter title = -->
+            <h2><em>Chapter IV</em>: Bode plots</h2>
+
+
+            <!-- = Section #01 = -->
+            <section id="01">
+              <!-- top quote -->
+              <header>
+                <blockquote>
+                  <q>You've gotta redefine yourself
+                  if you wish to find
+                  <br>
+                  The crystal visions of an open mind.</q>
+                  <footer>
+                    — George Kinney (<cite>Starvation</cite>)
+                  </footer>
+                </blockquote>
+              </header>
+              <!-- section title -->
+              <h3>The world as wheel and hallucination</h3>
+
+              <wc-ppp>
+                <p>
+                  In a universe governed by ubiquitous and permanent causality,
+                  everything relies on everything
+                  across the whole infinity of the space-time continuum.
+                </p>
+                <p class="y">
+                  Does <mark>proportional to its own rate of change</mark>
+                  relate to anything known?
+                  <br/>
+                  Is <mark>whole infinity</mark>
+                  more paradoxical than $ \; \exp(x) \,=\, 0 \; $?
+                </p>
+                <p>
+                  Real life equations are differential by essence.
+                  <br/>
+                  Arithmetic will tell you how many fingers are raised
+                  — never how much energy raises a finger.
+                </p>
+                <p class="N">
+                  Hence so many phenomena evolving across space-time
+                  with an exponential curve.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Yet we tend to perceive them as linear.
+                </p>
+                <p class="zz">
+                  Which means that our brain
+                  constantly performs a mathematical transform:
+                  the reciprocal to exponentiation — logarithms.
+                </p>
+                <p>
+                  Extracting actual constants out of constant proportionality.
+                  <br/>
+                  Bending curves to make them perfectly straight.
+                </p>
+                <wc-comment class="N">
+                  <p>
+                    People with zero mathematical education count
+                    <a
+                      title="Wikipedia.org | Logarithm — Psychology"
+                      target="_blank"
+                      rel="noopener"
+                      href="https://en.wikipedia.org/wiki/Logarithm#Psychology"
+                    >as such</a>:
+                  </p>
+                  <p class="small-caps S">
+                    1 &nbsp; 2 &nbsp; 3 &nbsp; 4 &nbsp; 5 &nbsp;
+                    6 &nbsp; 7 &nbsp; 8 &nbsp; 9 &nbsp; 10 &nbsp;
+                    20 &nbsp; 30 &nbsp; 40 &nbsp; 50 &nbsp; 60 &nbsp;
+                    70 &nbsp; 80 &nbsp; 90 &nbsp; 100 &nbsp; 200 &nbsp;
+                    300 &nbsp; 400 &nbsp; 500 &nbsp; 600 &nbsp; 700 &nbsp;
+                    800 &nbsp; 900 &nbsp; 1000 &nbsp; 2000 &nbsp; 3000 ...
+                  </p>
+                  <p>
+                    It took erudite mathematicians centuries
+                    to rebuild this primary instinct.
+                  </p>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Of course all this, to some extent, relies on convention.
+                </p>
+                <p class="zz">
+                  Everything is exponential because we assume space-time is linear.
+                </p>
+                <p>
+                  Maybe space-time is logarithmic and everything is linear...
+                </p>
+                <p class="y">
+                  Maybe $ \; E \,=\, m + 2c \; $?
+                </p>
+                <p>
+                  Maybe the Big Bang is not a moment?
+                  <br/>
+                  Maybe it's an asymptote?
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  But...
+                </p>
+                <p class="n">
+                  If space-time is logarithmic,
+                  then it's something's logarithm...
+                </p>
+                <p>
+                  $ t \,=\, \ln\bigl( $ what exactly? $ \bigr) \; $
+                  — $ \; \exp(t) \; $?
+                </p>
+                <p class="n">
+                  Anything less tautologic?
+                  <br/>
+                  $ \exp(j\omega t) \; $?
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  The only way permanent exponential growth ab æterno
+                  hasn't blown out to überall entropy yet,
+                  <br/>
+                  is if <span class="oldSchool">Κόσμος</span>
+                  is a Riemann hypersphere.
+                </p>
+                <p class="n">
+                  (Assuming there's such a thing as
+                  unbounded permanent exponential growth...)
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Speaking the universe in real Algebra,
+                  real trigonometry, real Calculus...
+                  <br/>
+                  feels like translating Kant into Mandarin Chinese.
+                </p>
+                <p class="n">
+                  Forcing a language's logic
+                  to map itself onto a distinct language's logic.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Perhaps the illusion of time passing
+                  is what has us mistake circles for waves...
+                  <br/>
+                  Perhaps waves and particles
+                  would be an undeniably united whole,
+                  were we somehow able to incorporate
+                  imaginary space-time in our observations.
+                  <br/>
+                  Perhaps we exist in 8 dimensions
+                  and our senses are half-blind.
+                  <br/>
+                  Perhaps reality is nothing but circles
+                  inside circles inside circles...
+                  <br/>
+                  Perhaps we're stuck on a circumference
+                  and hallucinate a straight line.
+                  <br/>
+                  Perhaps time is a looped palindrome
+                  and the concepts of ending and beginning are nonsensical.
+                  <br/>
+                  Perhaps <span class="oldSchool">Ἐμπεδοκλῆς</span>
+                  has been singing the Ewige Wiederkunft all along.
+                  <br/>
+                  Perhaps matter is not inside time:
+                  <br/>
+                  perhaps time is inside matter.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Immanuel called space-time:
+                  the a priori intuition, the conditions for experience
+                  — the pre-empirical shape of our understanding...
+                </p>
+                <p class="zz">
+                  What if subjects are also objects?
+                </p>
+                <p>
+                  If space-time is the form of my perception
+                  — what if you perceive me?
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Dead is god and we landscape the map,
+                  blah blah blah nothing is real...
+                </p>
+                <p class="zz">
+                  Negative dialectics and lysergic metaphysics.
+                  <br/>
+                  You're goldbluming, Jeff.
+                </p>
+                <p>
+                  ... Spiraling about spirals...
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Now that I've lost your attention:
+                  <br/>
+                  that's why you never implement positive feedback
+                  without a ceiling.
+                </p>
+              </wc-ppp>
+
+            </section><!-- end #01 -->
+
+
+            <!-- = Section #02 = -->
+            <section id="02">
+              <!-- top quote -->
+              <header>
+                <blockquote>
+                  <q>Pleased to meet you, hope you guess my name</q>
+                  <footer>
+                    — Mick Jagger (<cite>Sympathy for the Devil</cite>)
+                  </footer>
+                </blockquote>
+              </header>
+              <!-- section title -->
+              <h3>Tell me who's that writin'</h3>
+
+              <wc-ppp>
+                <p>
+                  <wc-ascii class="Achtung">[original_IN_PROGRESS]</wc-ascii>
+                </p>
+              </wc-ppp>
+
+            </section><!-- end #02 -->
+
+
+            <!-- section #03 -->
+            <section id="03">
+              <!-- top quote -->
+              <header>
+                <blockquote>
+                  <q>It's my wife and it's my life, haha</q>
+                  <footer>
+                    — Lou Reed (<cite>Heroin</cite>)
+                  </footer>
+                </blockquote>
+              </header>
+              <!-- section title -->
+              <h3>Gradus ad Wohltemperierte Clavier</h3>
+
+              <wc-ppp>
+                <p>
+                  <wc-ascii class="Achtung">[original_IN_PROGRESS]</wc-ascii>
+                </p>
+              </wc-ppp>
+
+            </section><!-- end #03 -->
+
+
+            <!-- section #04 -->
+            <section id="04">
+              <!-- top quote -->
+              <header>
+                <blockquote>
+                  <q>Every person who shall monopolize,
+                  or attempt to monopolize,
+                  <br/>
+                  or combine or conspire with any other person or persons,
+                  <br/>
+                  to monopolize any part of the trade or commerce
+                  among the several States,
+                  <br/>
+                  or with foreign nations,
+                  <br/>
+                  shall be deemed guilty of a misdemeanor [...]</q>
+                  <footer>
+                    — Sherman Act, section <span class="small-caps">2</span>
+                    (<span class="small-caps">1890</span>)
+                  </footer>
+                </blockquote>
+              </header>
+              <!-- section title -->
+              <h3>Big Brother & the holding company</h3>
+
+              <wc-ppp>
+                <p>
+                  <wc-ascii class="Achtung">[original_IN_PROGRESS]</wc-ascii>
+                </p>
+              </wc-ppp>
+
+            </section><!-- end #04 -->
+
+
+            <!-- section #05 -->
+            <section id="05">
+              <!-- top quote -->
+              <header>
+                <blockquote>
+                  <q>Just expand your conscience, you will be amazed
+                  <br/>
+                  At the lasting beauty of your days</q>
+                  <footer>
+                    — George Kinney (<cite>Starvation</cite>)
+                  </footer>
+                </blockquote>
+              </header>
+              <!-- section title -->
+              <h3>Working-class mirificum transform ®</h3>
+
+              <wc-ppp>
+                <p>
+                  <wc-ascii class="Achtung">[original_IN_PROGRESS]</wc-ascii>
+                </p>
+              </wc-ppp>
+
+            </section><!-- end #05 -->
+
+
+            <!-- section #06 -->
+            <section id="06">
+              <!-- section title -->
+              <h3>Working-class trigonometric deform ®</h3>
+
+              <wc-ppp>
+                <p>
+                  <wc-ascii class="Achtung">[original_IN_PROGRESS]</wc-ascii>
+                </p>
+                <p class="N">
+                  But basically:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \mathcal{WCTD}\bigl\{\, f(x) \,\bigr\}(x_0,T,\alpha,DC)
+                    \;=\;
+                    \alpha\cdot
+                    f\left(\,
+                      \frac{x - x_0}{T}
+                    \,\right) + DC
+                  $$
+                </wc-math>
+              </wc-ppp>
+
+            </section><!-- end #06 -->
+
+
+            <!-- section #07 -->
+            <section id="07">
+              <!-- top quote -->
+              <header>
+                <blockquote>
+                  <q>Change returns success
+                  <br/>
+                  Going and coming without error</q>
+                  <footer>
+                    — Syd Barrett
+                    (<cite>Chapter <span class="small-caps">24</span></cite>)
+                  </footer>
+                </blockquote>
+              </header>
+              <!-- section title -->
+              <h3>Working-class modulus fix ®</h3>
+
+              <wc-ppp>
+                <p>
+                  Third verse, same as the first.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  This section will feel disproportionally long,
+                  but it's an opportunity to properly introduce functions
+                  that tend to end up quite ubiquitous in computer programming.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Let's start with $ \min $ and $ \max $.
+                </p>
+                <p class="zz">
+                  These functions compare two real numbers
+                  and output one of them.
+                </p>
+                <p>
+                  $ \min $ outputs the smallest and $ \max $ outputs the biggest.
+                </p>
+                <p class="zz">
+                  If the numbers are equal,
+                  then they both output the common equal value.
+                </p>
+                <p>
+                  So:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \min(a \mathrel{,} b) \;=\;
+                    \left\{\:
+                      \begin{alignedat}{2}
+                        a & \;\quad\text{if}\quad a \,\leq\, b
+                        \\
+                        b & \;\quad\text{if}\quad a \,\geq\, b
+                      \end{alignedat}
+                    \right.
+                  $$
+                </wc-math>
+                <p>
+                  and:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \max(a \mathrel{,} b) \;=\;
+                    \left\{\:
+                      \begin{alignedat}{2}
+                        a & \;\quad\text{if}\quad a \,\geq\, b
+                        \\
+                        b & \;\quad\text{if}\quad a \,\leq\, b
+                      \end{alignedat}
+                    \right.
+                  $$
+                </wc-math>
+                <wc-comment>
+                  <p>
+                    Or:
+                  </p>
+                  <wc-code class="y">
+<code>
+max(a , b)  =  (a &gt; b) * a  +  (a &lt; b) * b  +  (a == b) * a ;
+
+min(a , b)  =  (a &lt; b) * a  +  (a &gt; b) * b  +  (a == b) * a ;
+
+</code>
+                  </wc-code>
+                  <p>
+                    or even:
+                  </p>
+                  <wc-code class="N">
+<code>
+max(a , b)  =  (a &gt;= b) * a  +  (a &lt; b) * b ;
+
+min(a , b)  =  (a &lt;= b) * a  +  (a &gt; b) * b ;
+
+</code>
+                  </wc-code>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Then there's the signum function.
+                </p>
+                <p class="zz">
+                  It takes one complex variable
+                  and divides it by its absolute value.
+                </p>
+                <p>
+                  If the variable is zero, various implementations exist;
+                  <br/>
+                  but I strongly recommend the ones that output zero.
+                </p>
+                <p class="zz">
+                  Why? Empirical discrimination.
+                </p>
+                <p>
+                  If there's a use for other implementations,
+                  I've never met it.
+                </p>
+                <p class="zz">
+                  Desmos uses this implementation.
+                </p>
+                <p>
+                  Take the exponential form:
+                  $ \; z \,=\, \left| z \right|
+                  \exp\bigl( j\arg(z) \bigr) \; $,
+                  <br/>
+                  you get:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \sgn(z) \;=\;
+                    \left\{\:
+                      \begin{alignedat}{2}
+                        \exp\bigl( j\arg(z) \bigr)
+                        & \;\quad\text{if}\quad z \,\neq\, 0
+                        \\
+                        0
+                        & \;\quad\text{if}\quad z \,=\, 0
+                      \end{alignedat}
+                    \right.
+                  $$
+                </wc-math>
+                <wc-comment>
+                  <p>
+                    Important corollary:
+                  </p>
+                  <wc-math class="N x s">
+                    $$
+                      \sgn(z) \;=\;
+                      \left\{\:
+                        \begin{alignedat}{2}
+                          0
+                          & \;\quad\text{if}\quad z \,=\, 0
+                          \\
+                          z/\left| z \right|
+                          & \;\quad\text{if not}
+                        \end{alignedat}
+                      \right.
+                    $$
+                  </wc-math>
+                  <wc-math class="x zz S">
+                    $$
+                      \implies\quad
+                      z \;=\; \left| z \right| \sgn(z)
+                      \quad\forall\; z
+                    $$
+                  </wc-math>
+                  <p>
+                    Which suspiciously resemble the complex exponential form.
+                  </p>
+                  <p class="N">
+                    In fact:
+                  </p>
+                  <wc-math class="N x s">
+                    $$
+                      \sgn(z) \;=\; \exp\bigl( j\arg(z) \bigr)
+                    $$
+                  </wc-math>
+                  <wc-math class="x s S">
+                    $$
+                      \implies\quad \arg(z) \;=\;
+                      \frac{
+                        \ln\bigl( \sgn(z) \bigr)
+                      }{j}
+                    $$
+                  </wc-math>
+                  <p>
+                    which is undefined at zero, as it should be.
+                  </p>
+                  <p class="n S">
+                    Notice that it's undefined whether
+                    $ \; \sgn(0) \,=\, 0 \; $
+                    or $ \; \sgn(0) \,=\, $ <wc-ascii>NaN</wc-ascii> .
+                  </p>
+                  <p>
+                    Is zero positive or negative?
+                    <br/>
+                    Either neither or both.
+                  </p>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  If $ z $ is real and positive,
+                  $ \; \arg(z) \,=\, 0 \; $,
+                  <br/>
+                  and:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \exp\bigl( j\arg(z) \bigr) \;=\;
+                    \cos(0) \,+\, j\sin(0) \;=\;
+                    1 \,+\, j\cdot0 \;=\; 1
+                  $$
+                </wc-math>
+                <p>
+                  (or simply: $ \; \exp(0) \,=\, 1 \; $)
+                </p>
+                <p class="N">
+                  If it's real and negative,
+                  $ \; \arg(z) \,=\, \pi \; $,
+                  <br/>
+                  and:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \exp\bigl( j\arg(z) \bigr) \;=\;
+                    \cos(\pi) \,+\, j\sin(\pi) \;=\;
+                    -1 \,+\, j\cdot0 \;=\; -1
+                  $$
+                </wc-math>
+                <p>
+                  So:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \sgn\bigl( \Re(z) \bigr) \;=\;
+                    \left\{
+                      \begin{alignedat}{2}
+                        +1 & \;\quad\text{if}\quad \Re(z) \,\gt\, 0
+                        \\
+                         0 & \;\quad\text{if}\quad \Re(z) \, = \, 0
+                        \\
+                        -1 & \;\quad\text{if}\quad \Re(z) \,\lt\, 0
+                      \end{alignedat}
+                    \right.
+                  $$
+                </wc-math>
+                <p>
+                  A C++ hack for signum with real arguments could be:
+                </p>
+                <wc-code class="y">
+<code>
+template &lt;typename T&gt;
+int sgn(T x)
+{
+  return ( x &gt; T(0) ) - ( x &lt; T(0) ) ;
+}
+
+</code>
+                </wc-code>
+                <wc-comment>
+                  <dl>
+                    <dt>
+                      $ x $ positive
+                    </dt>
+                    <dd>
+                      $
+                      \!\longrightarrow\quad
+                      $<wc-ascii>&nbsp;true</wc-ascii>$
+                      {}\,-\,{}
+                      $<wc-ascii>false</wc-ascii>$
+                      {}\;=\; 1 \,-\, 0 \;=\; +1 $
+                    </dd>
+                    <dt>
+                      $ x $ negative
+                    </dt>
+                    <dd>
+                      $
+                      \!\longrightarrow\quad
+                      $<wc-ascii>false</wc-ascii>$
+                      {}\,-\,{}
+                      $<wc-ascii>true&nbsp;</wc-ascii>$
+                      {}\;=\; 0 \,-\, 1 \;=\; -1 $
+                    </dd>
+                    <dt>
+                      $ x $ null
+                    </dt>
+                    <dd>
+                      $
+                      \!\longrightarrow\quad
+                      $<wc-ascii>false</wc-ascii>$
+                      {}\,-\,{}
+                      $<wc-ascii>false</wc-ascii>$
+                      {}\;=\; 0 \,-\, 0 \;=\; \hphantom{+} 0 $
+                    </dd>
+                  </dl>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Now the truncating functions.
+                </p>
+                <p class="zz">
+                  I know four of them:
+                  $ \floor $, $ \ceil $, $ \trunc $ and $ \round $.
+                </p>
+                <p>
+                  Say $ x $ is a real number.
+                </p>
+                <p class="zz">
+                  In base 10,
+                  $ x $ can be considered the sum of its integer part
+                  and its decimal part.
+                </p>
+                <p>
+                  To include negative numbers,
+                  these parts must incorporate $ x $'s sign.
+                </p>
+                <p>
+                  E.g.:
+                </p>
+                <wc-math class="N x s">
+                  $$
+                    x \;=\; 0.70710678 \;=\; 0 \,+\, .70710678
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \implies\;
+                    \left\{\;
+                      \begin{alignedat}{2}
+                        \INT(x) & \:=\: 0
+                        \\
+                        \DEC(x) & \:=\: .70710678
+                      \end{alignedat}
+                    \right.
+                  $$
+                </wc-math>
+                <wc-math class="N x s">
+                  $$
+                    x \;=\; 0.61803399\dots \;=\; 0 \,+\, .61803399\dots
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \implies\;
+                    \left\{\;
+                      \begin{alignedat}{2}
+                        \INT(x) & \:=\: 1
+                        \\
+                        \DEC(x) & \:=\: .61803399\dots
+                      \end{alignedat}
+                    \right.
+                  $$
+                </wc-math>
+                <wc-math class="N x s">
+                  $$
+                    x \;=\; -1000.0001 \;=\; -1000 \,-\, .0001
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \implies\;
+                    \left\{\;
+                      \begin{alignedat}{2}
+                        \INT(x) & \:=\: -1000
+                        \\
+                        \DEC(x) & \:=\: -.0001
+                      \end{alignedat}
+                    \right.
+                  $$
+                </wc-math>
+                <p>
+                  $ \trunc(x) \; $ simply outputs $ \; \INT(x) \; $.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  $ \ceil(x) \; $ outputs the the smallest integer
+                  greater than or equal to $ x $;
+                  <br/>
+                  if $ x $ is negative, that's
+                  $ \; \INT(x) \; $, or $ \; \trunc(x) \; $;
+                  <br/>
+                  if it's positive, that's
+                  $ \; \INT(x) + 1 \; $ or $ \; \trunc(x) + 1 \; $.
+                  <br/>
+                  (Unless $ x $ is an integer:
+                  then the output is just $ x $.)
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \ceil(x) \;=\; \INT(x) \,+\,
+                    \max\Bigl(
+                      \sgn\bigl( \DEC(x) \bigr) \mathrel{,} 0
+                    \Bigr)
+                  $$
+                </wc-math>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  $ \round(x) \; $ outputs the closest integer to $ x $.
+                </p>
+                <p class="n">
+                  There is a debate over what to do with $ .5 $,
+                  on which I'll elaborate if I ever use the $ \round $ function.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Finally, $ \; \floor(x) \; $
+                  outputs the greatest integer less than or equal to $ x $;
+                  <br/>
+                  if $ x $ is positive, it's
+                  $ \; \INT(x) \; $, or $ \; \trunc(x) \; $;
+                  <br/>
+                  if it's negative, it's
+                  $ \; \INT(x) - 1 \; $, or $ \; \trunc(x) - 1 \; $.
+                  <br/>
+                  (Unless $ x $ is an integer:
+                  then the output is just $ x $.)
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \floor(x) \;=\; \INT(x) \,+\,
+                    \min\Bigl(
+                      \sgn\bigl( \DEC(x) \bigr) \mathrel{,} 0
+                    \Bigr)
+                  $$
+                </wc-math>
+              </wc-ppp>
+
+              <wc-ppp>
+                <wc-comment>
+                  <p>
+                    Classically, we say that:
+                  </p>
+                  <ul>
+                    <li>
+                      $ \ceil $ truncates towards plus infinity;
+                    </li>
+                    <li>
+                      $ \trunc $ truncates towards zero;
+                    </li>
+                    <li>
+                      $ \floor $ truncates towards minus infinity.
+                    </li>
+                  </ul>
+                  <p class="n">
+                    First time I've stumbled upon these descriptions,
+                    I've found them more confusing than helping.
+                  </p>
+                  <p>
+                    Then I've studied truncation intensively
+                    and realised how efficient and clever they are.
+                  </p>
+                  <p class="y">
+                    From my (non-universal) standpoint:
+                    they have poor pedagogical value,
+                    but their completeness and conciseness
+                    makes them valuable mnemonics
+                    once you've clearly grasped the inherent mechanics
+                    of the three functions.
+                  </p>
+                  <h4>Notation</h4>
+                  <p class="zz">
+                    $ \floor(x) \; $ is also written
+                    $ \ \lfloor x \rfloor \; $.
+                  </p>
+                  <p>
+                    $ \ceil(x) \; $ is also written
+                    $ \ \lceil x \rceil \; $.
+                  </p>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  $ \floor $ is almost the only one invoked in this book.
+                </p>
+                <p class="zz">
+                  Mainly because it's the only one of the four
+                  that systematically preserves the variable's sign.
+                </p>
+                <wc-comment>
+                  <wc-math class="Z s">
+                    $$
+                      \round(-0.49) \;=\; 0
+                    $$
+                  </wc-math>
+                  <wc-math class="Z s">
+                    $$
+                      \ceil(-0.999) \;=\; 0
+                    $$
+                  </wc-math>
+                  <wc-math class="Z s">
+                    $$
+                      \trunc(-0.999) \;=\; 0
+                    $$
+                  </wc-math>
+                  <wc-math class="Z s">
+                    $$
+                      \floor(-0.0001) \;=\; -1
+                    $$
+                  </wc-math>
+                </wc-comment>
+                <p class="y">
+                  It's inherently bilateral-friendly,
+                  and therefore the one required
+                  for an implementation of the
+                  <a
+                    title="Wikipedia.org | Modulo — Variants of the definition"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://en.wikipedia.org/wiki/Modulo#Variants_of_the_definition"
+                  >modulo function</a>,
+                  if we want negative moduli to comply
+                  with trigonometric periodicity.
+                </p>
+                <wc-comment class="y">
+                  <p>
+                    I've arrived at this conclusion
+                    while painfully crafting
+                    the eponymous <cite>Working-class modulus fix</cite>.
+                  </p>
+                  <p class="zz">
+                    Only to eventually find out that
+                    <a
+                      title="Wikipedia.org | Logarithm — Psychology"
+                      target="_blank"
+                      rel="noopener"
+                      href="https://en.wikipedia.org/wiki/Logarithm#Psychology"
+                    >Donald Knuth</a>
+                    had already done the hard work.
+                    <br/>
+                    (It's ok, maths is fun, copy/pasting is not.)
+                  </p>
+                  <p>
+                    He promoted his results in
+                    Volume <span class="small-caps">1</span> of his book
+                    <a
+                      title="Wikipedia.org | The Art of Computer Programming"
+                      target="_blank"
+                      rel="noopener"
+                      href="https://en.wikipedia.org/wiki/The_Art_of_Computer_Programming"
+                    ><cite>The Art of Computer Programming</cite></a>.
+                  </p>
+                  <p class="zz">
+                    Four years later,
+                    <a
+                      title="Wikipedia.org | C (programming language) — History — New B and first C release"
+                      target="_blank"
+                      rel="noopener"
+                      href="https://en.wikipedia.org/wiki/C_(programming_language)#New_B_and_first_C_release"
+                    >Dennis Ritchie</a>
+                    ignored them.
+                  </p>
+                  <p>
+                    C++'s
+                    &nbsp;<a
+                      title="cplusplus.com | cmath | fmod"
+                      target="_blank"
+                      rel="noopener"
+                      href="https://cplusplus.com/reference/cmath/fmod/"
+                    ><wc-ascii>std::fmod</wc-ascii></a>&nbsp;
+                    is still using $ \trunc $, while
+                    &nbsp;<a
+                      title="cplusplus.com | cmath | remainder"
+                      target="_blank"
+                      rel="noopener"
+                      href="https://cplusplus.com/reference/cmath/remainder/"
+                    ><wc-ascii>std::remainder</wc-ascii></a>&nbsp;
+                    uses $ \round $.
+                  </p>
+                  <p class="N">
+                    (Donald Knuth's book is not open source, and I don't own it;
+                    <br/>
+                    this is Wikipedia hear-say — stay critical.)
+                  </p>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  The modulo function removes from its variable
+                  whatever exceeds any integer multiple of its modulus.
+                </p>
+                <p class="zz">
+                  Which is not problematic as long as everyone remains positive...
+                </p>
+                <p>
+                  Say your modulus is 5.
+                  <br/>
+                  Then:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    6 \;=\; 1\times5 \,+\, 1
+                    \quad\implies\quad
+                    \MOD(6 \mathrel{,} 5) \;=\; 1
+                  $$
+                </wc-math>
+                <p>
+                  or:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    102 \;=\; 20\times5 \,+\, 2
+                    \quad\implies\quad
+                    \MOD(102 \mathrel{,} 5) \;=\; 2
+                  $$
+                </wc-math>
+                <p>
+                  or:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    35 \;=\; 7\times5 \,+\, 0
+                    \quad\implies\quad
+                    \MOD(35 \mathrel{,} 5) \;=\; 0
+                  $$
+                </wc-math>
+                <p>
+                  Now what about $ -13 $?
+                </p>
+                <p>
+                  Is it $ \; -2\times5 - 3 \; $
+                  or $ \; -3\times5 + 2 \; $?
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  The key word is <strong>integer</strong> multiple.
+                </p>
+                <p class="zz">
+                  If $ a $ is an integer multiple of $ b $,
+                  then $ \; a/b \,=\, n \; $ is an integer.
+                </p>
+                <p>
+                  Then, if $ \; d \,=\, a + c \; $,
+                  the modulo function should output $ c $,
+                  <br/>
+                  assuming $ d $ is the variable,
+                  $ b $ is the modulus, $ \; c \,\lt\, b \; $,
+                  and all terms are (temporarily) positive.
+                </p>
+                <p class="n">
+                  So we want:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \MOD(d \mathrel{,} b) \;=\; c \;=\; d \,-\, a
+                    \;=\; d \,-\, b\cdot a/b \;=\; d \,-\, b\cdot n
+                  $$
+                </wc-math>
+                <p>
+                  Except: how do we extract $ a $?
+                </p>
+                <p>
+                  All we know is $ b $ and $ d $.
+                </p>
+                <p class="n">
+                  How about:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    d/b \;=\; \frac{a + c}{b} \;=\; a/b \,+\, c/b
+                    \;=\; n \,+\, c/b
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    c \;\lt\; b \quad\iff\quad c/b \;\lt\; 1
+                  $$
+                </wc-math>
+                <p>
+                  So $ n $ is the integer part of $ \; d/b \; $.
+                </p>
+                <p>
+                  And if we find $ n $, we get $ \ b\cdot n \; $,
+                  which, subtracted from $ d $, gives $ c $.
+                </p>
+                <p class="zz">
+                  Four candidates.
+                </p>
+                <p>
+                  Let's try them on positive numbers first.
+                </p>
+                <p class="n">
+                  Let's say the modulus is $ 3 $ and the variable is $ 4.8 $.
+                </p>
+                <p>
+                  We should get $ \; c \,=\, 1.8 \; $.
+                </p>
+                <!-- ceil -->
+                <wc-math class="N x s">
+                  $$
+                    \ceil(4.8/3) \;=\; \ceil(1.6) \;=\; 2
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    2\times3 \;=\; 6
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    4.8 \,-\, 6 \;=\; -1.2 \;\neq\; 1.8
+                  $$
+                </wc-math>
+                <!-- round -->
+                <wc-math class="N x s">
+                  $$
+                    \round(4.8/3) \;=\; \round(1.6) \;=\; 2
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    2\times3 \;=\; 6
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    4.8 \,-\, 6 \;=\; -1.2 \;\neq\; 1.8
+                  $$
+                </wc-math>
+                <!-- trunc -->
+                <wc-math class="N x s">
+                  $$
+                    \trunc(4.8/3) \;=\; \trunc(1.6) \;=\; 1
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    1\times3 \;=\; 3
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    4.8 \,-\, 3 \;=\; 1.8
+                  $$
+                </wc-math>
+                <!-- floor -->
+                <wc-math class="N x s">
+                  $$
+                    \floor(4.8/3) \;=\; \floor(1.6) \;=\; 1
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    1\times3 \;=\; 3
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    4.8 \,-\, 3 \;=\; 1.8
+                  $$
+                </wc-math>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p class="s">
+                  Two candidates: $ \trunc $ and $ \floor $.
+                </p>
+                <p>
+                  The next logical step would be to discriminate them
+                  against a negative variable.
+                </p>
+                <p>
+                  But what exactly do we expect from a negative variable?
+                </p>
+                <p class="zz">
+                  Let's invent a problem.
+                </p>
+                <p>
+                  We're three children selling lemonade
+                  to buy cigarettes and beer.
+                </p>
+                <p class="zz">
+                  At the end of the day,
+                  we split the earnings democratically (3 parts)
+                  and what's left (the remainder) goes to the treasury.
+                </p>
+                <p>
+                  So the earnings are the variable and the modulus is 3.
+                </p>
+                <p class="n">
+                  Now let's say it's been a shitty day:
+                  zero customer and 7€ invested in lemons;
+                  we share a debt: $ -7 $.
+                </p>
+                <p class="n">
+                  So: $ \; \MOD(-7 \mathrel{,} 3) \; $.
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    -7/3 \;=\; -2 \,-\, 1/3
+                  $$
+                </wc-math>
+                <p>
+                  $ \floor $ gives $ -3 $, $ \trunc $ gives $ -2 $.
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    -7 \,-\, -3\times3 \;=\; 9 \,-\, 7 \;=\; 2
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    -7 \,-\, -2\times3 \;=\; 6 \,-\, 7 \;=\; -1
+                  $$
+                </wc-math>
+                <p>
+                  If we use $ \trunc $, now the treasury has a debt...
+                </p>
+                <p class="zz">
+                  Maybe that's what we want?
+                </p>
+                <p>
+                  There are no bad tools,
+                  as long as they're appropriately used.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Let's invent a problem where we do know what we want.
+                </p>
+                <p class="n">
+                  You're circuit-bending a
+                  <a
+                    title="Wikipedia.org | Mellotron"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://en.wikipedia.org/wiki/Mellotron"
+                  >Mellotron</a>.
+                </p>
+                <wc-comment class="y">
+                  <p>
+                    The Mellotron is the first sampler ever
+                    if you ignore the Chamberlin
+                    and whatever Pierre Schaeffer was doing
+                    in the <span class="small-caps">1930</span>'s.
+                  </p>
+                  <p class="N s">
+                    The samples were stored on magnetic tapes
+                    and played on key-press.
+                  </p>
+                  <p>
+                    It would have been the perfect drone machine
+                    if only the samples had been longer than 8 seconds,
+                    or better yet: loopable.
+                  </p>
+                  <p class="N s">
+                    If you've never heard of it,
+                    you can try listening
+                    to an underground garage band from Liverpool
+                    called the Beatles.
+                  </p>
+                  <p>
+                    You're not into psychedelic pop?
+                  </p>
+                  <dl class="zz">
+                    <dt>
+                      Electronic music?
+                    </dt>
+                    <dd>
+                      $ \!\longrightarrow\quad $
+                      Jean-Michel Jarre (Maurice's son, yes)
+                    </dd>
+                    <dt>
+                      Progressive rock?
+                    </dt>
+                    <dd>
+                      $ \!\longrightarrow\quad $
+                      King Crimson
+                    </dd>
+                    <dt>
+                      Death metal?
+                    </dt>
+                    <dd>
+                      $ \!\longrightarrow\quad $
+                      Opeth
+                    </dd>
+                    <dt>
+                      Hip-hop?
+                    </dt>
+                    <dd>
+                      $ \!\longrightarrow\quad $
+                      pretty much anything LoFi
+                    </dd>
+                  </dl>
+                </wc-comment>
+                <p>
+                  You want the tapes to play infinitely.
+                </p>
+                <p class="zz">
+                  You take the flute low E,
+                  cut the attack and join both ends of the piece of tape.
+                </p>
+                <p>
+                  Say the tape's length is 1. So is the playback speed.
+                </p>
+                <p class="zz">
+                  So when you press the low E on the keyboard
+                  during a time of 1,
+                  you're back at the beginning of the loop.
+                </p>
+                <p>
+                  Any integer number of full loops so far is irrelevant
+                  regarding your current position on the tape.
+                </p>
+                <p class="zz">
+                  Except, woops: you've wired the rotor in reverse:
+                  the tape is playing backwards.
+                </p>
+                <p>
+                  So, e.g., if you press the key during 0.4,
+                  you've moved by $ - $0.4 on the tape.
+                  <br/>
+                  Which is equivalent to $ + $0.6.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Let's name variables.
+                </p>
+                <ul class="zz">
+                  <li>
+                    $ L \,=\, 1 \; $ is the length of the looped magnetic tape;
+                  </li>
+                  <li>
+                    $ T \,=\, 1 \; $ is the time required to play the full loop once;
+                  </li>
+                  <li>
+                    $ \f \,=\, -L/T \,=\, -1 \; $ is the rotor's speed;
+                  </li>
+                  <li>
+                    $ t $ is how long you've pressed the key;
+                  </li>
+                  <li>
+                    $ l(t) \,=\, \f t \,=\, -t \; $
+                    is the tape length covered backwards at the end of $ t $;
+                  </li>
+                </ul>
+                <p>
+                  let's temporarily assume that $ l(0) $ always resets to zero
+                  (or equivalently: that you've only pressed the key once).
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  We want $ \lambda(t) $, the position on the tape.
+                </p>
+                <p class="zz">
+                  It should always be positive and less than $ \; L \,=\, 1 \; $.
+                </p>
+                <p>
+                  What we know:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    l(t) \;=\; -(n + \delta)L \;=\; -n \,-\, \delta
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    n \;\in\; \mathbb{N}_{\geq0}
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    0 \;\leq\; \delta \;\lt\; 1
+                  $$
+                </wc-math>
+                <p>
+                  What we want:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \lambda(t) \;\in\; \left[ 0 \mathrel{,} L \right[
+                    \;=\; \left[ 0 \mathrel{,} 1 \right[
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \delta \;=\; 0
+                    \quad\implies\quad
+                    \lambda(t) \;=\; \lambda(n) \;=\; 0
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \delta \;\neq\; 0
+                    \quad\implies\quad
+                    \lambda(t) \;=\; L \,-\, \delta \;=\; 1 \,-\, \delta
+                  $$
+                </wc-math>
+                <p>
+                  Our modulus is $ \; L \,=\, 1 \; $.
+                  <br/>
+                  Our variable is $ \; -t \;=\; l(t) \;=\; -n \,-\, \delta \; $.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <h4>Using $ \trunc $</h4>
+                <h5>Case 1: $ \; \delta \,=\, 0 \; $</h5>
+                <wc-math class="N x s">
+                  $$
+                    -t \,-\, T\cdot\trunc(-t/T)
+                    \;=\; -n \,-\, \delta \,-\, \trunc(-n \,-\, \delta)
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    =\; -n \,-\, \trunc(-n) \;=\; -n \,-\, -n \;=\; 0
+                  $$
+                </wc-math>
+                <p class="W S">
+                  Ok.
+                </p>
+                <h5>Case 2: $ \; \delta \,\neq\, 0 \; $</h5>
+                <wc-math class="N x s">
+                  $$
+                    -t \,-\, T\cdot\trunc(-t/T)
+                    \;=\; -n \,-\, \delta \,-\, \trunc(-n \,-\, \delta)
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    =\; -n \,-\, \delta \,-\, -n \;=\; -\delta
+                  $$
+                </wc-math>
+                <p class="W S">
+                  Nope.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <h4>Using $ \floor $</h4>
+                <h5>Case 1: $ \; \delta \,=\, 0 \; $</h5>
+                <wc-math class="N x s">
+                  $$
+                    -t \,-\, T\cdot\floor(-t/T)
+                    \;=\; -n \,-\, \delta \,-\, \floor(-n \,-\, \delta)
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    =\; -n \,-\, \floor(-n) \;=\; -n \,-\, -n \;=\; 0
+                  $$
+                </wc-math>
+                <p class="W S">
+                  Ok.
+                </p>
+                <h5>Case 2: $ \; \delta \,\neq\, 0 \; $</h5>
+                <wc-math class="N x s">
+                  $$
+                    -t \,-\, T\cdot\floor(-t/T)
+                    \;=\; -n \,-\, \delta \,-\, \floor(-n \,-\, \delta)
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    =\; -n \,-\, \delta \,-\, (-n - 1)
+                    \;=\; -n \,-\, \delta \,+\, n \,+\, 1
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    =\; 1 \,-\, \delta \;=\; L \,-\, \delta
+                  $$
+                </wc-math>
+                <p class="W S">
+                  Ok.
+                </p>
+                <p>
+                  $ \floor $ wins.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p class="s">
+                  Let's clean that up.
+                </p>
+                <p>
+                  We can drop the length variables and leave $ T $ undefined.
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    -t \;=\; -nT \,-\, \delta T
+                    \quad\iff\quad
+                    -t/T \;=\; -n \,-\, \delta
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    n \;\in\; \mathbb{N}_{\geq0}
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    0 \:\lt\: \delta \:\lt\: 1
+                  $$
+                </wc-math>
+                <p>
+                  and we want $ \; T \,-\, \delta T \; $.
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \floor(-t/T) \;=\; \floor(-n \,-\, \delta)
+                    \;=\; -n \,-\, 1
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \implies\quad
+                    T\cdot\floor(-t/T) \;=\; -nT \,-\, T
+                    \;=\; -t \,+\, \delta T \,-\, T
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \iff\quad
+                    T \,-\, \delta T \;=\; -t \,-\, T\cdot\floor(-t/T)
+                  $$
+                </wc-math>
+                <p>
+                  Ok, so we have our general formula:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \MOD(x \mathrel{,} y) \;=\; x \,-\, y\cdot\floor(x/y)
+                  $$
+                </wc-math>
+                <wc-comment class="S">
+                  <p>
+                    Notice that the division by $ y $
+                    implies that a modulus of zero outputs
+                    &nbsp;<wc-ascii class="Achtung">&lt;undefined&gt;</wc-ascii>&nbsp;
+                    or
+                    &nbsp;<wc-ascii class="Achtung">NaN</wc-ascii>&nbsp;
+                    or
+                    &nbsp;<wc-ascii class="Achtung">[SYNTAX_ERROR]</wc-ascii>&nbsp;
+                    &c. for all $ x $.
+                  </p>
+                </wc-comment>
+                <p>
+                  Alternative notation:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    x \mod y \;=\; \MOD(x \mathrel{,} y)
+                  $$
+                </wc-math>
+                <p>
+                  Technically: left version is regular,
+                  and right version is code-friendly.
+                </p>
+                <p class="zz">
+                  I use both interchangeably
+                  depending on which one is clearer in context.
+                </p>
+                <p>
+                  Regular version is better at identifying
+                  which variable plays which role;
+                  <br/>
+                  dev version can be cleaner when mixed with other terms
+                  and nested parenthesis.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  What does it look like on a graph?
+                </p>
+                <p>
+                  Let's re-normalise the modulus to 1.
+                </p>
+                <p>
+                  Then:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    x \mod 1 \;=\; x \,-\, \floor(x)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    =\; \INT(x) \,+\, \DEC(x)
+                    \;-\;
+                    \Bigl[\;
+                      \INT(x) \,+\,
+                      \min\Bigl(
+                        \sgn\bigl( \DEC(x) \bigr) \mathrel{,} 0
+                      \Bigr)
+                    \;\Bigl]
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    =\; \INT(x) \,+\, \DEC(x) \,-\, \INT(x)
+                    \,-\, \min\Bigl( \sgn\bigl( \DEC(x) \bigr) \,,\ 0 \Bigr)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    =\; \DEC(x) \;-\;
+                    \left\{\;
+                      \begin{alignedat}{2}
+                         0 & \quad\text{if}\quad \DEC(x) \:\gt\: 0
+                        \\
+                         0 & \quad\text{if}\quad \DEC(x) \: = \: 0
+                        \\
+                         -1 & \quad\text{if}\quad \DEC(x) \:\lt\: 0
+                      \end{alignedat}
+                    \right.
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    x \;\geq\; 0 \quad\implies\quad
+                    0 \;\leq\; \DEC(x) \;\lt\; 1
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    x \;\lt\; 0 \quad\implies\quad
+                    -1 \;\lt\; \DEC(x) \;\lt\; 0
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \hphantom{x \;\lt\; 0}
+                    \quad\iff\quad
+                    0 \;\lt\; \DEC(x) \,+\, 1 \;\lt\; 1
+                  $$
+                </wc-math>
+                <p>
+                  The range is: $ \; \left[0 \mathrel{,} 1\right[ \; $.
+                </p>
+                <p class="n">
+                  Next:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    a \;\in\; \pm\mathbb{N}
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    a \;\lt\; b \;\lt\; a \,+\, 1
+                    \quad\implies\quad
+                    \floor(a) \;=\; \floor(b) \;=\; a
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \implies\quad
+                    a \,-\, \floor(a) \;\lt\; b \,-\, \floor(b)
+                  $$
+                </wc-math>
+                <p>
+                  It's strictly increasing between integers.
+                </p>
+                <p class="n">
+                  Next:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    a \;\lt\; ka \;\lt\; a \,+\, 1
+                    \quad\implies\quad
+                    \floor(ka) \;=\; \floor(a) \;=\; a
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    iff\quad
+                    ka \,-\, \floor(ka) \;=\; ka \,-\, a
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \implies\quad
+                    \frac{d}{dka} \MOD(ka \mathrel{,} 1) \;=\; 1
+                  $$
+                </wc-math>
+                <p>
+                  It's linear between integers.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Or you could just plot it on a graphing calculator app.
+                </p>
+                <p class="n">
+                  But remember:
+                  once the crypto-fascists and their robocops take over,
+                  those who depend on digital tech will die first.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p class="s">
+                  Now, what if the modulus is not normalised?
+                </p>
+                <p>
+                  Let's use a more general approach:
+                  let's compare two proportional moduli.
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \MOD(x \mathrel{,} y) \;=\; x \,-\, y\cdot\floor(x/y)
+                  $$
+                </wc-math>
+                <wc-math class="N x s">
+                  $$
+                    \MOD(x \mathrel{,} ky) \;=\; x \,-\, ky\cdot\floor(x/ky)
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \hphantom{\MOD(x \mathrel{,} ky)}
+                    \;=\;
+                    k\left(
+                      x/k \,-\, y\cdot
+                      \floor\!\left(
+                        \frac{x/k}{y}
+                      \right)
+                    \right)
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \hphantom{\MOD(x \mathrel{,} ky)}
+                    \;=\;
+                    k\cdot\MOD(x/k \mathrel{,} y)
+                  $$
+                </wc-math>
+                <p>
+                  If $ \; y \,=\, 1 \; $:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \MOD(x \mathrel{,} k) \;=\; k\cdot\MOD(x/k \mathrel{,} 1)
+                  $$
+                </wc-math>
+                <p>
+                  So the unit-modulus is the basic template of all moduli.
+                </p>
+                <p class="n">
+                  But more interestingly:
+                  <b>the modulus can be factored out</b>
+                  of the modulo function.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p class="s">
+                  Curve-wise?
+                </p>
+                <p>
+                  You might recognise the
+                  <cite>Working-class trigonometric deform</cite>;
+                  <br/>
+                  specifically: the full isometric special case,
+                  where phase and DC offset are null,
+                  and amplitude and period are equal.
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    f(x) \;=\; \MOD(x \mathrel{,} 1)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \implies\quad
+                    \MOD(x \mathrel{,} y) \;=\;
+                    \mathcal{WCTD}
+                    \bigl\{\,
+                      f(x)
+                    \,\bigr\}
+                    (
+                      0 \mathrel{,} y \mathrel{,} y \mathrel{,} 0
+                    )
+                  $$
+                </wc-math>
+                <p>
+                  So the curves always have the same shape,
+                  the modulus is basically a zoom factor.
+                  <br/>
+                  A non-deforming one.
+                </p>
+                <p class="zz">
+                  Of course we can deform the curve like with any function.
+                  <br/>
+                  Just: always under complete control.
+                  Isn't that convenient?
+                </p>
+                <p>
+                  And about the range:
+                  $ \; \MOD(\xi \mathrel{,} 1) \; $ is in
+                  $ \; \left[0 \mathrel{,} 1\right[ \; $,
+                  <br/>
+                  if $ \; \xi \,=\, x/k \; $,
+                  then $ \; \MOD(x/k \mathrel{,} 1) \; $is in
+                  $ \; \left[0 \mathrel{,} 1\right[ \; $.
+                </p>
+                <p class="n">
+                  Since the function is linear and increasing
+                  between discontinuities,
+                  <br/>
+                  $ \MOD(x \mathrel{,} k) \:=\: k\cdot\MOD(\xi \mathrel{,} 1) \; $ is in
+                  $ \; k\cdot\left[0 \mathrel{,} 1\right[
+                  \;=\;
+                  \left[0 \mathrel{,} k\right[ \; $.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <h4>The whole point all along</h4>
+                <p class="zz">
+                  What about negative moduli?
+                </p>
+                <p>
+                  Mathematically, no aporia:
+                  factor out the negative modulus,
+                  <br/>
+                  reach the factored normalised form
+                  (I guess it's its name now),
+                  <br/>
+                  you get a positive unit-modulus,
+                  a sign-flipped variable and a negative factor,
+                  which flips the range.
+                </p>
+                <p class="n">
+                  So:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    k \;\lt\; 0
+                    \implies\quad
+                    \MOD(x \mathrel{,} k)
+                    \;=\; k\cdot\MOD(x/k \mathrel{,} 1)
+                    \;\in\; \left] k \mathrel{,} 0 \right]
+                  $$
+                </wc-math>
+                <p>
+                  Ok, so it's always negative
+                  — nothing a constant term can't fix;
+                  <br/>
+                  but more interestingly:
+                  the upper bound is now included,
+                  and the lower one excluded.
+                </p>
+                <p class="zz">
+                  So, e.g., $ \; \MOD(x \mathrel{,} —k) \,+\, k \; $
+                  (with $ k $ positive) can reach $ k $ and is never zero,
+                  <br/>
+                  the roles are flipped,
+                  and everything else remains identical...
+                </p>
+                <p>
+                  Unless flipping everything also made the function
+                  decrease between discontinuities.
+                </p>
+                <p class="n">
+                  Let's check:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    k \;\lt\; 0
+                    \quad\iff\quad
+                    \sgn(k) \;=\; -1
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \iff\quad
+                    \left| k \right|\sgn(k) \;=\; \left| k \right|(-1)
+                    \;=\; -\left| k \right| \;=\; k
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \implies\;
+                    \left\{
+                      \begin{alignedat}{2}
+                        a/k & \;=\; -a/\left| k \right|
+                        \\
+                        b/k & \;=\; -b/\left| k \right|
+                      \end{alignedat}
+                    \right.
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    a/k \;\lt\; b/k \;\lt\; a/k \,+\, 1
+                    \quad\iff\quad
+                    -a/\left| k \right| \;\lt\;
+                    -b/\left| k \right| \;\lt\;
+                    -a/\left| k \right| \,+\, 1
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \iff\quad
+                    -a \;\lt\; -b \;\lt\; -a \,+\, \left| k \right|
+                    \quad\iff\quad
+                    a \;\gt\; b \;\gt\; a \,-\, \left| k \right|
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    a/k \;\in\; \pm\mathbb{N}
+                    \quad\implies\quad
+                    \floor(b/k) \;=\; \floor(a/k) \;=\; a/k
+                    \;=\; -a/\left| k \right|
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \MOD(a \mathrel{,} k)
+                    \;=\;
+                    k\bigl(
+                      a/k \,-\, \floor(a/k)
+                    \bigr)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \hphantom{ \MOD(a \mathrel{,} k) }
+                    \;=\;
+                    a \,-\, k \,
+                    \frac{-a}{ \left| k \right| }
+                    \;=\; a \,-\ \sgn(k)(-a)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \hphantom{ \MOD(a \mathrel{,} k) }
+                    \;=\;
+                    a \,-\, (-1)(-a) \;=\; a \,-\, a \;=\; 0
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \MOD(b \mathrel{,} k)
+                    \;=\;
+                    k\bigl(
+                      b/k \,-\, \floor(b/k)
+                    \bigr)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \hphantom{ \MOD(b \mathrel{,} k) }
+                    \;=\;
+                    b \,-\, k \,
+                    \frac{-a}{ \left| k \right| }
+                    \;=\; b \,-\ \sgn(k)(-a)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \hphantom{ \MOD(b \mathrel{,} k) }
+                    \;=\;
+                    b \,-\, (-1)(-a) \;=\; b \,-\, a
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    a \;\gt\; b
+                    \quad\iff\quad
+                    0 \;\gt\; b \,-\, a
+                  $$
+                </wc-math>
+                <p>
+                  In short:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    a \;\gt\; b
+                    \quad\iff\quad
+                    \MOD(a \mathrel{,} k) \;\gt\; \MOD(b \mathrel{,} k)
+                  $$
+                </wc-math>
+                <p>
+                  Generalisation:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    b/k \;\lt\; c/k \;\lt\; a/k \,+\, 1
+                    \;\left\{
+                      \begin{alignedat}{1}
+                        & \iff\quad
+                        b \;\gt\; c \;\gt\; a \,-\, \left| k \right|
+                        \\[0.25em]
+                        & \implies\quad
+                        \floor(c/k) \;=\; \floor(a/k)
+                        \;=\; -a/\left| k \right|
+                      \end{alignedat}
+                    \right.
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \MOD(c \mathrel{,} k)
+                    \;=\;
+                    k\bigl(
+                      c/k \,-\, \floor(c/k)
+                    \bigr)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \hphantom{ \MOD(c \mathrel{,} k) }
+                    \;=\;
+                    c \,-\, k \,
+                    \frac{-a}{ \left| k \right| }
+                    \;=\; c \,-\, (-1)(-a) \;=\; c \,-\, a
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    b \;\gt\; c
+                    \quad\iff\quad
+                    b \,-\, a \;\gt\; c \,-\, a
+                  $$
+                </wc-math>
+                <p>
+                  In short:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    b \;\gt\; c
+                    \quad\iff\quad
+                    \MOD(b \mathrel{,} k) \;\gt\; \MOD(c \mathrel{,} k)
+                  $$
+                </wc-math>
+                <p>
+                  Strictly increasing between discontinuities.
+                </p>
+                <wc-comment class="y">
+                  <p>
+                    If you need a decreasing ramp,
+                    choose any modulus (positive or negative),
+                    then reverse the variable:
+                  </p>
+                  <wc-math class="Z s">
+                    $$
+                      b \;\gt\; c
+                      \quad\iff\quad
+                      -b \;\lt\; -c
+                    $$
+                  </wc-math>
+                  <wc-math class="N x s">
+                    $$
+                      \implies\quad
+                      \MOD(-b \mathrel{,} k) \;\lt\; \MOD(-c \mathrel{,} k)
+                    $$
+                  </wc-math>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Now when would we want that?
+                </p>
+                <p class="zz">
+                  Well we could keep pretending to tweak
+                  that poor innocent Mellotron,
+                  and add a <mark>rewind</mark> foot-switch to its faceplate...
+                </p>
+                <p>
+                  But I've been advertising the modulus fix so subtly
+                  that it would bear unbearable hypocrisy.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Say we're chaining filters.
+                </p>
+                <p class="n">
+                  First stage:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    Y_1(s) \;=\; H_1(s)X(s)
+                  $$
+                </wc-math>
+                <p>
+                  Second stage:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    Y_2(s) \;=\; H_2(s)Y_1(s)
+                    \;=\; H_2(s)H_1(s)X(s)
+                  $$
+                </wc-math>
+                <p>
+                  Third stage:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    Y_3(s) \;=\; H_3(s)Y_2(s)
+                    \;=\; H_3(s)H_2(s)H_1(s)X(s)
+                  $$
+                </wc-math>
+                <p>
+                  $ N $<sup>th</sup> stage:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    Y_N(s) \;=\;
+                    X(s) \prod_{k=1}^N H_k(s)
+                  $$
+                </wc-math>
+                <p>
+                  Assuming $ X(s) $ has its phase normalised to zero,
+                  <br/>
+                  then $ Y_N(s) $'s phase is:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \phi \;=\;
+                    \sum_{k=1}^N \arg\bigl( H_k(s) \bigr)
+                  $$
+                </wc-math>
+                <p>
+                  This sum could very easily exceed the range
+                  $ \; \left]-\pi \mathrel{,} +\pi\right] \; $.
+                  <br/>
+                  (The probability grows with $ N $.)
+                </p>
+                <p class="n">
+                  Oh, no: a zero-crossing modulus that reaches its upper bound!
+                  <br/>
+                  If only we'd just spent hundreds of lines preparing for this...
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p class="s">
+                  We've found two possible modulo functions:
+                </p>
+                <ul>
+                  <li>
+                    positive modulus:
+                    ranges from zero (included) to the modulus (excluded)
+                  </li>
+                  <li>
+                    negative modulus:
+                    ranges from the modulus (excluded) to zero (included)
+                  </li>
+                </ul>
+                <p class="N s">
+                  We never cross zero as is.
+                </p>
+                <p>
+                  Two options:
+                </p>
+                <ol>
+                  <li>
+                    use a positive modulus and negative DC offset;
+                  </li>
+                  <li>
+                    use a negative modulus and a positive DC offset.
+                  </li>
+                </ol>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Since we want to include the upper bound
+                  and exclude the lower one,
+                  we want a negative modulus.
+                </p>
+                <p class="zz">
+                  Let's forget about $ \pi $ and unit-normalise as usual.
+                </p>
+                <p>
+                  We want the range:
+                  $ \; \left]-1 \mathrel{,} +1\right] \; $.
+                </p>
+                <p class="zz">
+                  $ 1 \,-\, -1 \;=\; 2 \; $ so that's our span,
+                  the absolute value of our modulus.
+                </p>
+                <p>
+                  We want it negative so $ -2 $.
+                </p>
+                <p class="zz">
+                  $ \MOD(x \mathrel{,} -2) \; $ is in
+                  $ \; \left]-2 \mathrel{,} 0\right] \; $
+                  so it needs a DC offset of $ +1 $.
+                </p>
+                <p>
+                  So:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \MOD(x \mathrel{,} 2) \,+\, 1
+                    \;\in\;
+                    \left] -1 \mathrel{,} +1 \right]
+                  $$
+                </wc-math>
+                <p>
+                  Whatever happens to $ x $ won't affect this range:
+                  <br/>
+                  that's how modulo works:
+                  anything from outside goes back inside.
+                </p>
+                <p class="n">
+                  Ok so we have our modulus.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Curve-wise?
+                </p>
+                <wc-maths class="Z s">
+                  $$
+                    \MOD(x \mathrel{,} 2) \,+\, 1
+                    \;=\;
+                    -2\cdot\MOD\bigl(x/(-2) \mathrel{,} 1) \,+\, 1
+                  $$
+                </wc-maths>
+                <p>
+                  That's the isometric case of the trigonometric deform
+                  (plus a DC offset).
+                </p>
+                <wc-comment class="y">
+                  <p>
+                    Meaning:
+                  </p>
+                  <wc-math class="Z s">
+                    $$
+                      \alpha\cdot
+                      f\left(
+                        \frac{ x - x_0 }{T} \,+\, DC
+                      \right)
+                    $$
+                  </wc-math>
+                  <p>
+                    with $ \; \alpha \,=\, T \,=\, -2 \; $,
+                    $ \; x_0 \,=\, 0 \; $ and $ \; DC \,=\, 1 \; $.
+                  </p>
+                </wc-comment>
+                <p>
+                  So the curve is not deformed:
+                  it's isometrically re-scaled
+                  and vertically offset by $ +1 $.
+                </p>
+                <p class="zz">
+                  So the worse that could have happened
+                  is a horizontal offset ($ x_0 $).
+                </p>
+                <p>
+                  Meaning: if we know one expected output value
+                  and one current output value,
+                  we can compare them and get the potentially required $ x_0 $.
+                </p>
+                <p class="n">
+                  Let's go unoriginal: we want zero at zero.
+                </p>
+                <wc-math class="N x s">
+                  $$
+                    \MOD(0 \mathrel{,} -2) \,+\, 1
+                    \;=\;
+                    0 \,-\, (-2)\floor\bigl( 0/(-2) \bigr) \,+\, 1
+                  $$
+                </wc-math>
+                <wc-math class="x S s">
+                  $$
+                    \hphantom{ \MOD(0 \mathrel{,} -2) \,+\, 1 }
+                    \;=\;
+                    0 \,-\, 0 \,+\, 1 \;=\; 1
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    1 \,-\, x_0 \;=\; 0
+                    \quad\iff\quad
+                    \MOD(x \,-\, 1 \mathrel{,} -2) \,+\, 1
+                  $$
+                </wc-math>
+                <p>
+                  Meet the <cite>Working-class modulus fix</cite>:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    M_1(x) \;=\; \MOD(x \,-\, \mathrel{,} -2) \,+\, 1
+                  $$
+                </wc-math>
+                <p>
+                  Since moduli can be factored out, they can be factored in.
+                </p>
+                <p class="zz">
+                  This is a template.
+                </p>
+                <p>
+                  The 1-index represents the absolute value
+                  of the range's boundaries.
+                </p>
+                <p class="n">
+                  General formula:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    M_k(x) \;=\; k\cdot M_1(x/k)
+                    \;\in\;
+                    \left] -k \mathrel{,} +k \right]
+                  $$
+                </wc-math>
+                <p>
+                  You can flip the boundaries' exclusion/inclusion
+                  by simply choosing a negative $ k $.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  And regarding phase:
+                </p>
+                <wc-math class="Z zz">
+                  $$
+                    M_\pi(\phi) \;=\; \pi
+                    \Bigl(\:
+                      \MOD\bigl(\phi/2 \,-\, 1 \mathrel{,} -2\bigr) \,+\, 1
+                    \:\Bigr)
+                  $$
+                </wc-math>
+                <p>
+                  Ok.
+                </p>
+              </wc-ppp>
+
+              <!-- M_k(x) -->
+              <iframe
+                class="desmos"
+                id="WCMF"
+                src="https://www.desmos.com/calculator/vnqmqjh4su?embed"
+              ></iframe>
+
+              <wc-ppp>
+                <p>
+                  $ \phi/\pi $ can look like a division at first glance,
+                  but very often, we get our values in radians as
+                  $ 2\pi $ times something,
+                  then it reads as <mark>ignore $ \pi $</mark>
+                  rather than <mark>divide by it</mark>.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  This function does not replace atan2.
+                </p>
+                <p class="zz">
+                  You need atan2 to get the argument of a complex number;
+                  <br/>
+                  and its output will come out safely clamped inside this very range;
+                  <br/>
+                  but once you start summing arguments,
+                  parallel instances of atan2 won't interact,
+                  and the total range often exceeds one boundary or the other
+                  more than once —
+                  <wc-spoiler>
+                    look at the phase plot of a
+                    <span class="small-caps">20</span><sup>th</sup>-order all-pass...
+                  </wc-spoiler>.
+                </p>
+                <p>
+                  Stack arguments up to 1000 $ \pi $ and a half if needed,
+                  the <cite>Working-class modulus fix</cite> has you covered.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <h4>When $ \pi $ is 1 and 1 is $ \pi $</h4>
+                <p>
+                  I'm personally reluctant to using radians
+                  as a unit of measure,
+                  <br/>
+                  because:
+                </p>
+                <ol>
+                  <li>
+                    a radian is a circle,
+                    <br/>
+                    naming it otherwise adds noise, not signal;
+                  </li>
+                  <li>
+                    in radians: $ \; \pi \,=\, 1/2 \; $,
+                    <br/>
+                    it makes one of the most fundamental constants of the universe
+                    look like a derivative.
+                  </li>
+                </ol>
+              </wc-ppp>
+
+              <wc-ppp id="unit-pi">
+                <p>
+                  I rather use $ \pi $ as a unit.
+                </p>
+                <p class="zz">
+                  It's equivalent to normalising it to 1,
+                  and sometimes allows light clean algebra.
+                </p>
+                <p>
+                  Should you (for some unlikely reason)
+                  need to use a software calculator,
+                  this normalisation can prevent unnecessary approximations.
+                </p>
+                <p class="zz">
+                  E.g.:
+                </p>
+                <dl style="overflow: visible;">
+                  <dt>$ \pi/2 \; $ is</dt>
+                  <dd style="padding-left: 0;">
+                    $ 1.5707963267948966192313216916397514420985846996875529104874722961539082031431044993140174126710585339910740432566411533235469223047752911158626797040642405587251420513509692605527798223114744774651909822144054878329667230642378241168933915826356009545728242834617301743052271633241066968036301245706368622935033031577940874407604604814146270458576821839462951800056652652744102332606920734759707558047165286351828797959765460930586909663058965525592740372311899813747836759428763624456139690915059745649168366812203283215430106974731976123685953510899304718513852696085881465883761923374092338347025660002840635726317804138928856713788948045868185893607342204506124767150732747926855253961398446294617710099780560645109804320172090799068148873856549802593536056749999991864890249755298658664080481592975122297276734541513212611541266723425176309655940855050015689193764432937666041907103085888345736517991267452143777343655797814319411768937968759788909288902660856134033065009639383055979546082100994690476286005327429316394329680766909139841151509760176509264844978868112997069456248608876417395657577874286212270753479754147665584308639279445375491908773187324696596275302004638508355695049244120064291808017818538300523550909714777980994733839187247241276898873634235520237673231040233421295347456466568385144945760523760810284830120290190750967556266912150177938201237482366319570996363021349613983911773908180046708608206099622931575151430914872778533749192527472942934634978454636053987546514776605826724936013779801182403327495599409173988767831849037132712639312759092087873364454888863969000408235300080726245960866086073861750707209867842740806805786762760667378709247342192616619536970716672738812084312594917847427810496096110921362751271284438358952473008267334024943136163958930428921919139839883407270504769418931804753400321125626025586964924480420642443134728021209826425111053305931533721393110195974725235618568934804781821859586437338823287869812069454329163229979066952390137950497328820394756347341991762978549129113102612447038633597391342413007384954513\dots \; $ Wow, shit, your screen is wide. Are we in the future?
+                  </dd>
+                  <dt>$ 1/2 \; $ is</dt>
+                  <dd style="padding-left: 0;">
+                    $ .5 $
+                  </dd>
+                </dl>
+              </wc-ppp>
+
+              <wc-ppp>
+                <wc-comment>
+                  <p>
+                    Ok, so, since I've written this:
+                    <br/>
+                    I noticed — while updating Desmos graphs
+                    for Chapter <span class="small-caps">ii</span>
+                    — that I couldn't name a variable <mark>τ</mark> (tau)
+                    because it's hard-coded as
+                    $ {\approx\; 6.28318530718} $ ... so $ 2\pi $ ?
+                  </p>
+                  <p class="y">
+                    I looked it up and thought
+                    <mark>a new number, good idea, let's use it!</mark> —
+                    <br/>
+                    — I looked up more and found a bunch of djihadists
+                    and all-caps trolls
+                    <br/>
+                    writing their own Wikipedia pages as an attempt to cancel $ \pi $.
+                  </p>
+                  <p class="y">
+                    <mark>I don't like strawberries,
+                    no one should have strawberries</mark> —
+                    <br/>
+                    — when narcissistic spoiled children
+                    imitate what they imagine <mark>clever</mark> looks like...
+                  </p>
+                  <p class="y">
+                    These people apparently don't know much about trigonometry
+                    or bilateral complex signal processing
+                    (especially integration over time where $ t $ needs an alias).
+                  </p>
+                  <p class="s">
+                    One particular argument about duplicate names:
+                    <br/>
+                    when nomenclature collides within itself,
+                    occasional alias or context is the fix...
+                  </p>
+                  <p>
+                    Sorry guys but it works both ways:
+                    <br/>
+                    the general symbol for the imaginary unit is $ i $.
+                    <br/>
+                    In electronics it's $ j $ because $ i $ntensity of the current...
+                  </p>
+                  <p class="N">
+                    Since τ is generally used for the time constant
+                    of LTI $ RC $ circuits,
+                    if we use $ \; \tau \,=\, 2\pi \; $ as you expect from us,
+                    <br/>
+                    then the cutoff in Hz is:
+                  </p>
+                  <wc-split class="grid-b">
+                    <wc-math class="Z s">
+                      $$
+                        \f_c \;=\; \frac{1}{\tau RC}
+                        \;=\; 1/\tau^2
+                        \;=\; 1/(RC)^2
+                        \;=\; 1/4\pi^2
+                      $$
+                    </wc-math>
+                    <p class="S">
+                      ... ττlogy much?
+                    </p>
+                  </wc-split>
+                  <p>
+                    I suppose the argument of negative real numbers is
+                    $ \tau/2 $ now...
+                    <br/>
+                    What's your plan regarding the range of atan2?
+                  </p>
+                  <p class="N s">
+                    Inside any trigonometric function, τ is equivalent to zero.
+                    <br/>
+                    (Congruent modulo... itself.)
+                  </p>
+                  <p>
+                    All hail das Schöne an sich, τὸ καλόν, the Empty concept,
+                    <br/>
+                    for its purity no other could achieve;
+                    <br/>
+                    god is dead, long live god.
+                  </p>
+                  <p class="n">
+                    Much ado about literally nothing.
+                  </p>
+                  <p class="y">
+                    When an idea is undeniably good,
+                    it doesn't need censorship to establish itself.
+                  </p>
+                  <p class="y">
+                    Tyranny is how uninteresting people hijack the attention
+                    on which they depend like fragile parasites,
+                    <br/>
+                    and which they couldn't get otherwise.
+                    <br/>
+                    (Be pertinent, or be loud.)
+                  </p>
+                  <p class="y">
+                    If one of you actually reads this:
+                    <br/>
+                    your moronic cry for attention
+                    and self-glorifying social performance
+                    is the sole reason why I'm not using τ.
+                    <br/>
+                    I genuinely liked the idea at first.
+                  </p>
+                  <p class="N">
+                    If I may quote Leonhard Euler:
+                  </p>
+                  <wc-math class="Z s">
+                    $$
+                      -\sqrt{\exp(j\tau)} \,+\, 1 \;=\; 0
+                    $$
+                  </wc-math>
+                  <p>
+                    Congratulations: the most beautiful equation is now ugly.
+                  </p>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p class="s">
+                  Anyway!
+                </p>
+                <p>
+                  I'm not fond of radians,
+                  I use unit-$ \pi $ as an alternative.
+                  <br/>
+                  If you find my alternative useful, please have it.
+                  If not, ok then.
+                </p>
+                <wc-comment class="y">
+                  <p>
+                    In the phase-optimised
+                    <cite>Working-class modulus fix</cite> case,
+                    <br/>
+                    it means distributing $ \pi $:
+                  </p>
+                  <wc-math class="N x zz">
+                    $$
+                      M_\pi(\phi) \;=\;
+                      \MOD\bigl( \phi \,-\, \pi \mathrel{,} -2\pi \bigr)
+                      \,+\, \pi
+                    $$
+                  </wc-math>
+                </wc-comment>
+                <p>
+                  See, Holy Church of the Mighty Tau ?
+                  Fascism not required...
+                  <br/>
+                  (We all fight the good fight.
+                  Some because good.
+                  Some because fight.)
+                </p>
+              </wc-ppp>
+
+            </section><!-- end #07 -->
+
+
+          </wc-chapter>
+
+
+          <footer>
+            &COPY; &nbsp; No, thanks.
+          </footer>
+
+
+        </main><!-- End Main -->
+
+
+      </wc-cosmic-wrap>
+
+
+    </body>
+
+
+</html>

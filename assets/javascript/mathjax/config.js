@@ -52,8 +52,8 @@ window.MathJax =
       AVG:      "{\\operatorname{avg}}",
       SPAN:     "{\\operatorname{span}}",
       NB:       "{\\operatorname{nb}}",
-      NUM:      "{\\operatorname{num.}}",
-      DENOM:    "{\\operatorname{denom.}}",
+      NUM:      "{\\operatorname{num}}",
+      DENOM:    "{\\operatorname{denom}}",
       sgn:      "{\\operatorname{sgn}}",
       fs:       "{\\operatorname{f}_{\\operatorname{s}}}",
       Nyquist:  "{\\operatorname{Nyquist}}",
@@ -62,7 +62,9 @@ window.MathJax =
       floor:    "{\\operatorname{floor}}",
       ceil:     "{\\operatorname{ceil}}",
       round:    "{\\operatorname{round}}",
-      trunc:    "{\\operatorname{trunc}}"
+      trunc:    "{\\operatorname{trunc}}",
+      DEC:      "{\\operatorname{dec}}",
+      MOD:      "{\\operatorname{mod}}"
     }
   },
   chtml:

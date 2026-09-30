@@ -7,7 +7,7 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <meta name="author" content="Antoine Portes"/>
-        <link rel="canonical" href="https://www.antoineportes.com/working-class_filter_design/">
+        <link rel="canonical" href="https://www.antoineportes.com/workingClassFilterDesign/">
         <!-- Style -->
         <link
           rel="preload"
@@ -33,6 +33,13 @@
         <link
           rel="preload"
           href="../assets/fonts/Unifont/unifont-17.0.05.woff2"
+          as="font"
+          type="font/woff2"
+          crossorigin
+        >
+        <link
+          rel="preload"
+          href="../assets/fonts/Iosevka/IosevkaFixed-Extended.woff2"
           as="font"
           type="font/woff2"
           crossorigin
@@ -136,7 +143,7 @@
             <!-- II. RC -->
             <li>
               <a
-                href="./02-rc.html"
+                href="./02-RCc.html"
                 rel="prev"
               >
                 Chapter <span class="small-caps">ii</span>: $ RC $
@@ -153,13 +160,13 @@
                 $ + $ <span class="small-caps">ii</span>
               </a>
             </li>
-            <!-- IV. Jargon -->
+            <!-- IV. Bode plots -->
             <li>
               <a
-                href="./04-jargon.html"
+                href="./04-bode-plots.html"
                 rel="prev"
               >
-                Chapter <span class="small-caps">iv</span>: Jargon
+                Chapter <span class="small-caps">iv</span>: Bode plots
               </a>
             </li>
             <!-- V. Poles and zeroes -->
@@ -171,31 +178,22 @@
                 Chapter <span class="small-caps">v</span>: Poles and zeroes
               </a>
             </li>
-            <!-- VI. More jargon -->
+            <!-- VI. Ones and zeroes -->
             <li>
               <a
-                href="./06-more-jargon.html"
+                href="./06-ones-and-zeroes.html"
                 rel="next"
               >
-                Chapter <span class="small-caps">vi</span>: More jargon
+                Chapter <span class="small-caps">vi</span>: Ones and zeroes
               </a>
             </li>
-            <!-- VII. Ones and zeroes -->
+            <!-- VII. Stephen Butterworth -->
             <li>
               <a
-                href="./07-ones-and-zeroes.html"
+                href="./07-stephen-butterworth.html"
                 rel="next"
               >
-                Chapter <span class="small-caps">vii</span>: Ones and zeroes
-              </a>
-            </li>
-            <!-- Stephen Butterworth -->
-            <li>
-              <a
-                href="./08-stephen-butterworth.html"
-                rel="next"
-              >
-                Chapter <span class="small-caps">viii</span>: Stephen Butterworth
+                Chapter <span class="small-caps">vii</span>: Stephen Butterworth
               </a>
             </li>
           </menu>
@@ -248,6 +246,50 @@
               <span>&xlarr;</span>
             </button>
           </header>
+          <div id="OG">
+            <!-- part A -->
+            <h6>original (part A):</h6>
+            <menu>
+              <li>
+                <a
+                  title="GitHub | antoineportes / Working-class-filter-design / Chapter 05: Poles and zeroes, part A"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://github.com/antoineportes/Working-class-filter-design/blob/main/Chapter 05_ Poles and zeroes, part A"
+                >GitHub</a>
+              </li>
+              <li>
+                <a
+                  title="(new tab, just in case)
+(( right click, save as... for direct download ))"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://raw.githubusercontent.com/antoineportes/Working-class-filter-design/refs/heads/main/Chapter 05_ Poles and zeroes, part A"
+                >download</a>
+              </li>
+            </menu>
+            <!-- part B -->
+            <h6>original (part B):</h6>
+            <menu>
+              <li>
+                <a
+                  title="GitHub | antoineportes / Working-class-filter-design / Chapter 05: Poles and zeroes, part B"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://github.com/antoineportes/Working-class-filter-design/blob/main/Chapter 05_ Poles and zeroes, part B"
+                >GitHub</a>
+              </li>
+              <li>
+                <a
+                  title="(new tab, just in case)
+(( right click, save as... for direct download ))"
+                  target="_blank"
+                  rel="noopener"
+                  href="https://raw.githubusercontent.com/antoineportes/Working-class-filter-design/refs/heads/main/Chapter 05_ Poles and zeroes, part B"
+                >download</a>
+              </li>
+            </menu>
+          </div>
           <!-- Sections list -->
           <nav>
             <ul>
@@ -567,9 +609,16 @@
                   with the same exponent(s) appears only once,
                   therefore having a single constant factor.
                 </p>
-                <p class="y">
-                  E.g.: $ \quad ax^2 \, + \, bx^2 \; = \; (a \, + \, b)x^2 $
-                </p>
+                <wc-split class="grid-b">
+                  <p class="n">
+                    E.g.:
+                  </p>
+                  <wc-math class="Z s">
+                    $$
+                      ax^2 \,+\, bx^2 \;=\; (a \,+\, b)x^2
+                    $$
+                  </wc-math>
+                </wc-split>
                 <p>
                   This single constant factor is called a coefficient.
                   <br/>
@@ -607,22 +656,17 @@
                   </p>
                   <h5>E.g. (1):</h5>
                   <wc-pp class="s">
-                    <wc-math class="Z">
+                    <wc-math class="N x s">
                       $$
                         x^4 \, + \, 2 \;
                         = \; (1) x^4 \, + \, (0) x^3 \, + \, (0) x^2 \,
                         + \, (0) x^1 \, + \, (2) x^0
                       $$
                     </wc-math>
-                    <wc-math class="hybrid">
-                      $$
-                        \begin{align}
-                          \text{degree:}& \quad 4
-                          \\
-                          \text{terms:}& \quad 5
-                        \end{align}
-                      $$
-                    </wc-math>
+                    <dl>
+                      <dt>degree:</dt><dd>4</dd>
+                      <dt>terms:</dt><dd>5</dd>
+                    </dl>
                   </wc-pp>
                   <h5>E.g. (2):</h5>
                   <wc-pp class="s">
@@ -654,7 +698,7 @@
                   </wc-pp>
                   <p>
                     And of course:
-                    $ \quad y \; = \; {a_2}x^2 \: + \: {a_1}x \: + \: a_0 \quad $
+                    $ \; y \;=\; {a_2}x^2 \,+\, {a_1}x \,+\, a_0 \; $
                     is a polynomial of order 2 — as long as $ a_2 $ is non-zero.
                   </p>
                 </wc-comment>
@@ -665,11 +709,11 @@
                   <p>
                     The canonical form:
                   </p>
-                  <wc-math class="Z">
+                  <wc-math class="Z s">
                     $$
-                      {a_N}x^N \: + \: {a_{N-1}}x^{(N-1)} \:
-                      + \: \dots \:
-                      + \: {a_1}x \: + \: a_0
+                      {a_N}x^N \,+\, {a_{N-1}}x^{N-1}
+                      \,+\, \dots
+                      \,+\, {a_1}x \,+\, a_0
                     $$
                   </wc-math>
                 </wc-split>
@@ -677,9 +721,9 @@
                   <p>
                     or, equivalently:
                   </p>
-                  <wc-math class="Z">
+                  <wc-math class="Z s">
                     $$
-                      \sum_{n=0}^{N}{a_n}x^n
+                      \sum_{n=0}^N{a_n}x^n
                     $$
                   </wc-math>
                 </wc-split>
@@ -687,13 +731,18 @@
                   <p>
                     can be re-expressed as:
                   </p>
-                  <wc-math class="Z">
+                  <wc-math class="Z s">
                     $$
                       {a_N}
                       \Bigl(
-                        x^N \: + \: \bigl( {a_{N-1}}/a_N \bigr)x^{(N-1)} \:
-                        + \: \dots \: + \:
-                        \bigl( {a_1} / {a_N} \bigr)x \: + \: {a_0}/{a_N}
+                        x^N \,+\,
+                        \bigl(
+                          a_{N-1}/a_N
+                        \bigr) x^{N-1}
+                        \,+\, \dots \,+\,
+                        \bigl(
+                          a_1/a_N
+                        \bigr) x \,+\, a_0/a_N
                       \Bigr)
                     $$
                   </wc-math>
@@ -702,10 +751,10 @@
                   <p>
                     or, better yet:
                   </p>
-                  <wc-math class="Z">
+                  <wc-math class="Z s">
                     $$
-                      {a_N}\sum_{n=0}^{N}
-                      \dfrac{a_n}{a_N} \, x^n
+                      a_N\sum_{n=0}^N
+                      \frac{a_n}{a_N} \, x^n
                     $$
                   </wc-math>
                 </wc-split>
@@ -740,7 +789,7 @@
               <wc-ppp>
                 <p>
                   A polynomial with a single term is called a monomial.
-                  Two terms? Binomial. Three terms? Trinomial. Etc.
+                  Two terms? Binomial. Three terms? Trinomial. &c.
                 </p>
                 <p class="n">
                   (E.g.: $ \; x^7 \; $ is a septic monic monomial...)
@@ -830,20 +879,20 @@
                 <p>
                   But if I write:
                 </p>
-                <wc-split class="grid-c s">
+                <wc-split class="grid-c">
                   <div>
                     <wc-math class="Z s">
                       $$
-                        f(x) \; = \; \frac{x/11 \, - \, 17/x}{15/10} \;
-                        = \; \frac{1}{11 \cdot 3/2} \, x \;
-                        + \; \frac{-17}{3/2} \, x^{-1}
+                        f(x) \;=\; \frac{x/11 \,-\, 17/x}{15/10}
+                        \;=\; \frac{1}{11\cdot3/2} \, x
+                        \;+\; \frac{-17}{3/2} \, x^{-1}
                       $$
                     </wc-math>
-                    <wc-math class="Z">
+                    <wc-math class="Z s">
                       $$
-                        \hphantom{ f(x) \; }
-                        = \; (2/33)x^1 \, + \, 0x^0 \,
-                        + \, (-34/3)x^{-1}
+                        \hphantom{ f(x) }
+                        \;=\; (2/33)x^1 \,+\, 0x^0
+                        \,+\, (-34/3)x^{-1}
                       $$
                     </wc-math>
                   </div>
@@ -852,7 +901,7 @@
                     <p>
                       $ f(x) \; $ is a Laurent polynomial of the first order.
                     </p>
-                    <p>
+                    <p class="n">
                       Its leading coefficient is: $ \; 2/33 \; $.
                       <br/>
                       Its constant term is: $ \; 0 \; $.
@@ -883,7 +932,7 @@
                   at which a polynomial outputs zero
                   are called its
                   <strong
-                    class="small-caps Achtung"
+                    class="small-caps Achtung2"
                   ><em>&nbsp;r&nbsp;o&nbsp;o&nbsp;t&nbsp;s&nbsp;</em></strong>.
                 </p>
                 <p class="zz">
@@ -925,14 +974,14 @@
                     href="https://en.wikipedia.org/wiki/Constant_function"
                   >constant</a></mark>
                 </h4>
-                <wc-math class="Z">
+                <wc-math class="Z s">
                   $$
-                    f(x) \; = \; a_0
+                    f(x) \;=\; a_0
                   $$
                 </wc-math>
                 <p>
-                  Then $ \; f(x) \, = \, 0 \; $
-                  means $ \; a_0 \, = \, 0 \; $
+                  Then $ \; f(x) \,=\, 0 \; $
+                  means $ \; a_0 \,=\, 0 \; $
                   which has 1 solution for $ a_0 $
                   but none for $ x $.
                   <br/>
@@ -953,25 +1002,25 @@
                     href="https://en.wikipedia.org/wiki/Linearity#Linear_polynomials"
                   >linear</a></mark>
                 </h4>
-                <wc-math class="Z">
+                <wc-math class="Z s">
                   $$
-                    f(x) \; = \; {a_1}x \, + \, a_0
+                    f(x) \;=\; {a_1}x \,+\, a_0
                   $$
                 </wc-math>
                 <wc-math class="x N s">
                   $$
-                    f(x) \, = \, 0
+                    f(x) \,=\, 0
                     \quad\iff\quad
-                    {a_1}x \, + \, a_0 \; = \; 0
+                    {a_1}x \,+\, a_0 \;=\; 0
                     \quad\iff\quad
-                    {a_1}(x \, + \, {a_0}/{a_1}) \; = \; 0
+                    {a_1}(x \,+\, a_0/a_1) \;=\; 0
                   $$
                 </wc-math>
-                <wc-math class="x">
+                <wc-math class="x s S">
                   $$
-                    \hphantom{f(x) \, = \, 0 \quad}
-                    \iff\quad
-                    x \; = \; {-a_0}/{a_1}
+                    \hphantom{ f(x) \,=\, 0 }
+                    \quad\iff\quad
+                    x \;=\; -a_0/a_1
                   $$
                 </wc-math>
                 <wc-comment class="y">
@@ -983,14 +1032,14 @@
                 </wc-comment>
                 <p>
                   Therefore a polynomial of the first order
-                  has one root: $ \; r_1 \, = \, -a_0/a_1 \; $.
+                  has one root: $ \; r_1 \,=\, -a_0/a_1 \; $.
                 </p>
                 <p class="n">
                   And:
                 </p>
-                <wc-math class="Z">
+                <wc-math class="Z s">
                   $$
-                    a_1 \, (x \, + \, a_0/a_1) \; = \; {a_1}(x - r_1)
+                    a_1 (x \,+\, a_0/a_1) \;=\; {a_1}(x - r_1)
                   $$
                 </wc-math>
                 <p>
@@ -1021,14 +1070,14 @@
                     href="https://en.wikipedia.org/wiki/Quadratic_formula"
                   >quadratic</a></mark>
                 </h4>
-                <wc-math class="ZZ">
+                <wc-math class="Z s">
                   $$
-                    {a_2}x^2 \, + \, {a_1}x \, + \, a_0 \; = \; 0
+                    {a_2}x^2 \,+\, {a_1}x \,+\, a_0 \;=\; 0
                     \quad\iff\quad
-                    a_2 \,
+                    a_2
                     \bigl(
-                      x^2 \, + \, (a_1/a_2)x \, + \, a_0/a_2
-                    \bigr) \; = \; 0
+                      x^2 \,+\, (a_1/a_2)x \,+\, a_0/a_2
+                    \bigr) \;=\; 0
                   $$
                 </wc-math>
                 <wc-comment class="y">
@@ -1041,12 +1090,12 @@
                     definition &c.
                   </p>
                 </wc-comment>
-                <wc-math class="ZZ">
+                <wc-math class="Z s">
                   $$
                     \iff\quad
-                    x^2 \, + \, (a_1/a_2)x \, + \, a_0/a_2 \; = \; 0
+                    x^2 \,+\, (a_1/a_2)x \,+\, a_0/a_2 \;=\; 0
                     \quad\iff\quad
-                    x^2 \, + \, (a_1/a_2)x \; = \; -a_0/a_2
+                    x^2 \,+\, (a_1/a_2)x \;=\; -a_0/a_2
                   $$
                 </wc-math>
                 <p>
@@ -1054,41 +1103,44 @@
                 </p>
                 <wc-math class="Z s">
                   $$
-                    (\alpha + \beta)^2 \;
-                    = \; (\alpha + \beta)(\alpha + \beta) \;
-                    = \; \alpha\alpha \, + \, \alpha\beta \, + \, \beta\alpha \,
-                    + \, \beta\beta \; = \; \alpha^2 \, + \, 2\alpha\beta \, + \, \beta^2
+                    (\alpha + \beta)^2
+                    \;=\;
+                    (\alpha + \beta)(\alpha + \beta)
+                    \;=\;
+                    \alpha\alpha \,+\, \alpha\beta \,+\, \beta\alpha\,+\, \beta\beta
+                    \;=\;
+                    \alpha^2 \,+\, 2\alpha\beta \,+\, \beta^2
                   $$
                 </wc-math>
                 <p>
-                  Now $ \; x^2 \, + \, (a_1/a_2)x \; $
-                  has the form: $ \; \alpha^2 \, + \, 2\alpha\beta \; $
+                  Now $ \; x^2 \,+\, (a_1/a_2)x \; $
+                  has the form: $ \; \alpha^2 \,+\, 2\alpha\beta \; $
                   where:
                 </p>
-                <wc-split class="grid-b s">
-                  <wc-math class="Z">
+                <wc-split class="grid-b">
+                  <wc-math class="Z s">
                     $$
-                      \alpha \, = \, x
+                      \alpha \;=\; x
                     $$
                   </wc-math>
                   <p>and</p>
-                  <wc-math class="Z">
+                  <wc-math class="Z s">
                     $$
-                      a_1/a_2 \, = \, 2\beta
+                      a_1/a_2 \;=\; 2\beta
                     $$
                   </wc-math>
                   <p>so</p>
-                  <wc-math class="x N">
+                  <wc-math class="Z s">
                     $$
-                      \beta \; = \; a_1 / (2a_2)
+                      \beta \;=\; a_1/(2a_2)
                     $$
                   </wc-math>
                 </wc-split>
-                <wc-split class="grid-b S">
+                <wc-split class="grid-b">
                   <p>Then:</p>
-                  <wc-math class="x s">
+                  <wc-math class="Z s">
                     $$
-                      \beta^2 \; = \; {a_1}^2 / (2a_2)^2
+                      \beta^2 \;=\; {a_1}^2/(2a_2)^2
                     $$
                   </wc-math>
                 </wc-split>
@@ -1098,64 +1150,65 @@
                 </p>
                 <wc-math class="Z s">
                   $$
-                    x^2 \, + \, (a_1/a_2) x \, + \, {a_1}^2 / (2a_2)^2 \;
-                    = \; {a_1}^2 / (2a_2)^2 \, - \, {a_0}/{a_2}
+                    x^2 \,+\, (a_1/a_2)x \,+\, {a_1}^2/(2a_2)^2
+                    \;=\;
+                    {a_1}^2/(2a_2)^2 \,-\, a_0/a_2
                   $$
                 </wc-math>
                 <wc-math class="Z s">
                   $$
                     \iff\quad
                     \bigl(
-                      x \, + \, a_1 / (2a_2)
-                    \bigr)^2 \;
-                    = \; {a_1}^2 / (2a_2)^2 \, - \, {a_0}/{a_2} \;
-                    = \; \frac{ {a_1}^2 \, - \, {2^2}{a_2}{a_0} }{ (2a_2)^2 }
+                      x \,+\, a_1/(2a_2)
+                    \bigr)^2
+                    \;=\;
+                    {a_1}^2/(2a_2)^2 \,-\, a_0/a_2
+                    \;=\;
+                    \frac{
+                      {a_1}^2 \,-\, 2^2 a_2 a_0
+                    }{ (2a_2)^2 }
                   $$
                 </wc-math>
                 <wc-math class="Z s">
                   $$
                     \iff\quad
-                    x \, + \, a_1 / (2a_2) \;
-                    = \; \pm
-                    \sqrt{
-                      \frac{{a_1}^2 \, - \, 4{a_2}{a_0} }{ (2a_2)^2 }
-                    } \;
-                    = \; \pm
-                    \frac{
-                      \sqrt{
-                        {a_1}^2 \, - \, 4{a_2}{a_0}
-                      }
-                    }{
-                      2{a_2}
+                    x \,+\, a_1/(2a_2)
+                    \;=\;
+                    \pm\sqrt{
+                      \frac{
+                        {a_1}^2 \,-\, 4 a_2 a_0
+                      }{ (2a_2)^2 }
                     }
+                    \;=\;
+                    \pm\frac{
+                      \sqrt{
+                        {a_1}^2 \,-\, 4 a_2 a_0
+                      }
+                    }{ 2 a_2 }
                   $$
                 </wc-math>
                 <wc-math class="Z s">
                   $$
                     \iff\quad
-                    x \;
-                    = \; \pm
-                    \frac{
+                    x
+                    \;=\;
+                    \pm\frac{
                       \sqrt{
-                        {a_1}^2 \, - \, 4{a_2}{a_0}
+                        {a_1}^2 \,-\, 4 a_2 a_0
                       }
-                    }{
-                      2a_2
-                    } \:
-                    - \: \frac{a_1}{2 \, a_2} \;
-                    = \;
+                    }{ 2a_2 }
+                    \:-\: \frac{a_1}{2 a_2}
+                    \;=\;
                     \frac{
-                      - a_1 \, \pm \,
+                      -a_1 \,\pm\,
                       \sqrt{
-                        {a_1}^2 \, - \, 4{a_2}{a_0}
+                        {a_1}^2 \,-\, 4 a_2 a_0
                       }
-                    }{
-                      2a_2
-                    }
+                    }{ 2 a_2 }
                   $$
                 </wc-math>
                 <p class="y">
-                  $ {a_1}^2 \, - \, 4{a_2}{a_0} \; $
+                  $ {a_1}^2 \,-\, 4 a_2 a_0 \; $
                   is called the polynomial's discriminant.
                   (Hence <cite>discriminating</cite> meaning
                   <mark>finding the roots</mark>.)
@@ -1177,31 +1230,31 @@
                     But when dealing with the special cases of affine or quadratic,
                     the classical notation is (respectively):
                   </p>
-                  <wc-split class="grid-b s">
-                    <wc-math class="Z">
+                  <wc-split class="grid-b">
+                    <wc-math class="Z s">
                       $$
-                       ax \, + \, b
+                       ax \,+\, b
                       $$
                     </wc-math>
                     <p>and</p>
-                    <wc-math class="Z">
+                    <wc-math class="Z s">
                       $$
-                        ax^2 \, + \, bx \, + \, c
+                        ax^2 \,+\, bx \,+\, c
                       $$
                     </wc-math>
                   </wc-split>
-                  <p class="s">
+                  <p>
                     I don't like this.
-                    You get $ \; a_1 \, = \, a \; $,
-                    then $ \; a_1 \, = \, b \; $, etc.
+                    You get $ \; a_1 \,=\, a \; $,
+                    then $ \; a_1 \,=\, b \; $, etc.
                     It's confusing for no reason.
                   </p>
-                  <p class="s">
+                  <p class="zz">
                     Plus it complies poorly with generalisation:
                     if you keep raising the order you'll get
-                    $ \; a_0 \, = \, d \; $ (as in $ \; df/dx \; $...),
-                    then $ \; a_0 \, = \, e \; $ (as in $ \; \exp(1) \; $...),
-                    then $ \; a_0 \, = \, f \; $ (as in $ \; f(x) \; $ or $ \; 2\pi\f \; $...);
+                    $ \; a_0 \,=\, d \; $ (as in $ \; df/dx \; $...),
+                    then $ \; a_0 \,=\, e \; $ (as in $ \; \exp(1) \; $...),
+                    then $ \; a_0 \,=\, f \; $ (as in $ \; f(x) \; $ or $ \; 2\pi\f \; $...);
                     orders 8 and 9 will give $ i $ and $ j $ (as in $ \; \sqrt{-1} \; $...);
                     order 23 gives $ \; a_0 \, = \, x \; $...
                   </p>
@@ -1224,25 +1277,21 @@
                   Therefore a polynomial of the second order has two roots:
                 </p>
                 <wc-split class="grid-b">
-                  <wc-math class="Z s">
+                  <wc-math class="N x s">
                     $$
-                      r_1 \; = \;
+                      r_1 \;=\;
                       \frac{
-                        -a_1 \, + \, \sqrt{\Delta}
-                      }{
-                        2a_2
-                      }
+                        -a_1 \,+\, \sqrt{\Delta}
+                      }{ 2 a_2 }
                     $$
                   </wc-math>
                   <p>and</p>
-                  <wc-math class="Z s">
+                  <wc-math class="N x  s">
                     $$
-                      r_2 \; = \;
+                      r_2 \;=\;
                       \frac{
-                        -a_1 \, - \, \sqrt{\Delta}
-                      }{
-                        2a_2
-                      }
+                        -a_1 \,-\, \sqrt{\Delta}
+                      }{ 2 a_2 }
                     $$
                   </wc-math>
                 </wc-split>
@@ -1266,13 +1315,20 @@
                 <p class="zz">
                   What comes next might apply to complex polynomials,
                   but I haven't checked.
+                  <br/>
                   And I don't want to write something false
                   because of too general phrasing.
                 </p>
-                <p>
-                  In short: from now on:
-                  $ \quad \Im(a_2) \, = \, \Im(a_1) \, = \, \Im(a_0) \, = \, 0 $
-                </p>
+                <wc-split class="grid-b">
+                  <p>
+                    In short: from now on:
+                  </p>
+                  <wc-math class="N x s">
+                    $$
+                      \Im(a_2) \,=\, \Im(a_1) \,=\, \Im(a_0) \,=\, 0
+                    $$
+                  </wc-math>
+                </wc-split>
               </wc-ppp>
 
               <wc-ppp>
@@ -1287,21 +1343,21 @@
                   <dt style="padding: 0;">
                     <wc-math class="s">
                       $$
-                        \Re(r_1) \; = \;
+                        \Re(r_1) \;=\;
                       $$
                     </wc-math>
                   </dt>
                   <dd style="padding: 0;">
                     <wc-math class="s">
                       $$
-                        \Re(r_2) \; = \; -{a_1}/(2a_2)
+                        \Re(r_2) \;=\; -a_1/2a_2
                       $$
                     </wc-math>
                   </dd>
                   <dt style="padding: 0;">
                     <wc-math class="s">
                       $$
-                        \Im(r_1) \; = \;
+                        \Im(r_1) \;=\;
                       $$
                     </wc-math>
                   </dt>
@@ -1309,22 +1365,22 @@
                     <wc-math class="s">
                       $$
                         \hphantom{-}
-                        \sqrt{\Delta} / (2a_2)
+                        \sqrt{\Delta}/(2 a_2)
                       $$
                     </wc-math>
                   </dd>
                   <dt style="padding: 0;">
                     <wc-math class="s">
                       $$
-                        \Im(r_2) \; = \;
+                        \Im(r_2) \;=\;
                       $$
                     </wc-math>
                   </dt>
                   <dd style="padding: 0;">
                     <wc-math class="s">
                       $$
-                        -\sqrt{\Delta} / (2a_2) \;
-                        = \; -\Im(r_1)
+                        -\sqrt{\Delta}/(2 a_2)
+                        \;=\; -\Im(r_1)
                       $$
                     </wc-math>
                   </dd>
@@ -1339,7 +1395,7 @@
               </wc-ppp>
 
               <wc-ppp>
-                <wc-split class="grid-c">
+                <wc-split>
                   <div>
                     <p>
                       So:
@@ -1367,12 +1423,12 @@
                     </wc-pp>
                   </div>
                   <wc-comment>
-                    <p class="S s">
+                    <p>
                       Pedagogy with a hammer.
                       <br/>
                       Patented by a guy named Friedrich.
                     </p>
-                    <p class="N n">
+                    <p class="N">
                       (Thanks, my friend.
                       <br/>
                       I wish you were here.)
@@ -1383,32 +1439,32 @@
 
               <wc-ppp>
                 <dl class="no-fucking-x-pad s">
-                  <dt>Now if $ \; x \: = \: r_1 \; $,&nbsp;</dt>
-                  <dd>$ \; x \, - \, r_1 \: = \: 0 \; $,</dd>
-                  <dt>and if $ \; x \: = \: r_2 \; $,&nbsp;</dt>
-                  <dd>$ \; x \, - \, r_2 \: = \: 0 \; $.</dd>
+                  <dt>Now if $ \; x \,=\, r_1 \; $,&nbsp;</dt>
+                  <dd>$ \; x \,-\, r_1 \;=\; 0 \; $,</dd>
+                  <dt>and if $ \; x \,=\, r_2 \; $,&nbsp;</dt>
+                  <dd>$ \; x \,-\, r_2 \;=\; 0 \; $.</dd>
                 </dl>
                 <p>
                   So if $ x $ equals $ r_1 $
                   <b class="small-caps">or</b> $ r_2 $:
                 </p>
-                <wc-split class="grid-b s">
-                  <wc-math class="Z">
+                <wc-split class="grid-b">
+                  <wc-math class="Z s">
                     $$
                       (x \, - \, r_1)(x \, - \, r_2) \; = \; 0
                     $$
                   </wc-math>
-                  <p>
+                  <p class="s">
                     since one of the factors is necessarily zero.
                   </p>
                 </wc-split>
                 <p>
                   Then the roots of
-                  $ \; (x \, - \, r_1)(x \, - \, r_2) \; $
+                  $ \; (x \,-\, r_1)(x \,-\, r_2) \; $
                   are $ r_1 $ and $ r_2 $.
                   <br/>
                   Same as
-                  $ \; x^2 \, + \, (a_1/a_2)x \, + \, a_0/a_2 \; $.
+                  $ \; x^2 \,+\, (a_1/a_2)x \,+\, a_0/a_2 \; $.
                 </p>
               </wc-ppp>
 
@@ -1421,111 +1477,93 @@
                 </p>
                 <wc-math class="Z s">
                   $$
-                    (x \, - \, r_1)(x \, - \, r_2) \;
-                    = \; \left(
-                      x \: - \:
+                    (x \,-\, r_1)(x \,-\, r_2)
+                    \;=\;
+                    \left(
+                      x \:-\:
                       \frac{
-                        -a_1 \, + \, \sqrt{\Delta}
-                      }{
-                        2a_2
-                      }
-                    \right)\left(
-                      x \: - \:
+                        -a_1 \,+\, \sqrt{\Delta}
+                      }{ 2 a_2 }
+                    \right)
+                    \left(
+                      x \:-\:
                       \frac{
-                        -a_1 \, - \, \sqrt{\Delta}
-                      }{
-                        2a_2
-                      }
+                        -a_1 \,-\, \sqrt{\Delta}
+                      }{ 2 a_2 }
                     \right)
                   $$
                 </wc-math>
                 <wc-math class="Z s">
                   $$
-                    = \; x^2 \: - \: x \,
+                    =\; x^2 \:-\: x \,
                     \frac{
-                      -a_1 \, - \sqrt{\Delta}
-                    }{
-                      2a_2
-                    } \: - \:
+                      -a_1 \,-\, \sqrt{\Delta}
+                    }{ 2 a_2 } \:-\:
                     \frac{
-                      -a_1 \, + \, \sqrt{\Delta}
-                    }{
-                      2a_2
-                    } \, x \: + \:
+                      -a_1 \,+\, \sqrt{\Delta}
+                    }{ 2 a_2 } \, x \:+\:
                     \frac{
                       \left(
-                        -a_1 \, + \, \sqrt{\Delta}
-                      \right)\left(
-                        -a_1 \, - \, \sqrt{\Delta}
+                        -a_1 \,+\, \sqrt{\Delta}
                       \right)
-                    }{
-                      (2a_2)^2
-                    }
+                      \left(
+                        -a_1 \,-\, \sqrt{\Delta}
+                      \right)
+                    }{ (2 a_2)^2 }
                   $$
                 </wc-math>
                 <wc-math class="Z s">
                   $$
-                    = \; x^2 \: - \:
+                    =\; x^2 \:-\:
                     \frac{
-                      -a_1 \, - \, \sqrt{\Delta} \,
-                      - \, a_1 \, + \, \sqrt{\Delta}
-                    }{
-                      2a_2
-                    } \, x \: + \:
+                      -a_1 \,-\, \sqrt{\Delta}
+                      \,-\, a_1 \,+\, \sqrt{\Delta}
+                    }{ 2 a_2 } \, x \:+\:
                     \frac{
-                      {a_1}^2 \, + \, {a_1}\sqrt{\Delta} \,
-                      - \, {a_1}\sqrt{\Delta} \, - \, \sqrt{\Delta^2}
-                    }{
-                      4{a_2}^2
-                    }
+                      {a_1}^2 \,+\, a_1\sqrt{\Delta}
+                      \,-\, a_1\sqrt{\Delta} \,-\, \sqrt{\Delta^2}
+                    }{ 4{a_2}^2 }
                   $$
                 </wc-math>
                 <wc-math class="Z s">
                   $$
-                    = \; x^2 \: - \:
+                    =\; x^2 \:-\:
+                    \frac{ -2 a_1 }{ 2 a_2 } \, x
+                    \:+\:
                     \frac{
-                      -2a_1
-                    }{
-                      2a_2
-                    } \, x \: + \:
-                    \frac{
-                      {a_1}^2 \, - \, \Delta
-                    }{
-                      4{a_2}^2
-                    }
+                      {a_1}^2 \,-\, \Delta
+                    }{ 4{a_2}^2 }
                   $$
                 </wc-math>
-                <wc-split class="grid-c">
+                <wc-split>
                   <wc-math class="Z s">
                     $$
-                      = \; x^2 \: + \: (a_1/a_2)x \: + \:
+                      =\; x^2 \:+\: (a_1/a_2)x \:+\:
                       \frac{
-                        {a_1}^2 \, - \, {a_1}² \, + \, 4{a_2}{a_0}
-                      }{
-                        4{a_2}{a_2}
-                      }
+                        {a_1}^2 \,-\, {a_1}^2 \,+\, 4 a_2 a_0
+                      }{ 4 a_2 a_2 }
                     $$
                   </wc-math>
                   <wc-comment>
                     <p>
-                      $ {a_1}^2 \, - \, {a_1}^2 \; $
+                      $ {a_1}^2 \,-\, {a_1}^2 \; $
                       cancels out,
                     </p>
                     <p>
-                      then $ \; 4a_2 \; $ becomes a common factor
+                      then $ \; 4 a_2 \; $ becomes a common factor
                       to both the numerator and the denominator.
                     </p>
                   </wc-comment>
                 </wc-split>
                 <wc-math class="Z s">
                   $$
-                    = \; x^2 \, + \, (a_1/a_2)x \, + \, a_0/a_2
+                    =\; x^2 \,+\, (a_1/a_2)x \,+\, a_0/a_2
                   $$
                 </wc-math>
                 <p>
                   Nice.
                 </p>
-                <p>
+                <p class="zz">
                   Then
                   $ \; a_2 \bigl( x^2 \, + \, (a_1/a_2)x \,
                   + \, a_0/a_2 \bigr) \;
@@ -1547,15 +1585,15 @@
                 </p>
                 <wc-math class="Z s">
                   $$
-                    a_2 (x \, - \, r_1)(x \, - \, r_2) \;
-                    =\; \sqrt{a_2}(x \, - \, r_1)
+                    a_2 (x \,-\, r_1)(x \,-\, r_2)
+                    \;=\; \sqrt{a_2}(x \,-\, r_1)
                     \cdot
-                    \sqrt{a_2}(x \, - \, r_2)
+                    \sqrt{a_2}(x \,-\, r_2)
                   $$
                 </wc-math>
                 <p>
-                  and that $ \; \sqrt{a_2}(x \, - \, r_1) \; $
-                  and $ \; \sqrt{a_2}(x \, - \, r_2) \; $
+                  and that $ \; \sqrt{a_2}(x \,-\, r_1) \; $
+                  and $ \; \sqrt{a_2}(x \,-\, r_2) \; $
                   are two first—order polynomials
                   whose respective roots are $ r_1 $ and $ r_2 $.
                 </p>
@@ -1590,70 +1628,70 @@
                   <p>Fun example:</p>
                   <wc-math class="x N s">
                     $$
-                      x^2 \, - \, 1 \; = \; 0
+                      x^2 \,-\, 1 \;=\; 0
                       \quad\iff\quad
-                      x^2 \: = \: 1
+                      x^2 \:=\: 1
                     $$
                   </wc-math>
                   <wc-math class="x s">
                     $$
                       \iff\quad
-                      x \; = \; \pm\sqrt{\, 1 \,} \; = \; \pm 1
+                      x \;=\; \pm\sqrt{\, 1 \,} \;=\; \pm 1
                     $$
                   </wc-math>
                   <p>So:</p>
                   <wc-math class="Z s">
                     $$
-                      x^2 \, - \ 1 \; = \; (x \, + \, 1)(x \, - \, 1)
+                      x^2 \,-\, 1 \;=\; (x \,+\, 1)(x \,-\, 1)
                     $$
                   </wc-math>
                   <p>You can check:</p>
-                  <wc-math class="x N s">
+                  <wc-math class="N x s">
                     $$
-                      3^2 \, - \, 1 \; = \; 9 \, - \, 1 \;
-                      = \; 8 \; = \; 4 \cdot 2
-                    $$
-                  </wc-math>
-                  <wc-math class="x s S">
-                    $$
-                      \hphantom{3^2 \, - \, 1 \; }
-                      = \; (3 \, + \, 1)(3 \, - \, 1)
-                    $$
-                  </wc-math>
-                  <wc-math class="x N s">
-                    $$
-                      7^2 \, - \, 1 \; = \; 49 \, - \, 1 \;
-                      = \; 48 \; = \; 8 \cdot 6
+                      3^2 \,-\, 1 \;=\; 9 \,-\, 1
+                      \;=\; 8 \;=\; 4 \cdot 2
                     $$
                   </wc-math>
                   <wc-math class="x s S">
                     $$
-                      \hphantom{7^2 \, - \, 1 \; }
-                      = \; (7 \, + \, 1)(7 \, - \, 1)
+                      \hphantom{3^2 \,-\, 1 }
+                      \;=\; (3 \,+\, 1)(3 \,-\, 1)
                     $$
                   </wc-math>
                   <wc-math class="x N s">
                     $$
-                      10^2 \, - \, 1 \; = \; 100 \, - \, 1 \;
-                      = \; 99 \; = \; 11 \cdot 9
+                      7^2 \,-\, 1 \;=\; 49 \,-\, 1
+                      \;=\; 48 \;=\; 8 \cdot 6
                     $$
                   </wc-math>
                   <wc-math class="x s S">
                     $$
-                      \hphantom{10^2 \, - \, 1 \; }
-                      = \; (10 \, + \, 1)(10 \, - \, 1)
+                      \hphantom{7^2 \,-\, 1 }
+                      \;=\; (7 \,+\, 1)(7 \,-\, 1)
                     $$
                   </wc-math>
                   <wc-math class="x N s">
                     $$
-                      0.5^2 \, - \, 1 \; = \; 0.25 \, - \, 1 \;
-                      = \; -0.75 \; = \; 1.5 \cdot -0.5
+                      10^2 \,-\, 1 \;=\; 100 \,-\, 1
+                      \;=\; 99 \;=\; 11 \cdot 9
                     $$
                   </wc-math>
                   <wc-math class="x s S">
                     $$
-                      \hphantom{0.5^2 \, - \, 1 \; }
-                      = \; (0.5 \, + \, 1)(0.5 \, - \, 1)
+                      \hphantom{10^2 \,-\, 1 }
+                      \;=\; (10 \,+\, 1)(10 \,-\, 1)
+                    $$
+                  </wc-math>
+                  <wc-math class="x N s">
+                    $$
+                      0.5^2 \,-\, 1 \;=\; 0.25 \,-\, 1
+                      \;=\; -0.75 \;=\; 1.5 \cdot -0.5
+                    $$
+                  </wc-math>
+                  <wc-math class="x s S">
+                    $$
+                      \hphantom{0.5^2 \,-\, 1 }
+                      \;=\; (0.5 \,+\, 1)(0.5 \,-\, 1)
                     $$
                   </wc-math>
                   <wc-math class="x N s fake">
@@ -1665,32 +1703,33 @@
                       rel="external"
                       href="https://en.wikipedia.org/wiki/Golden_ratio"
                     >$$ \varphi $$</a>$$
-                    {}^2 \, - \, 1 \;
-                    = \; \varphi(\varphi \, - \, 1/\varphi) \;
-                    = \; \varphi\bigl(
-                      \varphi \, - \, (\varphi \, - \, 1)
+                    {}^2 \,-\, 1
+                    \;=\; \varphi(\varphi \,-\, 1/\varphi)
+                    \;=\; \varphi
+                    \bigl(
+                      \varphi \,-\, (\varphi \,-\, 1)
                     \bigr)
                     $$
                   </wc-math>
                   <wc-math class="x s">
                     $$
-                      \hphantom{\varphi^2 \, - \, 1 \;}
-                      = \; \varphi(\varphi \, - \, \varphi \, + \, 1) \;
-                      = \; \varphi \cdot 1 \;
-                      = \; \varphi
+                      \hphantom{ \varphi^2 \,-\, 1 }
+                      \;=\; \varphi(\varphi \,-\, \varphi \,+\, 1)
+                      \;=\; \varphi \cdot 1
+                      \;=\; \varphi
                     $$
                   </wc-math>
                   <wc-math class="x s">
                     $$
-                      \hphantom{\varphi^2 \, - \, 1 \;}
-                      = \; \varphi^2/\varphi \;
-                      = \; \varphi^2 \cdot (1/\varphi)
+                      \hphantom{ \varphi^2 \, - \, 1 }
+                      \;=\; \varphi^2/\varphi
+                      \;=\; \varphi^2 \cdot (1/\varphi)
                     $$
                   </wc-math>
                   <wc-math class="x s S">
                     $$
-                      \hphantom{\varphi^2 \, - \, 1 \;}
-                      = \; (\varphi \, + \, 1)(\varphi \, - \, 1)
+                      \hphantom{ \varphi^2 \,-\, 1 }
+                      \;=\; (\varphi \,+\, 1)(\varphi \,-\, 1)
                     $$
                   </wc-math>
                   <p>
@@ -1705,39 +1744,42 @@
                 </p>
                 <wc-math class="x N s">
                   $$
-                    P_1(x) \; = \; \sqrt{a_2} \, (x \, - \, r_1) \;
-                    = \; \sqrt{a_2} \, \bigl(
-                      x \: - \: \Re(r_1) \: - \: j \, \Im(r_1)
+                    P_1(x) \;=\; \sqrt{a_2} \, (x \,-\, r_1)
+                    \;=\;
+                    \sqrt{a_2} \,
+                    \bigl(
+                      x \:-\: \Re(r_1) \:-\: j \, \Im(r_1)
                     \bigr)
                   $$
                 </wc-math>
                 <wc-math class="x s S">
                   $$
-                    \hphantom{P_1(x) \;}
-                    = \; \sqrt{a_2} \, x \: - \: \sqrt{a_2} \,\Re(r_1) \:
-                    - \: j \, \sqrt{a_2} \, \Im(r_1)
+                    \hphantom{ P_1(x) }
+                    \;=\; \sqrt{a_2} \, x \:-\: \sqrt{a_2} \, \Re(r_1)
+                    \:-\: j \, \sqrt{a_2} \, \Im(r_1)
                   $$
                 </wc-math>
                 <wc-math class="x N s">
                   $$
-                    P_2(x) \; = \; \sqrt{a_2} \, (x \, - \, r_2) \;
-                    = \; \sqrt{a_2} \, \bigl(
-                      x \: - \: \Re(r_2) \: - \: j \, \Im(r_2)
+                    P_2(x) \;=\; \sqrt{a_2} \, (x \,-\, r_2)
+                    \;=\; \sqrt{a_2} \,
+                    \bigl(
+                      x \:-\: \Re(r_2) \:-\: j \, \Im(r_2)
                     \bigr)
                   $$
                 </wc-math>
                 <wc-math class="x s S">
                   $$
-                    \hphantom{P_2(x) \;}
-                    = \; \sqrt{a_2} \, x \: - \: \sqrt{a_2} \,\Re(r_2) \:
-                    - \: j \, \sqrt{a_2} \, \Im(r_2)
+                    \hphantom{ P_2(x) }
+                    \;=\; \sqrt{a_2} \, x \:-\: \sqrt{a_2} \, \Re(r_2)
+                    \:-\: j \, \sqrt{a_2} \, \Im(r_2)
                   $$
                 </wc-math>
                 <p>Then:</p>
                 <wc-math class="x N s">
                   $$
-                    P_1(x) \, P_2(x) \;
-                    = \; \hphantom{ {} \cdot {} }
+                    P_1(x) P_2(x)
+                    \;=\; \hphantom{ {} \cdot {} }
                     \bigl(
                       \sqrt{a_2} \, x \: - \: \sqrt{a_2} \, \Re(r_1) \:
                       -\: j \, \sqrt{a_2} \, \Im(r_1)
@@ -1749,125 +1791,125 @@
                     \hphantom{ P_1(x) \, P_2(x) \; = \; {} }
                     {} \cdot {}
                     \bigl(
-                      \sqrt{a_2} \, x \: - \: \sqrt{a_2} \, \Re(r_2) \:
-                      - \: j \, \sqrt{a_2} \, \Im(r_2)
+                      \sqrt{a_2} \, x \:-\: \sqrt{a_2} \, \Re(r_2)
+                      \:-\: j \, \sqrt{a_2} \, \Im(r_2)
                     \bigr)
                   $$
                 </wc-math>
                 <wc-math class="x s">
                   $$
-                    \hphantom{ P_1(x) \, P_2(x) \; }
-                    = \; a_2 \, x^2 \:
-                    - \: a_2 \, \Re(r_2) \, x \:
-                    - \: j \, a_2 \, \Im(r_2) \, x
+                    \hphantom{ P_1(x) P_2(x) }
+                    \;=\; a_2 x^2
+                    \:-\: a_2 \, \Re(r_2) \, x
+                    \:-\: j \, a_2 \, \Im(r_2) \, x
                   $$
                 </wc-math>
                 <wc-math class="x s">
                   $$
-                    \hphantom{ P_1(x) \, P_2(x) \; = \; }
-                    - \: a_2 \, \Re(r_1) \, x \:
-                    - \: a_2 \, \Re(r_1) \, \Re(r_2) \:
-                    + \: j \, a_2 \, \Re(r_1) \, \Im(r_2)
+                    \hphantom{ P_1(x) P_2(x) \; = \; }
+                    -\: a_2 \, \Re(r_1) \, x
+                    \:-\: a_2 \, \Re(r_1) \, \Re(r_2)
+                    \:+\: j \, a_2 \, \Re(r_1) \, \Im(r_2)
                   $$
                 </wc-math>
                 <wc-math class="x s S">
                   $$
-                    \hphantom{ P_1(x) \, P_2(x) \; = \; }
-                    - \: j \, a_2 \, \Im(r_1) \, x \:
-                    + \: j \,a_2 \, \Im(r_1) \, \Re(r_2) \:
-                    - \: j \, a_2 \, \Im(r_1) \, \Im(r_2)
+                    \hphantom{ P_1(x) P_2(x) \; = \; }
+                    -\: j \, a_2 \, \Im(r_1) \, x
+                    \:+\: j \, a_2 \, \Im(r_1) \, \Re(r_2)
+                    \:-\: j \, a_2 \, \Im(r_1) \, \Im(r_2)
                   $$
                 </wc-math>
                 <wc-math class="Z s">
                   $$
-                    \alpha_2 \; = \; a_2
+                    \alpha_2 \;=\; a_2
                   $$
                 </wc-math>
                 <wc-math class="Z s">
                   $$
-                    \alpha_1 \; = \; -a_2 \,
+                    \alpha_1 \;=\; -a_2 \,
                     \Bigl(
-                      \Re(r_2) \: + \: j \,\Im(r_2) \:
-                      + \: \Re(r_1) \: + \: j \, \Im(r_2)
+                      \Re(r_2) \:+\: j \, \Im(r_2)
+                      \:+\: \Re(r_1) \:+\: j \, \Im(r_2)
                     \Bigr)
                   $$
                 </wc-math>
                 <wc-math class="Z s">
                   $$
-                    \alpha_0 \; = \; a_2 \,
+                    \alpha_0 \;=\; a_2 \,
                     \Bigl(
-                      \Re(r_1) \, \Re(r_2) \:
-                      + \: j \, \Re(r_1) \, \Im(r_2) \:
-                      + \: j \, \Im(r_1) \, \Re(r_2) \:
-                      - \: \Im(r_1) \, \Im(r_2)
+                      \Re(r_1) \, \Re(r_2)
+                      \:+\: j \, \Re(r_1) \, \Im(r_2)
+                      \:+\: j \, \Im(r_1) \, \Re(r_2)
+                      \:-\: \Im(r_1) \, \Im(r_2)
                     \Bigr)
                   $$
                 </wc-math>
                 <wc-math class="Z s">
                   $$
-                    \Im(\alpha_1) \; = \; -a_2 \,
+                    \Im(\alpha_1) \;=\; -a_2 \,
                     \bigl(
-                      \Im(r_2) \: + \: \Im(r_1)
+                      \Im(r_2) \:+\: \Im(r_1)
                     \bigr)
                   $$
                 </wc-math>
                 <wc-math class="Z s">
                   $$
-                    \Im(\alpha_0) \; = \; a_2 \,
+                    \Im(\alpha_0) \;=\; a_2 \,
                     \bigl(
-                      \Re(r_1) \, \Im(r_2) \:
-                      + \: \Im(r_1) \, \Re(r_2) \:
+                      \Re(r_1) \, \Im(r_2)
+                      \:+\: \Im(r_1) \, \Re(r_2)
                     \bigr)
                   $$
                 </wc-math>
                 <p>
-                  For $ \; P_1(x) \, P_2(x) \; $ to be a real polynomial,
+                  For $ \; P_1(x) P_2(x) \; $ to be a real polynomial,
                   we need all three coefficients to be purely real.
                 </p>
                 <p>That is:</p>
                 <wc-math class="x N s">
                   $$
-                    \Im(\alpha_1) \; = \; 0
+                    \Im(\alpha_1) \;=\; 0
                     \quad\iff\quad
-                    \Im(r_2) \: + \: \Im(r_1) \; = \; 0
+                    \Im(r_2) \:+\: \Im(r_1) \;=\; 0
                   $$
                 </wc-math>
                 <wc-math class="x s S">
                   $$
-                    \hphantom{ \Im(\alpha_1) \; = \; 0 \quad }
-                    \iff\quad
-                    \Im(r_2) \; = \; -\Im(r_1)
+                    \hphantom{ \Im(\alpha_1) \;=\; 0 }
+                    \quad\iff\quad
+                    \Im(r_2) \;=\; -\Im(r_1)
                   $$
                 </wc-math>
                 <wc-math class="x N s">
                   $$
-                    \Im(\alpha_0) \; = \; 0
+                    \Im(\alpha_0) \;=\; 0
                     \quad\iff\quad
-                    \Re(r_1) \, \Im(r_2) \:
-                    + \: \Im(r_1) \, \Re(r_2) \; = \; 0
+                    \Re(r_1) \, \Im(r_2)
+                    \:+\: \Im(r_1) \, \Re(r_2) \;=\; 0
                   $$
                 </wc-math>
                 <wc-math class="x s">
                   $$
-                    \hphantom{ \Im(\alpha_0) \; = \; 0 \quad }
-                    \iff\quad
-                    \Re(r_1) \, \Im(r_2) \;
-                    = \; -\Im(r_1) \, \Re(r_2)
+                    \hphantom{ \Im(\alpha_0) \;=\; 0 }
+                    \quad\iff\quad
+                    \Re(r_1) \, \Im(r_2)
+                    \;=\; -\Im(r_1) \, \Re(r_2)
                   $$
                 </wc-math>
                 <wc-math class="x s">
                   $$
-                    \hphantom{ \Im(\alpha_0) \; = \; 0 \quad }
-                    \iff\quad
-                    \Re(r_1) \, \Im(r_2) \;
-                    = \; \Re(r_2) \, \Im(r_2)
+                    \hphantom{ \Im(\alpha_0) \;=\; 0 }
+                    \quad\iff\quad
+                    \Re(r_1) \, \Im(r_2)
+                    \;=\; \Re(r_2) \, \Im(r_2)
                   $$
                 </wc-math>
                 <wc-math class="x s S">
                   $$
-                    \hphantom{ \Im(\alpha_0) \; = \; 0 \quad }
-                    \iff\quad
-                    \Re(r_1) \; = \; \Re(r_2)
+                    \hphantom{ \Im(\alpha_0) \;=\; 0 }
+                    \quad\iff\quad
+                    \Re(r_1) \;=\; \Re(r_2)
                   $$
                 </wc-math>
                 <wc-comment class="y">
@@ -1879,7 +1921,7 @@
                   </p>
                 </wc-comment>
                 <p>
-                  What if $ \; \Im(r_2) \, = \, 0 \; $ then?
+                  What if $ \; \Im(r_2) \,=\, 0 \; $ then?
                 </p>
                 <wc-math class="Z s">
                   $$
@@ -1887,31 +1929,31 @@
                       P_1 \cdot P_2
                     \bigr)(x) \;
                     = \; a_2 \,
-                    \left(
+                    \left(\:
                       \begin{alignedat}{2}
-                        & \, x^2 \: - \: \Re(r_2) \, x \,
+                        & x^2 \:-\: \Re(r_2) \, x
                         \\
-                        {} & \, - \: \Re(r_1) \, x \:
-                        + \: \Re(r_1) \, \Re(r_2) \,
+                        & {}-\: \Re(r_1) \, x
+                        \:+\: \Re(r_1) \, \Re(r_2)
                         \\
-                        {} & \, - \: j \, \Im(r_1) \:
-                        + \: j \, \Im(r_1) \, \Im(r_2) \,
-                      \end{alignedat}
+                        & {}-\: j \, \Im(r_1)
+                        \:+\: j \, \Im(r_1) \, \Im(r_2)
+                      \end{alignedat}\:
                     \right)
                   $$
                 </wc-math>
                 <wc-math class="Z s">
                   $$
-                    \Im\Bigl( \,
+                    \Im\Bigl(\,
                       \bigl(
                         P_1 \cdot P_2
-                      \bigr)(x) \,
-                    \Bigr) \;
-                    = \; a_2 \,
-                    \bigl( \,
-                      \Im(r_1) \, \Re(r_2) \:
-                      - \: \Im(r_1) \, x \,
-                    \bigr)
+                      \bigr)(x)
+                    \,\Bigr)
+                    \;=\; a_2 \,
+                    \bigl(\,
+                      \Im(r_1) \, \Re(r_2)
+                      \:-\: \Im(r_1) \, x
+                    \,\bigr)
                   $$
                 </wc-math>
               </wc-ppp>
@@ -1964,7 +2006,7 @@
                 <p class="n S">
                   So <mark>I don't know long divisions, only Euclidean ones</mark>
                   — is a category slip similar to
-                  <mark title="#notmyfender">It's not a Telecaster, it's a guitar</mark>.
+                  <mark title="#notMyFender">It's not a Telecaster, it's a guitar</mark>.
                 </p>
                 <p>
                   Turns out, after reading
@@ -2422,13 +2464,13 @@
                 <p>
                   There are almost 200 countries on Earth —
                   <a
-                    title="Editing Working-class-filter-design/Chapter 05_ Poles and zeroes
+                    title="Editing Working-class-filter-design/Chapter 05: Poles and zeroes
 at main · antoineportes/Working-class-filter-design"
                     target="_blank"
                     type="text/html"
                     charset="UTF-8"
                     rel="external"
-                    href="https://github.com/antoineportes/Working-class-filter-design/edit/main/Chapter%2005_%20Poles%20and%20zeroes"
+                    href="https://github.com/antoineportes/Working-class-filter-design/edit/main/Chapter 05_ Poles and zeroes"
                   >
                     pull a request
                   </a>
@@ -2462,182 +2504,185 @@ at main · antoineportes/Working-class-filter-design"
                     remainders by $ r $
                     and divisors by $ d $.
                   </p>
-                  <wc-math class="x N zz">
+                  <wc-math class="x N s">
                     $$
-                      \epsilon \; = \; \frac{6789}{33} \;
-                      = \; 10^3 \cdot (6/33) \, + \, 10^2 \cdot (7/33) \,
-                      + \, 10^1 \cdot (8/33) \, + \, 10^0 \cdot (9/33)
-                    $$
-                  </wc-math>
-                  <wc-math class="x S zz">
-                    $$
-                      \hphantom{\epsilon \; }
-                      = \; \Bigl(
-                        \bigl(
-                          (6/33) \cdot 10 \, + \, 7/33
-                        \bigr) \cdot 10 \, + \, 8/33
-                      \Bigr) \cdot 10 \, + \, 9
+                      \varepsilon \;=\; \frac{6789}{33}
+                      \;=\; 10^3 \cdot (6/33) \,+\, 10^2 \cdot (7/33)
+                      \,+\, 10^1 \cdot (8/33) \,+\, 10^0 \cdot (9/33)
                     $$
                   </wc-math>
-                  <wc-math class="x N zz">
+                  <wc-math class="x S s">
+                    $$
+                      \hphantom{ \varepsilon }
+                      \;=\;
+                      \Bigl(
+                        \bigl(\,
+                          (6/33) \cdot 10 \,+\, 7/33
+                        \bigr) \cdot 10 \,+\, 8/33
+                      \,\Bigr) \cdot 10 \,+\, 9
+                    $$
+                  </wc-math>
+                  <wc-math class="x N s">
                     $$
                       6/33
                       \quad\longrightarrow\quad
-                      q \: = \: 0
+                      q \:=\: 0
                       \qquad\AND\qquad
-                      r \: = \: 6
+                      r \:=\: 6
                     $$
                   </wc-math>
-                  <wc-math class="x zz">
+                  <wc-math class="x s">
                     $$
-                      \hphantom{6/33 \quad}
-                      \longrightarrow\quad
-                      6 \: = \: 0 \cdot 33 \, + \, 6 \:
-                      = \: q \cdot d \, + \, r
-                    $$
-                  </wc-math>
-                  <wc-math class="x S zz">
-                    $$
-                      \hphantom{6/33 \quad}
-                      \longrightarrow\quad
-                      10 \cdot 6/33 \:
-                      = \: 10 \cdot 0 \, + \, 10 \cdot 6/33
+                      \hphantom{ 6/33 }
+                      \quad\longrightarrow\quad
+                      6 \;=\; 0 \cdot 33 \,+\, 6
+                      \;=\; q \cdot d \,+\, r
                     $$
                   </wc-math>
-                  <wc-math class="x N zz">
+                  <wc-math class="x S s">
                     $$
-                      \epsilon \; = \; \Bigl(
+                      \hphantom{ 6/33 }
+                      \quad\longrightarrow\quad
+                      10 \cdot 6/33
+                      \;=\; 10 \cdot 0 \,+\, 10 \cdot 6/33
+                    $$
+                  </wc-math>
+                  <wc-math class="x N s">
+                    $$
+                      \varepsilon \;=\;
+                      \Bigl(\,
                         \bigl(
-                          10 \cdot 0 \, + \, (10 \cdot 6 \, + \, 7)/33
-                        \bigr) \cdot 10 \, + \, 8/33
-                      \Bigr) \cdot 10 \, + \, 9/33
+                          10 \cdot 0 \,+\, (10 \cdot 6 \,+\, 7)/33
+                        \bigr) \cdot 10 \,+\, 8/33
+                      \,\Bigr) \cdot 10 \,+\, 9/33
                     $$
                   </wc-math>
-                  <wc-math class="x S zz">
+                  <wc-math class="x S s">
                     $$
-                      \hphantom{\epsilon \; }
-                      = \; \bigl(
-                        (67/33) \cdot 10 \, + \, 8/33
-                      \bigr) \cdot 10 \, + \, 9/33
+                      \hphantom{ \varepsilon }
+                      \;=\;
+                      \bigl(\,
+                        (67/33) \cdot 10 \,+\, 8/33
+                      \,\bigr) \cdot 10 \,+\, 9/33
                     $$
                   </wc-math>
-                  <wc-math class="x N zz">
+                  <wc-math class="x N s">
                     $$
                       67/33
                       \quad\longrightarrow\quad
-                      q \: = \: 2
+                      q \;=\; 2
                       \qquad\AND\qquad
-                      r \: = \: 1
+                      r \;=\; 1
                     $$
                   </wc-math>
-                  <wc-math class="x zz">
+                  <wc-math class="x s">
                     $$
-                      \hphantom{67/33 \quad}
-                      \longrightarrow\quad
-                      67 \: = \: 2 \cdot 33 \, + \, 1 \:
-                      = \: q \cdot d \, + \, r
-                    $$
-                  </wc-math>
-                  <wc-math class="x S zz">
-                    $$
-                      \hphantom{67/33 \quad}
-                      \longrightarrow\quad
-                      10 \cdot 67/33 \:
-                      = \: 10 \cdot 2 \, + \, 10 \cdot 1/33
+                      \hphantom{ 67/33 }
+                      \quad\longrightarrow\quad
+                      67 \;=\; 2 \cdot 33 \,+\, 1
+                      \;=\; q \cdot d \,+\, r
                     $$
                   </wc-math>
-                  <wc-math class="x N zz">
+                  <wc-math class="x S s">
                     $$
-                      \epsilon \; = \; \bigl(
-                        10 \cdot 2 \, + \, (10 \cdot 1 \, + \, 8)/33
-                      \bigr) \cdot 10 \, + \, 9/33
-                    $$
-                  </wc-math>
-                  <wc-math class="x S zz">
-                    $$
-                      \hphantom{\epsilon \; }
-                      = \; 100 \cdot 2 \, + \, (18/33) \cdot 10 \, + \, 9/33
+                      \hphantom{ 67/33 }
+                      \quad\longrightarrow\quad
+                      10 \cdot 67/33
+                      \;=\: 10 \cdot 2 \,+\, 10 \cdot 1/33
                     $$
                   </wc-math>
-                  <wc-math class="x N zz">
+                  <wc-math class="x N s">
+                    $$
+                      \varepsilon \;=\;
+                      \bigl(\,
+                        10 \cdot 2 \,+\, (10 \cdot 1 \,+\, 8)/33
+                      \,\bigr) \cdot 10 \,+\, 9/33
+                    $$
+                  </wc-math>
+                  <wc-math class="x S s">
+                    $$
+                      \hphantom{ \varepsilon }
+                      \;=\; 100 \cdot 2 \,+\, (18/33) \cdot 10 \,+\, 9/33
+                    $$
+                  </wc-math>
+                  <wc-math class="x N s">
                     $$
                       18/33
                       \quad\longrightarrow\quad
-                      q \: = \: 0
+                      q \;=\; 0
                       \qquad\AND\qquad
-                      r \: = \: 18
+                      r \;=\; 18
                     $$
                   </wc-math>
-                  <wc-math class="x zz">
+                  <wc-math class="x s">
                     $$
-                      \hphantom{18/33 \quad}
-                      \longrightarrow\quad
-                      18 \: = \: 0 \cdot 33 \, + \, 18 \:
-                      = \: q \cdot d \, + \, r
-                    $$
-                  </wc-math>
-                  <wc-math class="x S zz">
-                    $$
-                      \hphantom{18/33 \quad}
-                      \longrightarrow\quad
-                      10 \cdot 18/33 \:
-                      = \: 10 \cdot 0 \, + \, 10 \cdot 18/33
+                      \hphantom{ 18/33 }
+                      \quad\longrightarrow\quad
+                      18 \;=\; 0 \cdot 33 \,+\, 18
+                      \;=\; q \cdot d \,+\, r
                     $$
                   </wc-math>
-                  <wc-math class="x N zz">
+                  <wc-math class="x S s">
                     $$
-                      \epsilon \; = \; \bigl(
-                        100 \cdot 2 \, + \, 10 \cdot 0 \,
-                        + \, 10 \cdot 18/33 \, + \, 9/33
-                    $$
-                  </wc-math>
-                  <wc-math class="x S zz">
-                    $$
-                      \hphantom{\epsilon \; }
-                      = \; 100 \cdot 2 \, + \, (180 \, + \, 9)/33 \;
-                      = \; 100 \cdot 2 \, + \, 189/33
+                      \hphantom{ 18/33 }
+                      \quad\longrightarrow\quad
+                      10 \cdot 18/33
+                      \;=\; 10 \cdot 0 \,+\, 10 \cdot 18/33
                     $$
                   </wc-math>
-                  <wc-math class="x N zz">
+                  <wc-math class="x N s">
+                    $$
+                      \varepsilon \;=\;
+                      100 \cdot 2 \,+\, 10 \cdot 0
+                      \,+\, 10 \cdot 18/33 \,+\, 9/33
+                    $$
+                  </wc-math>
+                  <wc-math class="x S s">
+                    $$
+                      \hphantom{ \varepsilon }
+                      \;=\; 100 \cdot 2 \,+\, (180 \,+\, 9)/33
+                      \;=\; 100 \cdot 2 \,+\, 189/33
+                    $$
+                  </wc-math>
+                  <wc-math class="x N s">
                     $$
                       189/33
                       \quad\longrightarrow\quad
-                      q \: = \: 5
+                      q \;=\; 5
                       \qquad\AND\qquad
-                      r \: = \: 24
+                      r \;=\; 24
                     $$
                   </wc-math>
-                  <wc-math class="x zz">
+                  <wc-math class="x s">
                     $$
-                      \hphantom{189/33 \quad}
-                      \longrightarrow\quad
-                      189 \: = \: 5 \cdot 33 \, + \, 24 \:
-                      = \: q \cdot d \, + \, r
-                    $$
-                  </wc-math>
-                  <wc-math class="x S zz">
-                    $$
-                      \hphantom{189/33 \quad}
-                      \longrightarrow\quad
-                      10 \cdot 189/33 \:
-                      = \: 5 \, + \, 24/33
+                      \hphantom{ 189/33 }
+                      \quad\longrightarrow\quad
+                      189 \;=\; 5 \cdot 33 \,+\, 24
+                      \;=\; q \cdot d \,+\, r
                     $$
                   </wc-math>
-                  <wc-math class="x N zz">
+                  <wc-math class="x S s">
                     $$
-                      \epsilon \; = \; 100 \cdot 2 \,
-                      + \, 5 \,
-                      + \, 24/33 \;
-                      = \; 205 \, + \, 24/33
+                      \hphantom{ 189/33 }
+                      \quad\longrightarrow\quad
+                      10 \cdot 189/33
+                      \;=\; 5 \,+\, 24/33
                     $$
                   </wc-math>
-                  <wc-math class="x S zz">
+                  <wc-math class="x N s">
                     $$
-                      \hphantom{\epsilon \; }
-                      \implies\quad
-                      Q \: = \: 205
+                      \varepsilon \;=\; 100 \cdot 2
+                      \,+\, 5 \,+\, 24/33
+                      \;=\; 205 \,+\, 24/33
+                    $$
+                  </wc-math>
+                  <wc-math class="x S s">
+                    $$
+                      \hphantom{ \varepsilon }
+                      \;\implies\quad
+                      Q \;=\; 205
                       \qquad\AND\qquad
-                      R \: = \: 24
+                      R \;=\; 24
                     $$
                   </wc-math>
                   <p>
@@ -2672,12 +2717,12 @@ at main · antoineportes/Working-class-filter-design"
 
               <wc-ppp>
                 <h4>Conclusion</h4>
-                <wc-pp>
+                <wc-pp class="S">
                   <p class="s">
                     Any number can take the form:
-                    $ \; \delta \: = \: q \cdot d \, + \, r \; $.
+                    $ \; \delta \;=\; q \cdot d \,+\, r \; $.
                   </p>
-                  <wc-comment>
+                  <wc-comment class="y">
                     <p>
                       <cite><strong>δ</strong></cite>ividend,
                       <cite><strong>d</strong></cite>ivisor,
@@ -2688,24 +2733,24 @@ at main · antoineportes/Working-class-filter-design"
                   <p>where:</p>
                   <wc-math class="x s">
                     $$
-                      q \; = \; \floor(\delta/d)
+                      q \;=\; \floor(\delta/d)
                     $$
                   </wc-math>
                   <wc-math class="x s">
                     $$
-                      r \; = \; \delta \mod d \;
-                      = \; \delta \, - \, q \cdot d
+                      r \;=\; \delta \mod d
+                      \;=\; \delta \,-\, q \cdot d
                     $$
                   </wc-math>
-                  <wc-math class="x S s">
+                  <wc-math class="x s">
                     $$
-                      d \; \neq \; 0
+                      d \;\neq\; 0
                     $$
                   </wc-math>
                 </wc-pp>
                 <p>
                   We're using powers of ten because
-                  Arabic numbers are a ten—symbol alphabet
+                  Arabic numbers are a ten-symbol alphabet
                   (because ten fingers).
                 </p>
                 <p>
