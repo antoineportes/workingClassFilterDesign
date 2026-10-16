@@ -330,24 +330,24 @@
                   Three theorems (but who's counting?)
                 </a>
               </li>
-              <!-- #04 I thought this was gonna be a book about filters... -->
+              <!-- #04 dummy -->
               <li>
                 <a
                   href="#04"
                   data-target="04"
-                  title="I thought this was gonna be a book about filters..."
+                  title="DUMMY"
                 >
-                  I thought this was gonna be a book about filters...
+                  dummy
                 </a>
               </li>
-              <!-- #05 dummy -->
+              <!-- #05 I thought this was gonna be a book about filters... -->
               <li>
                 <a
                   href="#05"
                   data-target="05"
-                  title="DUMMY"
+                  title="I thought this was gonna be a book about filters..."
                 >
-                  dummy
+                  I thought this was gonna be a book about filters...
                 </a>
               </li>
               <!-- #06 dummy -->
@@ -441,7 +441,7 @@
 
 
           <!-- == CHAPTER == -->
-          <wc-chapter>
+          <wc-chapter id="top">
             <!-- = Chapter title = -->
             <h2><em>Chapter V</em>: Poles and zeroes</h2>
 
@@ -515,9 +515,7 @@
                   <a
                     title="Wikipedia.org | Polynomial"
                     target="_blank"
-                    type="text/html"
-                    charset="UTF-8"
-                    rel="external"
+                    rel="noopener"
                     href="https://en.wikipedia.org/wiki/Polynomial"
                   >
                     polynomial
@@ -528,35 +526,43 @@
                   <a
                     title="Wikipedia.org | Elementary arithmetic"
                     target="_blank"
-                    type="text/html"
-                    charset="UTF-8"
-                    rel="external"
+                    rel="noopener"
                     href="https://en.wikipedia.org/wiki/Elementary_arithmetic"
                   >
                     arithmetical
                   </a>
                   expression mixing constants and variables.
-                  <br/>
+                </p>
+                <p class="zz">
                   An arithmetical expression is a mathematical expression
                   involving only addition and multiplication
                   (sums and products).
-                  <br/>
+                </p>
+                <p>
                   An addition is sometimes called a subtraction (difference)
                   — usually when involving one or several negative numbers.
-                  <br/>
+                </p>
+                <p class="zz">
                   A multiplication is sometimes called a division (ratio)
                   — usually when involving one or several rational numbers.
-                  <br/>
+                </p>
+                <p>
                   The notation of a repeated multiplication
                   of the same term by itself
                   can be simplified with exponentiation of said term
-                  to a positive integer power.
+                  to a (non-strictly) positive integer power.
+                  <br/>
+                  (Assuming any product is quietly multiplied by one;
+                  <br/>
+                  and when multiplying a number zero time by itself,
+                  this previously implicit one is all that remains.)
                 </p>
-                <p class="zz">
+                <p class="N">
                   Because of this property,
                   classical definitions often present exponentiation
                   as a third type of allowed operation.
-                  <br/>
+                </p>
+                <p class="n">
                   This is valid for polynomials
                   as long as the exponents are positive integers.
                   <br/>
@@ -564,7 +570,7 @@
                   a polynomial can feature exponentiation
                   if and only if said exponentiation is in fact a product.
                 </p>
-                <p>
+                <p class="N">
                   Choose the less confusing formulation of the definition.
                   <br/>
                   I like mine better (hopefully), but perhaps I'm weird.
@@ -577,31 +583,26 @@
                   (but equal) expressions.
                   <br/>
                   One of them is called canonical (or standard).
-                  <br/>
+                </p>
+                <p class="n">
                   It's obtained by making use of
                   <a
                     title="Wikipedia.org | Commutative property"
                     target="_blank"
-                    type="text/html"
-                    charset="UTF-8"
-                    rel="external"
+                    rel="noopener"
                     href="https://en.wikipedia.org/wiki/Commutative_property"
                   >commutativity</a>,
                   <a
                     title="Wikipedia.org | Associative property"
                     target="_blank"
-                    type="text/html"
-                    charset="UTF-8"
-                    rel="external"
+                    rel="noopener"
                     href="https://en.wikipedia.org/wiki/Associative_property"
                   >associativity</a>
                   and
                   <a
                     title="Wikipedia.org | Distributive property"
                     target="_blank"
-                    type="text/html"
-                    charset="UTF-8"
-                    rel="external"
+                    rel="noopener"
                     href="https://en.wikipedia.org/wiki/Distributive_property"
                   >distributivity</a>
                   so that each instance of a variable
@@ -621,27 +622,37 @@
                 </wc-split>
                 <p>
                   This single constant factor is called a coefficient.
-                  <br/>
+                </p>
+                <p class="zz">
                   A coefficient's association
                   with its corresponding exponentiation of the variable
                   forms a term.
-                  <br/>
-                  The canonical form is the sum of all terms.
-                  <br/>
-                  Each term has a degree, equal to its exponent.
-                  <br/>
-                  The <b>degree</b>, or <b>order</b>, of the polynomial
+                </p>
+                <p>
+                  The canonical form is the sum of all terms,
+                  sorted left-right from highest to lowest exponent.
+                </p>
+                <p class="zz">
+                  Each term has a degree, equal to its exponent
+                  (or sum of exponents if multivariable).
+                </p>
+                <p>
+                  The <b>degree</b> of the polynomial
                   is the highest degree in the canonical form.
-                  <br/>
+                </p>
+                <p class="zz">
                   The term of highest degree is called the leading term.
                   Its coefficient is called the <b>leading coefficient</b>.
-                  <br/>
+                </p>
+                <p>
                   Any coefficient can be zero
                   <strong>except</strong> the leading coefficient.
-                  <br/>
+                </p>
+                <p class="zz">
                   If the leading coefficient is 1,
                   the polynomial is called a <b>monic</b> polynomial.
-                  <br/>
+                </p>
+                <p>
                   The coefficient associated with the zeroth power of the variable
                   is called the <b>constant term</b>.
                 </p>
@@ -651,16 +662,16 @@
                 <wc-comment>
                   <p class="S">
                     Note that, since there's a zeroth term,
-                    the number of terms is greater than the degree / oder by 1
+                    the number of terms is greater than the degree by 1
                     — if we include potential null terms.
                   </p>
                   <h5>E.g. (1):</h5>
                   <wc-pp class="s">
                     <wc-math class="N x s">
                       $$
-                        x^4 \, + \, 2 \;
-                        = \; (1) x^4 \, + \, (0) x^3 \, + \, (0) x^2 \,
-                        + \, (0) x^1 \, + \, (2) x^0
+                        x^4 \,+\, 2
+                        \;=\; (1) x^4 \,+\, (0) x^3 \,+\, (0) x^2
+                        \,+\, (0) x^1 \,+\, (2) x^0
                       $$
                     </wc-math>
                     <dl>
@@ -671,13 +682,14 @@
                   <h5>E.g. (2):</h5>
                   <wc-pp class="s">
                     <p>
-                      $ y \, = \, x \; $
+                      $ y \,=\, x \; $
                       is a special case of the affine function:
-                      $ \; y \; = \; {a_1}x^1 \: + \: {a_0}x^0 $
+                      $ \; y \;=\; {a_1}x^1 \:+\: {a_0}x^0 $
                       <br/>
-                      which is a polynomial of order 1 with coefficients
-                      $ \; a_1 \, = \, 1 \; $ and $ \; a_0 \, = \, 0 \; $.
-                      <br/>
+                      which is a polynomial of degree 1 with coefficients
+                      $ \; a_1 \,=\, 1 \; $ and $ \; a_0 \,=\, 0 \; $.
+                    </p>
+                    <p>
                       In this case, $ a_1 $ is the leading coefficient,
                       $ \; a_1 \, x \; $ is the leading term,
                       $ a_0 $ is the constant term.
@@ -686,20 +698,28 @@
                   <h5>E.g. (3):</h5>
                   <wc-pp class="S">
                     <p>
-                      $ y \, = \, 1.33 \; $ is equivalent to
-                      $ \; y \; = \; 1.33 \, x^0 $
+                      $ y \,=\, 1.33 \; $ is equivalent to
+                      $ \; y \;=\; 1.33 \, x^0 $
                       <br/>
-                      which is a polynomial of order 0
+                      which is a polynomial of degree 0
                       whose unique coefficient is $ \; a_0 \, = \, 1.33 \; $.
-                      <br/>
+                    </p>
+                    <p>
                       In this case, the leading coefficient, the leading term,
                       and the constant term are indistinguishably: $ a_0 $.
+                    </p>
+                  </wc-pp>
+                  <h5>E.g. (4):</h5>
+                  <wc-pp class="s">
+                    <p>
+                      $ y \,=\, 0 \; $
+                      is a problem.
                     </p>
                   </wc-pp>
                   <p>
                     And of course:
                     $ \; y \;=\; {a_2}x^2 \,+\, {a_1}x \,+\, a_0 \; $
-                    is a polynomial of order 2 — as long as $ a_2 $ is non-zero.
+                    is a polynomial of degree 2 — as long as $ a_2 $ is non-zero.
                   </p>
                 </wc-comment>
               </wc-ppp>
@@ -767,6 +787,7 @@
                 </p>
                 <p class="zz">
                   Beware of amphibology:
+                  <br/>
                   this expression is sometimes loosely referred to
                   as factored form
                   — but this name is more typically reserved
@@ -808,6 +829,7 @@
                   If it has complex coefficients, it's a complex polynomial.
                   <br/>
                   (Real numbers are special cases of complex numbers.
+                  <br/>
                   Real polynomials are special cases of complex polynomials.)
                 </p>
                 <p>
@@ -824,13 +846,11 @@
 
               <wc-ppp>
                 <p>
-                  A polynomial of negative order is called a
+                  A polynomial of negative degree is called a
                   <a
                     title="Wikipedia.org | Laurent polynomial"
                     target="_blank"
-                    type="text/html"
-                    charset="UTF-8"
-                    rel="external"
+                    rel="noopener"
                     href="https://en.wikipedia.org/wiki/Laurent_polynomial"
                   >
                     Laurent polynomial
@@ -839,9 +859,7 @@
                   <a
                     title="Wikipedia.org | Pierre Alphonse Laurent"
                     target="_blank"
-                    type="text/html"
-                    charset="UTF-8"
-                    rel="external"
+                    rel="noopener"
                     href="https://en.wikipedia.org/wiki/Pierre_Alphonse_Laurent"
                   >Pierre Alphonse Laurent</a>).
                 </p>
@@ -850,17 +868,17 @@
                 </p>
                 <wc-pp class="s">
                   <p>
-                    a Laurent polynomial can have a positive order;
+                    a Laurent polynomial can have a positive degree;
                     <br/>
                     its specificity is that it allows negative exponents.
                   </p>
                 </wc-pp>
                 <p>
-                  Since $ \; x^{-n} \, = \, 1/x^n \; $,
-                  a Laurent polynomial is not defined at $ \; x \, = \, 0 \; $.
+                  Since $ \; x^{-n} \,=\, 1/x^n \; $,
+                  a Laurent polynomial is not defined at $ \; x \,=\, 0 \; $.
                   <br/>
                   (We won't be needing Laurent polynomials
-                  before Chapter <span class="small-caps">vii</span>.)
+                  before Chapter <span class="small-caps">vi</span>.)
                 </p>
               </wc-ppp>
 
@@ -899,7 +917,7 @@
                   <hr/>
                   <div>
                     <p>
-                      $ f(x) \; $ is a Laurent polynomial of the first order.
+                      $ f(x) \; $ is a Laurent polynomial of the first degree.
                     </p>
                     <p class="n">
                       Its leading coefficient is: $ \; 2/33 \; $.
@@ -911,11 +929,12 @@
                 <wc-comment class="y">
                   <p>
                     Fun fact:
+                    <br/>
                     $ a_0 $ is the only coefficient
                     not multiplied by a non-zero power of $ x $.
                   </p>
                   <p class="zz">
-                    So no matter the (non-Laurent) polynomial's order,
+                    So no matter the (non-Laurent) polynomial's degree,
                     its value at $ \; x \, = \, 0 \; $
                     is always $ a_0 $.
                   </p>
@@ -937,13 +956,13 @@
                 </p>
                 <p class="zz">
                   $ f(x) \; $ is a polynomial?
-                  $ \; f(r) \, = \, 0 \; $?
+                  $ \; f(r) \,=\, 0 \; $?
                   Then $ r $ is a
                   <span class="small-caps">root</span>
                   of $ \; f(x) \; $.
                   <br/>
                   $ f(x) \; $ is a polynomial?
-                  $ \; f(x) \, = \, 0 \; $
+                  $ \; f(x) \,=\, 0 \; $
                   has 17 solutions for $ x $?
                   $ \; f(x) \; $ has 17 roots.
                 </p>
@@ -964,13 +983,11 @@
 
               <wc-ppp>
                 <h4>
-                  Order 0
+                  Degree <span class="small-caps">0</span>
                   <mark><a
                     title="Wikipedia.org | Constant function"
                     target="_blank"
-                    type="text/html"
-                    charset="UTF-8"
-                    rel="external"
+                    rel="noopener"
                     href="https://en.wikipedia.org/wiki/Constant_function"
                   >constant</a></mark>
                 </h4>
@@ -985,35 +1002,34 @@
                   which has 1 solution for $ a_0 $
                   but none for $ x $.
                   <br/>
-                  Therefore a polynomial of the zeroth order
+                  Therefore a polynomial of the zeroth degree
                   has zero root.
                 </p>
               </wc-ppp>
 
               <wc-ppp>
                 <h4>
-                  Order 1 <mark>affine</mark> or
+                  Degree <span class="small-caps">1</span>
+                  <mark>affine</mark> or
                   <mark><a
                     title="Wikipedia.org | Linearity — Linear polynomials"
                     target="_blank"
-                    type="text/html"
-                    charset="UTF-8"
-                    rel="external"
+                    rel="noopener"
                     href="https://en.wikipedia.org/wiki/Linearity#Linear_polynomials"
                   >linear</a></mark>
                 </h4>
                 <wc-math class="Z s">
                   $$
-                    f(x) \;=\; {a_1}x \,+\, a_0
+                    f(x) \;=\; a_1 x \,+\, a_0
                   $$
                 </wc-math>
                 <wc-math class="x N s">
                   $$
                     f(x) \,=\, 0
                     \quad\iff\quad
-                    {a_1}x \,+\, a_0 \;=\; 0
+                    a_1 x \,+\, a_0 \;=\; 0
                     \quad\iff\quad
-                    {a_1}(x \,+\, a_0/a_1) \;=\; 0
+                    a_1 (x \,+\, a_0/a_1) \;=\; 0
                   $$
                 </wc-math>
                 <wc-math class="x s S">
@@ -1031,7 +1047,7 @@
                   </p>
                 </wc-comment>
                 <p>
-                  Therefore a polynomial of the first order
+                  Therefore a polynomial of the first degree
                   has one root: $ \; r_1 \,=\, -a_0/a_1 \; $.
                 </p>
                 <p class="n">
@@ -1060,19 +1076,17 @@
 
               <wc-ppp>
                 <h4>
-                  Order 2
+                  Degree <span class="small-caps">2</span>
                   <mark><a
                     title="Wikipedia.org | Quadratic formula"
                     target="_blank"
-                    type="text/html"
-                    charset="UTF-8"
-                    rel="external"
+                    rel="noopener"
                     href="https://en.wikipedia.org/wiki/Quadratic_formula"
                   >quadratic</a></mark>
                 </h4>
                 <wc-math class="Z s">
                   $$
-                    {a_2}x^2 \,+\, {a_1}x \,+\, a_0 \;=\; 0
+                    a_2 x^2 \,+\, a_1 x \,+\, a_0 \;=\; 0
                     \quad\iff\quad
                     a_2
                     \bigl(
@@ -1099,7 +1113,9 @@
                   $$
                 </wc-math>
                 <p>
-                  Pause. Let's consider the general case:
+                  Pause.
+                  <br/>
+                  Let's consider the general case:
                 </p>
                 <wc-math class="Z s">
                   $$
@@ -1148,7 +1164,7 @@
                   We can add any term we want to the equation,
                   as long as it happens on both sides, so:
                 </p>
-                <wc-math class="Z s">
+                <wc-math class="ZZ">
                   $$
                     x^2 \,+\, (a_1/a_2)x \,+\, {a_1}^2/(2a_2)^2
                     \;=\;
@@ -1163,6 +1179,11 @@
                     \bigr)^2
                     \;=\;
                     {a_1}^2/(2a_2)^2 \,-\, a_0/a_2
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \hphantom{ \iff\quad \bigl( x \,+\, a_1/(2a_2) \bigr)^2 }
                     \;=\;
                     \frac{
                       {a_1}^2 \,-\, 2^2 a_2 a_0
@@ -1179,11 +1200,14 @@
                         {a_1}^2 \,-\, 4 a_2 a_0
                       }{ (2a_2)^2 }
                     }
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \hphantom{ \iff\quad x \,+\, a_1/(2a_2) }
                     \;=\;
                     \pm\frac{
-                      \sqrt{
-                        {a_1}^2 \,-\, 4 a_2 a_0
-                      }
+                      \sqrt{ {a_1}^2 \,-\, 4 a_2 a_0 }
                     }{ 2 a_2 }
                   $$
                 </wc-math>
@@ -1198,20 +1222,21 @@
                       }
                     }{ 2a_2 }
                     \:-\: \frac{a_1}{2 a_2}
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \hphantom{ \iff\quad x }
                     \;=\;
                     \frac{
                       -a_1 \,\pm\,
-                      \sqrt{
-                        {a_1}^2 \,-\, 4 a_2 a_0
-                      }
+                      \sqrt{ {a_1}^2 \,-\, 4 a_2 a_0 }
                     }{ 2 a_2 }
                   $$
                 </wc-math>
                 <p class="y">
                   $ {a_1}^2 \,-\, 4 a_2 a_0 \; $
                   is called the polynomial's discriminant.
-                  (Hence <cite>discriminating</cite> meaning
-                  <mark>finding the roots</mark>.)
                   <br/>
                   It's usually notated $ \Delta $ (upper—case delta).
                 </p>
@@ -1224,7 +1249,9 @@
                   <p class="S">
                     Expressing polynomials' coefficients with indexes of
                     <mark>$ a $</mark> or <mark>$ b $</mark> is standard
-                    (the latter usually being reserved for numators).
+                    <br/>
+                    (the latter usually being reserved for numerators,
+                    the former for denominators).
                   </p>
                   <p>
                     But when dealing with the special cases of affine or quadratic,
@@ -1245,36 +1272,49 @@
                   </wc-split>
                   <p>
                     I don't like this.
+                    <br/>
                     You get $ \; a_1 \,=\, a \; $,
-                    then $ \; a_1 \,=\, b \; $, etc.
+                    then $ \; a_1 \,=\, b \; $, &c.
+                    <br/>
                     It's confusing for no reason.
                   </p>
                   <p class="zz">
                     Plus it complies poorly with generalisation:
-                    if you keep raising the order you'll get
-                    $ \; a_0 \,=\, d \; $ (as in $ \; df/dx \; $...),
-                    then $ \; a_0 \,=\, e \; $ (as in $ \; \exp(1) \; $...),
-                    then $ \; a_0 \,=\, f \; $ (as in $ \; f(x) \; $ or $ \; 2\pi\f \; $...);
-                    orders 8 and 9 will give $ i $ and $ j $ (as in $ \; \sqrt{-1} \; $...);
-                    order 23 gives $ \; a_0 \, = \, x \; $...
+                    <br/>
+                    if you keep raising the degree you'll get
+                    $ \; {a_0 \,=\, d} \; $ (as in $ \; {df/dx} \; $...),
+                    <br/>
+                    then $ \; {a_0 \,=\, e} \; $ (as in $ \; {\exp(1)} \; $...),
+                    <br/>
+                    then $ \; {a_0 \,=\, f} \; $
+                    (as in $ \; f(x) \; $ or $ \; {2\pi\f} \; $...);
+                    <br/>
+                    degrees <span class="small-caps">8</span>
+                    and <span class="small-caps">9</span>
+                    will give $ i $ and $ j $ (as in $ \; \sqrt{-1} \; $...);
+                    <br/>
+                    degree <span class="small-caps">23</span>
+                    gives $ \; {a_0 \,=\,} x \; $...
                   </p>
                   <p class="s">
-                    Order 26 starts using Greek letters.
+                    Degree <span class="small-caps">26</span> starts using Greek letters.
                     <br/>
                     At some point you'll run out of alphabets.
+                    <br/>
                     You'll never run out of numbers.
                   </p>
                   <p class="s S">
                     So pick one letter, give it indexes and stick with it.
+                    <br/>
                     Or, as usual, go play with fire.
                   </p>
                   <p>
                     Anyway, don't be surprised if you come across:
-                    $ \; \Delta \, = \, b^2 \, - \, 4ac \; $.
+                    $ \; \Delta \,=\, b^2 \,-\, 4ac \; $.
                   </p>
                 </wc-comment>
                 <p>
-                  Therefore a polynomial of the second order has two roots:
+                  Therefore a polynomial of the second degree has two roots:
                 </p>
                 <wc-split class="grid-b">
                   <wc-math class="N x s">
@@ -1305,7 +1345,8 @@
                 </p>
                 <p class="zz">
                   We might play around with complex numbers
-                  on our notebooks and GitHub repositories,
+                  in our notebooks and GitHub repositories,
+                  <br/>
                   but an analogue voltage, or its digital counterpart,
                   needs to remain purely real.
                 </p>
@@ -1365,7 +1406,7 @@
                     <wc-math class="s">
                       $$
                         \hphantom{-}
-                        \sqrt{\Delta}/(2 a_2)
+                        \sqrt{ -\Delta }\big/2a_2
                       $$
                     </wc-math>
                   </dd>
@@ -1379,7 +1420,7 @@
                   <dd style="padding: 0;">
                     <wc-math class="s">
                       $$
-                        -\sqrt{\Delta}/(2 a_2)
+                        -\sqrt{ -\Delta }\big/2a_2
                         \;=\; -\Im(r_1)
                       $$
                     </wc-math>
@@ -1391,7 +1432,28 @@
                   If $ \Delta $ is real and positive,
                   $ \sqrt{\Delta} $ is real
                   and so are $ r_1 $ and $ r_2 $.
+                  <br/>
+                  If $ \; Δ \,=\, 0 \; $, then $ \; r_1 \,=\, r_2 \; $.
                 </p>
+                <wc-comment class="y">
+                  <p>
+                    $ \Delta $'s sign is sole responsible for the root pattern:
+                  </p>
+                  <ul>
+                    <li>
+                      both real and distinct (positive)
+                    </li>
+                    <li>
+                      both real and identical (null)
+                    </li>
+                    <li>
+                      complex conjugates (negative)
+                    </li>
+                  </ul>
+                  <p class="zz">
+                    That's how it discriminates the roots and whence it got its name.
+                  </p>
+                </wc-comment>
               </wc-ppp>
 
               <wc-ppp>
@@ -1521,7 +1583,7 @@
                     }{ 2 a_2 } \, x \:+\:
                     \frac{
                       {a_1}^2 \,+\, a_1\sqrt{\Delta}
-                      \,-\, a_1\sqrt{\Delta} \,-\, \sqrt{\Delta^2}
+                      \,-\, a_1\sqrt{\Delta} \,-\, \sqrt{\Delta}^2
                     }{ 4{a_2}^2 }
                   $$
                 </wc-math>
@@ -1570,7 +1632,7 @@
                   = \; a_2 (x \, - \, r_1)(x \, - \, r_2) \; $.
                 </p>
                 <p>
-                  Therefore any second order (or quadratic) real polynomial
+                  Therefore any second-degree (or quadratic) real polynomial
                   can be expressed in terms of its roots and leading coefficient.
                 </p>
                 <p class="n">
@@ -1594,9 +1656,123 @@
                 <p>
                   and that $ \; \sqrt{a_2}(x \,-\, r_1) \; $
                   and $ \; \sqrt{a_2}(x \,-\, r_2) \; $
-                  are two first—order polynomials
+                  are two first-degree polynomials
                   whose respective roots are $ r_1 $ and $ r_2 $.
                 </p>
+                <wc-comment class="y">
+                  <p>
+                    If $ a_2 $ is negative, then its square root is imaginary.
+                    <br/>
+                    Then the first-degree sub-polynomials are complex.
+                  </p>
+                  <p class="n">
+                    But:
+                  </p>
+                  <wc-math class="Z s">
+                    $$
+                      a_2 \,\lt\, 0
+                      \quad\implies\quad
+                      \sqrt{a_2} \;=\; j\sqrt{-a_2}
+                    $$
+                  </wc-math>
+                  <wc-math class="Z s">
+                    $$
+                      \implies\quad
+                      \sqrt{a_2}(x - r_1)\sqrt{a_2}(x - r_2)
+                      \;=\;
+                      j^2\sqrt{-a_2}^2
+                      ( x^2 - xr_2 - xr_1 + r_1 r_2 )
+                    $$
+                  </wc-math>
+                  <wc-math class="Z s">
+                    $$
+                      \hphantom{\implies\quad}
+                      =\; a_2 \bigr( x^2 \,-\, (r_1 + r_2)x \,+\, r_1 r_2 \bigl)
+                    $$
+                  </wc-math>
+                  <wc-math class="Z s">
+                    $$
+                      \hphantom{\implies\quad}
+                      =\; a_2 x^2 \,-\, a_2 (r_1 + r_2)x \,+\, a_2 r_1 r_2
+                    $$
+                  </wc-math>
+                  <wc-math class="Z s">
+                    $$
+                      -a_2(r_1 + r_2)
+                      \;=\;
+                      -a_2 \left( -a_1 + \sqrt{\Delta} \right) \big/ 2a_2
+                      \,-\,
+                      a_2 \left( -a_1 - \sqrt{\Delta} \right) \big/ 2a_2
+                    $$
+                  </wc-math>
+                  <wc-math class="Z s">
+                    $$
+                      \hphantom{ -a_2(r_1 + r_2) }
+                      \;=\;
+                      - \left( -a_1 + \sqrt{\Delta} \right) \big/ 2
+                      \,-\, \left( -a_1 - \sqrt{\Delta} \right) \big/ 2
+                    $$
+                  </wc-math>
+                  <wc-math class="Z s">
+                    $$
+                      \hphantom{ -a_2(r_1 + r_2) }
+                      \;=\;
+                      \left( a_1 - \sqrt{\Delta} + a_1 + \sqrt{\Delta} \right) \big/ 2
+                    $$
+                  </wc-math>
+                  <wc-math class="Z s">
+                    $$
+                      \hphantom{ -a_2(r_1 + r_2) }
+                      \;=\;
+                      2a_1/2 \;=\; a_1
+                    $$
+                  </wc-math>
+                  <wc-math class="Z s">
+                    $$
+                      a_2 r_1 r_2
+                      \;=\; a_2
+                      \Bigl(
+                        \bigl( -a_1 + \sqrt{\Delta} \bigr) \big/ 2a_2
+                      \Bigr)
+                      \Bigl(
+                        \bigl( -a_1 - \sqrt{\Delta} \bigr) \big/ 2a_2
+                      \Bigr)
+                    $$
+                  </wc-math>
+                  <wc-math class="Z s">
+                    $$
+                      \hphantom{ a_2 r_1 r_2 }
+                      \;=\; a_2
+                      \left(
+                        {a_1}^2 - a_1\sqrt{\Delta} + a_1\sqrt{\Delta} - \sqrt{\Delta}^2
+                      \right) \big/ 4{a_2}^2
+                    $$
+                  </wc-math>
+                  <wc-math class="Z s">
+                    $$
+                      \hphantom{ a_2 r_1 r_2 }
+                      \;=\;
+                      ( {a_1}^2 - \Delta ) / 4a_2
+                    $$
+                  </wc-math>
+                  <wc-math class="Z s">
+                    $$
+                      \hphantom{ a_2 r_1 r_2 }
+                      \;=\;
+                      ( {a_1}^2 - {a_1}^2 + 4a_2 a_0 ) / 4a_2
+                    $$
+                  </wc-math>
+                  <wc-math class="Z s">
+                    $$
+                      \hphantom{ a_2 r_1 r_2 }
+                      \;=\;
+                      4a_2 a_0 / 4a_2 \;=\; a_0
+                    $$
+                  </wc-math>
+                  <p>
+                    Ok.
+                  </p>
+                </wc-comment>
               </wc-ppp>
 
               <wc-ppp>
@@ -1610,17 +1786,17 @@
                     </p>
                     <hr/>
                     <p>
-                      Therefore any second-order polynomial
+                      Therefore any second-degree polynomial
                       <br/>
-                      is the product of two first-order polynomials,
+                      is the product of two first-degree polynomials,
                       <br/>
                       whose respective roots
-                      are also the roots of said second-order polynomial.
+                      are also the roots of said second-degree polynomial.
                     </p>
                     <p class="zz">
-                      If the second-order polynomial is real,
+                      If the second-degree polynomial is real,
                       <br/>
-                      the first-order ones are either both real or forming a conjugate pair.
+                      the first-degree ones are either both real or forming a conjugate pair.
                     </p>
                   </wc-pp>
                 </div>
@@ -1697,10 +1873,8 @@
                   <wc-math class="x N s fake">
                     <a
                       title="Wikipedia.org | Golden ratio"
-                      target="_blank"
-                      type="text/html"
-                      charset="UTF-8"
-                      rel="external"
+                    target="_blank"
+                    rel="noopener"
                       href="https://en.wikipedia.org/wiki/Golden_ratio"
                     >$$ \varphi $$</a>$$
                     {}^2 \,-\, 1
@@ -1735,6 +1909,30 @@
                   <p>
                     Cool. Cool cool cool.
                   </p>
+                  <wc-comment class="N">
+                    <h4 class="smallCaps">
+                      Edit:
+                    </h4>
+                    <p class="n">
+                      I found this example so cool only
+                      because I didn't know geometric series yet.
+                      <br/>
+                      This is:
+                    </p>
+                    <wc-math class="Z s">
+                      $$
+                        \sum_{k=0}^{n-1} x^k
+                        \;=\;
+                        \frac{x^n - 1}{x - 1}
+                      $$
+                    </wc-math>
+                    <p>
+                      with $ \; n = 2 \; $.
+                    </p>
+                    <p class="zz">
+                      First times happen once. Happy is the noob.
+                    </p>
+                  </wc-comment>
                 </wc-comment>
               </wc-ppp>
 
@@ -1779,17 +1977,17 @@
                 <wc-math class="x N s">
                   $$
                     P_1(x) P_2(x)
-                    \;=\; \hphantom{ {} \cdot {} }
+                    \;=\;{} \hphantom{ {}\cdot{} }
                     \bigl(
                       \sqrt{a_2} \, x \: - \: \sqrt{a_2} \, \Re(r_1) \:
                       -\: j \, \sqrt{a_2} \, \Im(r_1)
                     \bigr)
                   $$
                 </wc-math>
-                <wc-math class="x s">
+                <wc-math class="x S s">
                   $$
-                    \hphantom{ P_1(x) \, P_2(x) \; = \; {} }
-                    {} \cdot {}
+                    \hphantom{ P_1(x) P_2(x) \; = \;{} }
+                    {}\cdot{}
                     \bigl(
                       \sqrt{a_2} \, x \:-\: \sqrt{a_2} \, \Re(r_2)
                       \:-\: j \, \sqrt{a_2} \, \Im(r_2)
@@ -1800,24 +1998,24 @@
                   $$
                     \hphantom{ P_1(x) P_2(x) }
                     \;=\; a_2 x^2
-                    \:-\: a_2 \, \Re(r_2) \, x
-                    \:-\: j \, a_2 \, \Im(r_2) \, x
+                    \:-\: a_2 \Re(r_2) x
+                    \:-\: j a_2 \Im(r_2) x
                   $$
                 </wc-math>
                 <wc-math class="x s">
                   $$
                     \hphantom{ P_1(x) P_2(x) \; = \; }
-                    -\: a_2 \, \Re(r_1) \, x
-                    \:-\: a_2 \, \Re(r_1) \, \Re(r_2)
-                    \:+\: j \, a_2 \, \Re(r_1) \, \Im(r_2)
+                    -\: a_2 \Re(r_1) x
+                    \:+\: a_2 \Re(r_1) \Re(r_2)
+                    \:+\: j a_2 \Re(r_1) \Im(r_2)
                   $$
                 </wc-math>
                 <wc-math class="x s S">
                   $$
                     \hphantom{ P_1(x) P_2(x) \; = \; }
-                    -\: j \, a_2 \, \Im(r_1) \, x
-                    \:+\: j \, a_2 \, \Im(r_1) \, \Re(r_2)
-                    \:-\: j \, a_2 \, \Im(r_1) \, \Im(r_2)
+                    -\: j a_2 \Im(r_1) x
+                    \:+\: j a_2 \Im(r_1) \Re(r_2)
+                    \:-\: a_2 \Im(r_1) \Im(r_2)
                   $$
                 </wc-math>
                 <wc-math class="Z s">
@@ -1829,8 +2027,8 @@
                   $$
                     \alpha_1 \;=\; -a_2 \,
                     \Bigl(
-                      \Re(r_2) \:+\: j \, \Im(r_2)
-                      \:+\: \Re(r_1) \:+\: j \, \Im(r_2)
+                      \Re(r_2) \:+\: j \Im(r_2)
+                      \:+\: \Re(r_1) \:+\: j \Im(r_1)
                     \Bigr)
                   $$
                 </wc-math>
@@ -1838,10 +2036,10 @@
                   $$
                     \alpha_0 \;=\; a_2 \,
                     \Bigl(
-                      \Re(r_1) \, \Re(r_2)
-                      \:+\: j \, \Re(r_1) \, \Im(r_2)
-                      \:+\: j \, \Im(r_1) \, \Re(r_2)
-                      \:-\: \Im(r_1) \, \Im(r_2)
+                      \Re(r_1) \Re(r_2)
+                      \:+\: j \Re(r_1) \Im(r_2)
+                      \:+\: j \Im(r_1) \Re(r_2)
+                      \:-\: \Im(r_1) \Im(r_2)
                     \Bigr)
                   $$
                 </wc-math>
@@ -1857,8 +2055,8 @@
                   $$
                     \Im(\alpha_0) \;=\; a_2 \,
                     \bigl(
-                      \Re(r_1) \, \Im(r_2)
-                      \:+\: \Im(r_1) \, \Re(r_2)
+                      \Re(r_1) \Im(r_2)
+                      \:+\: \Im(r_1) \Re(r_2)
                     \bigr)
                   $$
                 </wc-math>
@@ -1885,24 +2083,24 @@
                   $$
                     \Im(\alpha_0) \;=\; 0
                     \quad\iff\quad
-                    \Re(r_1) \, \Im(r_2)
-                    \:+\: \Im(r_1) \, \Re(r_2) \;=\; 0
+                    \Re(r_1) \Im(r_2)
+                    \:+\: \Im(r_1) \Re(r_2) \;=\; 0
                   $$
                 </wc-math>
                 <wc-math class="x s">
                   $$
                     \hphantom{ \Im(\alpha_0) \;=\; 0 }
                     \quad\iff\quad
-                    \Re(r_1) \, \Im(r_2)
-                    \;=\; -\Im(r_1) \, \Re(r_2)
+                    \Re(r_1) \Im(r_2)
+                    \;=\; -\Im(r_1) \Re(r_2)
                   $$
                 </wc-math>
                 <wc-math class="x s">
                   $$
                     \hphantom{ \Im(\alpha_0) \;=\; 0 }
                     \quad\iff\quad
-                    \Re(r_1) \, \Im(r_2)
-                    \;=\; \Re(r_2) \, \Im(r_2)
+                    \Re(r_1) \Im(r_2)
+                    \;=\; \Re(r_2) \Im(r_2)
                   $$
                 </wc-math>
                 <wc-math class="x s S">
@@ -1925,19 +2123,15 @@
                 </p>
                 <wc-math class="Z s">
                   $$
-                    \bigl(
-                      P_1 \cdot P_2
-                    \bigr)(x) \;
-                    = \; a_2 \,
+                    \bigl( P_1 \cdot P_2 \bigr)(x)
+                    \;=\; a_2 \,
                     \left(\:
-                      \begin{alignedat}{2}
-                        & x^2 \:-\: \Re(r_2) \, x
+                      \begin{alignedat}{1}
+                        & x^2 \:-\: \Re(r_2) x
                         \\
-                        & {}-\: \Re(r_1) \, x
-                        \:+\: \Re(r_1) \, \Re(r_2)
+                        & {}-\: \Re(r_1) x \:+\: \Re(r_1) \Re(r_2)
                         \\
-                        & {}-\: j \, \Im(r_1)
-                        \:+\: j \, \Im(r_1) \, \Im(r_2)
+                        & {}-\: j \Im(r_1) \:+\: j \Im(r_1) \Im(r_2)
                       \end{alignedat}\:
                     \right)
                   $$
@@ -1945,17 +2139,578 @@
                 <wc-math class="Z s">
                   $$
                     \Im\Bigl(\,
-                      \bigl(
-                        P_1 \cdot P_2
-                      \bigr)(x)
+                      \bigl( P_1 \cdot P_2 \bigr)(x)
                     \,\Bigr)
                     \;=\; a_2 \,
+                    \bigl(\, \Im(r_1) \Re(r_2) \:-\: \Im(r_1) x \,\bigr)
+                  $$
+                </wc-math>
+                <wc-math class="N x s">
+                  $$
+                    \Im\Bigl(\,
+                      \bigl( P_1 \cdot P_2 \bigr)(x)
+                    \,\Bigr)
+                    \;=\; 0 \quad\forall\; x
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \iff\quad
+                    \Im(r_1) \Re(r_2) \,-\, \Im(r_1) x
+                    \;=\; 0 \quad\forall\; x
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \iff\quad
+                    \Im(r_1) \Re(r_2) \;=\; \Im(r_1) x \quad\forall\; x
+                  $$
+                </wc-math>
+                <p class="s">
+                  $ \Re(r_2) \; $ is a constant, $ x $ is a variable.
+                </p>
+                <p>
+                  So the only solution for all $ x $ is
+                  $ \; \Im(r_1) \,=\, 0 \; $.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Ok! We now have an <mark>if and only if</mark>
+                  (or <mark>iff</mark> for friends and family).
+                </p>
+                <p class="zz">
+                  So, any real second-degree polynomial
+                  can be expressed as a product of first-degree polynomials,
+                  either purely real, or with complex conjugate roots.
+                </p>
+                <p>
+                  <b class="smallCaps">And</b>,
+                  any product of two purely real,
+                  or having complex conjugate roots,
+                  first-degree polynomials
+                  is a real second-degree polynomial.
+                </p>
+                <p class="n">
+                  There wouldn't be a Chapter
+                  <span class="small-caps">vii</span>
+                  if not for this tiny little <mark>and only if</mark>.
+                </p>
+                <wc-comment class="y">
+                  <p>
+                    What if...
+                  </p>
+                  <wc-math class="Z s">
+                    $$
+                      r_1 \;=\; r_2 \;=\; 0
+                    $$
+                  </wc-math>
+                  <p>
+                    ?
+                  </p>
+                  <p class="N">
+                    Then:
+                  </p>
+                  <wc-math class="Z s">
+                    $$
+                      P_1(x)P_2(x) \;=\; a_2(x - 0)(x - 0) \;=\; a_2 x^2
+                    $$
+                  </wc-math>
+                  <p>
+                    Since $ \; +0 \,=\, -0 \; $,
+                    any purely real number is its own complex conjugate.
+                  </p>
+                  <p>
+                    So this example satisfies the case
+                    $ \; r_2 \,=\, \conj(r_1) \; $.
+                  </p>
+                  <p class="zz">
+                    But it's also a special case of $ \; r_1 \,=\, r_2 \; $.
+                  </p>
+                  <p>
+                    Let's generalise that:
+                  </p>
+                  <wc-math class="N x s">
+                    $$
+                      P_1(x)P_2(x) \;=\; a_2(x - r_1)(x - r_1)
+                      \;=\; a_2( x^2 \,-\, 2r_1 x \,+\, {r_1}^2 )
+                    $$
+                  </wc-math>
+                  <wc-math class="x s S">
+                    $$
+                      \hphantom{ P_1(x)P_2(x) }
+                      \;=\; a_2 x^2 \,+\, 2a_2 r_1 x \,+\, a_2 {r_1}^2
+                    $$
+                  </wc-math>
+                  <p>
+                    which is a valid second-degree polynomial.
+                  </p>
+                  <wc-comment class="y">
+                    <p>
+                      Note that $ r_1 $ and $ r_2 $
+                      cannot be equal and conjugates at the same time,
+                      unless they're purely real.
+                    </p>
+                  </wc-comment>
+                  <p>
+                    So when we say that&nbsp;
+                    degree <span class="small-caps">2</span>
+                    $ \implies $ 2 roots&nbsp;,
+                    we do carefully not say <mark>distinct</mark> roots...
+                  </p>
+                  <p class="N">
+                    Also:
+                  </p>
+                  <p class="s">
+                    <span class="small-caps">1</span><sup>st</sup>-degree
+                    polynomials which are not exactly conjugates,
+                    just because of their leading coefficients,
+                    can be re-arranged as proper conjugates.
+                  </p>
+                  <h5>
+                    E.g.:
+                  </h5>
+                  <wc-math class="N x s">
+                    $$
+                      8( x - 11 + 6j ) \cdot 2( x - 11 - 6j )
+                      \;=\; 16( x - 11 + 6j )( x - 11 - 6j )
+                    $$
+                  </wc-math>
+                  <wc-math class="x s S">
+                    $$
+                      =\; 4( x - 11 + 6j ) \cdot 4( x - 11 - 6j )
+                    $$
+                  </wc-math>
+                  <p>
+                    More generally:
+                  </p>
+                  <wc-math class="N x s">
+                    $$
+                      \alpha\bigl( x - \Re(r) - j\Im(r) \bigr)
+                      \cdot
+                      \beta\bigl( x - \Re(r) + j\Im(r) \bigr)
+                    $$
+                  </wc-math>
+                  <wc-math class="x s">
+                    $$
+                      =\;
+                      \sqrt{\alpha\beta}\bigl( x - \Re(r) - j\Im(r) \bigr)
+                      \cdot
+                      \sqrt{\alpha\beta}\bigl( x - \Re(r) + j\Im(r) \bigr)
+                    $$
+                  </wc-math>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Before raising the degree any further,
+                  there's a special polynomial
+                  that tends to pop up in filter design and analysis.
+                </p>
+                <p class="n">
+                  It's called a biquadratic polynomial.
+                  (Ever heard of biquad filters? — If not you will soon.)
+                </p>
+                <wc-comment class="y">
+                  <h4 class="smallCaps Achtung">
+                    Achtung:
+                  </h4>
+                  <p class="zz">
+                    If yes, what follows will feel wrong.
+                    But it's not.
+                  </p>
+                  <p>
+                    There's an amphibology blurring this term.
+                    <br/>
+                    Chapter <span class="small-caps">vi, #05</span>
+                    addresses the issue properly.
+                  </p>
+                </wc-comment>
+                <p>
+                  Theoretically, a biquadratic polynomial is a quartic
+                  (<span class="small-caps">4</span><sup>th</sup>-degree).
+                </p>
+                <p class="n">
+                  It has the form:
+                </p>
+                <wc-split class="grid-b">
+                  <wc-math class="Z s">
+                    $$
+                      a_4 x^4 \,+\, a_2 x^2 \,+\, a_0
+                    $$
+                  </wc-math>
+                  <p class="y">
+                    ($ \; a_4 \,\neq\, 0 \; $)
+                  </p>
+                </wc-split>
+                <p>
+                  It's of degree <span class="small-caps">4</span> indeed,
+                  but its lack of any odd-exponent term
+                  makes it easier to discriminate than the average quartic.
+                </p>
+                <p class="n">
+                  Let's define:
+                </p>
+                <dl class="y W no-fucking-x-pad">
+                  <dt>$ \xi $</dt><dd>$ {}\,=\, x^2 $</dd>
+                  <dt>$ \alpha_2 $</dt><dd>$ {}\,=\, a_4 $</dd>
+                  <dt>$ \alpha_1 $</dt><dd>$ {}\,=\, a_2 $</dd>
+                  <dt>$ \alpha_0 $</dt><dd>$ {}\,=\, a_0 $</dd>
+                </dl>
+                <p>
+                  It becomes:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \alpha_2\xi^2 \,+\, \alpha_1\xi \,+\, \alpha_0
+                  $$
+                </wc-math>
+                <p>
+                  It has 2 roots for $ ξ $: $ \; \rho_1 \; $ and $ \; \rho_2 \; $.
+                </p>
+                <p class="n">
+                  And therefore 4 roots for $ x $:
+                </p>
+                <wc-split class="grid-b">
+                  <wc-math class="N x s">
+                    $$
+                      \pm\sqrt{\rho_1}
+                    $$
+                  </wc-math>
+                  <p class="N">
+                    and
+                  </p>
+                  <wc-math class="N x s">
+                    $$
+                      \pm\sqrt{\rho_2}
+                    $$
+                  </wc-math>
+                </wc-split>
+              </wc-ppp>
+
+              <wc-ppp>
+                <h4>Degree $ N $</h4>
+                <p class="S">
+                  <cite>Cubic, quartic, quintic, sextic,
+                  septic, octic, nonic, decic, undecic,
+                  duodecic, tredecic</cite>...
+                  <a
+                    title="Wikipedia.org | Degree of a polynomial — Names of polynomials by degree"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://en.wikipedia.org/wiki/Degree_of_a_polynomial#Names_of_polynomials_by_degree"
+                  >name your price</a>.
+                </p>
+                <wc-split>
+                  <div>
+                    <wc-math class="Z s">
+                      $$
+                        P_1(x) \;=\; a_1(x - r_1)
+                      $$
+                    </wc-math>
+                    <wc-math class="Z s">
+                      $$
+                        P_2(x) \;=\; a_2(x - r_2)(x - r_3)
+                      $$
+                    </wc-math>
+                    <wc-math class="N x s">
+                      $$
+                        \Pi(x) \;=\; \bigl( P_1 \cdot P_2 \bigr)(x)
+                      $$
+                    </wc-math>
+                    <wc-math class="x s S">
+                      $$
+                        \hphantom{ \Pi(x) }
+                        \;=\; a_1 a_2 (x - r_1)(x - r_2)(x - r_3)
+                      $$
+                    </wc-math>
+                  </div>
+                  <hr/>
+                  <div>
+                    <p>
+                      respectively:
+                    </p>
+                    <ul>
+                      <li>
+                        a <span class="smallCaps">1</span><sup>st</sup>-degree
+                        real polynomial in factored form
+                      </li>
+                      <li>
+                        a <span class="smallCaps">2</span><sup>nd</sup>-degree
+                        real polynomial in factored form
+                      </li>
+                      <li>
+                        their product
+                      </li>
+                    </ul>
+                  </div>
+                </wc-split>
+                <p class="zz">
+                  This last expression clearly has three roots:&nbsp;
+                  $ r_1 $, $ r_2 $ and $ r_3 $.
+                </p>
+                <p>
+                  It also looks very much like a factored form.
+                </p>
+                <wc-math class="N x s">
+                  $$
+                    \Pi(x) \;=\; a_1 a_2 (x^2 - r_2 x - r_1 x + r_1 r_2)(x - r_3)
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \hphantom{ \Pi(x) }
+                    \;=\;
+                    a_1 a_2
+                    ( x^3 - r_3 x^2 - r_2 x^2 + r_2 r_3 x - r_1 x^2 + r_1 r_3 x
+                    + r_1 r_2 x - r_1 r_2 r_3 )
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \hphantom{ \Pi(x) }
+                    \;=\;
+                    a_1 a_2
                     \bigl(\,
-                      \Im(r_1) \, \Re(r_2)
-                      \:-\: \Im(r_1) \, x
+                      x^3 \,-\, (r_3 + r_2 + r_1) x^2 \,+\, (r_2 r_3 + r_1 r_3 + r_1 r_2) x
+                      \,-\, r_1 r_2 r_3
                     \,\bigr)
                   $$
                 </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \hphantom{ \Pi(x) }
+                    \;=\;
+                    a_1 a_2 x^3
+                    \,-\, a_1 a_2 (r_3 + r_2 + r_1) x^2
+                    \,+\, a_1 a_2 (r_2 r_3 + r_1 r_3 + r_1 r_2) x
+                    \,-\, a_1 a_2 r_1 r_2 r_3
+                  $$
+                </wc-math>
+                <wc-math class="N x s">
+                  $$
+                    \alpha_3 \;=\; a_1 a_2
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \alpha_2 \;=\; -a_1 a_2 (r_3 + r_2 + r_1)
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \alpha_1 \;=\; a_1 a_2 (r_2 r_3 + r_1 r_3 + r_1 r_2)
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \alpha_0 \;=\; -a_1 a_2 r_1 r_2 r_3
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \implies\quad
+                    \Pi(x) \;=\; \alpha_3 x^3 \,+\, \alpha_2 x^2 \,+\, \alpha_1 x \,+\, \alpha_0
+                  $$
+                </wc-math>
+                <p>
+                  So $ \; \Pi(x) \; $ is a third-degree polynomial.
+                </p>
+                <p class="n">
+                  Is it real? — Two cases:
+                </p>
+                <ol>
+                  <li>
+                    $ r_2 $ and $ r_3 $ are real, then yes it is.
+                    <br/>
+                    (the only way to get an imaginary number out of real ones
+                    is with a negative sign and a fractional exponent;
+                    <br/>
+                    — <span class="small-caps">edit</span>:
+                    or a negative sign and a logarithm;
+                    <br/>
+                    — <span class="small-caps">edit 2</span>:
+                    or anything that I might be forgetting...
+                    <br/>
+                    but certainly not basic arithmetic.)
+                  </li>
+                  <li>
+                    $ r_2 $ and $ r_3 $ are complex conjugates...
+                  </li>
+                </ol>
+                <p class="n">
+                  Let's try
+                    <wc-popup>
+                    <span class="small-caps">(2)</span>
+                    <q class="actual-popup">
+                      $ r_2 $ and $ r_3 $ are complex conjugates...
+                    </q>
+                  </wc-popup>:
+                </p>
+                <wc-math class="N x s">
+                  $$
+                    \alpha_2 \;=\;
+                    -a_1 a_2
+                    \bigl(\,
+                      \Re(r_2) - j\Im(r_2) + \Re(r_2) + j\Im(r_2) + r_1
+                    \,\bigr)
+                  $$
+                </wc-math>
+                <wc-split class="grid-b">
+                  <wc-math class="x s S">
+                    $$
+                      \hphantom{ \alpha_2 }
+                      \;=\;
+                    -a_1 a_2
+                    \bigl(
+                      2\Re(r_2) + r_1
+                    \bigr)
+                    $$
+                  </wc-math>
+                  <wc-comment class="S">
+                    <p>
+                      ok.
+                    </p>
+                  </wc-comment>
+                </wc-split>
+                <wc-math class="N x s">
+                  $$
+                    \alpha_1
+                    \;=\; -a_1 a_2 \cdot
+                    \left(
+                      \begin{alignedat}{1} &
+                        \bigl(\, \Re(r_2) + j\Im(r_2) \,\bigr)
+                        \cdot
+                        \bigl(\, \Re(r_2) - j\Im(r_2) \,\bigr)
+                        \\[0.25em] &
+                        + r_1 \Re(r_2) - j r_1 \Im(r_2)
+                        + r_1 \Re(r_2) + j r_1 \Im(r_2)
+                      \end{alignedat}
+                    \right)
+                  $$
+                </wc-math>
+                <wc-math class="x zz">
+                  $$
+                    \hphantom{ \alpha_1 }
+                    \;=\; a_1 a_2
+                    \bigl(\,
+                      {\Re(r_2)}^2 - j\Re(r_2)\Im(r_2) + j\Re(r_2)\Im(r_2)
+                      + {\Im(r_2)}^2 + 2r_1 \Re(r_2)
+                    \,\bigr)
+                  $$
+                </wc-math>
+                <wc-math class="x zz">
+                  $$
+                    \hphantom{ \alpha_1 }
+                    \;=\; a_1 a_2
+                    \bigl(\,
+                      {\Re(r_2)}^2 + {\Im(r_2)}^2 + 2r_1 \Re(r_2)
+                    \,\bigr)
+                  $$
+                </wc-math>
+                <wc-split class="grid-b">
+                  <wc-math class="x zz S">
+                    $$
+                      \hphantom{ \alpha_1 }
+                      \;=\; a_1 a_2
+                      \bigl(\,
+                        {\left\vert r_2 \right\vert}^2 + 2r_1 \Re(r_2)
+                      \,\bigr)
+                    $$
+                  </wc-math>
+                  <wc-comment class="S">
+                    <p>
+                      ok.
+                    </p>
+                  </wc-comment>
+                </wc-split>
+                <wc-math class="N x s">
+                  $$
+                    \alpha_0
+                    \;=\; -a_1 a_2 r_1
+                    \bigl(\, \Re(r_2) + j\Im(r_2) \,\bigr)
+                    \bigl(\, \Re(r_2) - j\Im(r_2) \,\bigr)
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \hphantom{\alpha_0}
+                    \;=\; -a_1 a_2 r_1
+                    \bigl(\
+                      {\Re(r_2)}^2 - j\Re(r_2)\Im(r_2) + j\Im(r_2)\Re(r_2) + {\Im(r_2)}^2
+                    \,\bigr)
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                  \hphantom{\alpha_0}
+                  \;=\; -a_1 a_2 r_1
+                  \bigl(\
+                    {\Re(r_2)}^2 + {\Im(r_2)}^2
+                  \,\bigr)
+                  $$
+                </wc-math>
+                <wc-split class="grid-b">
+                  <wc-math class="x s S">
+                    $$
+                    \hphantom{\alpha_0}
+                    \;=\; -a_1 a_2 r_1 {\left\vert r_2 \right\vert}^2
+                    $$
+                  </wc-math>
+                  <wc-comment class="S">
+                    <p>
+                      ok.
+                    </p>
+                  </wc-comment>
+                </wc-split>
+                <p>
+                  Not bad, we have <mark>if</mark>
+                  — but not <mark>iff</mark>.
+                </p>
+                <p class="n">
+                  In syllogistical prose:
+                </p>
+                <wc-pp class="y">
+                  <p>
+                    The product of any real
+                    <span class="small-caps">1</span><sup>st</sup>-degree
+                    polynomial and any real
+                    <span class="small-caps">2</span><sup>nd</sup>-degree
+                    polynomial is a real
+                    <span class="small-caps">3</span><sup>rd</sup>-degree polynomial.
+                    <br/>
+                    (universal affirmative)
+                  </p>
+                </wc-pp>
+                <p>
+                  Which converts to:
+                </p>
+                <wc-pp class="y">
+                  <p>
+                    A real
+                    <span class="small-caps">3</span><sup>rd</sup>-degree polynomial
+                    <b class="smallCaps">can</b> be the product of a real
+                    <span class="small-caps">1</span><sup>st</sup>-degree
+                    and a real
+                    <span class="small-caps">2</span><sup>nd</sup>-degree polynomials.
+                    <br/>
+                    (particular affirmative)
+                  </p>
+                </wc-pp>
+                <p>
+                  (Corollary: in that case, at least,
+                  it has three roots and admits a factored form.)
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Not satisfying.
+                  <br/>
+                  We need grown-up maths.
+                </p>
               </wc-ppp>
 
             </section><!-- end #01 -->
@@ -1996,9 +2751,7 @@
                   <a
                     title="Wikipedia.org | Euclidean division"
                     target="_blank"
-                    type="text/html"
-                    charset="UTF-8"
-                    rel="external"
+                    rel="noopener"
                     href="https://en.wikipedia.org/wiki/Euclidean_division"
                   >Wikipedia</a>:
                   applies to any division with a remainder.
@@ -2014,21 +2767,18 @@
                     class="small-caps"
                     title="Wikipedia.org | Long division"
                     target="_blank"
-                    type="text/html"
-                    charset="UTF-8"
-                    rel="external"
+                    rel="noopener"
                     href="https://en.wikipedia.org/wiki/Long_division"
                   >→&nbsp;this&nbsp;←</a>,
                   that
                   <a
                     title="Wikipedia.org (French) | Division posée"
                     target="_blank"
-                    type="text/html"
-                    charset="UTF-8"
-                    rel="external"
+                    rel="noopener"
                     href="https://fr.wikipedia.org/wiki/Division_posée"
                   >French division</a>
                   is a long division,
+                  <br/>
                   except it has «&nbsp;fuck you I'm French&nbsp;»
                   written all over it.
                   <br/>
@@ -2048,9 +2798,7 @@
                       title="Wikipedia.org (Arabic) | قسمة مطولة"
                       lang="ar"
                       target="_blank"
-                      type="text/html"
-                      charset="UTF-8"
-                      rel="external"
+                      rel="noopener"
                       href="https://ar.wikipedia.org/wiki/قسمة_مطولة"
                     ><bdi lang="ar" dir="rtl">قسمة مطولة</bdi></a>
                   </li>
@@ -2059,9 +2807,7 @@
                       title="Wikipedia.org (Spanish) | División larga"
                       lang="es"
                       target="_blank"
-                      type="text/html"
-                      charset="UTF-8"
-                      rel="external"
+                      rel="noopener"
                       href="https://es.wikipedia.org/wiki/División_larga"
                     ><bdi lang="es">División larga</bdi></a>
                   </li>
@@ -2070,9 +2816,7 @@
                       title="Wikipedia.org (Flemish) | Staartdeling — België"
                       lang="nl"
                       target="_blank"
-                      type="text/html"
-                      charset="UTF-8"
-                      rel="external"
+                      rel="noopener"
                       href="https://nl.wikipedia.org/wiki/Staartdeling#België"
                     ><bdi lang="nl">Staartdeling — België</bdi></a>
                   </li>
@@ -2081,9 +2825,7 @@
                       title="Wikipedia.org (Mandarin) | 長除法"
                       lang="zh-Hant"
                       target="_blank"
-                      type="text/html"
-                      charset="UTF-8"
-                      rel="external"
+                      rel="noopener"
                       href="https://zh.wikipedia.org/wiki/長除法"
                     ><bdi lang="zh-Hant">長除法</bdi></a>
                   </li>
@@ -2092,9 +2834,7 @@
                       title="Wikipedia.org (Greek) | Κάθετη διαίρεση"
                       lang="el"
                       target="_blank"
-                      type="text/html"
-                      charset="UTF-8"
-                      rel="external"
+                      rel="noopener"
                       href="https://el.wikipedia.org/wiki/Κάθετη_διαίρεση"
                     ><bdi lang="el">Κάθετη διαίρεση</bdi></a>
                   </li>
@@ -2103,9 +2843,7 @@
                       title="Wikipedia.org (Greek) | Phép chia số lớn"
                       lang="vi"
                       target="_blank"
-                      type="text/html"
-                      charset="UTF-8"
-                      rel="external"
+                      rel="noopener"
                       href="https://vi.wikipedia.org/wiki/Phép_chia_số_lớn"
                     ><bdi lang="vi">Phép chia số lớn</bdi></a>
                   </li>
@@ -2114,9 +2852,7 @@
                       title="Wikipedia.org (Farsi) | تقسیم_طولانی"
                       lang="fa"
                       target="_blank"
-                      type="text/html"
-                      charset="UTF-8"
-                      rel="external"
+                      rel="noopener"
                       href="https://fa.wikipedia.org/wiki/تقسیم_طولانی"
                     ><bdi lang="fa" dir="rtl">تقسیم_طولانی</bdi></a>
                   </li>
@@ -2141,9 +2877,7 @@
                     title="Wikipedia.org (Russian) | Деление столбиком"
                     lang="ru"
                     target="_blank"
-                    type="text/html"
-                    charset="UTF-8"
-                    rel="external"
+                    rel="noopener"
                     href="https://ru.wikipedia.org/wiki/Деление_столбиком"
                   ><bdi lang="ru">Russians</bdi></a>
                   seem to know them all.
@@ -2156,79 +2890,103 @@
                 </p>
               </wc-ppp>
 
+              <style>
+                figure.longDivision > table#frLD,
+                figure.longDivision > table#deLD,
+                figure.longDivision > table#enLD
+                {
+                  & td
+                  {
+                    &.vinculumR
+                    {
+                      border-left: 1px solid var(--lightGrey);
+                    }
+                    &.vinculumT
+                    {
+                      border-bottom: 1px solid var(--lightGrey);
+                      padding-bottom: 0.25rem;
+                    }
+                    &.vinculumB
+                    {
+                      padding-top: 0.125rem;
+                    }
+
+                    &.v_T
+                    {
+                      vertical-align: top;
+                    }
+                  }
+
+                  & wc-math
+                  {
+                    font-size: 100%;
+                  }
+                }
+              </style>
+
               <wc-ppp>
                 <wc-grid2>
                   <!--  FRENCH  -->
                   <!-- French —— division -->
                   <figure class="longDivision s">
-                    <table class="Z">
+                    <table id="frLD" class="Z">
+                      <!-- line 1 -->
                       <tr>
                         <td></td>
                         <td><wc-math>$$ 6 $$</wc-math></td>
                         <td><wc-math>$$ 7 $$</wc-math></td>
                         <td><wc-math>$$ 1 $$</wc-math></td>
                         <td><wc-math>$$ 1 \quad $$</wc-math></td>
-                        <td
-                          style="
-                            border-left: 1px solid var(--lightGrey);
-                            border-bottom: 1px solid var(--lightGrey);
-                          "
-                        >
-                          <wc-math>
-                            $$
-                              \; 19
-                            $$
-                          </wc-math>
+                        <td class="vinculumR vinculumT">
+                          <wc-math>$$ \; 19 $$</wc-math>
                         </td>
                       </tr>
+                      <!-- line 2 -->
                       <tr>
-                        <td><wc-math>$$ - $$</wc-math></td>
-                        <td><wc-math>$$ 5 $$</wc-math></td>
-                        <td><wc-math>$$ 7 $$</wc-math></td>
-                        <td colspan="2"></td>
-                        <td
-                          rowspan="8"
-                          style="
-                            vertical-align: top;
-                            border-left: 1px solid var(--lightGrey);
-                          "
-                        >
-                          <wc-math>
-                            $$
-                              \; 353 \quad
-                            $$
-                          </wc-math>
+                        <td class="vinculumB"><wc-math>$$ - $$</wc-math></td>
+                        <td class="vinculumB"><wc-math>$$ 5 $$</wc-math></td>
+                        <td class="vinculumB"><wc-math>$$ 7 $$</wc-math></td>
+                        <td colspan="2" class="vinculumB"></td>
+                        <td rowspan="8" class="v_T vinculumR vinculumB">
+                          <wc-math>$$ \; 353 \quad $$</wc-math>
                         </td>
                       </tr>
+                      <!-- line 3 -->
                       <tr>
                         <td rowspan="2"></td>
                         <td><wc-math>$$ 1 $$</wc-math></td>
                         <td colspan="3"><wc-math>$$ 0 $$</wc-math></td>
                       </tr>
+                      <!-- line 4 -->
                       <tr>
                         <td><wc-math>$$ 1 $$</wc-math></td>
                         <td><wc-math>$$ 0 $$</wc-math></td>
                         <td colspan="2"><wc-math>$$ 1 $$</wc-math></td>
                       </tr>
+                      <!-- line 5 -->
                       <tr>
                         <td colspan="2"><wc-math>$$ - $$</wc-math></td>
                         <td><wc-math>$$ 9 $$</wc-math></td>
                         <td colspan="2"><wc-math>$$ 5 $$</wc-math></td>
                       </tr>
+                      <!-- line 6 -->
                       <tr>
                         <td colspan="3"></td>
                         <td colspan="2"><wc-math>$$ 6 $$</wc-math></td>
                       </tr>
+                      <!-- line 7 -->
                       <tr>
                         <td colspan="3"></td>
                         <td><wc-math>$$ 6 $$</wc-math></td>
                         <td><wc-math>$$ 1 $$</wc-math></td>
                       </tr>
+                      <!-- line 8 -->
                       <tr>
                         <td colspan="3"><wc-math>$$ - $$</wc-math></td>
                         <td><wc-math>$$ 5 $$</wc-math></td>
                         <td><wc-math>$$ 7 $$</wc-math></td>
                       </tr>
+                      <!-- line 9 -->
                       <tr>
                         <td colspan="4"></td>
                         <td><wc-math>$$ 4 $$</wc-math></td>
@@ -2274,54 +3032,57 @@
                   <!--  GERMAN  -->
                   <!-- German —— division -->
                   <figure class="longDivision s">
-                    <table class="Z">
+                    <table id="deLD" class="Z">
+                      <!-- line 1 -->
                       <tr>
                         <td></td>
                         <td><wc-math>$$ 6 $$</wc-math></td>
                         <td><wc-math>$$ 7 $$</wc-math></td>
                         <td><wc-math>$$ 1 $$</wc-math></td>
-                        <td>
-                          <wc-math>
-                            $$
-                              1 \; : \; 19 \; = \; 353
-                            $$
-                          </wc-math>
-                        </td>
+                        <td><wc-math>$$ 1 \;:\; 19 \;=\; 353 $$</wc-math></td>
                       </tr>
+                      <!-- line 2 -->
                       <tr>
                         <td><wc-math>$$ - $$</wc-math></td>
                         <td><wc-math>$$ 5 $$</wc-math></td>
                         <td colspan="3"><wc-math>$$ 7 $$</wc-math></td>
                       </tr>
+                      <!-- line 3 -->
                       <tr>
                         <td></td>
                         <td><wc-math>$$ 1 $$</wc-math></td>
                         <td colspan="3"><wc-math>$$ 0 $$</wc-math></td>
                       </tr>
+                      <!-- line 4 -->
                       <tr>
                         <td></td>
                         <td><wc-math>$$ 1 $$</wc-math></td>
                         <td><wc-math>$$ 0 $$</wc-math></td>
                         <td colspan="2"><wc-math>$$ 1 $$</wc-math></td>
                       </tr>
+                      <!-- line 5 -->
                       <tr>
                         <td colspan="2"><wc-math>$$ - $$</wc-math></td>
                         <td><wc-math>$$ 9 $$</wc-math></td>
                         <td colspan="2"><wc-math>$$ 5 $$</wc-math></td>
                       </tr>
+                      <!-- line 6 -->
                       <tr>
                         <td colspan="3"></td>
                         <td colspan="2"><wc-math>$$ 6 $$</wc-math></td>
                       </tr>
+                      <!-- line 7 -->
                       <tr>
                         <td colspan="3"></td>
                         <td><wc-math>$$ 1 $$</wc-math></td>
                       </tr>
+                      <!-- line 8 -->
                       <tr>
                         <td colspan="3"><wc-math>$$ - $$</wc-math></td>
                         <td><wc-math>$$ 5 $$</wc-math></td>
                         <td><wc-math>$$ 7 $$</wc-math></td>
                       </tr>
+                      <!-- line 9 -->
                       <tr>
                         <td colspan="4"></td>
                         <td><wc-math>$$ 4 $$</wc-math></td>
@@ -2357,76 +3118,87 @@
                   <!--  BRITISH  -->
                   <!-- Britsh —— division -->
                   <figure class="longDivision s">
-                    <table class="Z">
+                    <table id="enLD" class="Z">
+                      <!-- line 1 -->
                       <tr>
-                        <td colspan="3"></td>
-                        <td style="padding-bottom: 0.25rem;">
+                        <td></td>
+                        <td colspan="2" class="vinculumT"></td>
+                        <td class="vinculumT">
                           <wc-math>$$ 3 $$</wc-math>
                         </td>
-                        <td style="padding-bottom: 0.25rem;">
+                        <td class="vinculumT">
                           <wc-math>$$ 5 $$</wc-math>
                         </td>
-                        <td colspan="2" style="padding-bottom: 0.25rem;">
+                        <td colspan="2" class="vinculumT">
                           <wc-math>$$ 3 $$</wc-math>
                         </td>
                       </tr>
+                      <!-- line 2 -->
                       <tr>
                         <td><wc-math>$$ 19 \; $$</wc-math></td>
-                        <td style="border-top: 1px solid var(--lightGrey);">
-                          <wc-math>$$ \big{)} $$</wc-math>
+                        <td>
+                          <wc-math>$$ \big) $$</wc-math>
                         </td>
-                        <td style="border-top: 1px solid var(--lightGrey);"></td>
-                        <td style="border-top: 1px solid var(--lightGrey);">
+                        <td></td>
+                        <td>
                           <wc-math>$$ 6 $$</wc-math>
-                        <td style="border-top: 1px solid var(--lightGrey);">
+                        <td>
                           <wc-math>$$ 7 $$</wc-math>
                         </td>
-                        <td style="border-top: 1px solid var(--lightGrey);">
+                        <td>
                           <wc-math>$$ 1 $$</wc-math>
                         </td>
-                        <td style="border-top: 1px solid var(--lightGrey);">
+                        <td>
                           <wc-math>$$ 1 \; $$</wc-math>
                         </td>
                         </td>
                       </tr>
+                      <!-- line 3 -->
                       <tr>
                         <td colspan="2"></td>
                         <td><wc-math>$$ - $$</wc-math></td>
                         <td><wc-math>$$ 5 $$</wc-math></td>
                         <td colspan="3"><wc-math>$$ 7 $$</wc-math></td>
                       </tr>
+                      <!-- line 4 -->
                       <tr>
                         <td colspan="3"></td>
                         <td><wc-math>$$ 1 $$</wc-math></td>
                         <td colspan="3"><wc-math>$$ 0 $$</wc-math></td>
                       </tr>
+                      <!-- line 5 -->
                       <tr>
                         <td colspan="3"></td>
                         <td><wc-math>$$ 1 $$</wc-math></td>
                         <td><wc-math>$$ 0 $$</wc-math></td>
                         <td colspan="2"><wc-math>$$ 1 $$</wc-math></td>
                       </tr>
+                      <!-- line 6 -->
                       <tr>
                         <td colspan="2"></td>
                         <td colspan="2"><wc-math>$$ - $$</wc-math></td>
                         <td><wc-math>$$ 9 $$</wc-math></td>
                         <td colspan="2"><wc-math>$$ 5 $$</wc-math></td>
                       </tr>
+                      <!-- line 7 -->
                       <tr>
                         <td colspan="5"></td>
                         <td colspan="2"><wc-math>$$ 6 $$</wc-math></td>
                       </tr>
+                      <!-- line 8 -->
                       <tr>
                         <td colspan="5"></td>
                         <td><wc-math>$$ 6 $$</wc-math></td>
                         <td><wc-math>$$ 1 $$</wc-math></td>
                       </tr>
+                      <!-- line 9 -->
                       <tr>
                         <td colspan="2"></td>
                         <td colspan="3"><wc-math>$$ - $$</wc-math></td>
                         <td><wc-math>$$ 5 $$</wc-math></td>
                         <td><wc-math>$$ 7 $$</wc-math></td>
                       </tr>
+                      <!-- line 10 -->
                       <tr>
                         <td colspan="6"></td>
                         <td><wc-math>$$ 4 $$</wc-math></td>
@@ -2467,10 +3239,8 @@
                     title="Editing Working-class-filter-design/Chapter 05: Poles and zeroes
 at main · antoineportes/Working-class-filter-design"
                     target="_blank"
-                    type="text/html"
-                    charset="UTF-8"
-                    rel="external"
-                    href="https://github.com/antoineportes/Working-class-filter-design/edit/main/Chapter 05_ Poles and zeroes"
+                    rel="noopener"
+                    href="https://github.com/antoineportes/Working-class-filter-design/edit/main/Chapter 05_ Poles and zeroes, part A"
                   >
                     pull a request
                   </a>
@@ -2519,7 +3289,7 @@ at main · antoineportes/Working-class-filter-design"
                         \bigl(\,
                           (6/33) \cdot 10 \,+\, 7/33
                         \bigr) \cdot 10 \,+\, 8/33
-                      \,\Bigr) \cdot 10 \,+\, 9
+                      \,\Bigr) \cdot 10 \,+\, 9/33
                     $$
                   </wc-math>
                   <wc-math class="x N s">
@@ -2748,14 +3518,39 @@ at main · antoineportes/Working-class-filter-design"
                     $$
                   </wc-math>
                 </wc-pp>
+                <wc-comment class="y">
+                  <p>
+                    This only holds for positive divisors
+                    (the modulus in the modulo function).
+                  </p>
+                  <p class="zz">
+                    Euclid wants a positive remainder no matter what.
+                    <br/>
+                    So his modulo is not $ \trunc $-based,
+                    nor is it $ \floor $-based, it's a third option.
+                  </p>
+                  <p>
+                    The previous chapter has already established
+                    that we're only interested in $ \floor $.
+                  </p>
+                  <p class="n">
+                    Since nothing messes up my thoughts quite like
+                    the various implementation of modulo,
+                    and since I certainly wouldn't want to contaminate you...
+                    let's move on!
+                    <br/>
+                    (Just quote at you own risks as usual:
+                    the last set of equations is no longer Euclidean.)
+                  </p>
+                </wc-comment>
                 <p>
                   We're using powers of ten because
                   Arabic numbers are a ten-symbol alphabet
-                  (because ten fingers).
+                  (because ten fingers?).
                 </p>
                 <p>
                   We could use any base
-                  — we could use base x...
+                  — we could use base $ x $...
                 </p>
                 <p class="zz">
                   Which makes every (complex) number
@@ -2769,9 +3564,7 @@ at main · antoineportes/Working-class-filter-design"
                     <a
                       title="Wikipedia.org | Fundamental theorem of algebra"
                       target="_blank"
-                      type="text/html"
-                      charset="UTF-8"
-                      rel="external"
+                      rel="noopener"
                       href="https://en.wikipedia.org/wiki/Fundamental_theorem_of_algebra"
                     >the set of complex numbers
                     is algebraically closed</a>.
@@ -2789,27 +3582,165 @@ at main · antoineportes/Working-class-filter-design"
               </wc-ppp>
 
               <wc-ppp>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
+                <p>
+                  So any polynomial could take the form:
+                  $ \; \delta \;=\; q\cdot d \,+\, r \; $
+                  for a fixed value of $ x $
+                  (or whatever symbol it uses as a variable).
+                </p>
+                <p class="zz">
+                  If it remains valid for non-constant $ x $,
+                  <br/>
+                  then $ \delta $, $ q $, $ d $ and $ r $
+                  are all functions of $ x $.
+                </p>
+                <p>
+                  Then any polynomial can take the form:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    P(x) \;=\; Q(x)D(x) \,+\, R(x)
+                  $$
+                </wc-math>
+                <p>
+                  or:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \frac{ P(x) \,-\, R(x) }{D(x)} \;=\; Q(x)
+                  $$
+                </wc-math>
+                <p>
+                  Let's demonstrate that, shall we?
+                </p>
+                <p class="n">
+                  The Euclidean division answers the question:
+                </p>
+                <wc-pp class="y">
+                  <p class="s">
+                    <cite><b>How many times can we subtract the divisor in full
+                    from the dividend?</b></cite>
+                  </p>
+                  <p>
+                    The answer is the quotient,
+                    <br/>
+                    and whatever is left is the remainder.
+                  </p>
+                </wc-pp>
+                <p>
+                  So the quotient and the divisor are smaller than the dividend,
+                  and the remainder is smaller than the divisor.
+                </p>
+                <wc-comment class="y">
+                  <p>
+                    Actually the quotient can be equal — that's our limit-case
+                    (assuming Euclid sticks to strictly positive integers).
+                  </p>
+                  <p class="n">
+                    E.g.:
+                  </p>
+                  <wc-split class="grid-c">
+                    <wc-math class="Z s">
+                      $$
+                        \pi/1 \;=\; \frac{\delta - r}{d}
+                      $$
+                    </wc-math>
+                    <hr/>
+                    <div>
+                      <ul class="S">
+                        <li>
+                          $ \delta \,=\, \pi $
+                        </li>
+                        <li>
+                          $ r \,=\, 0 $
+                        </li>
+                        <li>
+                          $ d \,=\, 1 $
+                        </li>
+                      </ul>
+                      <p class="W S">
+                        $ \implies\quad q \,=\, \delta $
+                      </p>
+                    </div>
+                  </wc-split>
+                  <p>
+                    And the divisor can equate the dividend,
+                    <br/>
+                    that's the other limit:
+                  </p>
+                  <wc-math class="N x s">
+                    $$
+                      (x - 0)/x \;=\; 1
+                    $$
+                  </wc-math>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Polynomials are functions.
+                  <br/>
+                  Their variable(s) takes an infinity of values.
+                </p>
+                <p class="zz">
+                  So <mark>smaller</mark> makes little sense now.
+                </p>
+                <p>
+                  But they all have a degree
+                  — which is a constant integer —
+                  so <mark>smaller degree</mark> makes sense.
+                </p>
+                <p class="n">
+                  Let's define:
+                </p>
+                <ul>
+                  <li>
+                    $ N_P \; $ the degree of $ \; P(x) \; $ (dividend)
+                  </li>
+                  <li>
+                    $ N_D \; $ the degree of $ \; D(x) \; $ (divisor)
+                  </li>
+                  <li>
+                    $ N_Q \; $ the degree of $ \; Q(x) \; $ (quotient)
+                  </li>
+                  <li>
+                    $ N_R \; $ the degree of $ \; R(x) \; $ (remainder)
+                  </li>
+                </ul>
+                <p class="n">
+                  Apparently we want:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    N_P \;\geq\; N_D \;\gt\; N_R
+                  $$
+                </wc-math>
+                <p>
+                  Ok, but what about $ N_Q $?
+                </p>
+                <p class="n">
+                  And what if $ N_D $ is already zero (constant polynomial)?
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Let's try a random example:
+                </p>
+                <dl class="left y">
+                  <dt>
+                    $ P(x) \;=\; 4x^2 \,+\, 3x \,-\, 5 $
+                  </dt>
+                  <dd>
+                    $ \implies\quad N_P \;=\; 2 $
+                  </dd>
+                  <dt>
+                    $ D(x) \;=\; 7x \,+\, 12 $
+                  </dt>
+                  <dd>
+                    $ \implies\quad N_D \;=\; 1 $
+                  </dd>
+                </dl>
               </wc-ppp>
 
               <wc-ppp>
@@ -2827,24 +3758,81 @@ at main · antoineportes/Working-class-filter-design"
                 </p>
                 <p>
                   Let's go one step further:
+                  <br/>
                   let's reconcile Germans and French
                   — <cite>Umwerthung aller Werthe</cite>.
                 </p>
                 <p class="zz">
                   Let a French guy claim:
-                  <mark>I prefer the German way</mark>.
+                  «&nbsp;je préfère la façon allemande&nbsp;».
                 </p>
                 <p>
                   (I'm talking Euclidean division,
-                  not cheese,
-                  nor <span class="small-caps">20</span><sup>th</sup>
-                  century politics — of course.)
+                  not cheese, nor
+                  <span class="small-caps">20</span><sup>th</sup>-century
+                  politics — of course.)
                 </p>
-                <p class="zz">
+                <p class="n">
                   Vielleicht konnte ich sogar probieren,
                   auf Deutsch zu schreiben... Ok, no.
                 </p>
               </wc-ppp>
+
+              <style>
+                figure.longDivision > table#mainPLD
+                {
+                  & td
+                  {
+                    &.vinculumT
+                    {
+                      border-bottom: 1px solid var(--lightGrey);
+                      padding-bottom: 0.25rem;
+                    }
+                    &.vinculumB
+                    {
+                      padding-top: 0.125rem;
+                    }
+
+                    &.v_T
+                    {
+                      vertical-align: top;
+                    }
+                  }
+
+                  & wc-math
+                  {
+                    font-size: 100%;
+
+                    &.shhh
+                    {
+                      color: var(--quietGrey);
+
+                      & *.bypass, & *.bypass *
+                      {
+                        color: var(--lightGrey);
+                      }
+                    }
+
+                    &.t_L
+                    {
+                      text-align: left;
+                    }
+                    &.t_C
+                    {
+                      text-align: center;
+                    }
+                    &.t_R
+                    {
+                      text-align: right;
+                    }
+
+                    &.uub /* "under-underbrace" */
+                    {
+                      padding-top: 3pt;
+                    }
+                  }
+                }
+              </style>
 
               <wc-ppp>
                 <wc-split class="s">
@@ -2852,231 +3840,106 @@ at main · antoineportes/Working-class-filter-design"
                   <div>
                     <!--  Long Division  -->
                     <figure class="longDivision s">
-                      <table class="y">
+                      <table id="mainPLD" class="y">
                         <!-- line 1 -->
                         <tr>
-                          <td rowspan="5" style="vertical-align: top;">
-                            <wc-math style="color: hsl(0, 0%, 42%);">
-                              $$
-                                P(x) \longrightarrow \;
-                              $$
-                            </wc-math>
+                          <td rowspan="5" class="v_T">
+                            <wc-math class="shhh">$$ P(x) \longrightarrow\; $$</wc-math>
                           </td>
-                          <td style="vertical-align: top;">
-                            <wc-math>
-                              $$
-                                \hphantom{- \,}
-                                4x^2
-                              $$
-                            </wc-math>
+                          <td class="v_T">
+                            <wc-math>$$ \hphantom{ -\, } 4x^2 $$</wc-math>
                           </td>
-                          <td style="vertical-align: top;">
-                            <wc-math>
-                              $$
-                                \: + \:
-                              $$
-                            </wc-math>
+                          <td class="v_T">
+                            <wc-math>$$ \:+\: $$</wc-math>
                           </td>
-                          <td style="vertical-align: top;">
-                            <wc-math style="text-align: right;">
-                              $$
-                                3x
-                              $$
-                            </wc-math>
+                          <td class="v_T">
+                            <wc-math class="t_R">$$ 3x $$</wc-math>
                           </td>
-                          <td style="vertical-align: top;">
-                            <wc-math>
-                              $$
-                                \: + \:
-                              $$
-                            </wc-math>
+                          <td class="v_T">
+                            <wc-math>$$ \:-\: $$</wc-math>
                           </td>
-                          <td style="vertical-align: top;">
-                            <wc-math style="text-align: left;">
-                              $$
-                                5
-                              $$
-                            </wc-math>
+                          <td class="v_T">
+                            <wc-math class="t_L">$$ 5 $$</wc-math>
                           </td>
-                          <td rowspan="4" style="vertical-align: top;">
-                            <wc-math style="text-align: center;">
-                              $$
-                                : \;
-                              $$
-                            </wc-math>
+                          <td rowspan="4" class="v_T">
+                            <wc-math class="t_C">$$ :\;{} $$</wc-math>
                           </td>
-                          <td rowspan="4" style="vertical-align: top;">
-                            <wc-math style="text-align: center;">
-                              $$
-                                \textcolor{hsl(0, 0%, 42%)}
-                                {
-                                  \underbrace{
-                                    \textcolor{var(--lightGrey)}
-                                    {
-                                      7x \: + \: 12
-                                    }
-                                  }
-                                }
-                              $$
+                          <td rowspan="4" class="v_T">
+                            <wc-math class="t_C shhh">
+                              $$ \underbrace{ \class{bypass}{ 7x \:+\: 12 } } $$
                             </wc-math>
-                            <wc-math style="text-align: center; padding-top: 3pt; color: hsl(0, 0%, 42%);">
-                              $$
-                                \big\uparrow
-                              $$
-                            </wc-math>
-                            <wc-math style="text-align: center; color: hsl(0, 0%, 42%);">
-                              $$
-                                D(x)
-                              $$
-                            </wc-math>
+                            <wc-math class="t_C shhh uub">$$ \big\uparrow $$</wc-math>
+                            <wc-math class="t_C shhh">$$ D(x) $$</wc-math>
                           </td>
-                          <td rowspan="5" style="vertical-align: top;">
-                            <wc-math>
-                              $$
-                                \; = \;
-                              $$
-                            </wc-math>
+                          <td rowspan="5" class="v_T">
+                            <wc-math>$$ {}\;=\;{} $$</wc-math>
                           </td>
-                          <td rowspan="5" style="vertical-align: top;">
-                            <wc-math style="text-align: center;">
-                              $$
-                                \textcolor{hsl(0, 0%, 42%)}
-                                {
-                                  \underbrace{
-                                    \textcolor{var(--lightGrey)}
-                                    {
-                                      (4/7)x \: + \: 27/49
-                                    }
-                                  }
-                                }
-                              $$
+                          <td rowspan="5" class="v_T">
+                            <wc-math class="t_C shhh">
+                              $$ \underbrace{ \class{bypass}{ (4/7)x \:+\: 27/49 } } $$
                             </wc-math>
-                            <wc-math style="text-align: center; padding-top: 3pt; color: hsl(0, 0%, 42%);">
-                              $$
-                                \big\uparrow
-                              $$
-                            </wc-math>
-                            <wc-math style="text-align: center; color: hsl(0, 0%, 42%);">
-                              $$
-                                Q(x)
-                              $$
-                            </wc-math>
+                            <wc-math class="t_C shhh uub">$$ \big\uparrow $$</wc-math>
+                            <wc-math class="t_C shhh">$$ Q(x) $$</wc-math>
                           </td>
                         </tr>
                         <!-- line 2 -->
                         <tr>
-                          <td style="border-bottom: 1px solid var(--lightGrey); padding-bottom: 0.25rem;">
-                            <wc-math>
-                              $$
-                                - \, 4x^2
-                              $$
-                            </wc-math>
+                          <td class="vinculumT">
+                            <wc-math>$$ -\, 4x^2 $$</wc-math>
                           </td>
-                          <td style="border-bottom: 1px solid var(--lightGrey); padding-bottom: 0.25rem;">
-                            <wc-math>
-                              $$
-                                \: - \:
-                              $$
-                            </wc-math>
+                          <td class="vinculumT">
+                            <wc-math>$$ \:-\: $$</wc-math>
                           </td>
-                          <td style="border-bottom: 1px solid var(--lightGrey); padding-bottom: 0.25rem;">
-                            <wc-math style="text-align: right;">
-                              $$
-                                (48/7)x
-                              $$
-                            </wc-math>
+                          <td class="vinculumT">
+                            <wc-math class="t_R">$$ (48/7)x $$</wc-math>
                           </td>
                           <td></td>
                           <td>
-                            <wc-math style="text-align: left; color: var(--collateral);">
-                              $$
-                                \downarrow
-                              $$
-                            </wc-math>
+                            <wc-math class="t_L shhh">$$ \downarrow $$</wc-math>
                           </td>
                         </tr>
                         <!-- line 3 -->
                         <tr>
                           <td></td>
-                          <td>
-                            <wc-math>
-                              $$
-                                \: - \:
-                              $$
-                            </wc-math>
+                          <td class="vinculumB">
+                            <wc-math>$$ \:-\: $$</wc-math>
                           </td>
-                          <td>
-                            <wc-math style="text-align: right;">
-                              $$
-                                (27/7)x
-                              $$
-                            </wc-math>
+                          <td class="vinculumB">
+                            <wc-math class="t_R">$$ (27/7)x $$</wc-math>
                           </td>
-                          <td>
-                            <wc-math>
-                              $$
-                                \: - \:
-                              $$
-                            </wc-math>
+                          <td class="vinculumB">
+                            <wc-math>$$ \:-\: $$</wc-math>
                           </td>
-                          <td>
-                            <wc-math style="text-align: left;">
-                              $$
-                                5
-                              $$
-                            </wc-math>
+                          <td class="vinculumB">
+                            <wc-math class="t_L">$$ 5 $$</wc-math>
                           </td>
                         </tr>
                         <!-- line 4 -->
                         <tr>
                           <td></td>
-                          <td style="border-bottom: 1px solid var(--lightGrey); padding-bottom: 0.25rem;">
-                            <wc-math>
-                              $$
-                                \: + \:
-                              $$
-                            </wc-math>
+                          <td class="vinculumT">
+                            <wc-math>$$ \:+\: $$</wc-math>
                           </td>
-                          <td style="border-bottom: 1px solid var(--lightGrey); padding-bottom: 0.25rem;">
-                            <wc-math style="text-align: right;">
-                              $$
-                                (27/7)x
-                              $$
-                            </wc-math>
+                          <td class="vinculumT">
+                            <wc-math class="t_R">$$ (27/7)x $$</wc-math>
                           </td>
-                          <td style="border-bottom: 1px solid var(--lightGrey); padding-bottom: 0.25rem;">
-                            <wc-math>
-                              $$
-                                \: + \:
-                              $$
-                            </wc-math>
+                          <td class="vinculumT">
+                            <wc-math>$$ \:+\: $$</wc-math>
                           </td>
-                          <td style="border-bottom: 1px solid var(--lightGrey); padding-bottom: 0.25rem;">
-                            <wc-math style="text-align: left;">
-                              $$
-                                324/49
-                              $$
-                            </wc-math>
+                          <td class="vinculumT">
+                            <wc-math class="t_L">$$ 324/49 $$</wc-math>
                           </td>
                         </tr>
                         <!-- line 5 -->
-                         <tr>
+                        <tr>
                           <td colspan="4"></td>
-                          <td>
-                            <wc-math style="text-align: right; padding-top: 0.25rem;">
-                              $$
-                                79/49
-                              $$
-                            </wc-math>
+                          <td class="vinculumB">
+                            <wc-math class="t_R">$$ 79/49 $$</wc-math>
                           </td>
-                          <td colspan="2">
-                            <wc-math style="text-align: left; color: hsl(0, 0%, 42%); padding-top: 0.25rem;">
-                              $$
-                                \; \longleftarrow R(x)
-                              $$
-                            </wc-math>
+                          <td colspan="2" class="vinculumB">
+                            <wc-math class="t_L shhh">$$ \;\longleftarrow R(x) $$</wc-math>
                           </td>
-                         </tr>
+                        </tr>
                       </table>
                     </figure>
                     <wc-pp class="outlined">
@@ -3086,7 +3949,7 @@ at main · antoineportes/Working-class-filter-design"
                       </p>
                       <p>
                         So we can take advantage of the subtraction
-                        to reduce $ \; Q(x) \; $'s order,
+                        to reduce $ \; Q(x) \; $'s degree,
                         by finding a factor which makes
                         the leading term of $ \; P(x) \; $ and $ \; D(x) \; $ cancel out.
                       </p>
@@ -3109,83 +3972,399 @@ at main · antoineportes/Working-class-filter-design"
                       </p>
                       <p class="zz">
                         This is a constant, a coefficient for $ x^0 $,
-                        a zeroth-order polynomial...
+                        a zeroth-degree polynomial...
                       </p>
                       <p class="S">
-                        $ D(x) \; $ is of order 1, and $ \; 1 \: \gt \: 0 \; $.
+                        $ D(x) \; $ is of degree <span class="small-caps">1</span>,
+                        and $ \; 1 \,\gt\, 0 \; $.
                         So, stop.
                       </p>
                     </wc-pp>
                   </div>
-                  <wc-comment>
+                  <wc-comment class="topContent">
                     <p>
-                      $
-                        \: {4x^2/7x \: = \: (4/7)x}
-                      $
+                      $ \: 4x^2/7x \:=\: (4/7)x $
                     </p>
                     <p class="y">
-                      $
-                        {\: (4/7)x \cdot (7x \, + \, 12) \: = \: 4x^2 \, + \, (48/7)x}
-                      $
+                      $ \: {(4/7)x \cdot (7x \,+\, 12)} \:=\: {4x^2} \,+\, {(48/7)x} $
                     </p>
                     <p>
-                      $
-                        {\: 4x^2 \, + \, 3x \; - \, \bigl( 4x^2 \, + \, (48/7)x \bigr)}
-                      $
+                      $ \: {4x^2} \,+\, {3x} \;-\, {\bigl( 4x^2 \,+\, (48/7)x \bigr)} $
                       <br/>
-                      $
-                        {\; = \: 3x \, - \, (48/7)x}
-                      $
+                      $ \;=\: {3x} \,-\, {(48/7)x} $
                       <br/>
-                      $
-                        {\; = \: x(21/7 \, - \, 48/7)}
-                      $
+                      $ \;=\: {x(21/7 \,-\, 48/7)} $
                       <br/>
-                      $
-                        {\; = \: x \bigl( -(48 \, - \, 21)/7 \bigr)}
-                      $
+                      $ \;=\: {x \bigl( -(48 \,-\, 21)/7 \bigr)} $
                       <br/>
-                      $
-                        {\; = \: -(27/7)x}
-                      $
+                      $ \;=\: {-(27/7)x} $
                     </p>
                     <p class="y">
-                      $
-                        {\: (-27/7)x/7x \: = \: -27/(7 \cdot 7)}
-                      $
+                      $ \: {(-27/7)x/7x} \:=\: {-27/(7 \cdot 7)} $
                       <br/>
-                      $
-                        {\; = \: -27/49}
-                      $
+                      $ \;=\: {-27/49} $
                     </p>
                     <p>
-                      $
-                        {\: (-27/49) \cdot (7x \, + \, 12)}
-                      $
+                      $ \: {(-27/49)} \cdot {(7x \,+\, 12)} $
                       <br/>
-                      $
-                        {\; = \: -(27/7)x \, - \, (27 \cdot 12)/49}
-                      $
+                      $ \;=\: {-(27/7)x} \,-\, {(27 \cdot 12)/49} $
                       <br/>
-                      $
-                        {\; = \: -(27/7)x \, - \, 324/49}
-                      $
+                      $ \;=\: {-(27/7)x \,-\, 324/49} $
                     </p>
                     <p class="N">
-                      $
-                        {\: 324/49 \, - \, 5 \: = \: (324 \, - \, 49 \cdot 5)/49}
-                      $
+                      $ \: {324/49} \,-\, 5 \:=\: {(324 \,-\, 49 \cdot 5)/49} $
                       <br/>
-                      $
-                        {\; = \: (324 \, - \, 245)/49}
-                      $
+                      $ \;=\: {(324 \,-\, 245)/49} $
                       <br/>
-                      $
-                        {\; = \: 79/49}
-                      $
+                      $ \;=\: {79/49} $
                     </p>
                   </wc-comment>
                 </wc-split>
+                <wc-math class="Z s">
+                  $$
+                    Q(x) \;=\; (4/7)x \,-\, 27/49
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    R(x) \;=\; R \;=\; 79/49
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    4x^2 \,+\, 3x \,-\, 5
+                    \;=\;
+                    (7x + 12) \,\cdot\,
+                    \bigl(\, (4/7)x \,-\, 27/49 \,\bigr) \;+\; 79/49
+                  $$
+                </wc-math>
+                <p class="S">
+                  This algorithm is called the
+                  <a
+                    title="Wikipedia.org | Polynomial long division"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://en.wikipedia.org/wiki/Polynomial_long_division"
+                  >polynomial long division</a>.
+                </p>
+                <p>
+                  We proceed by cancelling the leading term
+                  and repeating until the result of the subtraction
+                  is of lower degree than the divisor.
+                </p>
+                <p class="zz">
+                  So we'll always have $ \; N_R \,\lt\, N_D \; $
+                  (assuming $ \; N_D \,\gt\, 0 \; $).
+                </p>
+                <p>
+                  Notice that in our example:
+                </p>
+                <ul>
+                  <li>$ N_P \,=\, 2 $</li>
+                  <li>$ N_D \,=\, 1 $</li>
+                  <li>$ N_Q \,=\, 1 $</li>
+                  <li>$ N_R \,=\, 0 $</li>
+                </ul>
+                <p class="zz">
+                  So: $ \; N_P \,=\,  N_D + N_Q + N_R $
+                </p>
+                <p>
+                  Is it always the case?
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Let's generalise $ \; P(x) \; $ and $ \; D(x) \; $:
+                </p>
+                <wc-split class="grid-b">
+                  <wc-math class="Z s">
+                    $$
+                      P(x) \;=\; \sum_{n=0}^{N_P} b_n x^n
+                    $$
+                  </wc-math>
+                  <p>
+                    <wc-ascii>&&</wc-ascii>
+                  </p>
+                  <wc-math class="Z s">
+                    $$
+                      D(x) \;=\; \sum_{m=0}^{N_D} a_m x^m
+                    $$
+                  </wc-math>
+                </wc-split>
+                <p>
+                  We'll always start the polynomial long division
+                  by cancelling $ \; b_{N_P} x^{N_P} \; $
+                  by subtracting $ \; D(x) \; $ times:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \frac{  b_{N_P} x^{N_P}  }{  a_{N_D} x^{N_D}  }
+                    \;=\;
+                    \frac{ b_{N_P} }{ a_{N_D} } x^{( N_P - N_D)}
+                  $$
+                </wc-math>
+                <p>
+                  And, as we've seen,
+                  this factor becomes the leading term of $ \; Q(x) \; $.
+                </p>
+                <p class="zz">
+                  So it defines: $ \; N_Q \,=\, N_P - N_D \; $.
+                </p>
+                <p>
+                  Therefore:
+                  <br/>
+                  <b class="small-caps"><em>nope</em></b>:
+                  $ \; N_P \,=\, N_D + N_Q + N_R \; $
+                  is not always the case,
+                  <br/>
+                  only when $ \; N_R \,=\, 0 \; $.
+                </p>
+                <wc-comment class="y">
+                  <p>
+                    Hyperfocusing on the remainder's degree
+                    might burry the useful stuff under the mess.
+                  </p>
+                  <p class="n">
+                    Here is it clean and naked:
+                  </p>
+                  <wc-math class="Z s">
+                    $$
+                      N_P \;=\; N_D \,+\, N_Q
+                    $$
+                  </wc-math>
+                  <wc-math class="Z s">
+                    $$
+                      N_Q \;=\; N_P \,-\, N_D
+                    $$
+                  </wc-math>
+                  <wc-math class="N x s">
+                    $$
+                      N_D \;=\; N_P \,-\, N_Q
+                    $$
+                  </wc-math>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <wc-comment>
+                  <p>
+                    I've tested:
+                  </p>
+                  <wc-split class="grid-c">
+                    <wc-math class="Z s">
+                      $$
+                        \frac{ 11x^5 \,+\, 3x^2 \,-\, 17x \,+\, 5 }
+                        { -x^3 \,+\, 2x \,-\, 12 }
+                      $$
+                    </wc-math>
+                    <hr/>
+                    <div>
+                      <p>
+                        I suggest you do too. It's fun.
+                      </p>
+                      <p class="n">
+                        You should end up with:
+                        <br/>
+                        $ N_Q \,=\, 5 - 3 \,=\, 2 $
+                        <br/>
+                        $ N_R \,=\, 2 \,\lt\, N_D \,=\, 3 $
+                      </p>
+                    </div>
+                  </wc-split>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Let's address the special case:
+                </p>
+                <wc-math class="N x s">
+                  $$
+                    N_D \:=\: 0
+                  $$
+                </wc-math>
+                <p>
+                  which means:
+                </p>
+                <wc-math class="N x s">
+                  $$
+                    D(x) \:=\: k
+                  $$
+                </wc-math>
+                <p>
+                  where $ k $ can be any constant.
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    P(x) \;=\; \sum_{n=0}^{N_P} b_n x^n
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \implies\quad P(x)/D(x)
+                    \;=\; P(x)/k
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \hphantom{ \implies\quad P(x)/D(x) }
+                    \;=\; \sum_{n=0}^{N_P} ( b_n / k ) x^n
+                    \;=\; Q(x)
+                  $$
+                </wc-math>
+                <p>
+                  We still have:
+                  $ \; N_Q \,=\, N_P - N_D \,=\, N_P - 0 \,=\, N_P \; $.
+                </p>
+                <p class="n">
+                  But since polynomial long division,
+                  unlike Euclidean division of constants,
+                  allows fractions in the quotient —
+                  <br/>
+                  — there won't be a remainder:
+                </p>
+                <wc-math class="Z s hybrid">
+                  $$
+                    R(x) \:=\: 0 \quad\implies\quad N_R \:=\: \text{???}
+                  $$
+                </wc-math>
+                <p>
+                  We also still have:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \frac{ P(x) - R(x) }{D(x)} \;=\; Q(x)
+                    \quad\iff\quad
+                    \frac{ P(x) - 0 }{k} \;=\; P(x)/k
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \iff\quad
+                    P(x) \;=\; kQ(x)
+                  $$
+                </wc-math>
+                <p>
+                  and:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \frac{ P(x) - R(x) }{D(x)} \;=\; Q(x)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \iff\quad
+                    P(x) \,-\, R(x) \;=\; D(x)Q(x)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \iff\quad
+                    -R(x) \;=\; D(x)Q(x) \,-\, P(x)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \iff\quad
+                    R(x) \;=\; P(x) \,-\, D(x)Q(x)
+                  $$
+                </wc-math>
+                <p>
+                  In the $ \; N_D \,=\, 0 \; $ case,
+                  <br/>
+                  that's:
+                </p>
+                <wc-split class="grid-b">
+                  <wc-math class="Z s">
+                    $$
+                      0 \;=\; P(x) \,-\, kQ(x)
+                      \quad\iff\quad
+                      P(x) \;=\; kQ(x)
+                    $$
+                  </wc-math>
+                  <wc-comment class="S">
+                    <p>
+                      ok.
+                    </p>
+                  </wc-comment>
+                </wc-split>
+                <p>
+                  So every relation we've found so far stands
+                  except the one between $ N_D $ and $ N_R $.
+                </p>
+                <p class="n">
+                  An expression of $ N_R $
+                  which would remain true for any positive integers:
+                  $ \; {N_P \,\gt\, N_D \,\geq\, 0} \; $
+                  would be:
+                </p>
+                <wc-split class="grid-b">
+                  <wc-math class="Z s">
+                    $$
+                      0 \:\leq\: N_R \:\lt\: N_D
+                      \quad\forall\;
+                      N_D \:\gt\: 0
+                    $$
+                  </wc-math>
+                  <p>
+                    <wc-ascii>&&</wc-ascii>
+                  </p>
+                  <wc-math class="Z s">
+                    $$
+                      N_D \:=\: 0 \;\implies\; R(x) \:=\: 0
+                    $$
+                  </wc-math>
+                </wc-split>
+                <wc-comment class="y">
+                  <p>
+                    But then, in the second case
+                    ($ \; R(x) \,=\, 0 \; $),
+                    what's the degree of $ R(x) $ ($ N_R $)?
+                  </p>
+                  <p class="zz">
+                    When defining concepts earlier,
+                    I've written that $ \; y \,=\, 0 \; $ is a problem
+                    (because it cannot have a null leading coefficient
+                    by definition,
+                    but it's also required by its expression).
+                  </p>
+                  <p>
+                    Some define its degree as minus infinity.
+                  </p>
+                  <p class="zz">
+                    You could be hardcore and reject its quality of polynomial
+                    for non-conformity with the general definition.
+                    <br/>
+                    (You could be even more hardcore and reject the general definition.)
+                  </p>
+                  <p>
+                    I'll stand by: <cite>it's a problem</cite>.
+                  </p>
+                  <p class="zz">
+                    But honestly: a verbiage problem.
+                  </p>
+                  <p>
+                    Is the null polynomial a polynomial?
+                    <br/>
+                    Is the answer in the question?
+                    <br/>
+                    None of these considerations will break our equations.
+                    <br/>
+                    Sometimes the wise doesn't give a fuck.
+                  </p>
+                  <p class="N s">
+                    If I absolutely had to give a value to its degree,
+                    <br/>
+                    I'd go with <wc-ascii>NaN</wc-ascii>,
+                    <br/>
+                    because principle of non-contradiction.
+                  </p>
+                  <p>
+                    Disagree by all means: please be free.
+                  </p>
+                </wc-comment>
               </wc-ppp>
 
             </section><!-- end #02 -->
@@ -3193,31 +4372,1047 @@ at main · antoineportes/Working-class-filter-design"
 
             <!-- section #03 -->
             <section id="03">
+              <!-- top quote -->
+              <header>
+                <blockquote>
+                  <q>Well it's a-<span class="small-caps">1</span>
+                  for the money,
+                  <br/>
+                  <span class="small-caps">2</span>
+                  for the show,
+                  <br/>
+                  <span class="small-caps">3</span>
+                  to get a-ready now: go cat go!</q>
+                  <footer>
+                    — Carl Perkins (<cite>Blue Suede Shoes</cite>)
+                  </footer>
+                </blockquote>
+              </header>
               <!-- section title -->
               <h3>Three theorems (but who's counting?)</h3>
 
               <wc-ppp>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
+                <p>
+                  Let $ \; P_N(x) \; $ be a polynomial of degree $ N $,
+                  <br/>
+                  and $ z $ any complex number.
+                  <br/>
+                  (Whether $ \; P_N(x) \; $ is fully complex
+                  or purely real is undefined until further notice.)
+                </p>
+                <p class="zz">
+                  Then $ \; x - z \; $ is a
+                  <span class="small-caps">1</span><sup>st</sup>-degree polynomial.
+                </p>
+                <p>
+                  So if we use $ \; x - z \; $ as the divisor
+                  in the polynomial long division
+                  of $ \; P_N(x) \; $ (the dividend),
+                  <br/>
+                  the quotient will be of degree $ \; N - 1 \; $.
+                </p>
+                <p class="zz">
+                  Let's call it $ \; Q_{N-1}(x) \; $.
+                </p>
+                <p>
+                  And the remainder will be of degree:
+                  $ \; 1 - 1 \,=\, 0 \; $,
+                  <br/>
+                  so it will be a constant.
+                  <br/>
+                  Let's call it $ R $.
+                </p>
+                <p class="n">
+                  So,
+                  <br/>
+                  based on what has been established during the previous section:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \frac{ P_N(x) - R }{ (x - z) } \;=\; Q_{N-1}(x)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \iff\quad
+                    P_N(x) \;=\; (x - z)Q_{N-1}(x) \,+\, R
+                  $$
+                </wc-math>
+                <p>
+                  Right now if we keep running the loop,
+                  we risk missing an opportunity to demonstrate a theorem...
+                </p>
+                <p class="zz">
+                  What kind of weirdo wouldn't want to demonstrate
+                  every last theorem on Earth?
+                  <br/>
+                  (Answering rhetorical questions is rude.)
+                </p>
+                <p>
+                  What if... $ \; x \,=\, z \; $?
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    P_N(z) \;=\; (z - z)Q_{N-1}(z) \,+\, R
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \iff\quad R \;=\; P_N(z)
+                  $$
+                </wc-math>
+                <p class="S">
+                  This is the
+                  <a
+                    title="Wikipedia.org | Polynomial remainder theorem"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://en.wikipedia.org/wiki/Polynomial_remainder_theorem"
+                  >polynomial remainder theorem</a>.
+                </p>
+                <p>
+                  It basically says that
+                  instead of bothering with polynomial long division,
+                  <br/>
+                  when the divisor is of degree <span class="small-caps">1</span>,
+                  <br/>
+                  you can get the remainder
+                  <br/>
+                  by using the opposite of the constant term
+                  of the divisor's normalised form
+                  <br/>
+                  (i.e. its root) as the dividend's variable.
+                </p>
+                <p class="n">
+                  The divisor must be normalised
+                  by factoring out its leading coefficient:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    ax \,+\, b
+                    \quad\longleftarrow\quad
+                    a \left(\, x \,+\, b/a \,\right)
+                  $$
+                </wc-math>
+                <p>
+                  then:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \frac{  P_N(x) \,-\, R  }{  a( x + b/a )  }
+                    \;=\; Q_{N-1}(x)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \iff\quad
+                    P_N(x) \;=\; a( a + b/a )Q_{N-1}(x) \,+\, R
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \implies\quad P_N(-b/a)
+                    \;=\; a(-b/a \,+\, b/a)Q_{N-1}(-b/a) \,+\, R
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \hphantom{ \implies\quad P_N(-b/a) }
+                    \;=\; R
+                  $$
+                </wc-math>
+                <wc-comment class="S">
+                  <p>
+                    Ok, but in what follows,
+                    we'll always assume that the factored out non-zero leading term
+                    has been absorbed by the dividend and the remainder.
+                  </p>
+                  <p class="n">
+                    Here for instance:
+                  </p>
+                  <dl class="W y no-fucking-x-pad">
+                    <dt>$ P_N(x) $</dt>
+                    <dd>$ \quad\longleftarrow\quad P_N(x)/a $</dd>
+                    <dt>$ R $</dt>
+                    <dd>$ \quad\longleftarrow\quad R(x)/a $</dd>
+                  </dl>
+                  <p>
+                    (Or simply that $ 1/a $ is a contingent factor
+                    that can be ignored and reintroduced at will.)
+                  </p>
+                </wc-comment>
+                <wc-comment>
+                  <p class="S">
+                    Oh yeah, I can hear the yelling objection:
+                    did we just casually divide by zero?
+                    <br/>
+                    ...
+                    <br/>
+                    Yes we did.
+                  </p>
+                  <p>
+                    The fractions above don't symbolise
+                    your usual digital calculator division;
+                    <br/>
+                    they stand for Euclid's algorithm.
+                    <br/>
+                    Which never applies actual division,
+                    only multiplication and subtraction.
+                  </p>
+                  <p class="n">
+                    So the base formula is not:
+                  </p>
+                  <wc-math class="Z s">
+                    $$
+                      \frac{\delta - r}{d} \;=\; q
+                    $$
+                  </wc-math>
+                  <p>
+                    but rather:
+                  </p>
+                  <wc-math class="Z s">
+                    $$
+                      \delta \;=\; dq \,+\, r
+                    $$
+                  </wc-math>
+                  <p>
+                    and $ \; d \,=\, 0 \; $ simply leads to $ \; \delta \,=\, r \; $.
+                  </p>
+                  <p class="N">
+                    So (ready?):
+                  </p>
+                  <wc-pp class="y">
+                    <p>
+                      (Euclidean) division by zero is 100% valid.
+                    </p>
+                  </wc-pp>
+                  <p>
+                    Indeed: $ \; x/0 \,=\, x \; $.
+                  </p>
+                  <p class="N">
+                    (Says Euclid, not me.)
+                  </p>
+                </wc-comment>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Now imagine we compute $ \; P_N(z) \; $ and it outputs zero.
+                </p>
+                <p class="zz">
+                  It means that $ z $ is a root of $ \; P_N(x) \; $
+                  (by definition of a root).
+                </p>
+                <p>
+                  It also means that $ \; R \,=\, 0 \; $
+                  (according to the polynomial remainder theorem
+                  — the one we've just demonstrated).
+                </p>
+                <p class="n">
+                  See:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    P_N(z) \;=\; 0
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \iff\quad (z - z)Q_{N-1}(z) \,+\, R \;=\; 0
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \iff\quad 0 \,+\, R \;=\; 0
+                    \quad\iff\quad R \;=\; 0
+                  $$
+                </wc-math>
+                <p>
+                  What this proves:
+                  <br/>
+                  when we divide a non-constant polynomial
+                  by a monic binomial of the first degree
+                  whose constant term
+                  is the opposite of any of the roots of the dividend —
+                  <br/>
+                  — there is no remainder.
+                </p>
+                <p class="zz">
+                  The monic and the quotient are called
+                  <a
+                    title="Wikipedia.org | Factorization of polynomials"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://en.wikipedia.org/wiki/Factorization_of_polynomials"
+                  >factors</a>
+                  of the dividend polynomial.
+                </p>
+                <p>
+                  This is the reason for the factored form's name.
+                </p>
+                <p class="N">
+                  Plain English may not offer the clearest formulation:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \left.
+                      \begin{alignedat}{1}
+                        & P_a(x) \;=\; \sum_{n=0}^N a_n x^n
+                        \\[0.25em]
+                        & P_a(r_1) \;=\; 0
+                      \end{alignedat}
+                    \;\right\}
+                    \;\iff\quad
+                    P_a(x) \;=\; (x - r_1) \sum_{n=0}^{N-1} b_n x^n
+                  $$
+                </wc-math>
+                <p>
+                  Let's define:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    P_b(x) \;=\; P_a(x)/(x - r_1) \;=\; \sum_{n=0}^{N-1} b_n x^n
+                  $$
+                </wc-math>
+                <p>
+                  and:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    P_b(r_2) \;=\; 0
+                  $$
+                </wc-math>
+                <p>
+                  then:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    P_b(x) \;=\; (x - r_2) \sum_{n=0}^{N-2} c_n x^n
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \implies\quad
+                    P_a(x)
+                    \;=\;
+                    (x - r_1)(x - r_2) \sum_{n=0}^{N-2} c_n x^n
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    P_a(r_2) \;=\; 0
+                  $$
+                </wc-math>
+                <p>
+                  So any root of $ \; P_b(x) \; $ is also a root of $ \; P_a(x) \; $.
+                </p>
+                <p>
+                  And, of course, $ r_1 $ is the root of $ \; x - r_1 \; $,
+                  <br/>
+                  and $ r_2 $ is the root of $ \; x - r_2 \; $.
+                </p>
+                <p>
+                  What this proves:
+                  <br/>
+                  all roots of a polynomial's factor
+                  are roots of said polynomial.
+                </p>
+                <p>
+                  This is the
+                  <a
+                    title="Wikipedia.org | Factor theorem"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://en.wikipedia.org/wiki/Factor_theorem"
+                  >factor theorem</a>.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  If we keep running this loop,
+                  <br/>
+                  knowing that the degree of the quotient
+                  is the degree of the dividend minus the degree of the divisor,
+                  <br/>
+                  and that the degree of our monic first-degree binomial divisor
+                  is always 1,
+                  <br/>
+                  we'll end up with $ \; P_{???}(x) \; $ being a constant factor
+                  —&nbsp;let's call it $ Q $.
+                </p>
+                <p class="n">
+                  So:
+                </p>
+                <wc-split>
+                  <wc-math class="Z s">
+                    $$
+                      P_a(x) \;=\; Q \prod_{\nu=1}^N (x - r_\nu)
+                    $$
+                  </wc-math>
+                  <wc-comment class="y">
+                    <p>
+                      where $ \; r_\nu \; $ are the roots of $ \; P_a(x) \; $.
+                    </p>
+                  </wc-comment>
+                </wc-split>
+                <p>
+                  What this proves:
+                </p>
+                <wc-pp class="n">
+                  <p>
+                    the degree of a polynomial
+                    is equal to the number of its roots.
+                  </p>
+                </wc-pp>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Equalities read in both directions.
+                </p>
+                <p class="n">
+                  So:
+                </p>
+                <ol class="y">
+                  <li>
+                    if a polynomial has $ N $ roots, it's of degree $ N $;
+                  </li>
+                  <li>
+                    if it's of degree $ N $, it has $ N $ roots.
+                  </li>
+                </ol>
+                <wc-pp class="outlined">
+                  <p class="y small-caps Achtung2">
+                    <b>↑↑↑&nbsp;&nbsp;Try not missing these two lines&nbsp;&nbsp;↑↑↑</b>
+                  </p>
+                </wc-pp>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  $ Q $  being constant,
+                  the only solutions to $ \; P_a(x) \,=\, 0 \; $
+                  are $ \; x \,=\, r_\nu \; $.
+                </p>
+                <p class="zz">
+                  So $ N $ roots is to be understood as a maximum.
+                </p>
+                <p>
+                  It's an exact number if we admit duplicates as distinct.
+                  <br/>
+                  (<mark>Distinct duplicates</mark> is very oxymoronic,
+                  but it's the best way I could find to characterise
+                  every possible polynomial in a general statement.)
+                </p>
+                <p class="n">
+                  E.g.:
+                </p>
+                <wc-math class="N x s">
+                  $$
+                    f(x)
+                    \;=\;
+                    (x - 11)(x - 11)(x - 11)/2
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \hphantom{ f(x) }
+                    \;=\;
+                    (x^2 \,-\, 11x \,-\, 11x \,+\, 11^2)(x - 11)/2
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \hphantom{ f(x) }
+                    \;=\;
+                    (x^3 \,-\, 33x^2 \,+\, 363x \,-\, 1331)/2
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \hphantom{ f(x) }
+                    \;=\;
+                    0.5x^3 \,+\, -16.5x^2 \,+\, 181.5x \,+\, -665.5
+                  $$
+                </wc-math>
+                <p>
+                  The only solution to $ \; f(x) \,=\, 0 \; $ is $ \; x \,=\, 11 \; $.
+                </p>
+                <p class="n">
+                  So $ \; f(x) \; $ is a third-degree polynomial with one root,
+                  or three equal roots — as you want.
+                </p>
+                <wc-comment class="y">
+                  <p>
+                    This phenomenon is called <cite>root multiplicity</cite>.
+                  </p>
+                  <p class="zz">
+                    Here, 11 has a multiplicity of 3.
+                  </p>
+                  <p>
+                    Sum the multiplicities of all roots,
+                    you get the polynomial's degree.
+                  </p>
+                </wc-comment>
+                <p>
+                  Notice that the constant factor
+                  in the factored form ($ \; 1/2 \; $)
+                  is equal to the leading coefficient
+                  in the standard form ($ \; 0.5 \; $).
+                </p>
+                <p class="zz">
+                  Also notice that the last expression of $ \; P_a(x) \; $
+                  looks very much like a factored form.
+                </p>
+                <p>
+                  So the next question is:
+                  $ \; Q $<wc-ascii>&nbsp;==&nbsp;</wc-ascii>$ a_N $<wc-ascii>&nbsp;?</wc-ascii>
+                </p>
+                <p class="zz">
+                  We got to the final expression
+                  through successive divisions of
+                  $ \; P_a(x) \; $ by $ \; (x - r_\nu) \; $.
+                </p>
+                <p>
+                  We start polynomial long division
+                  by cancelling the leading term,
+                  so that the leading term of $ \; P_b(x) \; $
+                  is: $ \; a_N x^{N-1} \; $.
+                  <br/>
+                  (Because the divisor's leading term is 1.)
+                </p>
+                <p class="zz">
+                  So as we run the loop,
+                  <br/>
+                  the leading coefficient of the quotient
+                  always remains the leading coefficient ($ \; a_N \; $)
+                  of the initial dividend ($ \; P_a(x) \; $).
+                </p>
+                <p>
+                  Which means that the leading coefficient of $ Q $ is $ a_N $.
+                </p>
+                <p class="zz">
+                  Since $ Q $ is of degree zero,
+                  its leading coefficient is also its constant term...
+                  <br/>
+                  therefore, yep: $ \; Q \,=\, a_N \; $.
+                </p>
+                <p class="smallCaps">
+                  <em>Therefore</em>:
+                </p>
+                <wc-split class="grid-c">
+                  <wc-math class="Z s">
+                    $$
+                      \sum_{n=1}^N a_n x^n \;=\; a_N \prod_{\nu=1}^N (x - r_\nu)
+                    $$
+                  </wc-math>
+                  <hr/>
+                  <div>
+                    <p>
+                      This is the true power of the factor theorem.
+                    </p>
+                    <p class="zz">
+                      And it's our <mark>if and only if</mark>.
+                    </p>
+                    <p>
+                      Meaning:
+                    </p>
+                    <wc-pp>
+                      <p>
+                        any product of $ N $
+                        <span class="small-caps">1</span><sup>st</sup>-degree polynomials
+                        <br/>
+                        is an $ N $<sup>th</sup>-degree polynomial;
+                      </p>
+                    </wc-pp>
+                    <p class="small-caps n">
+                      <em>and</em>:
+                    </p>
+                    <wc-pp>
+                      <p>
+                        any $ N $<sup>th</sup>-degree polynomial
+                        <br/>
+                        is a product of $ N $
+                        <span class="small-caps">1</span><sup>st</sup>-degree polynomials.
+                      </p>
+                    </wc-pp>
+                  </div>
+                </wc-split>
+                <p class="N">
+                  Another way to phrase this conclusion is:
+                  <br/>
+                  a polynomial and its non-constant factors
+                  have the same roots;
+                  <br/>
+                  <span class="small-caps">and</span> the degree of a polynomial
+                  is the number of its non-constant factors.
+                </p>
+                <p class="n">
+                  A corollary of the factor theorem
+                  (together with the fundamental theorem of Algebra)
+                  is:
+                  <br/>
+                  every polynomial admits a factored form.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Ok, next.
+                </p>
+                <p class="zz">
+                  This book is about filters.
+                  <br/>
+                  So for these theorems to be of any use,
+                  <br/>
+                  we need to know if the factored form of a real polynomial
+                  multiplies real polynomials.
+                </p>
+                <p>
+                  At first sight: not likely.
+                </p>
+                <p class="zz">
+                  But we don't need only real roots:
+                  <br/>
+                  we've seen that pairs of conjugate roots
+                  form real quadratic polynomials.
+                </p>
+                <p>
+                  And since real numbers are their own conjugates
+                  (their imaginary part is: $ \; 0 \,=\, -0 \; $) —
+                  <br/>
+                  — all we need to check is:
+                  <br/>
+                  given any polynomial — of any degree —
+                  are the conjugates of the roots also necessarily roots?
+                </p>
+                <p class="n">
+                  If yes,
+                  <br/>
+                  it would mean that any real polynomial
+                  can be expressed as a product of real polynomials
+                  of degree <span class="small-caps">1</span> and/or
+                  <span class="small-caps">2</span>.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p class="s">
+                  Let $ \; P_N(x) \; $ be a real polynomial.
+                </p>
+                <p>
+                  And let's evaluate its value at $ z $ (any complex number)
+                  <br/>
+                  and at $ \; \conj(z) \,=\, \Re(z) - j\Im(z) \; $.
+                  <br/>
+                  (Remember: <mark>real</mark> polynomial means
+                  <mark>real coefficients in standard form</mark> —
+                  <br/>
+                  — the variable can still have an imaginary part,
+                  hence <mark>$ z $</mark> here.)
+                </p>
+                <wc-math class="N x s">
+                  $$
+                    P_N(z) \;=\; \sum_{n=0}^N a_n z^n
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \iff\quad
+                    P_N\bigl( \conj(z) \bigr) \;=\; \sum_{n=0}^N a_n {\conj(z)}^n
+                  $$
+                </wc-math>
+                <p>
+                  Ok, so first, let's refresh our complex arithmetic.
+                </p>
+                <wc-math class="N x s hybrid">
+                  $$
+                    \cos \;=\; \text{adjacent} \,/\, \text{hypotenuse}
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \implies\quad
+                    \cos\bigl( \arg(z) \bigr) \;=\; \Re(z) \,/\, \lvert z \rvert
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \iff\quad
+                    \Re(z) \;=\; \lvert z \rvert \cos\bigl( \arg(z) \bigr)
+                  $$
+                </wc-math>
+                <wc-math class="N x s hybrid">
+                  $$
+                    \sin \;=\; \text{opposite} \,/\, \text{hypotenuse}
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \implies\quad
+                    \sin\bigl( \arg(z) \bigr) \;=\; \Im(z) \,/\, \lvert z \rvert
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \iff\quad
+                    \Im(z) \;=\; \lvert z \rvert \sin\bigl( \arg(z) \bigr)
+                  $$
+                </wc-math>
+                <wc-math class="N x s">
+                  $$
+                    \implies\quad \conj(z)
+                    \;=\;
+                    \lvert z \rvert \cos\bigl( \arg(z) \bigr)
+                    \,-\, j\lvert z \rvert \sin\bigl( \arg(z) \bigr)
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \hphantom{ \implies\quad \conj(z) }
+                    \;=\;
+                    \lvert z \rvert
+                    \Bigl(\,
+                      \cos\bigl( -\arg(z) \bigr)
+                      \,+\,
+                      j\sin\bigl( -\arg(z) \bigr)
+                    \,\Bigr)
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \hphantom{ \implies\quad \conj(z) }
+                    \;=\;
+                    \lvert z \rvert \exp\bigl( -j\arg(z) \bigr)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \implies\;
+                    \left\{\;
+                      \begin{alignedat}{2}
+                        \bigl\vert \conj(z) \bigr\vert & \;=\; \lvert z \rvert
+                        \\[0.25em]
+                            \arg\bigl( \conj(z) \bigr) & \;=\; -\arg(z)
+                      \end{alignedat}
+                    \right.
+                  $$
+                </wc-math>
+                <wc-math class="N x s">
+                  $$
+                    z^n
+                    \;=\; {\lvert z \rvert}^n {\exp\bigl( j\arg(z) \bigr)}^n
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \hphantom{ z^n }
+                    \;=\; {\lvert z \rvert}^n \exp\bigl( j \, n \, \arg(z) \bigr)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \implies\;
+                    \left\{\;
+                      \begin{alignedat}{2}
+                        \lvert z^n \rvert & \;=\; {\lvert z \rvert}^n
+                        \\[0.25em]
+                        \arg( z^n ) & \;=\; n\cdot\arg(z)
+                      \end{alignedat}
+                    \right.
+                  $$
+                </wc-math>
+                <wc-math class="N x s">
+                  $$
+                    {\conj(z)}^n
+                    \;=\; {\lvert z \rvert}^n {\exp\bigl( -j\arg(z) \bigr)}^n
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \hphantom{ {\conj(z)}^n }
+                    \;=\; {\lvert z \rvert}^n \exp\bigl( -j \, n \, \arg(z) \bigr)
+                  $$
+                </wc-math>
+                <wc-math class="N x s">
+                  $$
+                    \conj(z^n)
+                    \;=\;
+                    \left\vert z^n \right\vert \exp\bigl( -j\arg(z) \bigr)
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \hphantom{ \conj(z^n) }
+                    \;=\;
+                    {\lvert z \rvert}^n \exp\bigl( -j \, n \, \arg(z) \bigr)
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \hphantom{ \conj(z^n) }
+                    \;=\;
+                    {\conj(z)}^n
+                  $$
+                </wc-math>
+                <p>
+                  Let's define: $ \; \zeta_n \,=\, z^n \; $.
+                </p>
+                <p class="n">
+                  Then:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \conj(\zeta_n) \;=\; \conj(z^n) \;=\; {\conj(z)}^n
+                  $$
+                </wc-math>
+                <p>
+                  So:
+                </p>
+                <wc-math class="N x s">
+                  $$
+                    P_N(z) \;=\; \sum_{n=0}^N a_n \zeta_n
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \iff\quad
+                    P_N\bigl( \conj(z) \bigr)
+                    \;=\;
+                    \sum_{n=0}^N a_n \conj(\zeta_n)
+                  $$
+                </wc-math>
+                <p>
+                  If $ \; P_N(z) \; $ is a real polynomial,
+                  then all coefficients $ \; a_n \; $ are purely real.
+                </p>
+                <p class="n">
+                  So if:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    Z_n \;=\; a_n \zeta_n
+                  $$
+                </wc-math>
+                <p>
+                  then:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \Re(Z_n) \;=\; a_n \Re(\zeta_n)
+                  $$
+                </wc-math>
+                <p>
+                  and:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \Im(Z_n) \;=\; a_n \Im(\zeta_n)
+                  $$
+                </wc-math>
+                <p>
+                  and:
+                </p>
+                <wc-math class="N x s">
+                  $$
+                    a_n \conj(\zeta_n)
+                    \;=\;
+                    a_n \Re(\zeta_n) \,-\, j a_n \Im(\zeta_n)
+                  $$
+                </wc-math>
+                <wc-math class="x s">
+                  $$
+                    \hphantom{ a_n \conj(\zeta_n) }
+                    \;=\;
+                    \Re(Zn) \,-\, j \Im(Z_n)
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \hphantom{ a_n \conj(\zeta_n) }
+                    \;=\;
+                    \conj(Z_n)
+                  $$
+                </wc-math>
+                <p>
+                  Then:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    P_N(z)
+                    \;=\;
+                    \sum_{n=0}^N Z_n
+                    \;=\;
+                    \sum_{n=0}^N \bigl(\, \Re(Z_n) \,+\, j \Im(Z_n) \,\bigr)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \hphantom{ P_N(z) }
+                    \;=\;
+                    \sum_{n=0}^N \Re(Z_n) \,+\, \sum_{n=0}^N j \Im(Z_n)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \hphantom{ P_N(z) }
+                    \;=\;
+                    \sum_{n=0}^N \Re(Z_n) \,+\, j \sum_{n=0}^N \Im(Z_n)
+                  $$
+                </wc-math>
+                <p>
+                  Therefore:
+                </p>
+                <wc-math class="N x s">
+                  $$
+                    \Re\bigl( P_N(z) \bigr) \;=\; \sum_{n=0}^N \Re(Z_n)
+                  $$
+                </wc-math>
+                <p>
+                  and:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \Im\bigl( P_N(z) \bigr) \;=\; \sum_{n=0}^N \Im(Z_n)
+                  $$
+                </wc-math>
+                <p>
+                  Almost there:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    P_N\bigl( \conj(z) \bigr)
+                    \;=\;
+                    \sum_{n=0}^N \conj(Z_n)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \hphantom{ P_N\bigl( \conj(z) \bigr) }
+                    \;=\;
+                    \sum_{n=0}^N
+                    \bigl(\, \Re(Z_n) \,+\, j(-1) \Im(Z_n) \,\bigr)
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \hphantom{ P_N\bigl( \conj(z) \bigr) }
+                    \;=\;
+                    \sum_{n=0}^N \Re(Z_n) \,+\, \sum_{n=0}^N j(-1) \Im(Z_n)
+                  $$
+                </wc-math>
+                <wc-math class="N x s">
+                  $$
+                    \hphantom{ P_N\bigl( \conj(z) \bigr) }
+                    \;=\;
+                    \sum_{n=0}^N \Re(Z_n) \,-\, j \sum_{n=0}^N \Im(Z_n)
+                  $$
+                </wc-math>
+                <p>
+                  Therefore:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    P_N\bigl( \conj(z) \bigr)
+                    \;=\;
+                    \Re\bigl( P_N(z) \bigr) \,-\, j \Im\bigl( P_N(z) \bigr)
+                  $$
+                </wc-math>
+                <wc-math class="N x s">
+                  $$
+                    \hphantom{ P_N\bigl( \conj(z) \bigr) }
+                    \;=\;
+                    \conj\bigl( P_N(z) \bigr)
+                  $$
+                </wc-math>
+                <p>Ok.</p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  Now imagine that $ z $ is a root of $ \; P_N(x) \; $.
+                </p>
+                <p class="n">
+                  It means:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    P_N(z) \;=\; 0
+                    \quad\implies\quad
+                    P_n\bigl( \conj(z) \bigr) \;=\; \conj(0) \;=\; 0
+                  $$
+                </wc-math>
+                <p>
+                  What we've just proven:
+                  <br/>
+                  the complex conjugate of the root of a real polynomial
+                  is necessarily also a root.
+                </p>
+                <p class="n">
+                  This is the
+                  <a
+                    title="Wikipedia.org | Complex conjugate root theorem"
+                    target="_blank"
+                    rel="noopener"
+                    href="https://en.wikipedia.org/wiki/Complex_conjugate_root_theorem"
+                  >complex conjugate root theorem</a>.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  A purely real number is its own conjugate,
+                  <br/>
+                  so the theorem was obvious in that case.
+                </p>
+                <p class="n S">
+                  But all roots (of a <b>real</b> polynomial) having an imaginary part
+                  are guaranteed to come in conjugate pairs.
+                </p>
+                <p>
+                  Once we express the polynomial
+                  as a product of first-degree polynomials
+                  and a constant factor,
+                  <br/>
+                  assuming each first-degree polynomial
+                  is expressed in terms of its roots (factored form),
+                  <br/>
+                  these complex conjugate pairs
+                  will form second-degree real polynomials.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  So — and this is fucking fundamental —
+                  <br/>
+                  — a real polynomial of any degree can be expressed as a product of:
+                  <br/>
+                  <strong>real</strong> first-degree polynomial(s)
+                  <br/>
+                  and/or
+                  <br/>
+                  <strong>real</strong> second-degree polynomial(s)
+                  <br/>
+                  and one optional constant factor.
+                </p>
+                <p class="n S">
+                  (The constant factor being the leading coefficient,
+                  it's technically not optional but rather implicit when
+                  $ {}\,=\, 1 \; $.)
+                </p>
+                <h4>$ \iff $</h4>
+                <p class="S">
+                  Any product of polynomials,
+                  <br/>
+                  all roots of which
+                  <br/>
+                  either are real or come in conjugate pairs,
+                  <br/>
+                  is automatically a real polynomial.
+                </p>
+                <p>Ok.</p>
               </wc-ppp>
 
             </section><!-- end #03 -->
@@ -3225,6 +5420,18 @@ at main · antoineportes/Working-class-filter-design"
 
             <!-- section #04 -->
             <section id="04">
+              <!-- section title -->
+              <h3>???</h3>
+
+              <wc-ppp>
+                <wc-ascii class="Achtung">[[original_1N_PR06R355]]</wc-ascii>
+              </wc-ppp>
+
+            </section><!-- end #04 -->
+
+
+            <!-- section #05 -->
+            <section id="05">
               <!-- section title -->
               <h3>I thought this was gonna be a book about filters...</h3>
 
@@ -3237,39 +5444,476 @@ at main · antoineportes/Working-class-filter-design"
               </wc-ppp>
 
               <wc-ppp>
-                <wc-ascii class="Achtung">[[original_IN_PROGRE55]]</wc-ascii>
+                <p>
+                  In a minute.
+                </p>
+                <p>
+                  But there's one rather useful identity
+                  that can be derived from polynomial long division.
+                  <br/>
+                  Anywhere else would be even more off-topic.
+                </p>
               </wc-ppp>
 
-            </section><!-- end #04 -->
-
-
-            <!-- section #05 -->
-            <section id="05">
-              <!-- section title -->
-              <h3>dummy</h3>
+              <wc-ppp>
+                <p>
+                  Say we don't know the power rule.
+                </p>
+                <wc-math class="N x s">
+                  $$
+                    f(x) \;=\; x^n
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    n \;\in\;\mathbb{N}
+                  $$
+                </wc-math>
+                <p>
+                  Then:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    df/dx \;=\; \frac{ (x + dx)^n \,-\, x^n }{dx}
+                  $$
+                </wc-math>
+                <p>
+                  with $ \; dx \to 0 \; $.
+                </p>
+              </wc-ppp>
 
               <wc-ppp>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
-                <br/>
-                All work and no play makes Jack a dull boy.
+                <p>
+                  Let's define:
+                </p>
+                <wc-math class="N x s">
+                  $$
+                    a \;=\; x \,+\, dx
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    b \;=\; x
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \implies\quad
+                    dx \;=\; a \,-\, b
+                  $$
+                </wc-math>
+                <p>
+                  Then:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    df/dx \;=\; \frac{a^n \,-\, b^n}{a - b}
+                    \;=\;
+                    \frac{a^n}{a - b} \,-\, \frac{b^n}{a - b}
+                  $$
+                </wc-math>
+                <p>
+                  That's two polynomial divisions:
+                  <br/>
+                  each time a monic monomial of degree $ n $
+                  divided by a monic affine polynomial.
+                </p>
+                <p class="zz">
+                  First time, the variable is $ a $ and $ b $ is a constant term;
+                  <br/>
+                  second time, the variable is $ b $ and $ a $ is a constant term.
+                </p>
+                <p>
+                  Let's start with first.
+                </p>
+              </wc-ppp>
+
+              <style>
+                figure.longDivision > table#inftyPLD
+                {
+                  width: auto;
+
+                  & td
+                  {
+                    &:not(:empty)
+                    {
+                      width: 1%;
+                    }
+
+                    &[colspan]
+                    {
+                      width: auto;
+                    }
+
+                    &.IPLD_b
+                    {
+                      border-bottom: 1px solid var(--lightGrey);
+                      padding-bottom: 0.125rem;
+                    }
+                    &.IPLD_t
+                    {
+                      padding-top: 0.125rem;
+                    }
+                    &.IPLD_hc
+                    {
+                      text-align: center;
+                      & > wc-math
+                      {
+                        text-align: center;
+                      }
+                    }
+
+                    & wc-math
+                    {
+                      font-size: 100%;
+                    }
+                  }
+                }
+              </style>
+
+              <wc-ppp>
+                <!-- long division -->
+                <figure class="longDivision">
+                  <table id="inftyPLD">
+                    <!-- line 1 -->
+                    <tr>
+                      <td></td>
+                      <td>
+                        <wc-math>$$ a^n $$</wc-math>
+                      </td>
+                      <td colspan="2"></td>
+                      <td class="IPLD_hc">
+                        <wc-math>$$ {}\, \mathrel{:} \,{} $$</wc-math>
+                      </td>
+                      <td colspan="8">
+                        <wc-math>
+                          $$
+                            a \,-\, b
+                            \quad = \quad
+                            a^{n-1} \,+\, a^{n-2} b \,+\, a^{n-3} b^2
+                            \,+\, \dots \,+\, ab^{n-2} \,+\, b^{n-1}
+                          $$
+                        </wc-math>
+                      </td>
+                    </tr>
+                    <!-- line 2 -->
+                    <tr>
+                      <td class="IPLD_b">
+                        <wc-math>$$ \! - \, {} $$</wc-math>
+                      </td>
+                      <td class="IPLD_b">
+                        <wc-math>$$ a^n $$</wc-math>
+                      </td>
+                      <td class="IPLD_b IPLD_hc">
+                        <wc-math>$$ {} \,+\, {} $$</wc-math>
+                      </td>
+                      <td class="IPLD_b">
+                        <wc-math>$$ a^{n-1} b $$</wc-math>
+                      </td>
+                      <td colspan="9" rowspan="2"></td>
+                    </tr>
+                    <!-- line 3 -->
+                    <tr>
+                      <td colspan="3"></td>
+                      <td class="IPLD_t">
+                        <wc-math>$$ a^{n-1} b $$</wc-math>
+                      </td>
+                    </tr>
+                    <!-- line 4 -->
+                    <tr>
+                      <td colspan="2"></td>
+                      <td class="IPLD_b IPLD_hc">
+                        <wc-math>$$ {} \,-\, {} $$</wc-math>
+                      </td>
+                      <td class="IPLD_b">
+                        <wc-math>$$ a^{n-1} b $$</wc-math>
+                      </td>
+                      <td class="IPLD_b IPLD_hc">
+                        <wc-math>$$ {} \,+\, {} $$</wc-math>
+                      </td>
+                      <td class="IPLD_b">
+                        <wc-math>$$ a^{n-2} b^2 $$</wc-math>
+                      </td>
+                      <td colspan="7" rowspan="2"></td>
+                    </tr>
+                    <!-- line 5 -->
+                    <tr>
+                      <td colspan="5"></td>
+                      <td class="IPLD_t">
+                        <wc-math>$$ a^{n-2} b^2 $$</wc-math>
+                      </td>
+                    </tr>
+                    <!-- line 6 -->
+                    <tr>
+                      <td colspan="4"></td>
+                      <td class="IPLD_b IPLD_hc">
+                        <wc-math>$$ {} \,-\, {} $$</wc-math>
+                      </td>
+                      <td class="IPLD_b">
+                        <wc-math>$$ a^{n-2} b^2 $$</wc-math>
+                      </td>
+                      <td class="IPLD_b IPLD_hc">
+                        <wc-math>$$ {} \,+\, {} $$</wc-math>
+                      </td>
+                      <td class="IPLD_b">
+                        <wc-math>$$ a^{n-3} b^3 $$</wc-math>
+                      </td>
+                      <td colspan="5" rowspan="2"></td>
+                    </tr>
+                    <!-- line 7 -->
+                    <tr>
+                      <td colspan="7"></td>
+                      <td class="IPLD_t">
+                        <wc-math>$$ a^{n-3} b^3 $$</wc-math>
+                      </td>
+                    </tr>
+                    <!-- line 8 -->
+                    <tr>
+                      <td colspan="4"></td>
+                      <td class="IPLD_b" colspan="3"></td>
+                      <td class="IPLD_b IPLD_hc">
+                        <wc-math>$$ \cdots\!\cdots $$</wc-math>
+                      </td>
+                      <td colspan="5" rowspan="2"></td>
+                    </tr>
+                    <!-- line 9 -->
+                    <tr>
+                      <td colspan="7"></td>
+                      <td class="IPLD_t">
+                        <wc-math>$$ a^2 b^{n-2} $$</wc-math>
+                      </td>
+                    </tr>
+                    <!-- line 10 -->
+                    <tr>
+                      <td colspan="6"></td>
+                      <td class="IPLD_b IPLD_hc">
+                        <wc-math>$$ {} \,-\, {} $$</wc-math>
+                      </td>
+                      <td class="IPLD_b">
+                        <wc-math>$$ a^2 b^{n-2} $$</wc-math>
+                      </td>
+                      <td class="IPLD_b IPLD_hc">
+                        <wc-math>$$ {} \,+\, {} $$</wc-math>
+                      </td>
+                      <td class="IPLD_b">
+                        <wc-math>$$ a b^{n-1} $$</wc-math>
+                      </td>
+                      <td colspan="3" rowspan="2"></td>
+                    </tr>
+                    <!-- line 11 -->
+                    <tr>
+                      <td colspan="9"></td>
+                      <td class="IPLD_t">
+                        <wc-math>$$ a b^{n-1} $$</wc-math>
+                      </td>
+                    </tr>
+                    <!-- line 12 -->
+                    <tr>
+                      <td colspan="8"></td>
+                      <td class="IPLD_b IPLD_hc">
+                        <wc-math>$$ {} \,-\, {} $$</wc-math>
+                      </td>
+                      <td class="IPLD_b">
+                        <wc-math>$$ a b^{n-1} $$</wc-math>
+                      </td>
+                      <td class="IPLD_b IPLD_hc">
+                        <wc-math>$$ {} \,+\, {} $$</wc-math>
+                      </td>
+                      <td class="IPLD_b">
+                        <wc-math>$$ b^n $$</wc-math>
+                      </td>
+                      <td rowspan="2"></td>
+                    </tr>
+                    <!-- line 13 -->
+                    <tr>
+                      <td colspan="11"></td>
+                      <td class="IPLD_t">
+                        <wc-math>$$ b^n $$</wc-math>
+                      </td>
+                    </tr>
+                  </table>
+                </figure>
+                <p>
+                  The quotient is:
+                </p>
+                <wc-math class="N x s">
+                  $$
+                    a^{n-1} \,+\, a^{n-2}b \,+\, a^{n-3}b^2
+                    \,+\, \dots \,+\, ab^{n-2} \,+\, b^{n-1}
+                    \;=\; \sum_{k=0}^{n-1} a^{n-1-k}b^k
+                  $$
+                </wc-math>
+                <p>
+                  The remainder is $ b^n $.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  So:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    \frac{a^n}{a - b} \;=\;
+                    \left(
+                      \sum_{k=0}^{n-1} a^{n-1-k}b^k
+                    \right)
+                    \,+\, \frac{b^n}{a - b}
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \iff\quad
+                    \frac{a^n \,-\, b^n}{a \,-\, b}
+                    \;=\; \sum_{k=0}^{n-1} a^{n-1-k} b^k
+                  $$
+                </wc-math>
+                <p>
+                  Oh, no!
+                </p>
+                <p class="zz">
+                  The problem is solved half way.
+                  <br/>
+                  We don't get to compute the second long division
+                  or the infinite subtraction!
+                </p>
+                <p>
+                  Maths suck!
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  This also means:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    a^n \,-\, b^n \;=\; (a - b) \sum_{k=0}^{n-1} a^{n-1-k} b^k
+                  $$
+                </wc-math>
+                <p>
+                  Which is the useful identity I've mentioned
+                  as an excuse to drop yet another long division
+                  <br/>
+                  (I'll recidivate twice in chapter VI, just so you know).
+                </p>
+                <p class="zz">
+                  Our derivation is not valid for $ \; a \,=\, b \; $,
+                  <br/>
+                  otherwise our divisor is zero...
+                </p>
+                <p>
+                  But does the refactored identity hold in this case?
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    a \;=\; b
+                    \quad\iff\quad
+                    a^n \;=\; b^n
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    \iff\quad
+                    a^n \,-\, b^n \;=\; 0
+                  $$
+                </wc-math>
+                <wc-math class="Z s">
+                  $$
+                    a \;=\; b
+                    \quad\iff\quad
+                    a \,-\, b \;=\; 0
+                  $$
+                </wc-math>
+                <wc-math class="N x s">
+                  $$
+                    \iff\quad
+                    (a - b) \sum_{k=0}^{n-1} a^{n-1-k} b^k \;=\; 0
+                  $$
+                </wc-math>
+                <p>Ok.</p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <h4>
+                  Back to the power rule
+                </h4>
+                <wc-math class="Z s">
+                  $$
+                    df/dx \;=\; \frac{a^n \,-\, b^n}{a \,-\, b}
+                    \;=\; \sum_{k=0}^{n-1} a^{n-1-k} b^k
+                  $$
+                </wc-math>
+                <p>
+                  Remember: $ \; a \,=\, b + dx
+                  <br/>
+                  so $ dx $ tending to zero is equivalent to
+                  $ a $ tending to $ b $.
+                  <br/>
+                  And $ b $ is just $ x $, so $ a $ tends to $ x $.
+                </p>
+                <p class="zz">
+                  Also: the limit of a sum is the sum of the limits.
+                </p>
+                <p>
+                  So:
+                </p>
+                <wc-math class="N x s">
+                  $$
+                    df/dx
+                    \;=\;
+                    \lim_{a \to x}
+                    \Bigl(
+                      a^{n-1} \,+\, a^{n-2}x \,+\, a^{n-3}x^2
+                      \,+\, \dots \,+\, ax^{n-2} \,+\, x^{n-1}
+                    \Bigr)
+                  $$
+                </wc-math>
+                <wc-math class="x s S">
+                  $$
+                    \hphantom{ df/dx }
+                    \;=\;
+                    x^{n-1} \,+\, x^{n-1}  \,+\, x^{n-1}
+                    \,+\, \dots \,+\, x^{n-1} \,+\, x^{n-1}
+                  $$
+                </wc-math>
+                <p>
+                  The sum starts at $ \; k \,=\, 0 \; $
+                  and ends at $ \; k \,=\, n - 1 \; $,
+                  <br/>
+                  so that's $ \; n - 1 \; $ steps,
+                  $ +\, 1 $ because zeroes matter —
+                  <br/>
+                  — more on that once we finally start studying filters again —
+                  <br/>
+                  — so $ n $ steps, all equal to $ x^{n-1} $.
+                </p>
+                <p class="n">
+                  So:
+                </p>
+                <wc-math class="Z s">
+                  $$
+                    df/dx \;=\; nx^{n-1}
+                  $$
+                </wc-math>
+                <p>
+                  Ok.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  That's another way to get there — no binomial theorem.
+                </p>
+                <p class="n">
+                  Two-proofs-one-result never hurts.
+                </p>
+              </wc-ppp>
+
+              <wc-ppp>
+                <p>
+                  <wc-ascii class="Achtung">[[1N_PR06355]]</wc-ascii>
+                </p>
               </wc-ppp>
 
             </section><!-- end #05 -->

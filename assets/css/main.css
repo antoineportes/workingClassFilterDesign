@@ -139,6 +139,7 @@
   --yellow-B: 54;
   --yellow: rgb(var(--yellow-R), var(--yellow-G), var(--yellow-B));
   --lightGrey:  rgb(190, 190, 190);
+  --quietGrey: hsl(0, 0%, 42%);
   --chapter-bg: rgb(8, 8, 8);
   --subliminal: #ffffff14;
   --ground: hsl(21, 45%, 49%);
@@ -712,6 +713,8 @@ main
   /*  Links  */
   & a
   {
+    font-weight: inherit;
+
     &:link, &:visited
     {
       color: var(--yellow);
@@ -1211,6 +1214,7 @@ em
 small, sup
 {
   font-size: 75%;
+  line-height: 0;
 }
 wc-big
 {
@@ -1578,12 +1582,17 @@ wc-comment
   background:
     linear-gradient(
       60deg,
-      rgba(255, 255, 255, .045) 5%,
-      rgba(0, 0, 0, 0) 95%
+      rgb(19, 19, 19) 5%,
+      rgb(8, 8, 8) 95%
     );
   box-shadow:
     1px -1px 4px rgba(255, 255, 255, .05),
-    -1px 1px 6px rgba(0, 0, 0, .33);
+    -2px 2px 7px rgba(0, 0, 0, .45);
+
+  &.topContent
+  {
+    align-content: start;
+  }
 }
 /* #endregion */
 
